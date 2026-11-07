@@ -12,14 +12,14 @@
 <script>window.ER_SITE=1</script>
 <style>
 :root{
-  --bg:#f6f3ec; --card:#fffdf8; --ink:#1d1b16; --mute:#625d52; --line:#e4ddcf;
-  --accent:#b54d1a; --accent-soft:#f6e3d6; --green:#24603f; --green-soft:#dcebe2; --amber:#8a5a00; --amber-soft:#fbeccb;
+  --bg:#f3f5fa; --card:#ffffff; --ink:#141c33; --mute:#56607a; --line:#dde2ee;
+  --accent:#1b2f8a; --accent-soft:#e4e9fb; --night:#121d52; --sun:#f5a623; --sun-soft:#fff1d6; --green:#24603f; --green-soft:#dcebe2; --amber:#8a5a00; --amber-soft:#fbeccb;
   --red:#a1302a; --red-soft:#f6dcd9; --blue:#0b4f8a; --blue-soft:#e3f0fb; --violet:#4b2bb3; --violet-soft:#ede7ff;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 @media (prefers-color-scheme: dark){
-  :root{--bg:#16140f; --card:#1f1c16; --ink:#f1ece2; --mute:#aaa497; --line:#353026;
-  --accent:#ef8a52; --accent-soft:#3a2617; --green:#8bd0aa; --green-soft:#1d3127; --amber:#f2c36b; --amber-soft:#3a2d12;
+  :root{--bg:#0d1224; --card:#151c34; --ink:#eaeefa; --mute:#a3abc4; --line:#27304f;
+  --accent:#9db0ff; --accent-soft:#1d2752; --night:#080d26; --sun:#f7b84a; --sun-soft:#3a2c10; --green:#8bd0aa; --green-soft:#1d3127; --amber:#f2c36b; --amber-soft:#3a2d12;
   --red:#f39a90; --red-soft:#3b1f1c; --blue:#8cc4f2; --blue-soft:#132a3d; --violet:#c4b3ff; --violet-soft:#2a2340;}
 }
 *{box-sizing:border-box}
@@ -181,34 +181,112 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 .checks{display:grid;gap:4px;font-size:14px}
 #toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%) translateY(140px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;transition:transform .3s,opacity .3s;max-width:90vw;z-index:40;opacity:0;pointer-events:none}
 #toast.on{transform:translateX(-50%) translateY(0);opacity:1}
+/* ===== v3 : identité « soleil du matin » ===== */
+body{background:var(--bg)}
+.wrap{padding-top:0}
+.hero{position:relative;overflow:hidden;background:var(--night);color:#fff;padding:0 0 30px;margin-bottom:0}
+.hero-in{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:16px 16px 0}
+.sun{position:absolute;right:-90px;bottom:-150px;width:420px;height:420px;z-index:0;pointer-events:none}
+.hbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:34px}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{display:inline-block;width:22px;height:11px;border-radius:22px 22px 0 0;background:var(--sun)}
+.hrec{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+.hrec:hover{border-color:var(--sun);color:var(--sun)}
+.hero h1{font-family:inherit;font-weight:800;font-size:clamp(32px,6.4vw,58px);line-height:1.02;letter-spacing:-.035em;margin:0 0 14px;max-width:14ch}
+.hsub{color:#c9d1f0;font-size:16.5px;margin:0 0 20px;max-width:60ch}
+.hsub b{color:#fff}
+.hsearch{display:flex;gap:8px;background:#fff;border-radius:16px;padding:6px;max-width:680px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hsearch input{flex:1;border:0;background:transparent;font:inherit;font-size:16.5px;padding:10px 12px;color:#141c33;min-width:0}
+.hsearch input:focus{outline:none}
+.hsearch:focus-within{box-shadow:0 0 0 3px var(--sun),0 10px 30px rgba(0,0,0,.25)}
+.hsearch button{border:0;background:var(--sun);color:#141c33;font:inherit;font-weight:750;font-size:15.5px;padding:0 20px;border-radius:12px;cursor:pointer}
+.picks{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px;max-width:760px}
+.pick-b{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:13.5px;cursor:pointer}
+.pick-b:hover,.pick-b[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:#141c33}
+.pick-b small{opacity:.7;margin-left:3px}
+.hero .sub{color:#aeb7dc;margin:14px 0 0;font-size:13.5px}
+.hero #partenaire a{color:var(--sun)}
+body:not(.v-offres) .hsearch, body:not(.v-offres) .picks, body:not(.v-offres) .hsub{display:none}
+body:not(.v-offres) .hero h1{font-size:clamp(26px,4vw,34px);margin-bottom:0}
+body:not(.v-offres) .hbar{margin-bottom:18px}
+.nav{margin:-22px 0 16px;position:relative;z-index:2;box-shadow:0 6px 20px rgba(18,29,82,.12)}
+@media (max-width:640px){.nav{margin:0}.hbar{margin-bottom:22px}.sun{width:300px;height:300px;right:-110px;bottom:-130px}.hsearch button{padding:0 14px}}
+.nav button[aria-selected="true"]{background:var(--night);color:#fff}
+.chip[aria-pressed="true"]{background:var(--night);border-color:var(--night);color:#fff}
+.controls{border-bottom:0;position:static}
+/* cartes */
+.job{border-radius:16px;padding:16px;gap:10px;border-color:var(--line)}
+.job:hover{border-color:#b9c3e3}
+.job.spon{border:2px solid var(--sun);background:linear-gradient(var(--card),var(--card)) padding-box}
+.mono{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;background:hsl(var(--h) 55% 38%);letter-spacing:-.02em}
+.ttl{flex:1;min-width:0}
+.ttl h3{margin:0 0 2px;font-size:17px;font-weight:750;line-height:1.28;letter-spacing:-.01em}
+.ttl h3 a{color:inherit;text-decoration:none}
+.ttl h3 a:hover{color:var(--accent);text-decoration:underline}
+.emp{color:var(--mute);font-size:14px;font-weight:550}
+.facts{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px;color:var(--ink)}
+.facts li{display:flex;align-items:center;gap:5px}
+.facts span[aria-hidden]{opacity:.75}
+.btn{background:var(--accent)}
+.btn.go{background:var(--night);padding:8px 16px}
+.btn.wa{background:#e7f6ee;color:#11683c}
+@media (prefers-color-scheme: dark){.btn.go{background:var(--sun);color:#141c33}.btn.wa{background:#163a28;color:#9fe3bd}.mono{background:hsl(var(--h) 45% 32%)}}
+.tag.new{background:var(--sun-soft);color:#8a5600}
+@media (prefers-color-scheme: dark){.tag.new{color:var(--sun)}}
+.cta{background:var(--sun-soft)}
+.cta b{color:inherit}
+/* recruteurs */
+.rec-hero{background:var(--night);color:#fff;border-radius:20px;padding:22px;margin-bottom:14px;position:relative;overflow:hidden}
+.rec-hero h2{font-weight:800;font-size:clamp(24px,4.4vw,36px);line-height:1.08;letter-spacing:-.03em;margin:0 0 10px;max-width:18ch}
+.rec-hero p{color:#c9d1f0;margin:0 0 16px;max-width:58ch}
+.rec-kpi{display:flex;flex-wrap:wrap;gap:22px;margin-top:6px}
+.rec-kpi div{font-size:13.5px;color:#c9d1f0}.rec-kpi b{display:block;font-size:26px;color:var(--sun);font-weight:800;letter-spacing:-.02em}
+.why3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+.why3>div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+.why3 h3{margin:4px 0 4px;font-size:16px}.why3 p{margin:0;color:var(--mute);font-size:14px}
+.why3 .ic{font-size:24px}
+@media (max-width:640px){.why3{grid-template-columns:1fr}}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+.steps li::before{content:counter(s);flex:none;width:26px;height:26px;border-radius:50%;background:var(--night);color:#fff;display:grid;place-items:center;font-weight:750;font-size:13px}
+.fmt{border-radius:16px;background:var(--card)}
+.fmt .prix{font-family:inherit;font-weight:800;color:var(--accent)}
+.fmt.hi{border:2px solid var(--sun)}
+.panel h2,h2.h,.dlg h2{font-weight:800;letter-spacing:-.02em}
+.hrec{background:var(--night)}
+body:not(.v-offres) .sun{width:260px;height:260px;bottom:-170px;right:-60px}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
-<body>
-<div class="wrap">
-<header>
-  <h1>Emploi <span>Rapide</span></h1>
-  <p class="pitch">Les offres d'emploi d'Afrique francophone et du monde, vérifiées chaque matin — avec l'adresse pour postuler.</p>
-  <p class="sub" id="maj"></p>
-  <p class="sub" id="partenaire" style="display:none"></p>
+<body class="v-offres">
+<header class="hero">
+  <svg class="sun" viewBox="0 0 420 420" aria-hidden="true"><circle cx="210" cy="210" r="210" fill="#f5a623" opacity=".14"/><circle cx="210" cy="210" r="150" fill="#f5a623" opacity=".22"/><circle cx="210" cy="210" r="92" fill="#f5a623"/></svg>
+  <div class="hero-in">
+    <div class="hbar"><a class="logo" href="#" data-gov="offres"><i aria-hidden="true"></i>Emploi Rapide</a><button class="hrec" data-gov="recruteurs">Vous recrutez ?</button></div>
+    <h1 id="h1">Les offres d'emploi du jour, prêtes à postuler.</h1>
+    <p class="hsub" id="hsub"></p>
+    <form class="hsearch" id="hsearch" role="search"><label class="sr" for="q">Rechercher un emploi</label><input id="q" type="search" placeholder="Métier, compétence, employeur, ville…" autocomplete="off"><button type="submit">Rechercher</button></form>
+    <div class="picks" id="picks" aria-label="Recherches rapides"></div>
+    <p class="sub" id="maj"></p>
+    <p class="sub" id="partenaire" style="display:none"></p>
+  </div>
 </header>
+<div class="wrap">
 
 <nav class="nav" role="tablist" aria-label="Sections">
   <button role="tab" data-v="offres" aria-selected="true"><span class="ic" aria-hidden="true">🔎</span>Offres</button>
   <button role="tab" data-v="suivi" aria-selected="false"><span class="ic" aria-hidden="true">⭐</span><span class="lg">Mes candidatures</span><span class="sh">Suivi</span><span class="bdg" id="bdg-suivi" hidden></span></button>
   <button role="tab" data-v="profil" aria-selected="false"><span class="ic" aria-hidden="true">👤</span>Mon profil</button>
   <button role="tab" data-v="conseils" aria-selected="false"><span class="ic" aria-hidden="true">💡</span>Conseils</button>
+  <button role="tab" data-v="recruteurs" aria-selected="false"><span class="ic" aria-hidden="true">🏢</span>Recruteurs</button>
 </nav>
 
 <!-- ============ OFFRES ============ -->
 <section class="view" id="v-offres">
-<div class="stats" id="stats"></div>
 <div id="cta-profil"></div>
 <div id="ban-top"></div>
 
 <div class="controls" id="controls">
-  <label class="sr" for="q">Rechercher</label>
-  <input class="search" id="q" type="search" placeholder="Métier, compétence, employeur, ville…" autocomplete="off">
   <div class="row">
     <label class="sr" for="z">Région</label><select id="z"><option value="">Toutes les régions</option></select>
     <label class="sr" for="pays">Pays</label><select id="pays"><option value="">Tous les pays</option></select>
@@ -244,13 +322,6 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
 <div class="list" id="list"></div>
 <div style="text-align:center;margin:14px 0"><button class="btn ghost" id="more" hidden>Afficher plus d'offres</button></div>
 
-<section class="panel" id="annoncer" style="margin-top:22px">
-  <h2>Recruteurs : annoncez sur Emploi Rapide</h2>
-  <p class="sub" style="margin:0 0 10px">Vos offres sont vues chaque jour par des candidats de toute l'Afrique francophone et de la diaspora. Les annonces payantes sont toujours signalées comme telles et passent les mêmes contrôles anti-arnaque que les autres offres.</p>
-  <div class="formats" id="formats"></div>
-  <p style="margin:12px 0 0;font-weight:650" id="contact"></p>
-</section>
-
 <div class="notice"><b>Attention aux arnaques.</b> Un vrai recruteur ne demande jamais d'argent (frais de dossier, badge, visite médicale, formation payante, visa « garanti »). L'indice de confiance affiché sur chaque offre vous aide, mais vérifiez toujours l'employeur avant d'envoyer vos documents.</div>
 <details class="src">
   <summary>Comment les offres sont vérifiées</summary>
@@ -270,6 +341,38 @@ dialog::backdrop{background:rgba(0,0,0,.45)}
   <summary>Portails d'emploi surveillés</summary>
   <ul id="sources"></ul>
 </details>
+</section>
+
+<!-- ============ RECRUTEURS ============ -->
+<section class="view" id="v-recruteurs" hidden>
+  <div class="rec-hero" id="annoncer">
+    <h2>Recrutez les bons profils en Afrique francophone.</h2>
+    <p>Chaque matin, des candidats de toute l'Afrique francophone et de la diaspora consultent Emploi Rapide, avec un profil, un niveau d'études et un métier renseignés. Mettez votre offre devant eux.</p>
+    <div class="rec-kpi" id="rec-kpi"></div>
+  </div>
+  <div class="why3">
+    <div><span class="ic" aria-hidden="true">📌</span><h3>Votre offre en tête de liste</h3><p>L'offre sponsorisée reste épinglée en haut des résultats, avec un cadre distinct, pendant toute la durée choisie.</p></div>
+    <div><span class="ic" aria-hidden="true">🎯</span><h3>Des candidatures plus pertinentes</h3><p>Les candidats voient leur taux de compatibilité avec votre poste et reçoivent un e-mail de candidature qui reprend votre objet et votre référence.</p></div>
+    <div><span class="ic" aria-hidden="true">🛡️</span><h3>Une plateforme sans arnaque</h3><p>Chaque offre passe des contrôles : pas de frais demandés aux candidats, employeur identifiable, date limite affichée. Les candidats savent qu'ils peuvent vous faire confiance.</p></div>
+  </div>
+  <div class="panel">
+    <h2>Formats et tarifs</h2>
+    <p class="sub">Prix par période, sans engagement. Toutes les annonces payantes sont signalées comme telles.</p>
+    <div class="formats" id="formats"></div>
+  </div>
+  <div class="panel">
+    <h2>Comment ça marche</h2>
+    <ol class="steps">
+      <li>Choisissez un format et la période de diffusion.</li>
+      <li>Envoyez l'intitulé du poste, le lieu, la date limite et l'adresse ou le lien de candidature.</li>
+      <li>Votre annonce est vérifiée puis mise en ligne, sur le site et sur l'application.</li>
+    </ol>
+    <p style="margin:14px 0 0;font-weight:650" id="contact"></p>
+  </div>
+  <div class="panel">
+    <h2>Publier une offre classique</h2>
+    <p class="sub" style="margin:0">Vos offres publiées sur votre site carrières ou sur les portails d'emploi sont reprises gratuitement chaque matin, avec un lien vers votre page. Pour qu'elles soient mieux mises en valeur, indiquez toujours la date limite, le niveau demandé et une adresse de candidature à votre nom de domaine.</p>
+  </div>
 <p style="text-align:center;margin:22px 0 0;font-size:13px"><a href="confidentialite.html" style="color:var(--mute)">Politique de confidentialité</a></p>
 </section>
 
@@ -516,15 +619,17 @@ $('ban-top').innerHTML = banHTML(bans[0] || HOUSE);
 const part = actif(PUB.partenaire) ? PUB.partenaire : null;
 if(part){const el=$('partenaire');el.style.display='';
   el.innerHTML=`Partenaire du mois : <a href="${esc(safe(part.lien))}" target="_blank" rel="noopener sponsored" style="font-weight:650">${esc(part.nom)}</a> <span style="font-size:12px">(publicité)</span>`;}
-$('formats').innerHTML = (PUB.formats||[]).map(([n,p,t])=>`<div class="fmt"><b>${esc(n)}</b><div class="prix">${esc(p)}</div><small>${esc(t)}</small></div>`).join('');
+$('formats').innerHTML = (PUB.formats||[]).map(([n,p,t],i)=>`<div class="fmt${i===0?' hi':''}"><b>${esc(n)}</b><div class="prix">${esc(p)}</div><small>${esc(t)}</small></div>`).join('');
 $('contact').textContent = PUB.contact ? 'Pour réserver un espace : ' + PUB.contact : 'Réservations bientôt disponibles.';
 $('maj').textContent = 'Mise à jour le ' + new Date(D.maj+'T00:00:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) + ' · actualisée chaque matin';
 const isNew = j => (j.add||j.pub)===D.maj || j.pub===D.maj;
 const nSoon = jobs.filter(j=>{const d=days(j.lim);return d!==null&&d<=3}).length;
-$('stats').innerHTML = [
-  [jobs.length,'offres ouvertes'],[jobs.filter(isNew).length,'nouvelles ce matin'],
-  [new Set(jobs.filter(j=>!/^Monde/.test(j.p)).map(j=>j.p)).size,'pays couverts'],[nSoon,'clôturent sous 3 jours']
-].map(([b,s])=>`<div class="stat"><b>${b}</b><small>${s}</small></div>`).join('');
+const nPays=new Set(jobs.filter(j=>!/^Monde/.test(j.p)).map(j=>j.p)).size, nNew=jobs.filter(isNew).length;
+$('hsub').innerHTML = `<b>${jobs.length} offres ouvertes</b> dans ${nPays} pays${nNew&&nNew<jobs.length?`, dont <b>${nNew} nouvelles ce matin</b>`:''}. Chaque offre indique l'adresse pour postuler et un indice de confiance.`;
+$('rec-kpi').innerHTML = `<div><b>${jobs.length}</b>offres en ligne</div><div><b>${nPays}</b>pays couverts</div><div><b>6 h 40</b>mise à jour quotidienne</div>`;
+const topP=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,5);
+$('picks').innerHTML = topP.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false">${esc(p)}<small>${n}</small></button>`).join('')
+  + `<button class="pick-b" data-pf="deb" aria-pressed="false">🎓 Stages et débutants</button><button class="pick-b" data-pf="tt" aria-pressed="false">💻 Télétravail</button><button class="pick-b" data-pf="monde" aria-pressed="false">🌍 À l'international</button>`;
 $('sites').innerHTML = (D.sites||[]).map(([n,u,k])=>`<li><a href="${esc(safe(u))}" target="_blank" rel="noopener">${esc(n)}</a> · ${esc(k)}</li>`).join('');
 $('sources').innerHTML = [...new Set(jobs.map(j=>j.src))].sort((a,b)=>a.localeCompare(b,'fr')).map(s=>`<li>${esc(s)}</li>`).join('');
 
@@ -589,6 +694,7 @@ function syncControls(){
   ['z','pays','secteur','contrat','k','tri'].forEach(id=>$(id).value=st[id]||(id==='tri'?'pub':''));
   $('q').value=st.q||'';
   document.querySelectorAll('.chip[data-f]').forEach(c=>c.setAttribute('aria-pressed',st.f.has(c.dataset.f)));
+  document.querySelectorAll('.pick-b').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pp?st.pays===b.dataset.pp:st.f.has(b.dataset.pf)));
 }
 $('al-add').onclick=()=>{
   const s={q:st.q,z:st.z,pays:st.pays,secteur:st.secteur,contrat:st.contrat,k:st.k,f:[...st.f].filter(x=>x!=='new'&&x!=='soon')};
@@ -629,16 +735,21 @@ function card(j){
     `<span class="tag ${TRL[j.tr][0]}">${TRL[j.tr][1]}</span>`, j.li?'<span class="tag li">LinkedIn</span>':'',
     j.tt?'<span class="tag tt">💻 Télétravail</span>':'', !AFR(j)&&!j.tt?`<span class="tag zone">🌍 ${esc(zoneOf(j))}</span>`:'',
     j.ouv&&!AFR(j)?'<span class="tag ok">Ouvert à l\'international</span>':'', j.deb?'<span class="tag">🎓 Débutants</span>':'',
-    `<span class="tag">${esc(contratTxt(j.c))}</span>`, lim].join('');
+    lim].join('');
   const req=[j.niv!==null?nivLbl(j.niv)+(j.niv>=0?' min.':''):'', j.xp!==null?(j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'exp.':'Débutant accepté'):''].filter(Boolean).join(' · ');
+  const ini=(j.e.replace(/\(.*?\)/g,'').match(/[A-Za-zÀ-ÿ0-9]+/g)||['?']).filter(w=>w.length>2||/^[A-Z0-9]+$/.test(w)).slice(0,2);
+  const mono=(ini.length>1?ini.map(w=>w[0]).join(''):(ini[0]||j.e).slice(0,2)).toUpperCase();
+  const hue=parseInt(hid(j.e),36)%360;
+  const facts=[['📍',(j.v&&j.v!==j.p?j.v+', ':'')+j.p],['💼',contratTxt(j.c)],j.niv!==null?['🎓',nivLbl(j.niv)+(j.niv>=0?' minimum':'')]:null,j.xp!==null?['🧭',j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'expérience':'Débutants acceptés']:null].filter(Boolean);
   return `<article class="job${j.spon?' spon':''}" id="o-${j.id}">
-    <div class="top"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3>
+    <div class="top"><span class="mono" style="--h:${hue}" aria-hidden="true">${esc(mono)}</span>
+      <div class="ttl"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3><div class="emp">${esc(j.e)}</div></div>
       <button class="star" data-star="${j.id}" aria-pressed="${!!TR[j.id]}" aria-label="${TR[j.id]?'Retirer de':'Ajouter à'} mes candidatures">${TR[j.id]?'★':'☆'}</button></div>
-    <div class="meta"><b>${esc(j.e)}</b> · ${j.v&&j.v!==j.p?esc(j.v)+', ':''}${esc(j.p)} · ${esc(j.s)}${req?' · '+esc(req):''}</div>
+    <ul class="facts">${facts.map(([i,t])=>`<li><span aria-hidden="true">${i}</span>${esc(t)}</li>`).join('')}</ul>
     <div class="tags">${tags}</div>
     ${detHTML(j,c)}
-    <div class="foot"><span>${j.pub?'Publiée le '+fmt(j.pub):'Repérée le '+fmt(j.add||D.maj)} · ${esc(j.src)}</span>
-      <span class="acts"><button class="btn wa" data-wa="${j.id}" aria-label="Partager sur WhatsApp">WhatsApp</button><a class="btn" href="${esc(safe(j.u))}" target="_blank" rel="noopener">Voir l'annonce</a></span></div>
+    <div class="foot"><span>${j.pub?'Publiée le '+fmt(j.pub):'Repérée le '+fmt(j.add||D.maj)}, via ${esc(j.src)}</span>
+      <span class="acts"><button class="btn wa" data-wa="${j.id}" aria-label="Partager sur WhatsApp">Partager</button><a class="btn go" href="${esc(safe(j.lien||j.u))}" target="_blank" rel="noopener">${j.lien?'Postuler':'Voir l\'offre'}</a></span></div>
   </article>`;
 }
 
@@ -651,6 +762,7 @@ function sorted(r){
 }
 function render(keep){
   if(!keep) shown=PAGE;
+  document.querySelectorAll('.pick-b').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pp?st.pays===b.dataset.pp:st.f.has(b.dataset.pf)));
   let r = sorted(jobs.filter(j=>match(j,st)));
   r = [...r.filter(j=>j.spon), ...r.filter(j=>!j.spon)];
   lastR=r;
@@ -809,6 +921,8 @@ function ctaProfil(){
 function show(v){
   document.querySelectorAll('.nav [role=tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===v));
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='v-'+v);
+  document.body.className='v-'+v;
+  $('h1').textContent={offres:"Les offres d'emploi du jour, prêtes à postuler.",suivi:'Mes candidatures',profil:'Mon profil',conseils:'Conseils de recruteur',recruteurs:'Espace recruteurs'}[v];
   if(v==='suivi') renderSuivi(); if(v==='profil') loadP();
   window.scrollTo({top:0});
 }
@@ -822,6 +936,12 @@ function openOffer(id){
   setTimeout(()=>el.classList.remove('hl'),2500); return true;
 }
 
+$('hsearch').onsubmit=e=>{e.preventDefault();clearTimeout(qT);st.q=$('q').value;render();$('count').scrollIntoView({behavior:'smooth',block:'start'});};
+$('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!b)return;
+  if(b.dataset.pp){st.pays=st.pays===b.dataset.pp?'':b.dataset.pp;}
+  else {const f=b.dataset.pf;st.f.has(f)?st.f.delete(f):st.f.add(f);}
+  syncControls();render();});
+document.querySelectorAll('[data-gov]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();show(b.dataset.gov);}));
 /* ---------- démarrage ---------- */
 syncControls(); ctaProfil(); render(); renderAlertes(); badge();
 const hm=location.hash.match(/o=([a-z0-9]+)/); if(hm) setTimeout(()=>openOffer(hm[1]),50);
