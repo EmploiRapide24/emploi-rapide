@@ -9,8 +9,8 @@
   "id": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#f6f3ec",
-  "theme_color": "#c2551f",
+  "background_color": "#f0f4fb",
+  "theme_color": "#1d5bd8",
   "categories": [
     "business",
     "productivity"
