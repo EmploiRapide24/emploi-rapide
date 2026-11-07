@@ -32,7 +32,8 @@ for j in d["offres"]:
     apply = j.get("lien") or j["u"]
     ld = None
     if j.get("desc") and j.get("c") not in ("Programme", "Forum", "Concours"):
-        ld = {"@context":"https://schema.org/","@type":"JobPosting","title":j["t"],"description":"<p>"+html.escape(j["desc"])+"</p>",
+        secs = "".join("<p><b>"+t+"</b></p><ul>"+"".join("<li>"+html.escape(str(x))+"</li>" for x in (j.get(k) if isinstance(j.get(k),list) else [j.get(k)]) if x)+"</ul>" for t,k in (("Missions","mis"),("Profil recherché","pro"),("Conditions et avantages","plus")) if j.get(k))
+        ld = {"@context":"https://schema.org/","@type":"JobPosting","title":j["t"],"description":"<p>"+html.escape(j["desc"])+"</p>"+secs,
               "datePosted": j.get("pub") or j.get("add") or today,
               "hiringOrganization":{"@type":"Organization","name":j["e"]},
               "directApply": False, "url": j_url}
@@ -49,14 +50,15 @@ for j in d["offres"]:
 <link rel="canonical" href="{j_url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{E(j['t'])} – {E(j['e'])}">
 <meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{j_url}"><meta property="og:image" content="{DOMAIN}/icons/icon-512.png">
-<meta name="theme-color" content="#b54d1a"><link rel="icon" href="../icons/icon-192.png">
+<meta name="theme-color" content="#1d5bd8"><link rel="icon" href="../icons/icon-192.png">
 {('<script type="application/ld+json">'+json.dumps(ld, ensure_ascii=False).replace("</","<\\/")+'</script>') if ld else ''}
-<style>body{{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 18px;color:#1d1b16;background:#f6f3ec}}h1{{font-size:24px;line-height:1.25;margin:8px 0}}.m{{color:#625d52}}.b{{display:inline-block;background:#b54d1a;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:650;margin:6px 6px 0 0}}.g{{background:#1d1b16}}.box{{background:#fffdf8;border:1px solid #e4ddcf;border-radius:12px;padding:12px 14px;margin:14px 0}}a{{color:#b54d1a}}</style></head><body>
+<style>body{{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 18px;color:#0f1a33;background:#ffffff}}h1{{font-size:24px;line-height:1.25;margin:8px 0}}.m{{color:#56607a}}.b{{display:inline-block;background:#1d5bd8;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:650;margin:6px 6px 0 0}}.g{{background:#0f1a33}}.box{{background:#ffffff;border:1px solid #dde2ee;border-radius:12px;padding:12px 14px;margin:14px 0}}a{{color:#1d5bd8}}</style></head><body>
 <p><a href="../#o={i}">← Toutes les offres sur Emploi Rapide</a></p>
 <h1>{E(j['t'])}</h1>
 <p class="m"><b>{E(j['e'])}</b> · {E(lieu)} · {E(j['s'])} · {E('Contrat non précisé' if j['c']=='Emploi' else j['c'])}</p>
 {f'<p class="m">Date limite : <b>{E(j["lim"])}</b></p>' if j.get('lim') else ''}
 {f'<p>{E(j["desc"])}</p>' if j.get('desc') else ''}
+{''.join(f'<h2 style="font-size:17px;margin:16px 0 4px">{t}</h2><ul>'+''.join(f'<li>{E(x)}</li>' for x in (j.get(k) if isinstance(j.get(k),list) else [j.get(k)]) if x)+'</ul>' for t,k in (('Missions','mis'),('Profil recherché','pro'),('Conditions et avantages','plus')) if j.get(k))}
 <div class="box"><b>Comment postuler</b><br>
 {''.join(f'✉️ <a href="mailto:{E(m)}">{E(m)}</a><br>' for m in mails)}
 {f'<p style="margin:6px 0 0">{E(j["cons"])}</p>' if j.get('cons') else ''}

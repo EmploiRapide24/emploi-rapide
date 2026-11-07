@@ -308,7 +308,12 @@ body:not(.v-offres) .sun{width:260px;height:260px;bottom:-170px;right:-60px}
 .pb h3{margin:0 0 6px;font-size:17.5px;font-weight:750;line-height:1.3;letter-spacing:-.01em}
 .pb h3 a{color:inherit;text-decoration:none}.pb h3 a:hover{text-decoration:underline}
 .pdesc{margin:0 0 8px;font-size:14.5px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.pdesc.open{display:block}
+.pfull .prich{display:none}
+.pfull.open .pdesc{display:block}
+.pfull.open .prich{display:grid;gap:8px;margin:2px 0 10px}
+.psec b{display:block;font-size:14px;margin-bottom:2px}
+.psec ul{margin:0;padding-left:20px;font-size:14.5px;line-height:1.5}
+.psec li{margin:2px 0}
 .more{background:none;border:0;padding:0;color:var(--mute);font:inherit;font-weight:700;font-size:14px;cursor:pointer;margin:-4px 0 8px}
 .pb .facts{margin-bottom:8px}
 .pb .tags{margin-bottom:10px}
@@ -794,7 +799,7 @@ function match(j, s){
   if(f.has('monde') && AFR(j)) return false;
   if(f.has('like') && !LK[j.id]) return false;
   const q = norm(s.q).trim();
-  if(q){const hay=norm([j.t,j.e,j.v,j.p,j.s,j.desc,j.c].join(' ')); if(!q.split(/\s+/).every(w=>hay.includes(w))) return false;}
+  if(q){const hay=norm([j.t,j.e,j.v,j.p,j.s,j.desc,j.c,L(j.mis).join(' '),L(j.pro).join(' '),L(j.plus).join(' '),j.sal].join(' ')); if(!q.split(/\s+/).every(w=>hay.includes(w))) return false;}
   return true;
 }
 
@@ -862,7 +867,7 @@ function card(j){
     `<span class="tag ${TRL[j.tr][0]}">${TRL[j.tr][1]}</span>`, j.li?'<span class="tag li">LinkedIn</span>':'',
     j.tt?'<span class="tag tt">💻 Télétravail</span>':'', !AFR(j)&&!j.tt?`<span class="tag zone">🌍 ${esc(zoneOf(j))}</span>`:'',
     j.ouv&&!AFR(j)?'<span class="tag ok">Ouvert à l\'international</span>':'', j.deb?'<span class="tag">🎓 Débutants</span>':'', lim].join('');
-  const facts=[['💼',contratTxt(j.c)],j.niv!==null?['🎓',nivLbl(j.niv)+(j.niv>=0?' minimum':'')]:null,j.xp!==null?['🧭',j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'expérience':'Débutants acceptés']:null,['🏷️',j.s]].filter(Boolean);
+  const facts=[j.sal?['💰',j.sal]:null,['💼',contratTxt(j.c)],j.niv!==null?['🎓',nivLbl(j.niv)+(j.niv>=0?' minimum':'')]:null,j.xp!==null?['🧭',j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'expérience':'Débutants acceptés']:null,['🏷️',j.s]].filter(Boolean);
   const when = j.pub||j.add||D.maj;
   const liked=!!LK[j.id], saved=!!TR[j.id];
   const apply = j.lien ? `<a class="ap" href="${esc(safe(j.lien))}" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📨</span>Postuler</a>`
@@ -872,7 +877,7 @@ function card(j){
   return `<article class="job${j.spon?' spon':''}" id="o-${j.id}">
     <div class="ph">${monoHTML(j.e)}<div class="who"><b>${esc(j.e)}</b><span>${j.spon?'Sponsorisé':ago(when)} · 📍 ${esc((j.v&&j.v!==j.p?j.v+', ':'')+j.p)}</span></div></div>
     <div class="pb"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3>
-      ${j.desc?`<p class="pdesc">${esc(j.desc)}</p>${j.desc.length>190?'<button class="more" data-more>Voir plus</button>':''}`:''}
+      ${fullHTML(j)}
       <ul class="facts">${facts.map(([i,t])=>`<li><span aria-hidden="true">${i}</span>${esc(t)}</li>`).join('')}</ul>
       <div class="tags">${tags}</div></div>
     ${detHTML(j,c)}
@@ -885,6 +890,15 @@ function card(j){
     </div>
     <div class="psrc">Source : ${esc(j.src)}${j.pub?' · publiée le '+fmt(j.pub):''}</div>
   </article>`;
+}
+const L = a => Array.isArray(a) ? a.filter(Boolean) : (a ? [a] : []);
+function fullHTML(j){
+  const mis=L(j.mis), pro=L(j.pro), plus=L(j.plus);
+  const sec=(t,a)=>a.length?`<div class="psec"><b>${t}</b><ul>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
+  const rich = sec('Missions',mis)+sec('Profil recherché',pro)+sec('Conditions et avantages',plus);
+  if(!j.desc && !rich) return '';
+  const long = rich || (j.desc||'').length>190;
+  return `<div class="pfull">${j.desc?`<p class="pdesc">${esc(j.desc)}</p>`:''}${rich?`<div class="prich">${rich}</div>`:''}</div>${long?'<button class="more" data-more>Voir plus</button>':''}`;
 }
 function monoHTML(name){
   const w=(name.replace(/\(.*?\)/g,'').match(/[A-Za-zÀ-ÿ0-9]+/g)||['?']).filter(x=>x.length>2||/^[A-Z0-9]+$/.test(x)).slice(0,2);
@@ -930,7 +944,7 @@ if(st.contrat||st.k||['direct','li','monde','tt','ouv'].some(x=>st.f.has(x))) $(
 
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
-  const mb=e.target.closest('[data-more]'); if(mb){const p=mb.previousElementSibling;p.classList.toggle('open');mb.textContent=p.classList.contains('open')?'Voir moins':'Voir plus';return;}
+  const mb=e.target.closest('[data-more]'); if(mb){const p=mb.previousElementSibling;const o=p.classList.toggle('open');mb.textContent=o?'Voir moins':'Voir plus';return;}
   const lk=e.target.closest('[data-like]'); if(lk){const id=lk.dataset.like;toggleLike(id);refreshCard(id);renderSide();renderShorts();if(LK[id])toast('Ajoutée à vos j\'aime. Retrouvez-les dans « Mes j\'aime ».');return;}
   const em=e.target.closest('[data-emp]'); if(em){show('offres');st.q=em.dataset.emp;syncControls();render();$('count').scrollIntoView({behavior:'smooth'});return;}
   const sh=e.target.closest('[data-sf]'); if(sh){show('offres');const f=sh.dataset.sf;st.f.has(f)?st.f.delete(f):st.f.add(f);syncControls();render();renderShorts();return;}
