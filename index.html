@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Emploi Rapide – Offres d'emploi en Afrique francophone</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22118%22%20fill%3D%22%231d5bd8%22/%3E%3Cpath%20fill%3D%22%23ffffff%22%20transform%3D%22translate%2858%20366%29%20scale%282.6%29%22%20d%3D%22M43.65234375%201.7578125C63.2080078125%201.7578125%2078.80859375%20-9.1552734375%2081.6650390625%20-24.755859375H59.033203125C57.2021484375%20-19.62890625%2051.9287109375%20-16.40625%2044.53125%20-16.40625C34.5703125%20-16.40625%2028.7109375%20-22.6318359375%2028.41796875%20-32.4462890625H82.2509765625V-39.2578125C82.2509765625%20-62.6953125%2066.2109375%20-79.1015625%2042.9931640625%20-79.1015625C20.068359375%20-79.1015625%203.80859375%20-62.255859375%203.80859375%20-38.671875C3.80859375%20-15.087890625%2019.921875%201.7578125%2043.65234375%201.7578125ZM28.564453125%20-47.5341796875C29.6630859375%20-55.6640625%2035.15625%20-60.498046875%2043.65234375%20-60.498046875C52.0751953125%20-60.498046875%2057.6416015625%20-55.6640625%2058.740234375%20-47.5341796875Z%20M84.7978515625%200.0H109.9931640625V-39.6240234375C109.9931640625%20-50.6103515625%20116.21875%20-56.9091796875%20125.2275390625%20-56.9091796875C128.8896484375%20-56.9091796875%20133.357421875%20-56.7626953125%20135.1884765625%20-56.689453125V-77.490234375C133.1376953125%20-77.5634765625%20131.013671875%20-77.63671875%20128.3037109375%20-77.63671875C117.9765625%20-77.63671875%20112.1904296875%20-73.53515625%20109.4072265625%20-63.720703125H109.1875V-77.34375H84.7978515625Z%22/%3E%3Ccircle%20cx%3D%22430%22%20cy%3D%22338%22%20r%3D%2228%22%20fill%3D%22%2322c55e%22/%3E%3C/svg%3E">
 <meta name="theme-color" content="#1d5bd8">
@@ -13,16 +14,13 @@
 <script>window.ER_SITE=1</script>
 <style>
 :root{
+  color-scheme:light;
   --bg:#ffffff; --soft:#f2f4f8; --card:#ffffff; --ink:#0f1a33; --mute:#56607a; --line:#dde2ee;
   --accent:#1d5bd8; --accent-soft:#e3ecfd; --night:#1d5bd8; --sun:#16a34a; --sun-soft:#dcfce7; --green:#24603f; --green-soft:#dcebe2; --amber:#8a5a00; --amber-soft:#fbeccb;
   --red:#a1302a; --red-soft:#f6dcd9; --blue:#0b4f8a; --blue-soft:#e3f0fb; --violet:#4b2bb3; --violet-soft:#ede7ff;
   --serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0d1224; --soft:#1b2440; --card:#151c34; --ink:#eaeefa; --mute:#a3abc4; --line:#27304f;
-  --accent:#8fb3ff; --accent-soft:#1a2a55; --night:#123b8f; --sun:#34d36e; --sun-soft:#12301f; --green:#8bd0aa; --green-soft:#1d3127; --amber:#f2c36b; --amber-soft:#3a2d12;
-  --red:#f39a90; --red-soft:#3b1f1c; --blue:#8cc4f2; --blue-soft:#132a3d; --violet:#c4b3ff; --violet-soft:#2a2340;}
-}
+
 *{box-sizing:border-box}
 html{scroll-padding-top:70px}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-text-size-adjust:100%}
@@ -230,9 +228,9 @@ body:not(.v-offres) .hbar{margin-bottom:18px}
 .btn{background:var(--accent)}
 .btn.go{background:var(--night);padding:8px 16px}
 .btn.wa{background:#e7f6ee;color:#11683c}
-@media (prefers-color-scheme: dark){.btn{color:#0f1a33}.btn.ghost{color:var(--ink)}.btn.go{background:#2f6df0;color:#fff}.btn.wa{background:#163a28;color:#9fe3bd}.mono{background:hsl(var(--h) 45% 32%)}}
+
 .tag.new{background:var(--sun-soft);color:#13692f}
-@media (prefers-color-scheme: dark){.tag.new{color:var(--sun)}}
+
 .cta{background:var(--sun-soft)}
 .cta b{color:inherit}
 /* recruteurs */
