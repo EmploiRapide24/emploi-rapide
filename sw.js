@@ -1,5 +1,5 @@
 // Emploi Rapide : fonctionne hors connexion avec la dernière liste téléchargée
-const C='emploi-rapide-v6';
+const C='emploi-rapide-v7';
 const SHELL=['./','index.html','manifest.webmanifest','icons/icon-192.png','icons/icon-512.png','confidentialite.html'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>c.addAll(SHELL)));self.skipWaiting();});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==C).map(x=>caches.delete(x)))));self.clients.claim();});

@@ -207,7 +207,6 @@ body{background:var(--bg)}
 .pick-b small{opacity:.7;margin-left:3px}
 .hero .sub{color:#c7d6ff;margin:14px 0 0;font-size:13.5px}
 .hero #partenaire a{color:#fff;text-decoration:underline}
-body:not(.v-offres) .hsearch, body:not(.v-offres) .picks, body:not(.v-offres) .hsub{display:none}
 body:not(.v-offres) .hero h1{font-size:clamp(26px,4vw,34px);margin-bottom:0}
 body:not(.v-offres) .hbar{margin-bottom:18px}
 .nav{margin:-22px 0 16px;position:relative;z-index:2;box-shadow:0 6px 20px rgba(18,29,82,.12)}
@@ -256,32 +255,136 @@ body:not(.v-offres) .hbar{margin-bottom:18px}
 .panel h2,h2.h,.dlg h2{font-weight:800;letter-spacing:-.02em}
 .hrec{background:var(--night)}
 body:not(.v-offres) .sun{width:260px;height:260px;bottom:-170px;right:-60px}
+/* ===== v4 : fil d'actualité ===== */
+.wrap{max-width:none;margin:0;padding:0 0 90px}
+.topbar{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line);box-shadow:0 1px 3px rgba(15,26,51,.06)}
+.tb-in{max-width:1280px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:12px}
+.topbar .logo{color:var(--accent);font-size:20px;flex:none}
+.topbar .logo .mk rect{fill:var(--accent)} .topbar .logo .mk path{fill:#fff}
+.hsearch{flex:1;max-width:560px;margin:0 auto;display:flex;align-items:center;gap:6px;background:var(--bg);border-radius:999px;padding:4px 4px 4px 14px;box-shadow:none}
+.hsearch:focus-within{box-shadow:0 0 0 2px var(--accent)}
+.hsearch input{font-size:15px;padding:8px 4px;color:var(--ink)}
+.hsearch button{border-radius:999px;padding:8px 16px;font-size:14px}
+.sic{opacity:.6;font-size:14px}
+.hrec{flex:none;background:var(--accent-soft);color:var(--accent);border:0;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.hrec:hover{background:var(--accent);color:#fff}
+.layout{max-width:1280px;margin:0 auto;padding:16px;display:grid;grid-template-columns:250px minmax(0,640px) 300px;gap:24px;justify-content:center;align-items:start}
+.lside,.rside{position:sticky;top:72px;max-height:calc(100vh - 88px);overflow:auto}
+.lside .nav{flex-direction:column;background:transparent;border:0;box-shadow:none;padding:0;margin:0 0 12px;gap:2px}
+.lside .nav button{text-align:left;display:flex;align-items:center;gap:10px;padding:10px 12px;font-size:15px;border-radius:10px}
+.lside .nav button:hover{background:var(--card)}
+.lside .nav button[aria-selected="true"]{background:var(--accent-soft);color:var(--accent)}
+.lside .nav .ic{font-size:20px;width:28px;text-align:center;margin:0}
+.lside .nav .lg{display:inline}.lside .nav .sh{display:none}
+.shorts{border-top:1px solid var(--line);padding-top:10px}
+.shorts h3,.side h3{font-size:14px;color:var(--mute);font-weight:700;margin:4px 12px 6px}
+.shorts button{display:flex;width:100%;align-items:center;gap:10px;background:none;border:0;padding:8px 12px;border-radius:10px;font:inherit;font-size:14.5px;color:var(--ink);cursor:pointer;text-align:left}
+.shorts button:hover,.shorts button[aria-pressed="true"]{background:var(--card)}
+.shorts button[aria-pressed="true"]{color:var(--accent);font-weight:700}
+.shorts .n{margin-left:auto;color:var(--mute);font-size:12.5px}
+.lfoot{color:var(--mute);font-size:12px;margin:12px}
+.composer{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.hello{font-size:19px;font-weight:800;margin:0 0 4px;letter-spacing:-.01em}
+.composer .hsub{color:var(--mute);font-size:14.5px;margin:0 0 10px}
+.composer .hsub b{color:var(--ink)}
+.picks{display:flex;gap:10px;overflow-x:auto;padding:6px 4px 4px;margin:0;scrollbar-width:thin;flex-wrap:nowrap}
+.pick-b{flex:none;display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;color:var(--ink);font:inherit;font-size:12.5px;cursor:pointer;width:76px;padding:0}
+.pick-b .ring{width:60px;height:60px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:16px;color:#fff;background:hsl(var(--h) 60% 42%);box-shadow:0 0 0 3px var(--card),0 0 0 5px var(--accent)}
+.pick-b[aria-pressed="true"] .ring{box-shadow:0 0 0 3px var(--card),0 0 0 5px var(--sun)}
+.pick-b:hover,.pick-b[aria-pressed="true"]{background:none;color:var(--accent)}
+.pick-b small{opacity:1;margin:0;color:var(--mute);font-size:11.5px}
+.pick-b .lb{max-width:76px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.controls{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}
+#ban-top .ad{margin-bottom:12px}
+/* publication */
+.job{padding:0;gap:0;border-radius:14px;overflow:hidden}
+.job>*{margin:0}
+.ph{display:flex;gap:10px;align-items:center;padding:12px 16px 0}
+.ph .mono{width:42px;height:42px;border-radius:50%;font-size:14px}
+.ph .who{flex:1;min-width:0}
+.ph .who b{display:block;font-size:15px;line-height:1.25}
+.ph .who span{display:block;color:var(--mute);font-size:12.5px;line-height:1.35}
+.pb{padding:10px 16px 0}
+.pb h3{margin:0 0 6px;font-size:17.5px;font-weight:750;line-height:1.3;letter-spacing:-.01em}
+.pb h3 a{color:inherit;text-decoration:none}.pb h3 a:hover{text-decoration:underline}
+.pdesc{margin:0 0 8px;font-size:14.5px;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pdesc.open{display:block}
+.more{background:none;border:0;padding:0;color:var(--mute);font:inherit;font-weight:700;font-size:14px;cursor:pointer;margin:-4px 0 8px}
+.pb .facts{margin-bottom:8px}
+.pb .tags{margin-bottom:10px}
+.job .det{border-top:0;padding:0 16px 8px}
+.job .det>summary{font-size:13.5px}
+.pcount{display:flex;justify-content:space-between;padding:0 16px 8px;font-size:13px;color:var(--mute)}
+.pcount:empty{display:none}
+.pbar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin:0 12px;padding:4px 0}
+.pbar>*{display:flex;align-items:center;justify-content:center;gap:6px;background:none;border:0;border-radius:8px;padding:8px 4px;font:inherit;font-size:14px;font-weight:650;color:var(--mute);cursor:pointer;text-decoration:none;white-space:nowrap}
+.pbar>*:hover{background:var(--bg)}
+.pbar .on{color:var(--accent)}
+.pbar .ap{color:var(--sun)}
+.pbar .ico{font-size:17px;line-height:1}
+.psrc{padding:0 16px 10px;font-size:12px;color:var(--mute)}
+/* colonne droite */
+.side{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 4px;margin-bottom:12px}
+.side ul{list-style:none;margin:0;padding:0}
+.side li button{display:flex;width:100%;gap:10px;align-items:center;background:none;border:0;border-radius:10px;padding:8px 12px;font:inherit;color:var(--ink);text-align:left;cursor:pointer}
+.side li button:hover{background:var(--bg)}
+.side li .mono{width:34px;height:34px;border-radius:50%;font-size:12px}
+.side li b{display:block;font-size:13.5px;line-height:1.3;font-weight:650}
+.side li small{display:block;color:var(--mute);font-size:12px}
+.side .soonx{color:var(--red);font-weight:700}
+.side .ad{margin:4px 8px;padding:10px}
+.side .reccta{margin:4px 12px 6px;font-size:13.5px;color:var(--mute)}
+.side .reccta .btn{margin-top:8px}
+.rside .side:first-child{margin-top:0}
+/* responsive */
+.feed,.lside,.rside{min-width:0}
+.pbar>:not(.on):not(.ap) .ico{filter:grayscale(1);opacity:.75}
+.side .ad{padding-top:24px}
+@media (max-width:480px){.pbar>*{font-size:12.5px;gap:4px;padding:8px 2px}.pbar .ico{font-size:15px}.ph,.pb,.pcount,.psrc,.job .det{padding-left:12px;padding-right:12px}}
+@media (max-width:1180px){.layout{grid-template-columns:220px minmax(0,640px)}.rside{display:none}}
+@media (min-width:1181px){#ban-top{display:none}}
+@media (max-width:860px){
+  .layout{grid-template-columns:minmax(0,1fr);padding:10px}
+  .lside{position:static;max-height:none;overflow:visible}
+  .shorts,.lfoot{display:none}
+  .lside .nav{position:fixed;left:8px;right:8px;bottom:8px;z-index:30;flex-direction:row;background:var(--card);border:1px solid var(--line);box-shadow:0 6px 24px rgba(0,0,0,.18);padding:4px;border-radius:14px}
+  .lside .nav button{flex:1;flex-direction:column;gap:1px;font-size:11.5px;padding:7px 2px;text-align:center}
+  .lside .nav .ic{font-size:19px;width:auto}
+  .lside .nav .lg{display:none}.lside .nav .sh{display:inline}
+  .hrec{display:none}
+  .topbar .logo{font-size:0;gap:0}
+  .hsearch button{display:none}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body class="v-offres">
-<header class="hero">
-  <svg class="sun" viewBox="0 0 420 420" aria-hidden="true"><circle cx="210" cy="210" r="210" fill="#ffffff" opacity=".06"/><circle cx="210" cy="210" r="150" fill="#ffffff" opacity=".07"/><circle cx="210" cy="210" r="92" fill="#ffffff" opacity=".08"/></svg>
-  <div class="hero-in">
-    <div class="hbar"><a class="logo" href="#" data-gov="offres"><svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="118" fill="#ffffff"/><path fill="#1d5bd8" transform="translate(58 366) scale(2.6)" d="M43.65234375 1.7578125C63.2080078125 1.7578125 78.80859375 -9.1552734375 81.6650390625 -24.755859375H59.033203125C57.2021484375 -19.62890625 51.9287109375 -16.40625 44.53125 -16.40625C34.5703125 -16.40625 28.7109375 -22.6318359375 28.41796875 -32.4462890625H82.2509765625V-39.2578125C82.2509765625 -62.6953125 66.2109375 -79.1015625 42.9931640625 -79.1015625C20.068359375 -79.1015625 3.80859375 -62.255859375 3.80859375 -38.671875C3.80859375 -15.087890625 19.921875 1.7578125 43.65234375 1.7578125ZM28.564453125 -47.5341796875C29.6630859375 -55.6640625 35.15625 -60.498046875 43.65234375 -60.498046875C52.0751953125 -60.498046875 57.6416015625 -55.6640625 58.740234375 -47.5341796875Z M84.7978515625 0.0H109.9931640625V-39.6240234375C109.9931640625 -50.6103515625 116.21875 -56.9091796875 125.2275390625 -56.9091796875C128.8896484375 -56.9091796875 133.357421875 -56.7626953125 135.1884765625 -56.689453125V-77.490234375C133.1376953125 -77.5634765625 131.013671875 -77.63671875 128.3037109375 -77.63671875C117.9765625 -77.63671875 112.1904296875 -73.53515625 109.4072265625 -63.720703125H109.1875V-77.34375H84.7978515625Z"/><circle cx="430" cy="338" r="28" fill="#22c55e"/></svg>Emploi Rapide</a><button class="hrec" data-gov="recruteurs">Vous recrutez ?</button></div>
-    <h1 id="h1">Les offres d'emploi du jour, prêtes à postuler.</h1>
-    <p class="hsub" id="hsub"></p>
-    <form class="hsearch" id="hsearch" role="search"><label class="sr" for="q">Rechercher un emploi</label><input id="q" type="search" placeholder="Métier, compétence, employeur, ville…" autocomplete="off"><button type="submit">Rechercher</button></form>
-    <div class="picks" id="picks" aria-label="Recherches rapides"></div>
-    <p class="sub" id="maj"></p>
-    <p class="sub" id="partenaire" style="display:none"></p>
+<header class="topbar">
+  <div class="tb-in">
+    <a class="logo" href="#" data-gov="offres"><svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="118" fill="#ffffff"/><path fill="#1d5bd8" transform="translate(58 366) scale(2.6)" d="M43.65234375 1.7578125C63.2080078125 1.7578125 78.80859375 -9.1552734375 81.6650390625 -24.755859375H59.033203125C57.2021484375 -19.62890625 51.9287109375 -16.40625 44.53125 -16.40625C34.5703125 -16.40625 28.7109375 -22.6318359375 28.41796875 -32.4462890625H82.2509765625V-39.2578125C82.2509765625 -62.6953125 66.2109375 -79.1015625 42.9931640625 -79.1015625C20.068359375 -79.1015625 3.80859375 -62.255859375 3.80859375 -38.671875C3.80859375 -15.087890625 19.921875 1.7578125 43.65234375 1.7578125ZM28.564453125 -47.5341796875C29.6630859375 -55.6640625 35.15625 -60.498046875 43.65234375 -60.498046875C52.0751953125 -60.498046875 57.6416015625 -55.6640625 58.740234375 -47.5341796875Z M84.7978515625 0.0H109.9931640625V-39.6240234375C109.9931640625 -50.6103515625 116.21875 -56.9091796875 125.2275390625 -56.9091796875C128.8896484375 -56.9091796875 133.357421875 -56.7626953125 135.1884765625 -56.689453125V-77.490234375C133.1376953125 -77.5634765625 131.013671875 -77.63671875 128.3037109375 -77.63671875C117.9765625 -77.63671875 112.1904296875 -73.53515625 109.4072265625 -63.720703125H109.1875V-77.34375H84.7978515625Z"/><circle cx="430" cy="338" r="28" fill="#22c55e"/></svg>Emploi Rapide</a>
+    <form class="hsearch" id="hsearch" role="search"><label class="sr" for="q">Rechercher un emploi</label><span class="sic" aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Rechercher un métier, un employeur, une ville…" autocomplete="off"><button type="submit">Rechercher</button></form>
+    <button class="hrec" data-gov="recruteurs">Vous recrutez ?</button>
   </div>
 </header>
-<div class="wrap">
-
-<nav class="nav" role="tablist" aria-label="Sections">
+<div class="layout">
+<aside class="lside">
+  <nav class="nav" role="tablist" aria-label="Sections">
   <button role="tab" data-v="offres" aria-selected="true"><span class="ic" aria-hidden="true">🔎</span>Offres</button>
   <button role="tab" data-v="suivi" aria-selected="false"><span class="ic" aria-hidden="true">⭐</span><span class="lg">Mes candidatures</span><span class="sh">Suivi</span><span class="bdg" id="bdg-suivi" hidden></span></button>
   <button role="tab" data-v="profil" aria-selected="false"><span class="ic" aria-hidden="true">👤</span>Mon profil</button>
   <button role="tab" data-v="conseils" aria-selected="false"><span class="ic" aria-hidden="true">💡</span>Conseils</button>
   <button role="tab" data-v="recruteurs" aria-selected="false"><span class="ic" aria-hidden="true">🏢</span>Recruteurs</button>
 </nav>
-
+  <div class="shorts" id="shorts"></div>
+  <p class="lfoot" id="maj"></p>
+</aside>
+<main class="feed wrap">
+<div class="composer" id="composer">
+  <p class="hello" id="h1">Les offres d'emploi du jour, prêtes à postuler.</p>
+  <p class="hsub" id="hsub"></p>
+  <div class="picks" id="picks" aria-label="Recherches rapides"></div>
+  <p class="sub" id="partenaire" style="display:none"></p>
+</div>
 <!-- ============ OFFRES ============ -->
 <section class="view" id="v-offres">
 <div id="cta-profil"></div>
@@ -308,6 +411,7 @@ body:not(.v-offres) .sun{width:260px;height:260px;bottom:-170px;right:-60px}
     <button class="chip" data-f="deb" aria-pressed="false">🎓 Débutants & stages</button>
     <button class="chip" data-f="fiable" aria-pressed="false">✅ Confiance élevée</button>
     <button class="chip" data-f="mail" aria-pressed="false">✉️ Candidature par e-mail</button>
+    <button class="chip" data-f="like" aria-pressed="false">❤️ Mes j'aime</button>
     <button class="chip more-f" data-f="direct" aria-pressed="false">Site officiel de l'employeur</button>
     <button class="chip more-f" data-f="li" aria-pressed="false">LinkedIn</button>
     <button class="chip more-f" data-f="monde" aria-pressed="false">🌍 Hors Afrique francophone</button>
@@ -467,6 +571,8 @@ body:not(.v-offres) .sun{width:260px;height:260px;bottom:-170px;right:-60px}
     <li>Visa ou emploi à l'étranger « garanti ».</li>
     <li>Demande de pièce d'identité ou de coordonnées bancaires avant tout entretien.</li></ol></details>
 </section>
+</main>
+<aside class="rside" id="rside"></aside>
 </div>
 
 <dialog id="dlg" aria-labelledby="dlg-t"><div class="dlg" id="dlg-b"></div></dialog>
@@ -584,6 +690,11 @@ function compat(j){
   return {s:Math.max(0,Math.min(100,s)),w};
 }
 
+/* ---------- j'aime ---------- */
+let LK = store.get('er-likes', {});
+function toggleLike(id){ if(LK[id]) delete LK[id]; else LK[id]=today; store.set('er-likes',LK); }
+const ago = d => {const n=-days(d); return n<=0?"aujourd'hui":n===1?'hier':n<7?'il y a '+n+' j':'le '+fmt(d);};
+
 /* ---------- suivi des candidatures ---------- */
 let TR = store.get('er-suivi', {});
 const ST = [['save','⭐ À postuler'],['post','📨 Candidature envoyée'],['ent','🗣️ Entretien'],['ok','🎉 Acceptée'],['ko','Refusée']];
@@ -635,8 +746,10 @@ const nPays=new Set(jobs.filter(j=>!/^Monde/.test(j.p)).map(j=>j.p)).size, nNew=
 $('hsub').innerHTML = `<b>${jobs.length} offres ouvertes</b> dans ${nPays} pays${nNew&&nNew<jobs.length?`, dont <b>${nNew} nouvelles ce matin</b>`:''}. Chaque offre indique l'adresse pour postuler et un indice de confiance.`;
 $('rec-kpi').innerHTML = `<div><b>${jobs.length}</b>offres en ligne</div><div><b>${nPays}</b>pays couverts</div><div><b>6 h 40</b>mise à jour quotidienne</div>`;
 const topP=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,5);
-$('picks').innerHTML = topP.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false">${esc(p)}<small>${n}</small></button>`).join('')
-  + `<button class="pick-b" data-pf="deb" aria-pressed="false">🎓 Stages et débutants</button><button class="pick-b" data-pf="tt" aria-pressed="false">💻 Télétravail</button><button class="pick-b" data-pf="monde" aria-pressed="false">🌍 À l'international</button>`;
+const ISO={"Côte d'Ivoire":'CI','Sénégal':'SN','RD Congo':'CD','Maroc':'MA','Cameroun':'CM','Bénin':'BJ','Togo':'TG','Mali':'ML','Tunisie':'TN','Mauritanie':'MR','Burkina Faso':'BF','Niger':'NE','Gabon':'GA','Guinée':'GN','Congo':'CG','Madagascar':'MG'};
+const topP8=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,7);
+$('picks').innerHTML = topP8.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false"><span class="ring" style="--h:${parseInt(hid(p),36)%360}">${esc(ISO[p]||p.slice(0,2).toUpperCase())}</span><span class="lb">${esc(p)}</span><small>${n} offres</small></button>`).join('')
+  + `<button class="pick-b" data-pf="deb" aria-pressed="false"><span class="ring" style="--h:150">🎓</span><span class="lb">Débutants</span><small>stages</small></button><button class="pick-b" data-pf="tt" aria-pressed="false"><span class="ring" style="--h:265">💻</span><span class="lb">Télétravail</span><small>à distance</small></button><button class="pick-b" data-pf="monde" aria-pressed="false"><span class="ring" style="--h:200">🌍</span><span class="lb">Monde</span><small>international</small></button>`;
 $('sites').innerHTML = (D.sites||[]).map(([n,u,k])=>`<li><a href="${esc(safe(u))}" target="_blank" rel="noopener">${esc(n)}</a> · ${esc(k)}</li>`).join('');
 $('sources').innerHTML = [...new Set(jobs.map(j=>j.src))].sort((a,b)=>a.localeCompare(b,'fr')).map(s=>`<li>${esc(s)}</li>`).join('');
 
@@ -672,6 +785,7 @@ function match(j, s){
   if(f.has('tt') && !j.tt) return false;
   if(f.has('ouv') && !j.ouv) return false;
   if(f.has('monde') && AFR(j)) return false;
+  if(f.has('like') && !LK[j.id]) return false;
   const q = norm(s.q).trim();
   if(q){const hay=norm([j.t,j.e,j.v,j.p,j.s,j.desc,j.c].join(' ')); if(!q.split(/\s+/).every(w=>hay.includes(w))) return false;}
   return true;
@@ -722,7 +836,6 @@ function calURL(j){
 }
 function detHTML(j, c){
   let h='';
-  if(j.desc) h+=`<p class="desc">${esc(j.desc)}</p>`;
   let how='';
   j.mails.forEach(m=>{how+=`<div class="how-row"><span aria-hidden="true">✉️</span><a href="mailto:${esc(m)}" class="mail">${esc(m)}</a><button class="copy" data-copy="${esc(m)}">Copier</button></div>`;});
   if(j.lien) how+=`<div class="how-row"><a class="btn dark" href="${esc(safe(j.lien))}" target="_blank" rel="noopener">Postuler en ligne ↗</a></div>`;
@@ -732,7 +845,7 @@ function detHTML(j, c){
   h+=`<div class="box"><span class="box-t">Comment postuler</span>${how}</div>`;
   if(c) h+=`<div class="box"><span class="box-t">Compatibilité avec votre profil : ${c.s} %</span>${whyHTML(c.w)}</div>`;
   h+=`<div class="box"><span class="box-t">Indice de confiance : ${TRL[j.tr][1].replace(/^\S+ /,'')}</span>${whyHTML(j.trp)}</div>`;
-  return `<details class="det" data-id="${j.id}"><summary>${j.desc?'Descriptif, candidature et compatibilité':'Comment postuler'}</summary>${h}</details>`;
+  return `<details class="det" data-id="${j.id}"><summary>Comment postuler, compatibilité et confiance</summary>${h}</details>`;
 }
 function card(j){
   const d=days(j.lim), c=compat(j);
@@ -741,23 +854,35 @@ function card(j){
   const tags = [j.spon?'<span class="tag spon">Sponsorisé</span>':'', sc, isNew(j)?'<span class="tag new">Nouveau</span>':'',
     `<span class="tag ${TRL[j.tr][0]}">${TRL[j.tr][1]}</span>`, j.li?'<span class="tag li">LinkedIn</span>':'',
     j.tt?'<span class="tag tt">💻 Télétravail</span>':'', !AFR(j)&&!j.tt?`<span class="tag zone">🌍 ${esc(zoneOf(j))}</span>`:'',
-    j.ouv&&!AFR(j)?'<span class="tag ok">Ouvert à l\'international</span>':'', j.deb?'<span class="tag">🎓 Débutants</span>':'',
-    lim].join('');
-  const req=[j.niv!==null?nivLbl(j.niv)+(j.niv>=0?' min.':''):'', j.xp!==null?(j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'exp.':'Débutant accepté'):''].filter(Boolean).join(' · ');
-  const ini=(j.e.replace(/\(.*?\)/g,'').match(/[A-Za-zÀ-ÿ0-9]+/g)||['?']).filter(w=>w.length>2||/^[A-Z0-9]+$/.test(w)).slice(0,2);
-  const mono=(ini.length>1?ini.map(w=>w[0]).join(''):(ini[0]||j.e).slice(0,2)).toUpperCase();
-  const hue=parseInt(hid(j.e),36)%360;
-  const facts=[['📍',(j.v&&j.v!==j.p?j.v+', ':'')+j.p],['💼',contratTxt(j.c)],j.niv!==null?['🎓',nivLbl(j.niv)+(j.niv>=0?' minimum':'')]:null,j.xp!==null?['🧭',j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'expérience':'Débutants acceptés']:null].filter(Boolean);
+    j.ouv&&!AFR(j)?'<span class="tag ok">Ouvert à l\'international</span>':'', j.deb?'<span class="tag">🎓 Débutants</span>':'', lim].join('');
+  const facts=[['💼',contratTxt(j.c)],j.niv!==null?['🎓',nivLbl(j.niv)+(j.niv>=0?' minimum':'')]:null,j.xp!==null?['🧭',j.xp?j.xp+' an'+(j.xp>1?'s':'')+' d\'expérience':'Débutants acceptés']:null,['🏷️',j.s]].filter(Boolean);
+  const when = j.pub||j.add||D.maj;
+  const liked=!!LK[j.id], saved=!!TR[j.id];
+  const apply = j.lien ? `<a class="ap" href="${esc(safe(j.lien))}" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📨</span>Postuler</a>`
+    : j.mails.length ? `<button class="ap" data-mail="${j.id}"><span class="ico" aria-hidden="true">📨</span>Postuler</button>`
+    : `<a class="ap" href="${esc(safe(j.u))}" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📨</span>Voir l'offre</a>`;
+  const cnt=[liked?'<span>👍 Vous aimez cette offre</span>':'', saved?'<span>⭐ Dans vos candidatures</span>':''].filter(Boolean).join('');
   return `<article class="job${j.spon?' spon':''}" id="o-${j.id}">
-    <div class="top"><span class="mono" style="--h:${hue}" aria-hidden="true">${esc(mono)}</span>
-      <div class="ttl"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3><div class="emp">${esc(j.e)}</div></div>
-      <button class="star" data-star="${j.id}" aria-pressed="${!!TR[j.id]}" aria-label="${TR[j.id]?'Retirer de':'Ajouter à'} mes candidatures">${TR[j.id]?'★':'☆'}</button></div>
-    <ul class="facts">${facts.map(([i,t])=>`<li><span aria-hidden="true">${i}</span>${esc(t)}</li>`).join('')}</ul>
-    <div class="tags">${tags}</div>
+    <div class="ph">${monoHTML(j.e)}<div class="who"><b>${esc(j.e)}</b><span>${j.spon?'Sponsorisé':ago(when)} · 📍 ${esc((j.v&&j.v!==j.p?j.v+', ':'')+j.p)}</span></div></div>
+    <div class="pb"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3>
+      ${j.desc?`<p class="pdesc">${esc(j.desc)}</p>${j.desc.length>190?'<button class="more" data-more>Voir plus</button>':''}`:''}
+      <ul class="facts">${facts.map(([i,t])=>`<li><span aria-hidden="true">${i}</span>${esc(t)}</li>`).join('')}</ul>
+      <div class="tags">${tags}</div></div>
     ${detHTML(j,c)}
-    <div class="foot"><span>${j.pub?'Publiée le '+fmt(j.pub):'Repérée le '+fmt(j.add||D.maj)}, via ${esc(j.src)}</span>
-      <span class="acts"><button class="btn wa" data-wa="${j.id}" aria-label="Partager sur WhatsApp">Partager</button><a class="btn go" href="${esc(safe(j.lien||j.u))}" target="_blank" rel="noopener">${j.lien?'Postuler':'Voir l\'offre'}</a></span></div>
+    <div class="pcount">${cnt}</div>
+    <div class="pbar">
+      <button class="${liked?'on':''}" data-like="${j.id}" aria-pressed="${liked}"><span class="ico" aria-hidden="true">👍</span>J'aime</button>
+      ${apply}
+      <button data-wa="${j.id}"><span class="ico" aria-hidden="true">↗️</span>Partager</button>
+      <button class="${saved?'on':''}" data-star="${j.id}" aria-pressed="${saved}"><span class="ico" aria-hidden="true">${saved?'⭐':'☆'}</span>${saved?'Enregistrée':'Enregistrer'}</button>
+    </div>
+    <div class="psrc">Source : ${esc(j.src)}${j.pub?' · publiée le '+fmt(j.pub):''}</div>
   </article>`;
+}
+function monoHTML(name){
+  const w=(name.replace(/\(.*?\)/g,'').match(/[A-Za-zÀ-ÿ0-9]+/g)||['?']).filter(x=>x.length>2||/^[A-Z0-9]+$/.test(x)).slice(0,2);
+  const m=(w.length>1?w.map(x=>x[0]).join(''):(w[0]||name).slice(0,2)).toUpperCase();
+  return `<span class="mono" style="--h:${parseInt(hid(name),36)%360}" aria-hidden="true">${esc(m)}</span>`;
 }
 
 /* ---------- liste ---------- */
@@ -780,6 +905,7 @@ function render(keep){
   $('more').hidden = r.length<=shown;
   $('more').textContent = 'Afficher plus d\'offres ('+(r.length-shown)+' restantes)';
   store.set('veille-filtres',{...st,f:[...st.f]});
+  if($('shorts').innerHTML) document.querySelectorAll('#shorts [data-sf]').forEach(b=>b.setAttribute('aria-pressed',st.f.has(b.dataset.sf)));
 }
 $('more').onclick=()=>{shown+=PAGE;render(true);};
 $('reset').onclick=()=>{Object.assign(st,{q:'',z:'',pays:'',secteur:'',contrat:'',k:'',f:new Set()});syncControls();render();};
@@ -797,10 +923,14 @@ if(st.contrat||st.k||['direct','li','monde','tt','ouv'].some(x=>st.f.has(x))) $(
 
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
+  const mb=e.target.closest('[data-more]'); if(mb){const p=mb.previousElementSibling;p.classList.toggle('open');mb.textContent=p.classList.contains('open')?'Voir moins':'Voir plus';return;}
+  const lk=e.target.closest('[data-like]'); if(lk){const id=lk.dataset.like;toggleLike(id);refreshCard(id);renderSide();renderShorts();if(LK[id])toast('Ajoutée à vos j\'aime. Retrouvez-les dans « Mes j\'aime ».');return;}
+  const em=e.target.closest('[data-emp]'); if(em){show('offres');st.q=em.dataset.emp;syncControls();render();$('count').scrollIntoView({behavior:'smooth'});return;}
+  const sh=e.target.closest('[data-sf]'); if(sh){show('offres');const f=sh.dataset.sf;st.f.has(f)?st.f.delete(f):st.f.add(f);syncControls();render();renderShorts();return;}
   const t=e.target.closest('[data-copy],[data-star],[data-wa],[data-mail],[data-posted],[data-go]'); if(!t) return;
   if(t.dataset.copy!==undefined){const v=t.dataset.copy;
     try{navigator.clipboard.writeText(v).then(()=>toast('Copié : '+v),()=>toast('Copie impossible : sélectionnez le texte.'));}catch(err){toast('Copie impossible : sélectionnez le texte.');}}
-  else if(t.dataset.star){toggleSave(t.dataset.star); refreshCard(t.dataset.star); if(!$('v-suivi').hidden) renderSuivi();}
+  else if(t.dataset.star){toggleSave(t.dataset.star); refreshCard(t.dataset.star); renderSide(); if(!$('v-suivi').hidden) renderSuivi();}
   else if(t.dataset.wa){const j=byId[t.dataset.wa]||{...TR[t.dataset.wa].s,id:t.dataset.wa};
     const txt='📢 Offre d\'emploi : '+j.t+' – '+j.e+' ('+(j.v&&j.v!==j.p?j.v+', ':'')+j.p+')'+(j.lim?'\n⏳ Date limite : '+fmtL(j.lim):'')+'\n👉 '+shareURL(j)+'\n\nTrouvée sur Emploi Rapide';
     if(navigator.share && /Android|iPhone|iPad/i.test(navigator.userAgent)){navigator.share({title:j.t,text:txt}).catch(()=>{});}
@@ -920,6 +1050,8 @@ pf.onsubmit=e=>{e.preventDefault();
 };
 $('pf-clear').onclick=()=>{P={};store.set('er-profil',P);loadP();ctaProfil();if(st.tri==='score'){st.tri='pub';syncControls();}render();toast('Profil effacé.');};
 function ctaProfil(){
+  const pn=(P.nom||'').trim().split(/\s+/)[0];
+  $('h1').textContent = pn ? `Bonjour ${pn} 👋 Voici les offres du jour.` : "Les offres d'emploi du jour, prêtes à postuler.";
   $('cta-profil').innerHTML = hasP() ? '' : `<div class="cta"><span style="font-size:26px" aria-hidden="true">🎯</span><p><b>Quelles offres sont faites pour vous ?</b> Créez votre profil en 1 minute : compatibilité calculée pour chaque offre et e-mails de candidature prêts.</p><button class="btn" data-pfgo>Mon profil</button></div>`;
   $('cta-profil').querySelector('[data-pfgo]')?.addEventListener('click',()=>show('profil'));
 }
@@ -929,7 +1061,7 @@ function show(v){
   document.querySelectorAll('.nav [role=tab]').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===v));
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='v-'+v);
   document.body.className='v-'+v;
-  $('h1').textContent={offres:"Les offres d'emploi du jour, prêtes à postuler.",suivi:'Mes candidatures',profil:'Mon profil',conseils:'Conseils de recruteur',recruteurs:'Espace recruteurs'}[v];
+  $('composer').hidden = v!=='offres';
   if(v==='suivi') renderSuivi(); if(v==='profil') loadP();
   window.scrollTo({top:0});
 }
@@ -949,8 +1081,31 @@ $('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!
   else {const f=b.dataset.pf;st.f.has(f)?st.f.delete(f):st.f.add(f);}
   syncControls();render();});
 document.querySelectorAll('[data-gov]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();show(b.dataset.gov);}));
+/* ---------- colonnes latérales ---------- */
+function renderShorts(){
+  const items=[['like','❤️',"Mes j'aime",Object.keys(LK).filter(i=>byId[i]).length],['new','🆕','Nouvelles offres',jobs.filter(isNew).length],['soon','⏳','Clôturent bientôt',nSoon],['deb','🎓','Débutants et stages',jobs.filter(j=>j.deb).length],['tt','💻','Télétravail',jobs.filter(j=>j.tt).length],['fiable','✅','Confiance élevée',jobs.filter(j=>j.tr===1).length],['monde','🌍','International',jobs.filter(j=>!AFR(j)).length]];
+  $('shorts').innerHTML='<h3>Raccourcis</h3>'+items.map(([f,i,l,n])=>`<button data-sf="${f}" aria-pressed="${st.f.has(f)}"><span aria-hidden="true">${i}</span>${l}<span class="n">${n}</span></button>`).join('');
+}
+function sideItem(j,sub){return `<li><button data-go="${j.id}">${monoHTML(j.e)}<span><b>${esc(j.t)}</b><small>${sub}</small></span></button></li>`;}
+function renderSide(){
+  const soon=jobs.filter(j=>{const d=days(j.lim);return d!==null&&d<=7;}).sort((a,b)=>a.lim.localeCompare(b.lim)).slice(0,5);
+  const emp=Object.entries(jobs.reduce((m,j)=>(m[j.e]=(m[j.e]||0)+1,m),{})).filter(([e,n])=>n>1&&!/^\(/.test(e)).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const lk=Object.keys(LK).map(i=>byId[i]).filter(Boolean);
+  let sug=[];
+  if(lk.length){const S=new Set(lk.map(j=>j.s)),Pp=new Set(lk.map(j=>j.p));
+    sug=jobs.filter(j=>!LK[j.id]&&(S.has(j.s))).map(j=>[j,(Pp.has(j.p)?2:0)+(compat(j)?.s||0)/50]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]);}
+  else if(hasP()) sug=jobs.map(j=>[j,compat(j).s]).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]);
+  const ad=bans[0]||HOUSE;
+  $('rside').innerHTML =
+    (sug.length?`<div class="side"><h3>${lk.length?'Proches de vos j\'aime':'Pour votre profil'}</h3><ul>${sug.map(j=>sideItem(j,esc(j.e)+(compat(j)?' · '+compat(j).s+' %':''))).join('')}</ul></div>`:'')
+    +(soon.length?`<div class="side"><h3>Clôturent bientôt</h3><ul>${soon.map(j=>{const d=days(j.lim);return sideItem(j,`<span class="soonx">${d===0?"Aujourd'hui":d===1?'Demain':'Dans '+d+' jours'}</span> · ${esc(j.e)}`)}).join('')}</ul></div>`:'')
+    +`<div class="side"><h3>Sponsorisé</h3>${banHTML(ad)}</div>`
+    +(emp.length?`<div class="side"><h3>Ils recrutent en ce moment</h3><ul>${emp.map(([e,n])=>`<li><button data-emp="${esc(e)}">${monoHTML(e)}<span><b>${esc(e)}</b><small>${n} offres ouvertes</small></span></button></li>`).join('')}</ul></div>`:'')
+    +`<div class="side"><h3>Vous recrutez ?</h3><p class="reccta">Mettez votre offre en tête du fil, devant des milliers de candidats.<br><button class="btn" data-gov2="recruteurs">Découvrir nos formats</button></p></div>`;
+  $('rside').querySelector('[data-gov2]')?.addEventListener('click',()=>show('recruteurs'));
+}
 /* ---------- démarrage ---------- */
-syncControls(); ctaProfil(); render(); renderAlertes(); badge();
+syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide();
 const hm=location.hash.match(/o=([a-z0-9]+)/); if(hm) setTimeout(()=>openOffer(hm[1]),50);
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
