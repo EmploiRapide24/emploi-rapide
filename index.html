@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emploi Rapide – Offres d'emploi en Afrique francophone</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%22112%22%20fill%3D%22%23121d52%22/%3E%3Cg%20transform%3D%22translate%280%20-6%29%22%3E%3Cg%20fill%3D%22%23ffffff%22%3E%3Cpath%20d%3D%22M112%20100h140v46h-92v42h80v44h-80v44h92v46H112z%22/%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M276%20100h82a72%2072%200%200%201%2022%20140.5L414%20322h-52l-30-74h-8v74h-48zM324%20144v62h32a31%2031%200%200%200%200-62z%22/%3E%3C/g%3E%3Cpath%20d%3D%22M190%20418a66%2066%200%200%201%20132%200z%22%20fill%3D%22%23f5a623%22/%3E%3Crect%20x%3D%22112%22%20y%3D%22414%22%20width%3D%22288%22%20height%3D%2210%22%20rx%3D%225%22%20fill%3D%22%23f5a623%22/%3E%3C/g%3E%3C/svg%3E">
 <meta name="theme-color" content="#c2551f">
 <meta name="description" content="Toutes les offres d'emploi d'Afrique francophone, mises à jour chaque matin : portails d'emploi, sites carrières des employeurs et LinkedIn.">
 <link rel="manifest" href="manifest.webmanifest">
@@ -189,7 +190,7 @@ body{background:var(--bg)}
 .sun{position:absolute;right:-90px;bottom:-150px;width:420px;height:420px;z-index:0;pointer-events:none}
 .hbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:34px}
 .logo{font-weight:800;font-size:19px;letter-spacing:-.02em;color:#fff;text-decoration:none;display:flex;align-items:center;gap:8px}
-.logo i{display:inline-block;width:22px;height:11px;border-radius:22px 22px 0 0;background:var(--sun)}
+.logo .mk{width:34px;height:34px;flex:none;display:block}
 .hrec{background:transparent;border:1.5px solid rgba(255,255,255,.45);color:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:14px;font-weight:650;cursor:pointer}
 .hrec:hover{border-color:var(--sun);color:var(--sun)}
 .hero h1{font-family:inherit;font-weight:800;font-size:clamp(32px,6.4vw,58px);line-height:1.02;letter-spacing:-.035em;margin:0 0 14px;max-width:14ch}
@@ -262,7 +263,7 @@ body:not(.v-offres) .sun{width:260px;height:260px;bottom:-170px;right:-60px}
 <header class="hero">
   <svg class="sun" viewBox="0 0 420 420" aria-hidden="true"><circle cx="210" cy="210" r="210" fill="#f5a623" opacity=".14"/><circle cx="210" cy="210" r="150" fill="#f5a623" opacity=".22"/><circle cx="210" cy="210" r="92" fill="#f5a623"/></svg>
   <div class="hero-in">
-    <div class="hbar"><a class="logo" href="#" data-gov="offres"><i aria-hidden="true"></i>Emploi Rapide</a><button class="hrec" data-gov="recruteurs">Vous recrutez ?</button></div>
+    <div class="hbar"><a class="logo" href="#" data-gov="offres"><svg class="mk" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" rx="112" fill="#1f2f7d"/><g transform="translate(0 -6)"><g fill="#ffffff"><path d="M112 100h140v46h-92v42h80v44h-80v44h92v46H112z"/><path fill-rule="evenodd" d="M276 100h82a72 72 0 0 1 22 140.5L414 322h-52l-30-74h-8v74h-48zM324 144v62h32a31 31 0 0 0 0-62z"/></g><path d="M190 418a66 66 0 0 1 132 0z" fill="#f5a623"/><rect x="112" y="414" width="288" height="10" rx="5" fill="#f5a623"/></g></svg>Emploi Rapide</a><button class="hrec" data-gov="recruteurs">Vous recrutez ?</button></div>
     <h1 id="h1">Les offres d'emploi du jour, prêtes à postuler.</h1>
     <p class="hsub" id="hsub"></p>
     <form class="hsearch" id="hsearch" role="search"><label class="sr" for="q">Rechercher un emploi</label><input id="q" type="search" placeholder="Métier, compétence, employeur, ville…" autocomplete="off"><button type="submit">Rechercher</button></form>
