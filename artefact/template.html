@@ -460,6 +460,10 @@ label.f{font-size:14px;font-weight:600}
 .tk-sep{opacity:.6;padding:0 12px}
 @media (prefers-reduced-motion:reduce){.tk-track{animation:none}.tk-win{overflow-x:auto}}
 @media (max-width:860px){.ticker{font-size:12.5px;height:30px}.tk-lab{padding-left:12px}.topbar .hsearch{flex:1 1 auto;margin-left:8px}}
+/* Bandeau d'accueil : pleine largeur */
+.composer .hsub{max-width:none}
+.composer .picks{max-width:none}
+@media (min-width:861px){.composer .picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));overflow:visible;gap:10px 4px;justify-items:center}.composer .pick-b{width:72px}.composer .pick-b .ring{width:50px;height:50px;font-size:14.5px}.composer .pick-b .lb{max-width:72px}}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -856,9 +860,9 @@ $('hsub').innerHTML = `<b>${jobs.length} offres ouvertes</b> dans ${nPays} pays$
 $('rec-kpi').innerHTML = `<div><b>${jobs.length}</b>offres en ligne</div><div><b>${nPays}</b>pays couverts</div><div><b>6 h 40</b>mise à jour quotidienne</div>`;
 const topP=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,5);
 const ISO={"Côte d'Ivoire":'CI','Sénégal':'SN','RD Congo':'CD','Maroc':'MA','Cameroun':'CM','Bénin':'BJ','Togo':'TG','Mali':'ML','Tunisie':'TN','Mauritanie':'MR','Burkina Faso':'BF','Niger':'NE','Gabon':'GA','Guinée':'GN','Congo':'CG','Madagascar':'MG'};
-const topP8=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,7);
-$('picks').innerHTML = topP8.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false"><span class="ring" style="--h:${parseInt(hid(p),36)%360}">${esc(ISO[p]||p.slice(0,2).toUpperCase())}</span><span class="lb">${esc(p)}</span><small>${n} offres</small></button>`).join('')
-  + `<button class="pick-b" data-pf="deb" aria-pressed="false"><span class="ring" style="--h:150">🎓</span><span class="lb">Débutants</span><small>stages</small></button><button class="pick-b" data-pf="tt" aria-pressed="false"><span class="ring" style="--h:265">💻</span><span class="lb">Télétravail</span><small>à distance</small></button><button class="pick-b" data-pf="monde" aria-pressed="false"><span class="ring" style="--h:200">🌍</span><span class="lb">Monde</span><small>international</small></button>`;
+const topP8=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,13);
+$('picks').innerHTML = `<button class="pick-b" data-pf="deb" aria-pressed="false"><span class="ring" style="--h:150">🎓</span><span class="lb">Débutants</span><small>stages</small></button><button class="pick-b" data-pf="tt" aria-pressed="false"><span class="ring" style="--h:265">💻</span><span class="lb">Télétravail</span><small>à distance</small></button><button class="pick-b" data-pf="monde" aria-pressed="false"><span class="ring" style="--h:200">🌍</span><span class="lb">Monde</span><small>international</small></button>`
+  + topP8.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false"><span class="ring" style="--h:${parseInt(hid(p),36)%360}">${esc(ISO[p]||p.slice(0,2).toUpperCase())}</span><span class="lb">${esc(p)}</span><small>${n} offre${n>1?'s':''}</small></button>`).join('');
 $('sites').innerHTML = (D.sites||[]).map(([n,u,k])=>`<li><a href="${esc(safe(u))}" target="_blank" rel="noopener">${esc(n)}</a> · ${esc(k)}</li>`).join('');
 $('sources').innerHTML = [...new Set(jobs.map(j=>j.src))].sort((a,b)=>a.localeCompare(b,'fr')).map(s=>`<li>${esc(s)}</li>`).join('');
 
@@ -1170,6 +1174,14 @@ document.addEventListener('click',async e=>{
     return; }
 });
 
+/* ---------- bandeau d'accueil : rangées complètes ---------- */
+function fitPicks(){
+  const el=$('picks'); if(!el) return; const items=[...el.children]; items.forEach(i=>i.style.display='');
+  if(innerWidth<861) return;
+  const cols=getComputedStyle(el).gridTemplateColumns.split(' ').filter(Boolean).length||1;
+  const n=items.length, keep=n<=cols?n:n-(n%cols);
+  items.forEach((it,k)=>{ if(k>=keep && it.getAttribute('aria-pressed')!=='true') it.style.display='none'; });
+}
 /* ---------- bande déroulante des dernières offres ---------- */
 function renderTicker(){
   const tr=$('tk-track'); if(!tr) return;
@@ -1368,7 +1380,7 @@ function renderSide(){
   $('rside').querySelector('[data-gov2]')?.addEventListener('click',()=>show('recruteurs'));
 }
 /* ---------- démarrage ---------- */
-syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts(); loadAbos(); renderTicker();
+syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts(); loadAbos(); renderTicker(); fitPicks(); addEventListener('resize',()=>{clearTimeout(window._fp);window._fp=setTimeout(fitPicks,150);});
 (()=>{ const t=new URLSearchParams(location.search).get('desabo'); if(!t||!SB_ON) return;
   history.replaceState(null,'',location.pathname+location.hash);
   fetch(SB_URL+'/functions/v1/alertes?desabo='+encodeURIComponent(t)).then(r=>r.json()).then(j=>{
