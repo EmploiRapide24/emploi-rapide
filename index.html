@@ -481,7 +481,7 @@ label.f{font-size:14px;font-weight:600}
 /* Sélecteur de langue */
 .lang{display:flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:999px;padding:2px 4px 2px 10px;background:#fff;flex:none}
 .lang select{border:0;background:none;font:inherit;font-size:13.5px;padding:6px 4px;cursor:pointer;max-width:120px;color:var(--ink)}
-.tr-l{color:#1d5bd8;text-decoration:none;white-space:nowrap}.tr-l:hover{text-decoration:underline}
+.tr-l{color:#1d5bd8;text-decoration:none;white-space:nowrap;background:none;border:0;padding:0;font:inherit;cursor:pointer}#gt-el{position:absolute;left:-9999px;top:0}.tr-l:hover{text-decoration:underline}
 .goog-te-banner-frame,.skiptranslate>iframe,#goog-gt-tt,.goog-te-balloon-frame{display:none!important}body{top:0!important}.goog-text-highlight{background:none!important;box-shadow:none!important}
 @media (max-width:860px){.lang{padding-left:6px}.lang select{max-width:64px;font-size:12.5px}.hrec{display:none}.topbar .hsearch{min-width:0}.topbar .hsearch input{min-width:0;width:100%}.tb-in{gap:8px;padding-left:12px;padding-right:12px}}
 /* Police arrondie */
@@ -1036,7 +1036,7 @@ function card(j){
       <button class="${saved?'on':''}" data-star="${j.id}" aria-pressed="${saved}"><span class="ico" aria-hidden="true">${saved?'⭐':'☆'}</span>${saved?'Enregistrée':'Enregistrer'}</button>
     </div>
     ${OPENC.has(j.id)?cmtHTML(j.id):''}
-    <div class="psrc">Source : ${esc(j.src)}${j.pub?' · publiée le '+fmt(j.pub):''} · <a class="tr-l" href="${trURL(j)}" target="_blank" rel="noopener">🌐 Traduire cette offre</a></div>
+    <div class="psrc">Source : ${esc(j.src)}${j.pub?' · publiée le '+fmt(j.pub):''} ${SITE?' · <button class="tr-l" data-tr="1">🌐 Traduire</button>':''}</div>
   </article>`;
 }
 const L = a => Array.isArray(a) ? a.filter(Boolean) : (a ? [a] : []);
@@ -1252,31 +1252,37 @@ $('li-q').addEventListener('input',()=>{clearTimeout(window._lq);window._lq=setT
 $('li-tri').addEventListener('change',renderListe);
 $('li-som').addEventListener('click',e=>{const a=e.target.closest('[data-lj]'); if(!a) return; e.preventDefault(); const el=$(a.dataset.lj); el&&el.scrollIntoView({behavior:'smooth',block:'start'});});
 
-/* ---------- traduction (Google Traduction) ---------- */
+/* ---------- traduction instantanée (Google Traduction, sur la page) ---------- */
 const LANG_KEY='er-lang';
-function curLang(){ const m=document.cookie.match(/googtrans=\/fr\/([^;]+)/); return m?decodeURIComponent(m[1]):(store.get(LANG_KEY,'')||'fr'); }
-function trURL(j){ const tl=curLang()==='fr'?'en':curLang(); return 'https://emploirapide24-com.translate.goog/offre/'+j.id+'.html?_x_tr_sl=fr&_x_tr_tl='+encodeURIComponent(tl)+'&_x_tr_hl=fr'; }
-function setLang(l){
-  store.set(LANG_KEY,l);
-  const host=location.hostname, exp=l==='fr'?'expires=Thu, 01 Jan 1970 00:00:00 GMT':'max-age=31536000';
-  const v=l==='fr'?'':'/fr/'+l;
-  document.cookie='googtrans='+v+';path=/;'+exp;
-  if(host.includes('.')) document.cookie='googtrans='+v+';path=/;domain=.'+host.replace(/^www\./,'')+';'+exp;
-  if(SITE) location.reload();
-  else if(l!=='fr') window.open('https://emploirapide24-com.translate.goog/?_x_tr_sl=fr&_x_tr_tl='+encodeURIComponent(l)+'&_x_tr_hl=fr','_blank','noopener');
+function curLang(){ const m=document.cookie.match(/googtrans=\/fr\/([^;]+)/); return m?decodeURIComponent(m[1]):'fr'; }
+let GT_CBS=null;
+function loadGT(cb){
+  const combo=document.querySelector('select.goog-te-combo'); if(combo){cb(combo);return;}
+  if(GT_CBS){GT_CBS.push(cb);return;} GT_CBS=[cb];
+  window.googleTranslateElementInit=()=>{ try{ new google.translate.TranslateElement({pageLanguage:'fr',autoDisplay:false},'gt-el'); }catch(e){}
+    let n=0; const t=setInterval(()=>{const c=document.querySelector('select.goog-te-combo'); if(c||++n>60){clearInterval(t); if(c) GT_CBS.forEach(f=>f(c)); else toast('La traduction est indisponible pour le moment.'); GT_CBS=null;}},100); };
+  if(!$('gt-el')){const d=document.createElement('div'); d.id='gt-el'; document.body.appendChild(d);}
+  const sc=document.createElement('script'); sc.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; sc.async=true;
+  sc.onerror=()=>{toast('La traduction est indisponible pour le moment.'); GT_CBS=null;}; document.head.appendChild(sc);
 }
+function setLang(l){
+  store.set(LANG_KEY,l); const sel=$('lang'); if(sel) sel.value=l;
+  if(l==='fr' && curLang()==='fr') return;
+  if(l!=='fr') toast('Traduction en cours…');
+  loadGT(c=>{ c.value=l; c.dispatchEvent(new Event('change')); });
+}
+function trOffer(){ const l=curLang()!=='fr'?curLang():((navigator.language||'en').slice(0,2)==='fr'?'en':(navigator.language||'en').slice(0,2)); const sel=$('lang'); const ok=sel&&[...sel.options].some(o=>o.value===l); setLang(ok?l:'en'); }
 (function initLang(){
-  const sel=$('lang'); if(!sel) return; const l=curLang(); sel.value=[...sel.options].some(o=>o.value===l)?l:'fr';
+  const sel=$('lang'); if(!sel) return;
+  if(!SITE){ sel.closest('.lang').hidden=true; return; }
+  const l=curLang(); sel.value=[...sel.options].some(o=>o.value===l)?l:'fr';
   sel.addEventListener('change',()=>setLang(sel.value));
-  if(SITE && l!=='fr'){
-    window.googleTranslateElementInit=()=>{ try{ new google.translate.TranslateElement({pageLanguage:'fr',autoDisplay:false},'gt-el'); }catch(e){} };
-    const d=document.createElement('div'); d.id='gt-el'; d.style.display='none'; document.body.appendChild(d);
-    const sc=document.createElement('script'); sc.src='https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'; sc.async=true; document.head.appendChild(sc);
-  }
+  if(l!=='fr') loadGT(()=>{});
 })();
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
   const cb=e.target.closest('[data-cmt]'); if(cb){openCmts(cb.dataset.cmt);return;}
+  if(e.target.closest('[data-tr]')){trOffer();return;}
   if(e.target.closest('[data-logout]')){const t=SESS&&SESS.at; if(t) fetch(SB_URL+'/auth/v1/logout',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+t}}).catch(()=>{}); saveSess(null); rerenderOpen(); toast('Vous êtes déconnecté.'); return;}
   if(e.target.closest('[data-relog]')){AUTH.step='mail'; rerenderOpen(); return;}
   const mb=e.target.closest('[data-more]'); if(mb){const p=mb.previousElementSibling;const o=p.classList.toggle('open');mb.textContent=o?'Voir moins':'Voir plus';return;}
