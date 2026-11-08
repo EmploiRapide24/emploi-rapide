@@ -46,3 +46,4 @@ select cron.schedule('alertes-emploi', '5 8 * * *',
        headers := '{"Content-Type":"application/json"}'::jsonb, body := '{}'::jsonb) $$);
 
 select jobname, schedule from cron.job;
+grant select, update on public.abonnements to service_role;

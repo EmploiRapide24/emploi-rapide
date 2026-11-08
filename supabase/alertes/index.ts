@@ -8,6 +8,7 @@ const BREVO = Deno.env.get("BREVO_API_KEY") ?? "";
 const SITE = "https://emploirapide24.com";
 const FN = (Deno.env.get("SUPABASE_URL") ?? "") + "/functions/v1/alertes";
 
+const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "content-type", "Access-Control-Allow-Methods": "GET, POST, OPTIONS" };
 type Offre = Record<string, any>;
 const norm = (s: unknown) => String(s ?? "").toLowerCase().normalize("NFD").replace(/\p{M}/gu, "");
 const L = (x: unknown) => (Array.isArray(x) ? x : x ? [x] : []) as string[];
@@ -62,16 +63,17 @@ function emailHTML(libelle: string, offres: Offre[], total: number, jeton: strin
   <table style="width:100%;border-collapse:collapse">${lignes}</table>${plus}
   <p style="font-size:13px;color:#4b5563;margin-top:16px">⚠️ Un vrai recruteur ne demande jamais d'argent. Ne payez jamais pour postuler.</p>
   <p style="font-size:12px;color:#9ca3af;margin-top:16px">Vous recevez cet e-mail car vous avez créé cette alerte sur emploirapide24.com.
-  <a href="${FN}?desabo=${jeton}" style="color:#9ca3af">Se désabonner de cette alerte</a>.</p></div>`;
+  <a href="${SITE}/?desabo=${jeton}" style="color:#9ca3af">Se désabonner de cette alerte</a>.</p></div>`;
 }
 
 Deno.serve(async (req) => {
   const url = new URL(req.url);
+  if (req.method === "OPTIONS") return new Response(null, { headers: CORS });
   const desabo = url.searchParams.get("desabo");
   if (desabo) {
-    if (!/^[0-9a-f-]{36}$/i.test(desabo)) return page("Lien invalide", "Ce lien de désabonnement n'est pas valide.");
-    await SB.from("abonnements").update({ actif: false }).eq("jeton", desabo);
-    return page("Vous êtes désabonné", "Vous ne recevrez plus d'e-mails pour cette alerte. Vous pouvez en recréer une à tout moment sur le site.");
+    if (!/^[0-9a-f-]{36}$/i.test(desabo)) return Response.json({ ok: false }, { status: 400, headers: CORS });
+    const { data } = await SB.from("abonnements").update({ actif: false }).eq("jeton", desabo).select("libelle");
+    return Response.json({ ok: true, libelle: data?.[0]?.libelle ?? null }, { headers: CORS });
   }
   if (req.method !== "POST") return new Response("ok");
   if (new Date().getUTCHours() < 7) return Response.json({ envoyes: 0, raison: "trop tôt (avant 7 h)" });

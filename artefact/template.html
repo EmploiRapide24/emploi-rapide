@@ -1333,6 +1333,13 @@ function renderSide(){
 }
 /* ---------- démarrage ---------- */
 syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts(); loadAbos();
+(()=>{ const t=new URLSearchParams(location.search).get('desabo'); if(!t||!SB_ON) return;
+  history.replaceState(null,'',location.pathname+location.hash);
+  fetch(SB_URL+'/functions/v1/alertes?desabo='+encodeURIComponent(t)).then(r=>r.json()).then(j=>{
+    let m=$('mdl-abo'); if(!m){m=document.createElement('div');m.id='mdl-abo';m.className='mdl';document.body.appendChild(m);}
+    m.innerHTML=`<div class="mdl-c" role="dialog" aria-modal="true"><button class="mdl-x" data-abo-close aria-label="Fermer">×</button><h2>${j.ok?'✅ Vous êtes désabonné':'Lien invalide'}</h2><p>${j.ok?"Vous ne recevrez plus d'e-mails pour cette alerte"+(j.libelle?' (<b>'+esc(j.libelle)+'</b>)':'')+". Vous pouvez en recréer une à tout moment depuis les filtres.":"Ce lien de désabonnement n'est pas valide."}</p></div>`; m.hidden=false;
+  }).catch(()=>toast('Désabonnement impossible pour le moment. Réessayez plus tard.'));
+})();
 const hm=location.hash.match(/o=([a-z0-9]+)/); if(hm) setTimeout(()=>openOffer(hm[1]),50);
 </script>
 </body>
