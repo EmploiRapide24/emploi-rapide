@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.emploirapide24.app",
+        "sha256_cert_fingerprints": ["83:85:9F:61:C9:66:4E:6B:E2:A5:23:24:B5:01:62:22:B5:44:2D:31:05:E1:32:9F:82:A8:6B:8D:DF:7A:92:D9"]
+      }
+    }]
