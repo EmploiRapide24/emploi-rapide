@@ -1269,7 +1269,12 @@ function setLang(l){
   store.set(LANG_KEY,l); const sel=$('lang'); if(sel) sel.value=l;
   if(l==='fr' && curLang()==='fr') return;
   if(l!=='fr') toast('Traduction en cours…');
-  loadGT(c=>{ c.value=l; c.dispatchEvent(new Event('change')); });
+  loadGT(c=>{ c.value=l; c.dispatchEvent(new Event('change',{bubbles:true}));
+    // filet de sécurité : si la page n'est pas traduite après 6 s, on applique la langue en rechargeant la page (même site)
+    setTimeout(()=>{ const ok = l==='fr' ? !document.querySelector('font[style]') : !!document.querySelector('font[style],font[class]');
+      if(!ok){ const v=l==='fr'?'':'/fr/'+l, exp=l==='fr'?'expires=Thu, 01 Jan 1970 00:00:00 GMT':'max-age=31536000';
+        document.cookie='googtrans='+v+';path=/;'+exp; document.cookie='googtrans='+v+';path=/;domain=.'+location.hostname.replace(/^www\./,'')+';'+exp; location.reload(); } },6000);
+  });
 }
 function trOffer(){ const l=curLang()!=='fr'?curLang():((navigator.language||'en').slice(0,2)==='fr'?'en':(navigator.language||'en').slice(0,2)); const sel=$('lang'); const ok=sel&&[...sel.options].some(o=>o.value===l); setLang(ok?l:'en'); }
 (function initLang(){
