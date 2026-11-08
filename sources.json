@@ -1,0 +1,3345 @@
+{
+ "version": 1,
+ "maj": "2026-11-08",
+ "curseur": 0,
+ "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
+ "pays": {
+  "Sénégal": {
+   "emp": [
+    {
+     "nom": "Sonatel (Orange)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Free Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Expresso Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Wave",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Senelec",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SDE / Sen'Eau",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Dakar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "DP World Dakar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Dakar Dem Dikk",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Air Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "AIBD",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SAR (Société africaine de raffinage)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Petrosen",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Woodside Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Eramet Grande Côte",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sococim",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Dangote Cement Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ciments du Sahel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Industries chimiques du Sénégal (ICS)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SENICO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sedima",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Patisen",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Kirène",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Auchan Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CBAO Attijariwafa",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BICIS / BNDE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Banque de l'Habitat du Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Coris Bank Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "La Poste Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CSS (Compagnie sucrière sénégalaise)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SODEFITEX",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Total Energies Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Vivo Energy Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Eiffage Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CDE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "APIX",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "FONGIP",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "DER/FJ",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "3FPT",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Fonction publique du Sénégal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploidakar.com",
+    "emploisenegal.sn",
+    "senjob.com",
+    "expatdakar.com",
+    "senrecrut.com",
+    "louma-jobs.com",
+    "concoursn.com",
+    "fonctionpublique.gouv.sn",
+    "anpej.sn"
+   ]
+  },
+  "Côte d'Ivoire": {
+   "emp": [
+    {
+     "nom": "Orange Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MTN Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Wave Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CIE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SODECI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CIPREL",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Azito Énergie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Petroci",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SIR (Société ivoirienne de raffinage)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome d'Abidjan",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port de San Pedro",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Abidjan Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bolloré / AGL Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Air Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SITARAIL",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SIFCA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SAPH",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Palmci",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sucrivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Nestlé Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Solibra",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Unilever Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Cargill Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Olam Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SAN Cocoa / Barry Callebaut",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CFAO Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Prosuma",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Carrefour CI (CFAO Retail)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SIB",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "NSIA Banque",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BICICI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Côte d'Ivoire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Coris Bank CI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Banque Atlantique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BNI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank CI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "NSIA Assurances",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sunu Assurances CI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Endeavour Mining (Ity)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Perseus Mining (Yaouré)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Fortuna (Lagune)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Allied Gold (Bonikro)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BAD (siège Abidjan)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BCEAO Abidjan",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploi.educarriere.ci",
+    "projobivoire.com",
+    "emploi.ci",
+    "novojob.com",
+    "rmo-jobcenter.com",
+    "agenceemploijeunes.ci",
+    "fonctionpublique.gouv.ci",
+    "gucaci.ciconcours.com",
+    "emploiplus.ci"
+   ]
+  },
+  "Cameroun": {
+   "emp": [
+    {
+     "nom": "MTN Cameroon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orange Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Camtel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Nexttel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ENEO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Camwater",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SONARA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNH",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Douala",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Kribi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Kribi Conteneurs Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Camair-Co",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Camrail",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SABC (Boissons du Cameroun)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Guinness Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Nestlé Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sosucam",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CDC (Cameroon Development Corporation)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Socapalm",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Cimencam",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Dangote Cement Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Afriland First Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SCB Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BICEC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CCA Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Express Union",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Activa Assurances",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Chanas Assurances",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TotalEnergies Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Tradex",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Perenco Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Razel Cameroun",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BEAC (siège Yaoundé)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CNPS",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MINFOPRA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ENAM",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploi.cm",
+    "minajobs.net",
+    "jobincameroon.com",
+    "cameroondesks.com",
+    "optioncarriere.cm",
+    "kamerpower.com",
+    "minfopra.gov.cm",
+    "fne.cm"
+   ]
+  },
+  "RD Congo": {
+   "emp": [
+    {
+     "nom": "Vodacom Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Airtel RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orange RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Africell RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNEL",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Regideso",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Kamoto Copper Company (Glencore)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Mutanda Mining",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Tenke Fungurume Mining (CMOC)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Kibali Gold (Barrick)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ivanhoe Mines / Kamoa Copper",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ERG (Eurasian Resources Group) RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Gécamines",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MMG Kinsevere",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Rawbank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Equity BCDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TMB (Trust Merchant Bank)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Access Bank RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "FBNBank RDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sofibanque",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bracongo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bralima",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Groupe Forrest",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNCC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Congo Airways",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Banque centrale du Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MONUSCO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ONEM",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "mediacongo.net",
+    "emploi-rdc.com",
+    "jobrdc.com",
+    "ccirdc.com",
+    "optioncarriere.cd",
+    "onem.cd"
+   ]
+  },
+  "Congo": {
+   "emp": [
+    {
+     "nom": "MTN Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Airtel Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "E2C (Énergie électrique du Congo)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "LCDE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TotalEnergies EP Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Eni Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Perenco Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Congolaise de raffinage (CORAF)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNPC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Pointe-Noire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Congo Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Brasco",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BGFIBank Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "LCB Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Crédit du Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Olam Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Dangote Cement Congo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CFCO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploicongo.net",
+    "congo-job.com",
+    "optioncarriere.cg",
+    "adelacongo.org"
+   ]
+  },
+  "Gabon": {
+   "emp": [
+    {
+     "nom": "Airtel Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Gabon Télécom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SEEG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Comilog (Eramet)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Setrag",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Perenco Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Assala Energy",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TotalEnergies Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BW Energy Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Olam Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "GSEZ (Arise)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sobraga",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BGFIBank Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UGB (Orabank)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BICIG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Gabon",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Gabon Oil Company",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CNAMGS",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port d'Owendo (OPRAG)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "gabonemploi.com",
+    "emploigabon.com",
+    "optioncarriere.ga",
+    "one.ga"
+   ]
+  },
+  "Bénin": {
+   "emp": [
+    {
+     "nom": "MTN Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Celtiis",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SBEE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SONEB",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Cotonou",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bénin Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bolloré / AGL Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SIPI Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "GDIZ (Zone industrielle de Glo-Djigbé)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sobebra",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "NSIA Banque Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Coris Bank Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BIIC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ANPE Bénin",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Agence des services numériques",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploibenin.com",
+    "anpe.bj",
+    "gouv.bj/opportunites",
+    "servicepublic.bj",
+    "beninjobs.net"
+   ]
+  },
+  "Togo": {
+   "emp": [
+    {
+     "nom": "Togocom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CEET",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TdE (Togolaise des eaux)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Lomé",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Lomé Container Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Togo Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Asky Airlines",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank (siège groupe Lomé)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Coris Bank Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Banque Atlantique Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sunu Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Oragroup",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOAD",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BIDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "WACEM",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Heidelberg Cement Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNPT",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ANPE Togo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploitogo.info",
+    "anpetogo.org",
+    "togojobs.net",
+    "republicoftogo.com",
+    "fonctionpublique.gouv.tg"
+   ]
+  },
+  "Burkina Faso": {
+   "emp": [
+    {
+     "nom": "Orange Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Burkina (Onatel)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Telecel Faso",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SONABEL",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ONEA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SONABHY",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Endeavour Mining (Houndé, Mana)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Iamgold (Essakane)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orezone (Bomboré)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "West African Resources",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Brakina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SN-SOSUCO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sofitex",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Coris Bank International",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Vista Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ANPE Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Fonction publique Burkina",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "lefaso.net/emploi",
+    "emploiburkina.com",
+    "burkinajobs.net",
+    "anpe.bf",
+    "concours.gov.bf"
+   ]
+  },
+  "Mali": {
+   "emp": [
+    {
+     "nom": "Orange Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Malitel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Telecel Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "EDM-SA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SOMAGEP",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Barrick (Loulo-Gounkoto)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "B2Gold (Fekola)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Allied Gold (Sadiola)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Resolute (Syama)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Hummingbird / Yanfolila",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BDM-SA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BMS-SA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Coris Bank Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CMDT",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bramali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ANPE Mali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "APEJ",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploimali.com",
+    "malijob.net",
+    "maliweb.net/emploi",
+    "anpe-mali.org",
+    "apej.ml"
+   ]
+  },
+  "Niger": {
+   "emp": [
+    {
+     "nom": "Airtel Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Zamani Telecom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Niger Telecoms",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Nigelec",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SPEN / SEEN",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orano (Somaïr)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sonidep",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Soraz",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "WAPCO Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Global Atomic",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sonibank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BIA Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ANPE Niger",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "nigerjob.com",
+    "anpe-niger.ne",
+    "emploiniger.com",
+    "tamtaminfo.com"
+   ]
+  },
+  "Guinée": {
+   "emp": [
+    {
+     "nom": "Orange Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MTN Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Cellcom Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "EDG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SEG (eaux)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Compagnie des bauxites de Guinée (CBG)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SMB-Winning",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "GAC (Emirates Global Aluminium)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Rio Tinto Simandou",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "WCS (Winning Consortium Simandou)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "AngloGold Ashanti Siguiri",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société minière de Dinguiraye",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Conakry",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Albayrak / Conakry Terminal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Vista Bank Guinée",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "AGUIPE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "guineejobs.com",
+    "emploiguinee.com",
+    "aguipe.gov.gn",
+    "guinee360.com"
+   ]
+  },
+  "Mauritanie": {
+   "emp": [
+    {
+     "nom": "Mauritel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Chinguitel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Mattel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SOMELEC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNDE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNIM",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Kinross (Tasiast)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MCM (Mauritanian Copper Mines)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "bp Mauritanie (GTA)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Kosmos Energy",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port autonome de Nouakchott",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BMCI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Mauritanie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BNM",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Attijari bank Mauritanie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "beta.mr",
+    "emploi.mr",
+    "rimjobs.net",
+    "anetat.mr"
+   ]
+  },
+  "Madagascar": {
+   "emp": [
+    {
+     "nom": "Telma",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orange Madagascar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Airtel Madagascar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Jirama",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ambatovy",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "QMM (Rio Tinto)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Base Toliara",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Star Brasseries",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Socota",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Groupe Axian",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Groupe Sodiaco",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BNI Madagascar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BFV-SG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOA Madagascar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MCB Madagascar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BMOI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Air Madagascar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Madagascar International Container Terminal (MICTSL)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "asako.mg",
+    "portaljob-madagascar.com",
+    "moovjob.mg",
+    "jobmada.com",
+    "emploi.mg"
+   ]
+  },
+  "Maroc": {
+   "emp": [
+    {
+     "nom": "OCP",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Maroc Telecom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orange Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "inwi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ONEE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Royal Air Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ONCF",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Tanger Med",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Marsa Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Renault Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Stellantis Kénitra",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Yazaki Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Lear Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Attijariwafa bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Banque Populaire",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bank of Africa",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CIH Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Crédit du Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CDG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Managem",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Lafarge Holcim Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ciments du Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Cosumar",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Lesieur Cristal",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Centrale Danone",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Label'Vie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Marjane",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Capgemini Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CGI Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Intelcia",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Webhelp / Concentrix Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Majorel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Akwa / Afriquia",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TotalEnergies Maroc",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploi.ma",
+    "rekrute.com",
+    "anapec.org",
+    "emploi-public.ma",
+    "dreamjob.ma",
+    "marocannonces.com/emploi",
+    "optioncarriere.ma"
+   ]
+  },
+  "Tunisie": {
+   "emp": [
+    {
+     "nom": "Tunisie Telecom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ooredoo Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orange Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "STEG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SONEDE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Tunisair",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Groupe chimique tunisien",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CPG",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Poulina Group Holding",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Délice Danone",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SFBT",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Biat",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Attijari bank Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Amen Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BH Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "STB",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UIB",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sofrecom Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Vermeg",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Telnet",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sagemcom Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Leoni Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Dräxlmaier Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Yazaki Tunisie",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "tunisietravail.net",
+    "keejob.com",
+    "tanitjobs.com",
+    "emploi.nat.tn",
+    "optioncarriere.tn",
+    "farojob.net"
+   ]
+  },
+  "Tchad": {
+   "emp": [
+    {
+     "nom": "Airtel Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Moov Africa Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SNE",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "STE (eaux)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Esso / Savannah Energy Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Glencore Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "SHT (Société des hydrocarbures du Tchad)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Commercial Bank Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orabank Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UBA Tchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CotonTchad",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Brasseries du Logone",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "tchademploi.com",
+    "onape.td",
+    "alwihdainfo.com"
+   ]
+  },
+  "Centrafrique": {
+   "emp": [
+    {
+     "nom": "Orange Centrafrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Telecel Centrafrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Énerca",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sodeca",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Centrafrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BSIC Centrafrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MINUSCA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploicentrafrique.com",
+    "acfpe.cf"
+   ]
+  },
+  "Burundi": {
+   "emp": [
+    {
+     "nom": "Econet Leo",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Lumitel",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Regideso Burundi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Interbank Burundi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BANCOBU",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "KCB Burundi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Burundi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Brarudi",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "burundijobs.net",
+    "iwacu-burundi.org"
+   ]
+  },
+  "Rwanda": {
+   "emp": [
+    {
+     "nom": "MTN Rwanda",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Airtel Rwanda",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bank of Kigali",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Equity Bank Rwanda",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "I&M Bank Rwanda",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "RwandAir",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Rwanda Development Board",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Bralirwa",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Inyange",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "jobinrwanda.com",
+    "mifotra.gov.rw",
+    "careers.rw"
+   ]
+  },
+  "Djibouti": {
+   "emp": [
+    {
+     "nom": "Djibouti Telecom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "EDD",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "ONEAD",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Port de Djibouti (SGTD, DMP)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ethio-Djibouti Railway",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BCIMR",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CAC Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Salaam African Bank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "djibjob.com",
+    "anefip.dj"
+   ]
+  },
+  "Comores": {
+   "emp": [
+    {
+     "nom": "Comores Telecom",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Telma Comores",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Sonelec",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Exim Bank Comores",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BIC Comores",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "emploicomores.com",
+    "anpe.km"
+   ]
+  },
+  "Régional et international": {
+   "emp": [
+    {
+     "nom": "BAD (Banque africaine de développement)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BCEAO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BEAC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BOAD",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "BIDC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UEMOA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CEMAC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CEDEAO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Union africaine",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Afreximbank",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Ecobank Transnational",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Oragroup",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Société Générale Afrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Orange Middle East & Africa",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MTN Group",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Airtel Africa",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "TotalEnergies Afrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Vivo Energy",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CFAO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "AGL (Africa Global Logistics)",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MSC Afrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Maersk Afrique",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Endeavour Mining",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Barrick",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Perseus Mining",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "B2Gold",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Banque mondiale / IFC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "FMI",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "PNUD",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UNICEF",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "PAM",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "HCR",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "OMS",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "FAO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UNFPA",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "OIT",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "UNESCO",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "OIF",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Volontaires des Nations unies",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "MSF",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "CICR",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Save the Children",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Plan International",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "World Vision",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Oxfam",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "NRC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "IRC",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Care",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Action contre la faim",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    },
+    {
+     "nom": "Croix-Rouge",
+     "url": "",
+     "vu": "",
+     "ok": 1
+    }
+   ],
+   "por": [
+    "unvacancies.org",
+    "careers.un.org",
+    "jobs.undp.org",
+    "unicef.org/careers",
+    "wfp.org/careers",
+    "unhcr.org/careers",
+    "app.unv.org",
+    "reliefweb.int/jobs",
+    "impactpool.org",
+    "devex.com/jobs",
+    "afdb.org/careers",
+    "worldbank.org/careers",
+    "jobs.francophonie.org",
+    "coordinationsud.org",
+    "jobs.af",
+    "africanjobs.net",
+    "jobrapide.org",
+    "afriqueemplois.com",
+    "emploi-afrique.com",
+    "optioncarriere.com",
+    "linkedin.com/jobs",
+    "glassdoor",
+    "indeed"
+   ]
+  }
+ }
+}

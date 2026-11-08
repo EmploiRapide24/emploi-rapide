@@ -432,6 +432,10 @@ label.f{font-size:14px;font-weight:600}
 .cform input{max-width:220px}.crow{display:flex;gap:8px;align-items:flex-end}.crow textarea{flex:1;resize:vertical}
 .cnote{margin:0;font-size:11.5px;color:var(--mute)}
 @media (max-width:480px){.pbar>*{flex-direction:column;gap:1px;font-size:11px;padding:6px 1px}}
+/* Fiabilité et étapes */
+.apply-t{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.apply .vf{font-style:normal;font-weight:700;font-size:12px;color:#15803d;background:#e8f8ee;border-radius:999px;padding:2px 8px}
+.apply .etp{margin:2px 0 0;padding-left:20px;font-size:13.5px;display:grid;gap:3px}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -718,6 +722,9 @@ const jobsAll = D.offres.map(j=>{
   /* indice de confiance : uniquement des faits vérifiables */
   const pts=[]; let sc=0;
   if(j.d){sc+=2;pts.push(['y',"Annonce publiée sur le site officiel de l'employeur"]);}
+  if(j.vf){sc+=2;pts.push(['y','Vérifiée le '+fmt(j.vf)+" : l'offre est toujours en ligne à la source"]);}
+  if(j.ns>=2){sc+=1;pts.push(['y','Publiée sur '+j.ns+' sources indépendantes']);}
+  if(j.al){sc-=3;pts.push(['n',String(j.al)]);}
   if(j.k==='International / ONG'||j.k==='Public'){sc+=1;pts.push(['y','Employeur institutionnel ('+(j.k==='Public'?'secteur public':'organisation internationale ou ONG')+')']);}
   if(j.lien && /^https?:/.test(j.lien)){sc+=1;pts.push(['y','Lien de candidature direct']);}
   if(j.desc){sc+=1;pts.push(['y','Descriptif du poste disponible']);}
@@ -933,7 +940,7 @@ function applyHTML(j){
   if(j.lien) r+=`<a class="go" href="${esc(safe(j.lien))}" target="_blank" rel="noopener"><span aria-hidden="true">🔗</span><span><b>Postuler en ligne</b><small>${esc(host(j.lien))}</small></span><i aria-hidden="true">↗</i></a>`;
   j.mails.forEach(m=>{r+=`<div class="go"><span aria-hidden="true">✉️</span><span><b>Envoyer sa candidature par e-mail</b><a href="mailto:${esc(m)}"><small>${esc(m)}</small></a></span><button class="copy" data-copy="${esc(m)}">Copier</button></div>`;});
   if(!j.lien && j.u) r+=`<a class="go" href="${esc(safe(j.u))}" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span><b>${j.mails.length?'Voir l\'annonce d\'origine':'Voir l\'annonce et postuler'}</b><small>${esc(host(j.u))}</small></span><i aria-hidden="true">↗</i></a>`;
-  return r?`<div class="apply"><span class="apply-t">Pour postuler</span>${r}</div>`:'';
+  return r?`<div class="apply"><span class="apply-t">Pour postuler${j.vf?` <em class="vf">✅ Vérifiée le ${fmt(j.vf)}</em>`:''}</span>${r}${j.etp&&j.etp.length?`<ol class="etp">${j.etp.map(x=>`<li>${esc(x)}</li>`).join('')}</ol>`:''}</div>`:'';
 }
 function card(j){
   const d=days(j.lim), c=compat(j);
