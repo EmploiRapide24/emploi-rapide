@@ -436,6 +436,8 @@ label.f{font-size:14px;font-weight:600}
 .apply-t{display:flex;justify-content:space-between;gap:8px;align-items:center}
 .apply .vf{font-style:normal;font-weight:700;font-size:12px;color:#15803d;background:#e8f8ee;border-radius:999px;padding:2px 8px}
 .apply .etp{margin:2px 0 0;padding-left:20px;font-size:13.5px;display:grid;gap:3px}
+.cwho{margin:0;font-size:12.5px;color:var(--mute)}.lnk{background:none;border:0;padding:0;font:inherit;color:#1d5bd8;cursor:pointer;text-decoration:underline}
+.clog{background:var(--soft);border-radius:12px;padding:10px 12px}.clog input{flex:1;max-width:none}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -1033,7 +1035,19 @@ const SB_URL='https://tmymxnerhhcejbkkptdf.supabase.co', SB_KEY='sb_publishable_
 const SB_ON = !!(SB_URL.startsWith('https://') && SB_KEY.length>20 && location.protocol.startsWith('http') && !/claude|anthropic/.test(location.hostname));
 const CC={}, CM={}, OPENC=new Set();
 let CNOM=''; try{CNOM=localStorage.getItem('er-cnom')||''}catch(e){}
-function sb(path,opt={}){return fetch(SB_URL+'/rest/v1/'+path,{...opt,headers:{apikey:SB_KEY,'Content-Type':'application/json',...(opt.headers||{})}}).then(r=>{if(!r.ok) throw new Error(r.status); return r.status===204?null:r.json();});}
+let SESS=null; try{SESS=JSON.parse(localStorage.getItem('er-sess')||'null')}catch(e){}
+let AUTH={step:'mail',email:'',busy:false};
+function saveSess(s){SESS=s; try{s?localStorage.setItem('er-sess',JSON.stringify(s)):localStorage.removeItem('er-sess')}catch(e){}}
+function sb(path,opt={}){return fetch(SB_URL+'/rest/v1/'+path,{...opt,headers:{apikey:SB_KEY,'Content-Type':'application/json',...(opt.headers||{})}}).then(async r=>{if(!r.ok) throw new Error(r.status); const t=await r.text(); return t?JSON.parse(t):null;});}
+function auth(path,body){return fetch(SB_URL+'/auth/v1/'+path,{method:'POST',headers:{apikey:SB_KEY,'Content-Type':'application/json'},body:JSON.stringify(body)}).then(async r=>{const j=await r.json().catch(()=>({})); if(!r.ok){const e=new Error(j.msg||j.error_description||j.message||r.status); e.code=j.error_code||''; e.status=r.status; throw e;} return j;});}
+function keepSess(j){saveSess({at:j.access_token,rt:j.refresh_token,exp:Date.now()+((j.expires_in||3600)-60)*1000,email:(j.user&&j.user.email)||AUTH.email});}
+async function token(){
+  if(!SESS) return null;
+  if(Date.now()<SESS.exp) return SESS.at;
+  try{const j=await auth('token?grant_type=refresh_token',{refresh_token:SESS.rt}); keepSess(j); return SESS.at;}
+  catch(e){saveSess(null); return null;}
+}
+function rerenderOpen(){OPENC.forEach(i=>refreshCard(i));}
 function loadCounts(){ if(!SB_ON) return;
   sb('nb_commentaires?select=offre,n').then(rows=>{rows.forEach(r=>CC[r.offre]=r.n); document.querySelectorAll('article.job').forEach(a=>{const id=a.id.slice(2); if(CC[id]) refreshCard(id);});}).catch(()=>{});}
 function agoC(t){const m=Math.round((Date.now()-new Date(t))/60000); if(m<1) return "à l'instant"; if(m<60) return 'il y a '+m+' min'; const h=Math.round(m/60); if(h<24) return 'il y a '+h+' h'; const d=Math.round(h/24); return d<30?'il y a '+d+' j':new Date(t).toLocaleDateString('fr-FR');}
@@ -1043,12 +1057,24 @@ function cmtHTML(id){
   const list = L===undefined ? '<p class="cmt-off">Chargement des commentaires…</p>' : L===null ? '<p class="cmt-off">Impossible de charger les commentaires. Vérifiez votre connexion puis réessayez.</p>'
     : L.length ? L.map(c=>`<div class="cmt">${monoHTML(c.nom)}<div class="cb"><b>${esc(c.nom)}</b><p>${esc(c.texte)}</p><span>${agoC(c.created_at)}</span></div></div>`).join('')
     : '<p class="cmt-off">Aucun commentaire pour l\'instant. Avez-vous postulé ? Partagez votre expérience.</p>';
+  if(!SESS) return `<div class="cmts" id="c-${id}">${list}${loginHTML(id)}</div>`;
   return `<div class="cmts" id="c-${id}">${list}
+    <p class="cwho">Connecté : ${esc(SESS.email)} · <button type="button" class="lnk" data-logout>Se déconnecter</button></p>
     <form class="cform" data-cform="${id}">
       <input name="nom" maxlength="40" required placeholder="Votre prénom" value="${esc(CNOM)}" aria-label="Votre prénom">
       <div class="crow"><textarea name="texte" maxlength="600" required rows="2" placeholder="Écrire un commentaire…" aria-label="Votre commentaire"></textarea><button class="btn">Publier</button></div>
       <p class="cnote">Restez courtois. Ne publiez ni numéro de téléphone ni lien. ⚠️ Un vrai recruteur ne demande jamais d'argent.</p>
     </form></div>`;
+}
+function loginHTML(id){
+  if(AUTH.step==='code') return `<form class="cform clog" data-clog="code">
+    <p class="cnote">Un code vous a été envoyé à <b>${esc(AUTH.email)}</b>. Saisissez-le ci-dessous (pensez à regarder dans les spams).</p>
+    <div class="crow"><input name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="8" required placeholder="Code reçu par e-mail" aria-label="Code reçu par e-mail"><button class="btn"${AUTH.busy?' disabled':''}>Valider</button></div>
+    <p class="cnote"><button type="button" class="lnk" data-relog>Changer d'adresse e-mail ou renvoyer un code</button></p></form>`;
+  return `<form class="cform clog" data-clog="mail">
+    <p class="cnote"><b>Inscrivez-vous pour commenter</b> : saisissez votre e-mail, vous recevrez un code de connexion. Pas de mot de passe.</p>
+    <div class="crow"><input name="email" type="email" autocomplete="email" required placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail" value="${esc(AUTH.email)}"><button class="btn"${AUTH.busy?' disabled':''}>Recevoir mon code</button></div>
+    <p class="cnote">Votre e-mail n'est jamais affiché. Seul votre prénom apparaît sous vos commentaires.</p></form>`;
 }
 function openCmts(id){
   if(OPENC.has(id)){OPENC.delete(id);refreshCard(id);return;}
@@ -1059,7 +1085,23 @@ function openCmts(id){
   }
   setTimeout(()=>{const f=document.querySelector(`[data-cform="${id}"] textarea`); if(f&&CM[id]!==undefined) f.focus({preventScroll:true});},50);
 }
-document.addEventListener('submit',e=>{
+document.addEventListener('submit',async e=>{
+  const lg=e.target.closest('[data-clog]');
+  if(lg){e.preventDefault(); if(AUTH.busy) return;
+    if(lg.dataset.clog==='mail'){
+      const em=lg.email.value.trim().toLowerCase(); if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(em)){toast('Adresse e-mail invalide.');return;}
+      AUTH.busy=true; AUTH.email=em; rerenderOpen();
+      try{await auth('otp',{email:em,create_user:true}); AUTH.step='code'; toast('Code envoyé à '+em+'.');}
+      catch(err){toast(err.status===429?'Trop de demandes : patientez une minute puis réessayez.':"Le code n'a pas pu être envoyé. Vérifiez l'adresse puis réessayez.");}
+      AUTH.busy=false; rerenderOpen(); setTimeout(()=>{const c=document.querySelector('[data-clog="code"] input');c&&c.focus({preventScroll:true});},50);
+    } else {
+      const code=lg.code.value.replace(/\D/g,''); if(code.length<6){toast('Saisissez le code reçu par e-mail.');return;}
+      AUTH.busy=true; rerenderOpen();
+      try{const j=await auth('verify',{type:'email',email:AUTH.email,token:code}); keepSess(j); AUTH={step:'mail',email:'',busy:false}; toast('Vous êtes connecté. Vous pouvez commenter.');}
+      catch(err){AUTH.busy=false; toast('Code incorrect ou expiré. Réessayez ou demandez un nouveau code.');}
+      AUTH.busy=false; rerenderOpen();
+    }
+    return;}
   const f=e.target.closest('[data-cform]'); if(!f) return; e.preventDefault();
   const id=f.dataset.cform, nom=f.nom.value.trim(), texte=f.texte.value.trim();
   if(nom.length<2||texte.length<2){toast('Indiquez votre prénom et un commentaire.');return;}
@@ -1067,13 +1109,16 @@ document.addEventListener('submit',e=>{
   if(/(\d[\s.-]?){8,}/.test(texte)){toast('Les numéros de téléphone ne sont pas autorisés dans les commentaires.');return;}
   const b=f.querySelector('button'); b.disabled=true; b.textContent='Envoi…';
   try{localStorage.setItem('er-cnom',nom)}catch(err){} CNOM=nom;
-  sb('commentaires',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({offre:id,nom,texte})})
+  const tk=await token(); if(!tk){toast('Votre session a expiré : reconnectez-vous.'); rerenderOpen(); return;}
+  sb('commentaires',{method:'POST',headers:{Prefer:'return=minimal',Authorization:'Bearer '+tk},body:JSON.stringify({offre:id,nom,texte})})
     .then(()=>{(CM[id]=CM[id]||[]).push({nom,texte,created_at:new Date().toISOString()}); CC[id]=(CC[id]||0)+1; refreshCard(id); toast('Commentaire publié.');})
     .catch(()=>{b.disabled=false;b.textContent='Publier';toast("Le commentaire n'a pas pu être publié. Réessayez dans un instant.");});
 });
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
   const cb=e.target.closest('[data-cmt]'); if(cb){openCmts(cb.dataset.cmt);return;}
+  if(e.target.closest('[data-logout]')){const t=SESS&&SESS.at; if(t) fetch(SB_URL+'/auth/v1/logout',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+t}}).catch(()=>{}); saveSess(null); rerenderOpen(); toast('Vous êtes déconnecté.'); return;}
+  if(e.target.closest('[data-relog]')){AUTH.step='mail'; rerenderOpen(); return;}
   const mb=e.target.closest('[data-more]'); if(mb){const p=mb.previousElementSibling;const o=p.classList.toggle('open');mb.textContent=o?'Voir moins':'Voir plus';return;}
   const lk=e.target.closest('[data-like]'); if(lk){const id=lk.dataset.like;toggleLike(id);refreshCard(id);renderSide();renderShorts();if(LK[id])toast('Ajoutée à vos j\'aime. Retrouvez-les dans « Mes j\'aime ».');return;}
   const em=e.target.closest('[data-emp]'); if(em){show('offres');st.q=em.dataset.emp;syncControls();render();$('count').scrollIntoView({behavior:'smooth'});return;}
