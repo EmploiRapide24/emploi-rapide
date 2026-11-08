@@ -511,7 +511,7 @@ h1,h2,h3,b,strong{letter-spacing:0}
 <details class="src">
   <summary>Comment les offres sont vérifiées</summary>
   <ul>
-    <li>Chaque matin, les offres sont collectées sur les sites carrières officiels, les portails d'emploi de chaque pays, les plateformes des Nations unies et LinkedIn.</li>
+    <li>Toutes les heures, les offres sont collectées sur les sites carrières officiels, les portails d'emploi de chaque pays, les plateformes des Nations unies et LinkedIn.</li>
     <li>Les offres expirées, les appels d'offres destinés aux entreprises et toute annonce qui demande de l'argent aux candidats sont retirés.</li>
     <li>Les résumés sont rédigés par Emploi Rapide 24 à partir de l'annonce d'origine ; seule l'annonce d'origine fait foi.</li>
     <li>L'<b>indice de confiance</b> se calcule à partir de faits vérifiables : annonce publiée sur le site de l'employeur, employeur institutionnel, descriptif, date limite, adresse e-mail professionnelle ou personnelle.</li>
@@ -556,7 +556,7 @@ h1,h2,h3,b,strong{letter-spacing:0}
   </div>
   <div class="panel">
     <h2>Publier une offre classique</h2>
-    <p class="sub" style="margin:0">Vos offres publiées sur votre site carrières ou sur les portails d'emploi sont reprises gratuitement chaque matin, avec un lien vers votre page. Pour qu'elles soient mieux mises en valeur, indiquez toujours la date limite, le niveau demandé et une adresse de candidature à votre nom de domaine.</p>
+    <p class="sub" style="margin:0">Vos offres publiées sur votre site carrières ou sur les portails d'emploi sont reprises gratuitement, avec une mise à jour toutes les heures, avec un lien vers votre page. Pour qu'elles soient mieux mises en valeur, indiquez toujours la date limite, le niveau demandé et une adresse de candidature à votre nom de domaine.</p>
   </div>
 <p style="text-align:center;margin:22px 0 0;font-size:13px"><a href="confidentialite.html" style="color:var(--mute)">Politique de confidentialité</a></p>
 </section>
@@ -819,12 +819,12 @@ $('formats').innerHTML = (PUB.formats||[]).map(([n,p,t],i)=>`<div class="fmt${i=
   const href=isMail?'mailto:'+PUB.contact+'?subject='+encodeURIComponent('Réservation d\'un espace sur Emploi Rapide 24')+'&body='+encodeURIComponent(body):safe(PUB.contact);
   c.innerHTML=`<a class="btn go" href="${esc(href)}">Réserver par e-mail</a> <span style="font-weight:400;color:var(--mute);margin-left:8px">ou écrivez à <a href="mailto:${esc(PUB.contact)}">${esc(PUB.contact)}</a></span>`;
 })();
-$('maj').textContent = 'Mise à jour le ' + new Date(D.maj+'T00:00:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) + ' · actualisée chaque matin';
+$('maj').textContent = 'Mise à jour le ' + new Date(D.maj+'T00:00:00').toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'}) + ' · actualisée toutes les heures';
 const isNew = j => (j.add||j.pub)===D.maj || j.pub===D.maj;
 const nSoon = jobs.filter(j=>{const d=days(j.lim);return d!==null&&d<=3}).length;
 const nPays=new Set(jobs.filter(j=>!/^Monde/.test(j.p)).map(j=>j.p)).size, nNew=jobs.filter(isNew).length;
-$('hsub').innerHTML = `<b>${jobs.length} offres ouvertes</b> dans ${nPays} pays${nNew&&nNew<jobs.length?`, dont <b>${nNew} nouvelles ce matin</b>`:''}. Chaque offre indique l'adresse pour postuler et un indice de confiance.`;
-$('rec-kpi').innerHTML = `<div><b>${jobs.length}</b>offres en ligne</div><div><b>${nPays}</b>pays couverts</div><div><b>6 h 40</b>mise à jour quotidienne</div>`;
+$('hsub').innerHTML = `<b>${jobs.length} offres ouvertes</b> dans ${nPays} pays${nNew&&nNew<jobs.length?`, dont <b>${nNew} nouvelles aujourd'hui</b>`:''}. Chaque offre indique l'adresse pour postuler et un indice de confiance.`;
+$('rec-kpi').innerHTML = `<div><b>${jobs.length}</b>offres en ligne</div><div><b>${nPays}</b>pays couverts</div><div><b>Chaque heure</b>mise à jour des offres</div>`;
 const topP=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,5);
 const ISO={"Côte d'Ivoire":'CI','Sénégal':'SN','RD Congo':'CD','Maroc':'MA','Cameroun':'CM','Bénin':'BJ','Togo':'TG','Mali':'ML','Tunisie':'TN','Mauritanie':'MR','Burkina Faso':'BF','Niger':'NE','Gabon':'GA','Guinée':'GN','Congo':'CG','Madagascar':'MG'};
 const topP8=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,7);
