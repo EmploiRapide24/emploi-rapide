@@ -420,6 +420,18 @@ label.f{font-size:14px;font-weight:600}
 .apply .go>span:nth-child(2){display:flex;flex-direction:column;min-width:0;flex:1}
 .apply .go b{font-size:14px}.apply .go small{font-size:12.5px;color:#1d5bd8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .apply .go a{text-decoration:none}.apply .go i{font-style:normal;color:#1d5bd8;font-weight:800}
+/* Commentaires */
+.pbar{grid-template-columns:repeat(5,1fr)}
+.ccount{background:none;border:0;font:inherit;color:var(--mute);cursor:pointer;padding:0}.ccount:hover{text-decoration:underline}
+.cmts{border-top:1px solid var(--line);margin:0 12px;padding:10px 4px 6px;display:grid;gap:10px}
+.cmt{display:flex;gap:8px;align-items:flex-start}.cmt .mono,.cmt>:first-child{width:32px;height:32px;flex:none;font-size:12px}
+.cmt .cb{background:var(--soft);border-radius:14px;padding:7px 12px;min-width:0}
+.cmt .cb b{font-size:13px}.cmt .cb p{margin:2px 0 0;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere}.cmt .cb span{display:block;font-size:11.5px;color:var(--mute);margin-top:2px}
+.cmt-off{margin:0;color:var(--mute);font-size:13.5px}
+.cform{display:grid;gap:6px}.cform input,.cform textarea{border:1px solid var(--line);border-radius:12px;padding:8px 12px;font:inherit;font-size:14px;background:#fff;min-width:0}
+.cform input{max-width:220px}.crow{display:flex;gap:8px;align-items:flex-end}.crow textarea{flex:1;resize:vertical}
+.cnote{margin:0;font-size:11.5px;color:var(--mute)}
+@media (max-width:480px){.pbar>*{flex-direction:column;gap:1px;font-size:11px;padding:6px 1px}}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -937,7 +949,7 @@ function card(j){
   const apply = j.lien ? `<a class="ap" href="${esc(safe(j.lien))}" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📨</span>Postuler</a>`
     : j.mails.length ? `<button class="ap" data-mail="${j.id}"><span class="ico" aria-hidden="true">📨</span>Postuler</button>`
     : `<a class="ap" href="${esc(safe(j.u))}" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📨</span>Voir l'offre</a>`;
-  const cnt=[liked?'<span>👍 Vous aimez cette offre</span>':'', saved?'<span>⭐ Dans vos candidatures</span>':''].filter(Boolean).join('');
+  const cnt=[liked?'<span>👍 Vous aimez cette offre</span>':'', CC[j.id]?`<button class="ccount" data-cmt="${j.id}">💬 ${CC[j.id]} commentaire${CC[j.id]>1?'s':''}</button>`:'', saved?'<span>⭐ Dans vos candidatures</span>':''].filter(Boolean).join('');
   return `<article class="job${j.spon?' spon':''}" id="o-${j.id}">
     <div class="ph">${monoHTML(j.e)}<div class="who"><b>${esc(j.e)}</b><span>${j.spon?'Sponsorisé':ago(when)} · 📍 ${esc((j.v&&j.v!==j.p?j.v+', ':'')+j.p)}</span></div></div>
     <div class="pb"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3>
@@ -948,10 +960,12 @@ function card(j){
     <div class="pcount">${cnt}</div>
     <div class="pbar">
       <button class="${liked?'on':''}" data-like="${j.id}" aria-pressed="${liked}"><span class="ico" aria-hidden="true">👍</span>J'aime</button>
+      <button data-cmt="${j.id}" aria-expanded="${OPENC.has(j.id)}"><span class="ico" aria-hidden="true">💬</span>Commenter</button>
       ${apply}
       <button data-wa="${j.id}"><span class="ico" aria-hidden="true">↗️</span>Partager</button>
       <button class="${saved?'on':''}" data-star="${j.id}" aria-pressed="${saved}"><span class="ico" aria-hidden="true">${saved?'⭐':'☆'}</span>${saved?'Enregistrée':'Enregistrer'}</button>
     </div>
+    ${OPENC.has(j.id)?cmtHTML(j.id):''}
     <div class="psrc">Source : ${esc(j.src)}${j.pub?' · publiée le '+fmt(j.pub):''}</div>
   </article>`;
 }
@@ -1006,8 +1020,53 @@ let qT; $('q').oninput=e=>{clearTimeout(qT);qT=setTimeout(()=>{st.q=e.target.val
 $('toggle-f').onclick=()=>{const c=$('controls');const o=c.classList.toggle('open');$('toggle-f').setAttribute('aria-expanded',o);$('toggle-f').textContent=o?'− Moins de filtres':'+ Plus de filtres';};
 if(st.contrat||st.k||['direct','li','monde','tt','ouv'].some(x=>st.f.has(x))) $('toggle-f').click();
 
+
+/* ---------- commentaires (Supabase) ---------- */
+const SB_URL='https://tmymxnerhhcejbkkptdf.supabase.co', SB_KEY='sb_publishable_h_L0TpR3365CuvpF4RxIeg_U3yv6zUR';
+const SB_ON = !!(SB_URL.startsWith('https://') && SB_KEY.length>20 && location.protocol.startsWith('http') && !/claude|anthropic/.test(location.hostname));
+const CC={}, CM={}, OPENC=new Set();
+let CNOM=''; try{CNOM=localStorage.getItem('er-cnom')||''}catch(e){}
+function sb(path,opt={}){return fetch(SB_URL+'/rest/v1/'+path,{...opt,headers:{apikey:SB_KEY,'Content-Type':'application/json',...(opt.headers||{})}}).then(r=>{if(!r.ok) throw new Error(r.status); return r.status===204?null:r.json();});}
+function loadCounts(){ if(!SB_ON) return;
+  sb('nb_commentaires?select=offre,n').then(rows=>{rows.forEach(r=>CC[r.offre]=r.n); document.querySelectorAll('article.job').forEach(a=>{const id=a.id.slice(2); if(CC[id]) refreshCard(id);});}).catch(()=>{});}
+function agoC(t){const m=Math.round((Date.now()-new Date(t))/60000); if(m<1) return "à l'instant"; if(m<60) return 'il y a '+m+' min'; const h=Math.round(m/60); if(h<24) return 'il y a '+h+' h'; const d=Math.round(h/24); return d<30?'il y a '+d+' j':new Date(t).toLocaleDateString('fr-FR');}
+function cmtHTML(id){
+  if(!SB_ON) return `<div class="cmts" id="c-${id}"><p class="cmt-off">Les commentaires sont disponibles sur <a href="https://emploirapide24.com/" target="_blank" rel="noopener">emploirapide24.com</a>.</p></div>`;
+  const L=CM[id];
+  const list = L===undefined ? '<p class="cmt-off">Chargement des commentaires…</p>' : L===null ? '<p class="cmt-off">Impossible de charger les commentaires. Vérifiez votre connexion puis réessayez.</p>'
+    : L.length ? L.map(c=>`<div class="cmt">${monoHTML(c.nom)}<div class="cb"><b>${esc(c.nom)}</b><p>${esc(c.texte)}</p><span>${agoC(c.created_at)}</span></div></div>`).join('')
+    : '<p class="cmt-off">Aucun commentaire pour l\'instant. Avez-vous postulé ? Partagez votre expérience.</p>';
+  return `<div class="cmts" id="c-${id}">${list}
+    <form class="cform" data-cform="${id}">
+      <input name="nom" maxlength="40" required placeholder="Votre prénom" value="${esc(CNOM)}" aria-label="Votre prénom">
+      <div class="crow"><textarea name="texte" maxlength="600" required rows="2" placeholder="Écrire un commentaire…" aria-label="Votre commentaire"></textarea><button class="btn">Publier</button></div>
+      <p class="cnote">Restez courtois. Ne publiez ni numéro de téléphone ni lien. ⚠️ Un vrai recruteur ne demande jamais d'argent.</p>
+    </form></div>`;
+}
+function openCmts(id){
+  if(OPENC.has(id)){OPENC.delete(id);refreshCard(id);return;}
+  OPENC.add(id); refreshCard(id);
+  if(SB_ON && CM[id]===undefined){
+    sb('commentaires?select=nom,texte,created_at&offre=eq.'+encodeURIComponent(id)+'&order=created_at.asc&limit=200')
+      .then(r=>{CM[id]=r;CC[id]=r.length;}).catch(()=>{CM[id]=null;}).finally(()=>refreshCard(id));
+  }
+  setTimeout(()=>{const f=document.querySelector(`[data-cform="${id}"] textarea`); if(f&&CM[id]!==undefined) f.focus({preventScroll:true});},50);
+}
+document.addEventListener('submit',e=>{
+  const f=e.target.closest('[data-cform]'); if(!f) return; e.preventDefault();
+  const id=f.dataset.cform, nom=f.nom.value.trim(), texte=f.texte.value.trim();
+  if(nom.length<2||texte.length<2){toast('Indiquez votre prénom et un commentaire.');return;}
+  if(/https?:|www\.|\.(com|net|org|sn|ci)\b/i.test(texte)){toast('Les liens ne sont pas autorisés dans les commentaires.');return;}
+  if(/(\d[\s.-]?){8,}/.test(texte)){toast('Les numéros de téléphone ne sont pas autorisés dans les commentaires.');return;}
+  const b=f.querySelector('button'); b.disabled=true; b.textContent='Envoi…';
+  try{localStorage.setItem('er-cnom',nom)}catch(err){} CNOM=nom;
+  sb('commentaires',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({offre:id,nom,texte})})
+    .then(()=>{(CM[id]=CM[id]||[]).push({nom,texte,created_at:new Date().toISOString()}); CC[id]=(CC[id]||0)+1; refreshCard(id); toast('Commentaire publié.');})
+    .catch(()=>{b.disabled=false;b.textContent='Publier';toast("Le commentaire n'a pas pu être publié. Réessayez dans un instant.");});
+});
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
+  const cb=e.target.closest('[data-cmt]'); if(cb){openCmts(cb.dataset.cmt);return;}
   const mb=e.target.closest('[data-more]'); if(mb){const p=mb.previousElementSibling;const o=p.classList.toggle('open');mb.textContent=o?'Voir moins':'Voir plus';return;}
   const lk=e.target.closest('[data-like]'); if(lk){const id=lk.dataset.like;toggleLike(id);refreshCard(id);renderSide();renderShorts();if(LK[id])toast('Ajoutée à vos j\'aime. Retrouvez-les dans « Mes j\'aime ».');return;}
   const em=e.target.closest('[data-emp]'); if(em){show('offres');st.q=em.dataset.emp;syncControls();render();$('count').scrollIntoView({behavior:'smooth'});return;}
@@ -1190,7 +1249,7 @@ function renderSide(){
   $('rside').querySelector('[data-gov2]')?.addEventListener('click',()=>show('recruteurs'));
 }
 /* ---------- démarrage ---------- */
-syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide();
+syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts();
 const hm=location.hash.match(/o=([a-z0-9]+)/); if(hm) setTimeout(()=>openOffer(hm[1]),50);
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
