@@ -446,6 +446,20 @@ label.f{font-size:14px;font-weight:600}
 /* Logo ER24 Figtree */
 .logo .mk.w{width:auto;height:36px}
 .topbar .logo .mk.w rect{fill:#fff4cc}.topbar .logo .mk.w path.er{fill:#1d5bd8;stroke:#1d5bd8}.topbar .logo .mk.w path.n{fill:#f5b800;stroke:#f5b800}
+/* Barre de recherche à droite */
+.topbar .hsearch{margin:0 0 0 auto;flex:0 1 520px}
+/* Bande déroulante */
+.ticker{display:flex;align-items:center;gap:10px;background:#1d5bd8;color:#fff;height:34px;overflow:hidden;font-size:13.5px}
+.tk-lab{flex:none;background:#f5b800;color:#1d2b4f;font-weight:800;height:100%;display:flex;align-items:center;padding:0 12px 0 24px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%);padding-right:20px}
+.tk-win{flex:1;overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+.tk-track{display:inline-flex;align-items:center;white-space:nowrap;animation:tk 90s linear infinite;will-change:transform}
+.ticker:hover .tk-track,.ticker:focus-within .tk-track{animation-play-state:paused}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tk-i{background:none;border:0;color:#fff;font:inherit;cursor:pointer;padding:0 4px}.tk-i:hover b,.tk-i:focus-visible b{text-decoration:underline}.tk-i b{font-weight:700}
+.tk-soon{font-style:normal;margin-left:8px;background:#fff4cc;color:#92400e;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:700}
+.tk-sep{opacity:.6;padding:0 12px}
+@media (prefers-reduced-motion:reduce){.tk-track{animation:none}.tk-win{overflow-x:auto}}
+@media (max-width:860px){.ticker{font-size:12.5px;height:30px}.tk-lab{padding-left:12px}.topbar .hsearch{flex:1 1 auto;margin-left:8px}}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -459,6 +473,7 @@ h1,h2,h3,b,strong{letter-spacing:0}
     <form class="hsearch" id="hsearch" role="search"><label class="sr" for="q">Rechercher un emploi</label><span class="sic" aria-hidden="true">🔍</span><input id="q" type="search" placeholder="Rechercher un métier, un employeur, une ville…" autocomplete="off"><button type="submit">Rechercher</button></form>
     <button class="hrec" data-gov="recruteurs">Vous recrutez ?</button>
   </div>
+  <div class="ticker" id="ticker" aria-label="Dernières offres"><span class="tk-lab">🆕 En direct</span><div class="tk-win"><div class="tk-track" id="tk-track"></div></div></div>
 </header>
 <div class="layout">
 <aside class="lside">
@@ -1154,6 +1169,18 @@ document.addEventListener('click',async e=>{
     try{ await sb('abonnements?id=eq.'+(+del.dataset.aboDel),{method:'DELETE',headers:{Authorization:'Bearer '+tk}}); await loadAbos(); refreshAbo(); toast('Vous ne recevrez plus cette alerte par e-mail.'); }catch(err){ toast('Impossible pour le moment. Réessayez.'); }
     return; }
 });
+
+/* ---------- bande déroulante des dernières offres ---------- */
+function renderTicker(){
+  const tr=$('tk-track'); if(!tr) return;
+  const L=[...jobs].sort((a,b)=>(dateJ(b)||'').localeCompare(dateJ(a)||'')).slice(0,18);
+  if(!L.length){$('ticker').hidden=true;return;}
+  const item=j=>{const d=days(j.lim); const tag=d!==null&&d<=3?`<em class="tk-soon">${d===0?"Clôture aujourd'hui":d===1?'Clôture demain':'Clôture dans '+d+' j'}</em>`:'';
+    return `<button class="tk-i" data-go="${j.id}"><b>${esc(j.t)}</b> · ${esc(j.e)} · ${esc(j.v&&j.v!==j.p?j.v:j.p)}${tag}</button>`;};
+  const h=L.map(item).join('<span class="tk-sep" aria-hidden="true">•</span>');
+  tr.innerHTML=h+'<span class="tk-sep" aria-hidden="true">•</span>'+h;
+  tr.style.animationDuration=Math.max(40,L.length*6)+'s';
+}
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
   const cb=e.target.closest('[data-cmt]'); if(cb){openCmts(cb.dataset.cmt);return;}
@@ -1341,7 +1368,7 @@ function renderSide(){
   $('rside').querySelector('[data-gov2]')?.addEventListener('click',()=>show('recruteurs'));
 }
 /* ---------- démarrage ---------- */
-syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts(); loadAbos();
+syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts(); loadAbos(); renderTicker();
 (()=>{ const t=new URLSearchParams(location.search).get('desabo'); if(!t||!SB_ON) return;
   history.replaceState(null,'',location.pathname+location.hash);
   fetch(SB_URL+'/functions/v1/alertes?desabo='+encodeURIComponent(t)).then(r=>r.json()).then(j=>{
