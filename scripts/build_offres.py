@@ -45,7 +45,7 @@ for j in d["offres"]:
         if j.get("c") in ETYPE: ld["employmentType"] = ETYPE[j["c"]]
     mails = [m for m in re.split(r"[,;]\s*", j.get("mail") or "") if m]
     page = f"""<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{E(j['t'])} – {E(j['e'])} ({E(lieu)}) | Emploi Rapide</title>
+<title>{E(j['t'])} – {E(j['e'])} ({E(lieu)}) | Emploi Rapide 24</title>
 <meta name="description" content="{E(desc[:155])}">
 <link rel="canonical" href="{j_url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{E(j['t'])} – {E(j['e'])}">
@@ -53,7 +53,7 @@ for j in d["offres"]:
 <meta name="theme-color" content="#1d5bd8"><link rel="icon" href="../icons/icon-192.png">
 {('<script type="application/ld+json">'+json.dumps(ld, ensure_ascii=False).replace("</","<\\/")+'</script>') if ld else ''}
 <style>body{{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 18px;color:#0f1a33;background:#ffffff}}h1{{font-size:24px;line-height:1.25;margin:8px 0}}.m{{color:#56607a}}.b{{display:inline-block;background:#1d5bd8;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:650;margin:6px 6px 0 0}}.g{{background:#0f1a33}}.box{{background:#ffffff;border:1px solid #dde2ee;border-radius:12px;padding:12px 14px;margin:14px 0}}a{{color:#1d5bd8}}</style></head><body>
-<p><a href="../#o={i}">← Toutes les offres sur Emploi Rapide</a></p>
+<p><a href="../#o={i}">← Toutes les offres sur Emploi Rapide 24</a></p>
 <h1>{E(j['t'])}</h1>
 <p class="m"><b>{E(j['e'])}</b> · {E(lieu)} · {E(j['s'])} · {E('Contrat non précisé' if j['c']=='Emploi' else j['c'])}</p>
 {f'<p class="m">Date limite : <b>{E(j["lim"])}</b></p>' if j.get('lim') else ''}
@@ -64,7 +64,7 @@ for j in d["offres"]:
 {f'<p style="margin:6px 0 0">{E(j["cons"])}</p>' if j.get('cons') else ''}
 <a class="b g" href="{E(apply)}" rel="noopener" target="_blank">Postuler / voir l'annonce d'origine</a>
 <a class="b" href="../#o={i}">Préparer ma candidature</a></div>
-<p class="m" style="font-size:13px">Source : {E(j['src'])}. Résumé rédigé par Emploi Rapide ; seule l'annonce d'origine fait foi. Un vrai recruteur ne demande jamais d'argent.</p>
+<p class="m" style="font-size:13px">Source : {E(j['src'])}. Résumé rédigé par Emploi Rapide 24 ; seule l'annonce d'origine fait foi. Un vrai recruteur ne demande jamais d'argent.</p>
 </body></html>"""
     open(os.path.join(odir, i + ".html"), "w").write(page)
     urls.append(j_url)
