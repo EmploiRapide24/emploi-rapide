@@ -69,6 +69,37 @@ for j in d["offres"]:
 </body></html>"""
     open(os.path.join(odir, i + ".html"), "w").write(page)
     urls.append(j_url)
+# Page « Toutes les offres » (liste publique regroupée par pays)
+groupes = {}
+for j in d["offres"]:
+    if j.get("lim") and j["lim"] < today: continue
+    groupes.setdefault(j["p"], []).append(j)
+ordre = sorted(groupes, key=lambda p: (-len(groupes[p]), p))
+def ligne(j):
+    i = hid(j["t"] + "|" + j["e"])
+    v = j.get("v") if j.get("v") and j.get("v") != j["p"] else ""
+    c = "Contrat non précisé" if j.get("c") == "Emploi" else (j.get("c") or "")
+    lim = ("Date limite : " + j["lim"]) if j.get("lim") else ""
+    meta = " · ".join(x for x in (E(j["e"]), E(v), E(c), E(lim)) if x)
+    return '<li><a href="offre/' + i + '.html">' + E(j["t"]) + '</a><span>' + meta + '</span></li>'
+blocs = "".join('<h2 id="' + E(hid(p)) + '">' + E(p) + ' <small>(' + str(len(groupes[p])) + ')</small></h2><ul>' + "".join(ligne(j) for j in sorted(groupes[p], key=lambda j: (j.get("lim") or "9999", j["t"]))) + '</ul>' for p in ordre)
+sommaire = " · ".join('<a href="#' + E(hid(p)) + '">' + E(p) + ' (' + str(len(groupes[p])) + ')</a>' for p in ordre)
+n_total = sum(len(v) for v in groupes.values())
+liste = ('<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+ '<title>Toutes les offres d\'emploi (' + str(n_total) + ') – Emploi Rapide 24</title>'
+ '<meta name="description" content="Liste complète des ' + str(n_total) + ' offres d\'emploi ouvertes en Afrique francophone et dans le monde, mise à jour chaque matin.">'
+ '<link rel="canonical" href="' + DOMAIN + '/offres.html"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">'
+ '<style>body{font-family:Nunito,system-ui,sans-serif;margin:0;color:#1f2937;background:#f3f6fb}main{max-width:1100px;margin:0 auto;padding:20px 16px 60px}'
+ 'h1{font-size:26px;margin:6px 0 4px;color:#1d5bd8}h2{font-size:19px;margin:26px 0 8px;padding-top:6px;border-top:1px solid #dbe3f0}h2 small{color:#6b7280;font-weight:600}'
+ '.som{font-size:14px;line-height:1.9}.som a,ul a{color:#1d5bd8;text-decoration:none}.som a:hover,ul a:hover{text-decoration:underline}'
+ 'ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px}li{background:#fff;border:1px solid #e3e8f2;border-radius:12px;padding:10px 12px}'
+ 'li a{font-weight:800;display:block}li span{font-size:13px;color:#6b7280}.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.btn{background:#1d5bd8;color:#fff;border-radius:999px;padding:8px 16px;text-decoration:none;font-weight:700}</style></head><body><main>'
+ '<div class="top"><a href="./" style="font-weight:800;color:#1d5bd8;text-decoration:none;font-size:20px">Emploi Rapide <span style="color:#f5b800">24</span></a><a class="btn" href="./">Rechercher et filtrer</a></div>'
+ '<h1>Toutes les offres d\'emploi (' + str(n_total) + ')</h1><p style="margin:0 0 10px;color:#4b5563">Mise à jour du ' + E(today) + '. Classées par pays, puis par date limite.</p>'
+ '<p class="som">' + sommaire + '</p>' + blocs +
+ '<p style="font-size:13px;color:#6b7280;margin-top:30px">Un vrai recruteur ne demande jamais d\'argent. Seule l\'annonce d\'origine fait foi.</p></main></body></html>')
+open(os.path.join(SITE, "offres.html"), "w").write(liste)
+urls.insert(1, DOMAIN + "/offres.html")
 open(os.path.join(SITE, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 open(os.path.join(SITE, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
-print("ok", len(d["offres"]), "pages", len(urls)-1)
+print("ok", len(d["offres"]), "pages", len(urls)-2)

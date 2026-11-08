@@ -470,6 +470,14 @@ label.f{font-size:14px;font-weight:600}
 .composer .hsub{max-width:none}
 .composer .picks{max-width:none}
 @media (min-width:861px){.composer .picks{display:grid;grid-template-columns:repeat(auto-fill,minmax(72px,1fr));overflow:visible;gap:10px 4px;justify-items:center}.composer .pick-b{width:72px}.composer .pick-b .ring{width:50px;height:50px;font-size:14.5px}.composer .pick-b .lb{max-width:72px}}
+/* Toutes les offres */
+.li-tools{display:flex;gap:8px;flex-wrap:wrap}.li-tools input{flex:1 1 260px;border:1px solid var(--line);border-radius:999px;padding:9px 14px;font:inherit;font-size:14px;background:var(--soft)}.li-tools select{border:1px solid var(--line);border-radius:999px;padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.li-som{margin:10px 0 0;font-size:13.5px;line-height:1.9}.li-som a{color:#1d5bd8;text-decoration:none;white-space:nowrap}.li-som a:hover{text-decoration:underline}
+.li-g{margin-top:12px}.li-g h3{margin:0 0 8px;font-size:17px}.li-g h3 small{color:var(--mute);font-weight:600;font-size:13px}
+.li-ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:6px 14px}
+.li-ul li{padding:8px 0;border-bottom:1px solid var(--line);min-width:0}
+.li-t{background:none;border:0;padding:0;font:inherit;font-weight:700;font-size:14.5px;color:#1d5bd8;cursor:pointer;text-align:left}.li-t:hover{text-decoration:underline}
+.li-m{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}.li-soon{color:#b91c1c;font-weight:700}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -489,6 +497,7 @@ h1,h2,h3,b,strong{letter-spacing:0}
 <aside class="lside">
   <nav class="nav" role="tablist" aria-label="Sections">
   <button role="tab" data-v="offres" aria-selected="true"><span class="ic" aria-hidden="true">🔎</span>Offres</button>
+  <button role="tab" data-v="liste" aria-selected="false"><span class="ic" aria-hidden="true">📋</span><span class="lg">Toutes les offres</span><span class="sh">Liste</span></button>
   <button role="tab" data-v="suivi" aria-selected="false"><span class="ic" aria-hidden="true">⭐</span><span class="lg">Mes candidatures</span><span class="sh">Suivi</span><span class="bdg" id="bdg-suivi" hidden></span></button>
   <button role="tab" data-v="profil" aria-selected="false"><span class="ic" aria-hidden="true">👤</span>Mon profil</button>
   <button role="tab" data-v="conseils" aria-selected="false"><span class="ic" aria-hidden="true">💡</span>Conseils</button>
@@ -601,6 +610,15 @@ h1,h2,h3,b,strong{letter-spacing:0}
 </section>
 
 <!-- ============ SUIVI ============ -->
+<section class="view" id="v-liste" hidden>
+  <div class="panel">
+    <h2 id="li-h">Toutes les offres</h2>
+    <p class="sub" style="margin:0 0 10px">La liste complète des offres ouvertes, classées par pays. Cliquez sur une offre pour voir le détail et postuler. <a href="https://emploirapide24.com/offres.html" target="_blank" rel="noopener">Page à partager ↗</a></p>
+    <div class="li-tools"><input id="li-q" type="search" placeholder="Filtrer la liste : métier, employeur, ville…" aria-label="Filtrer la liste"><select id="li-tri" aria-label="Trier"><option value="pays">Par pays</option><option value="lim">Par date limite</option><option value="new">Plus récentes</option><option value="emp">Par employeur</option></select></div>
+    <p class="li-som" id="li-som"></p>
+  </div>
+  <div id="li-box"></div>
+</section>
 <section class="view" id="v-suivi" hidden>
   <div class="panel">
     <h2>Mes candidatures</h2>
@@ -1202,6 +1220,30 @@ function renderTicker(){
   tr.innerHTML=h+'<span class="tk-sep" aria-hidden="true">•</span>'+h;
   tr.style.animationDuration=Math.max(40,L.length*6)+'s';
 }
+
+/* ---------- vue « Toutes les offres » ---------- */
+function renderListe(){
+  const q=norm($('li-q').value).trim(), tri=$('li-tri').value;
+  let L=jobs.filter(j=>!q||q.split(/\s+/).every(w=>norm([j.t,j.e,j.v,j.p,j.s,j.c].join(' ')).includes(w)));
+  $('li-h').textContent=`Toutes les offres (${L.length}${L.length!==jobs.length?' sur '+jobs.length:''})`;
+  const row=j=>{const d=days(j.lim); const lim=j.lim?`<span class="${d!==null&&d<=3?'li-soon':''}">${d===0?"Clôture aujourd'hui":d===1?'Clôture demain':'Jusqu’au '+fmt(j.lim)}</span>`:'';
+    return `<li><button class="li-t" data-go="${j.id}">${esc(j.t)}</button><span class="li-m">${esc(j.e)}${j.v&&j.v!==j.p?' · '+esc(j.v):''}${tri!=='pays'?' · '+esc(j.p):''} · ${esc(contratTxt(j.c))}${lim?' · '+lim:''}</span></li>`;};
+  const key=tri==='pays'?(j=>j.p):tri==='emp'?(j=>j.e):null;
+  const byLim=(a,b)=>(a.lim||'9999').localeCompare(b.lim||'9999')||a.t.localeCompare(b.t,'fr');
+  if(key){
+    const G={}; L.forEach(j=>(G[key(j)]=G[key(j)]||[]).push(j));
+    const ks=Object.keys(G).sort((a,b)=>tri==='pays'?(G[b].length-G[a].length||a.localeCompare(b,'fr')):a.localeCompare(b,'fr'));
+    $('li-som').innerHTML=tri==='pays'?ks.map(k=>`<a href="#lg-${hid(k)}" data-lj="lg-${hid(k)}">${esc(k)} (${G[k].length})</a>`).join(' · '):'';
+    $('li-box').innerHTML=ks.map(k=>`<div class="panel li-g" id="lg-${hid(k)}"><h3>${esc(k)} <small>${G[k].length}</small></h3><ul class="li-ul">${G[k].sort(byLim).map(row).join('')}</ul></div>`).join('')||'<div class="panel"><p class="sub">Aucune offre ne correspond à ce filtre.</p></div>';
+  } else {
+    $('li-som').innerHTML='';
+    L.sort(tri==='lim'?byLim:(a,b)=>(dateJ(b)||'').localeCompare(dateJ(a)||''));
+    $('li-box').innerHTML=L.length?`<div class="panel li-g"><ul class="li-ul">${L.map(row).join('')}</ul></div>`:'<div class="panel"><p class="sub">Aucune offre ne correspond à ce filtre.</p></div>';
+  }
+}
+$('li-q').addEventListener('input',()=>{clearTimeout(window._lq);window._lq=setTimeout(renderListe,150);});
+$('li-tri').addEventListener('change',renderListe);
+$('li-som').addEventListener('click',e=>{const a=e.target.closest('[data-lj]'); if(!a) return; e.preventDefault(); const el=$(a.dataset.lj); el&&el.scrollIntoView({behavior:'smooth',block:'start'});});
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
   const cb=e.target.closest('[data-cmt]'); if(cb){openCmts(cb.dataset.cmt);return;}
@@ -1346,7 +1388,7 @@ function show(v){
   document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='v-'+v);
   document.body.className='v-'+v;
   $('composer').hidden = v!=='offres';
-  if(v==='suivi') renderSuivi(); if(v==='profil') loadP();
+  if(v==='suivi') renderSuivi(); if(v==='profil') loadP(); if(v==='liste') renderListe();
   window.scrollTo({top:0});
 }
 document.querySelectorAll('.nav [role=tab]').forEach(b=>b.onclick=()=>show(b.dataset.v));
