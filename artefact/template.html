@@ -432,6 +432,11 @@ label.f{font-size:14px;font-weight:600}
 .apply .etp{margin:2px 0 0;padding-left:20px;font-size:13.5px;display:grid;gap:3px}
 .cwho{margin:0;font-size:12.5px;color:var(--mute)}.lnk{background:none;border:0;padding:0;font:inherit;color:#1d5bd8;cursor:pointer;text-decoration:underline}
 .clog{background:var(--soft);border-radius:12px;padding:10px 12px}.clog input{flex:1;max-width:none}
+.al-mail{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer;white-space:nowrap}.al-mail.on{background:#e8f8ee;border-color:#bfe8cf;color:#15803d;font-weight:700}
+.al-hint{margin:6px 2px 0;font-size:12.5px;color:var(--mute)}
+.mdl{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:100;padding:16px}.mdl[hidden]{display:none}
+.mdl-c{background:#fff;border-radius:16px;max-width:440px;width:100%;padding:20px;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.2)}.mdl-c h2{margin:0 0 10px;font-size:19px}.mdl-c p{margin:0 0 10px;font-size:14.5px}
+.mdl-x{position:absolute;top:8px;right:10px;border:0;background:none;font-size:24px;cursor:pointer;color:var(--mute)}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -883,13 +888,15 @@ function renderAlertes(){
     const m=jobs.filter(j=>match(j,a.s)); const n=m.filter(j=>dateJ(j)>a.vu).length;
     return `<div class="al"><button class="al-go" data-i="${i}"><b>${esc(alNom(a.s))}</b>
       <span>${m.length} offre${m.length>1?'s':''}${n?` · <em>${n} nouvelle${n>1?'s':''}</em>`:''}</span></button>
-      <button class="al-x" data-x="${i}" aria-label="Supprimer l'alerte">×</button></div>`;}).join('');
+      <button class="al-mail${ABOS.some(b=>JSON.stringify(b.criteres)===JSON.stringify(a.s))?' on':''}" data-mail-al="${i}" title="Recevoir ces offres par e-mail">${ABOS.some(b=>JSON.stringify(b.criteres)===JSON.stringify(a.s))?'📧 E-mail actif':'📧 Par e-mail'}</button>
+      <button class="al-x" data-x="${i}" aria-label="Supprimer l'alerte">×</button></div>`;}).join('')+(SB_ON?'<p class="al-hint">📧 Recevez chaque matin par e-mail les nouvelles offres de vos alertes.</p>':'');
   box.querySelectorAll('.al-go').forEach(b=>b.onclick=()=>{
     const a=alertes[+b.dataset.i];
     Object.assign(st,{q:'',z:'',pays:'',secteur:'',contrat:'',k:''},a.s,{f:new Set(a.s.f||[])});
     a.vu=today; saveAl(); syncControls(); render(); renderAlertes(); $('count').scrollIntoView({behavior:'smooth'});
   });
   box.querySelectorAll('.al-x').forEach(b=>b.onclick=()=>{alertes.splice(+b.dataset.x,1);saveAl();renderAlertes();});
+  box.querySelectorAll('[data-mail-al]').forEach(b=>b.onclick=()=>openAbo(alertes[+b.dataset.mailAl].s));
 }
 function syncControls(){
   ['z','pays','secteur','contrat','k','tri'].forEach(id=>$(id).value=st[id]||(id==='tri'?'pub':''));
@@ -902,6 +909,7 @@ $('al-add').onclick=()=>{
   if(alertes.some(a=>JSON.stringify(a.s)===JSON.stringify(s))){toast('Cette alerte existe déjà.');return;}
   alertes.push({s,vu:today}); saveAl(); renderAlertes();
   toast('Alerte enregistrée : ses nouvelles offres seront signalées à chaque visite.');
+  if(SB_ON) openAbo(s);
 };
 function toast(m){const t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('on'),3500);}
 
@@ -1038,7 +1046,7 @@ async function token(){
   try{const j=await auth('token?grant_type=refresh_token',{refresh_token:SESS.rt}); keepSess(j); return SESS.at;}
   catch(e){saveSess(null); return null;}
 }
-function rerenderOpen(){OPENC.forEach(i=>refreshCard(i));}
+function rerenderOpen(){OPENC.forEach(i=>refreshCard(i)); if(typeof refreshAbo==='function') refreshAbo();}
 function loadCounts(){ if(!SB_ON) return;
   sb('nb_commentaires?select=offre,n').then(rows=>{rows.forEach(r=>CC[r.offre]=r.n); document.querySelectorAll('article.job').forEach(a=>{const id=a.id.slice(2); if(CC[id]) refreshCard(id);});}).catch(()=>{});}
 function agoC(t){const m=Math.round((Date.now()-new Date(t))/60000); if(m<1) return "à l'instant"; if(m<60) return 'il y a '+m+' min'; const h=Math.round(m/60); if(h<24) return 'il y a '+h+' h'; const d=Math.round(h/24); return d<30?'il y a '+d+' j':new Date(t).toLocaleDateString('fr-FR');}
@@ -1063,7 +1071,7 @@ function loginHTML(id){
     <div class="crow"><input name="code" inputmode="numeric" autocomplete="one-time-code" maxlength="8" required placeholder="Code reçu par e-mail" aria-label="Code reçu par e-mail"><button class="btn"${AUTH.busy?' disabled':''}>Valider</button></div>
     <p class="cnote"><button type="button" class="lnk" data-relog>Changer d'adresse e-mail ou renvoyer un code</button></p></form>`;
   return `<form class="cform clog" data-clog="mail">
-    <p class="cnote"><b>Inscrivez-vous pour commenter</b> : saisissez votre e-mail, vous recevrez un code de connexion. Pas de mot de passe.</p>
+    <p class="cnote"><b>${id==='abo'?'Créez votre compte en 30 secondes':'Inscrivez-vous pour commenter'}</b> : saisissez votre e-mail, vous recevrez un code de connexion. Pas de mot de passe.</p>
     <div class="crow"><input name="email" type="email" autocomplete="email" required placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail" value="${esc(AUTH.email)}"><button class="btn"${AUTH.busy?' disabled':''}>Recevoir mon code</button></div>
     <p class="cnote">Votre e-mail n'est jamais affiché. Seul votre prénom apparaît sous vos commentaires.</p></form>`;
 }
@@ -1088,7 +1096,7 @@ document.addEventListener('submit',async e=>{
     } else {
       const code=lg.code.value.replace(/\D/g,''); if(code.length<6){toast('Saisissez le code reçu par e-mail.');return;}
       AUTH.busy=true; rerenderOpen();
-      try{const j=await auth('verify',{type:'email',email:AUTH.email,token:code}); keepSess(j); AUTH={step:'mail',email:'',busy:false}; toast('Vous êtes connecté. Vous pouvez commenter.');}
+      try{const j=await auth('verify',{type:'email',email:AUTH.email,token:code}); keepSess(j); AUTH={step:'mail',email:'',busy:false}; toast('Vous êtes connecté.'); loadAbos();}
       catch(err){AUTH.busy=false; toast('Code incorrect ou expiré. Réessayez ou demandez un nouveau code.');}
       AUTH.busy=false; rerenderOpen();
     }
@@ -1104,6 +1112,38 @@ document.addEventListener('submit',async e=>{
   sb('commentaires',{method:'POST',headers:{Prefer:'return=minimal',Authorization:'Bearer '+tk},body:JSON.stringify({offre:id,nom,texte})})
     .then(()=>{(CM[id]=CM[id]||[]).push({nom,texte,created_at:new Date().toISOString()}); CC[id]=(CC[id]||0)+1; refreshCard(id); toast('Commentaire publié.');})
     .catch(()=>{b.disabled=false;b.textContent='Publier';toast("Le commentaire n'a pas pu être publié. Réessayez dans un instant.");});
+});
+
+/* ---------- alertes par e-mail (Supabase) ---------- */
+let ABOS=[]; let ABO_S=null;
+async function loadAbos(){ if(!SB_ON||!SESS) {ABOS=[]; return;} const tk=await token(); if(!tk){ABOS=[];return;}
+  try{ABOS=await sb('abonnements?select=id,criteres,libelle,actif&actif=eq.true',{headers:{Authorization:'Bearer '+tk}})||[];}catch(e){ABOS=[];} renderAlertes(); }
+function aboHTML(){
+  const s=ABO_S, lib=esc(alNom(s));
+  const deja=ABOS.find(b=>JSON.stringify(b.criteres)===JSON.stringify(s));
+  let body;
+  if(!SB_ON) body=`<p>Les alertes par e-mail sont disponibles sur <a href="https://emploirapide24.com/" target="_blank" rel="noopener">emploirapide24.com</a>.</p>`;
+  else if(!SESS) body=`<p>Recevez chaque matin les nouvelles offres de l'alerte <b>${lib}</b>. Inscrivez-vous d'abord avec votre e-mail (un code vous sera envoyé, pas de mot de passe).</p>${loginHTML('abo')}`;
+  else if(deja) body=`<p>✅ Vous recevez déjà les nouvelles offres de l'alerte <b>${lib}</b> à <b>${esc(SESS.email)}</b>, chaque matin.</p><div class="acts"><button class="btn ghost" data-abo-del="${deja.id}">Ne plus recevoir cette alerte</button></div>`;
+  else body=`<p>Recevoir chaque matin à <b>${esc(SESS.email)}</b> les nouvelles offres de l'alerte <b>${lib}</b> ?</p><p class="cnote">Un seul e-mail par jour, seulement s'il y a des nouveautés. Désabonnement en un clic dans chaque e-mail.</p><div class="acts"><button class="btn" data-abo-add>📧 Oui, m'abonner</button></div>`;
+  return `<div class="mdl-c" role="dialog" aria-modal="true" aria-label="Alerte par e-mail"><button class="mdl-x" data-abo-close aria-label="Fermer">×</button><h2>📧 Alerte par e-mail</h2>${body}</div>`;
+}
+function openAbo(s){ ABO_S=s; let m=$('mdl-abo'); if(!m){m=document.createElement('div');m.id='mdl-abo';m.className='mdl';document.body.appendChild(m);} m.innerHTML=aboHTML(); m.hidden=false; }
+function closeAbo(){ const m=$('mdl-abo'); if(m) m.hidden=true; ABO_S=null; }
+function refreshAbo(){ const m=$('mdl-abo'); if(m&&!m.hidden&&ABO_S) m.innerHTML=aboHTML(); }
+document.addEventListener('click',async e=>{
+  if(e.target.closest('[data-abo-close]')||e.target.id==='mdl-abo'){closeAbo();return;}
+  const add=e.target.closest('[data-abo-add]');
+  if(add){ add.disabled=true; const tk=await token(); if(!tk){toast('Session expirée : reconnectez-vous.'); refreshAbo(); return;}
+    try{ await sb('abonnements',{method:'POST',headers:{Prefer:'return=minimal',Authorization:'Bearer '+tk},body:JSON.stringify({email:SESS.email,criteres:ABO_S,libelle:alNom(ABO_S).slice(0,200)})});
+      if(!alertes.some(a=>JSON.stringify(a.s)===JSON.stringify(ABO_S))){alertes.push({s:ABO_S,vu:today});saveAl();}
+      await loadAbos(); refreshAbo(); toast('Abonnement enregistré : les nouvelles offres vous seront envoyées chaque matin.'); }
+    catch(err){ add.disabled=false; toast("L'abonnement n'a pas pu être enregistré (10 alertes maximum). Réessayez."); }
+    return; }
+  const del=e.target.closest('[data-abo-del]');
+  if(del){ const tk=await token(); if(!tk){toast('Session expirée : reconnectez-vous.');return;}
+    try{ await sb('abonnements?id=eq.'+(+del.dataset.aboDel),{method:'DELETE',headers:{Authorization:'Bearer '+tk}}); await loadAbos(); refreshAbo(); toast('Vous ne recevrez plus cette alerte par e-mail.'); }catch(err){ toast('Impossible pour le moment. Réessayez.'); }
+    return; }
 });
 /* ---------- actions sur les cartes ---------- */
 document.addEventListener('click',e=>{
@@ -1292,7 +1332,7 @@ function renderSide(){
   $('rside').querySelector('[data-gov2]')?.addEventListener('click',()=>show('recruteurs'));
 }
 /* ---------- démarrage ---------- */
-syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts();
+syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts(); renderSide(); loadCounts(); loadAbos();
 const hm=location.hash.match(/o=([a-z0-9]+)/); if(hm) setTimeout(()=>openOffer(hm[1]),50);
 </script>
 </body>
