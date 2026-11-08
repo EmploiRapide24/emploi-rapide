@@ -412,6 +412,14 @@ button,input,select,textarea{font-family:inherit}
 label.f{font-size:14px;font-weight:600}
 @media (max-width:860px){.topbar .logo{font-size:0;gap:0}.lside .nav button{font-size:11px;font-weight:600}}
 @media (max-width:480px){.pbar>*{font-size:12px}}
+/* Bloc Pour postuler */
+.apply{margin:12px 0 2px;border:1px solid #d6e2fb;background:#f5f8ff;border-radius:12px;padding:8px 10px;display:grid;gap:6px}
+.apply-t{font-weight:800;font-size:13px;color:#1d5bd8}
+.apply .go{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e3e8f2;border-radius:10px;padding:8px 10px;color:var(--ink);text-decoration:none;min-width:0}
+.apply a.go:hover,.apply a.go:focus-visible{border-color:#1d5bd8}
+.apply .go>span:nth-child(2){display:flex;flex-direction:column;min-width:0;flex:1}
+.apply .go b{font-size:14px}.apply .go small{font-size:12.5px;color:#1d5bd8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.apply .go a{text-decoration:none}.apply .go i{font-style:normal;color:#1d5bd8;font-weight:800}
 /* Police arrondie */
 :root{--serif:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif}
 body{font-family:"Nunito",-apple-system,system-ui,"Segoe UI",Roboto,Arial,sans-serif;font-size:14.5px;letter-spacing:.005em}
@@ -905,7 +913,15 @@ function detHTML(j, c){
   h+=`<div class="box"><span class="box-t">Comment postuler</span>${how}</div>`;
   if(c) h+=`<div class="box"><span class="box-t">Compatibilité avec votre profil : ${c.s} %</span>${whyHTML(c.w)}</div>`;
   h+=`<div class="box"><span class="box-t">Indice de confiance : ${TRL[j.tr][1].replace(/^\S+ /,'')}</span>${whyHTML(j.trp)}</div>`;
-  return `<details class="det" data-id="${j.id}"><summary>Comment postuler, compatibilité et confiance</summary>${h}</details>`;
+  return `<details class="det" data-id="${j.id}"><summary>Préparer ma candidature, compatibilité et confiance</summary>${h}</details>`;
+}
+function applyHTML(j){
+  const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'')}catch(e){return ''}};
+  let r='';
+  if(j.lien) r+=`<a class="go" href="${esc(safe(j.lien))}" target="_blank" rel="noopener"><span aria-hidden="true">🔗</span><span><b>Postuler en ligne</b><small>${esc(host(j.lien))}</small></span><i aria-hidden="true">↗</i></a>`;
+  j.mails.forEach(m=>{r+=`<div class="go"><span aria-hidden="true">✉️</span><span><b>Envoyer sa candidature par e-mail</b><a href="mailto:${esc(m)}"><small>${esc(m)}</small></a></span><button class="copy" data-copy="${esc(m)}">Copier</button></div>`;});
+  if(!j.lien && j.u) r+=`<a class="go" href="${esc(safe(j.u))}" target="_blank" rel="noopener"><span aria-hidden="true">📄</span><span><b>${j.mails.length?'Voir l\'annonce d\'origine':'Voir l\'annonce et postuler'}</b><small>${esc(host(j.u))}</small></span><i aria-hidden="true">↗</i></a>`;
+  return r?`<div class="apply"><span class="apply-t">Pour postuler</span>${r}</div>`:'';
 }
 function card(j){
   const d=days(j.lim), c=compat(j);
@@ -927,7 +943,7 @@ function card(j){
     <div class="pb"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3>
       ${fullHTML(j)}
       <ul class="facts">${facts.map(([i,t])=>`<li><span aria-hidden="true">${i}</span>${esc(t)}</li>`).join('')}</ul>
-      <div class="tags">${tags}</div></div>
+      <div class="tags">${tags}</div>${applyHTML(j)}</div>
     ${detHTML(j,c)}
     <div class="pcount">${cnt}</div>
     <div class="pbar">
