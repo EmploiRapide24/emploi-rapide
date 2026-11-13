@@ -24,6 +24,15 @@ odir = os.path.join(SITE, "offre"); shutil.rmtree(odir, ignore_errors=True); os.
 today = d.get("maj", "")
 urls = [DOMAIN + "/"]
 E = lambda x: html.escape(str(x or ""), quote=True)
+from urllib.parse import quote
+_open = [x for x in d["offres"] if not (x.get("lim") and x["lim"] < today)]
+def simil(j):
+    c = [x for x in _open if x is not j and x["p"] == j["p"] and x.get("s") == j.get("s")]
+    c += [x for x in _open if x is not j and x["p"] == j["p"] and x not in c]
+    c += [x for x in _open if x is not j and x.get("s") == j.get("s") and x not in c]
+    c = c[:5]
+    if not c: return ""
+    return '<h2 style="font-size:17px;margin:20px 0 4px">Offres similaires</h2><ul class="sim">' + "".join('<li><a href="' + hid(x["t"] + "|" + x["e"]) + '.html">' + E(x["t"]) + '</a><span>' + E(x["e"]) + " · " + E(x["p"]) + '</span></li>' for x in c) + '</ul>'
 for j in d["offres"]:
     if j.get("lim") and j["lim"] < today: continue
     i = hid(j["t"] + "|" + j["e"]); j_url = f"{DOMAIN}/offre/{i}.html"
@@ -50,10 +59,10 @@ for j in d["offres"]:
 <meta name="description" content="{E(desc[:155])}">
 <link rel="canonical" href="{j_url}">
 <meta property="og:type" content="website"><meta property="og:title" content="{E(j['t'])} – {E(j['e'])}">
-<meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{j_url}"><meta property="og:image" content="{DOMAIN}/icons/icon-512.png">
-<meta name="theme-color" content="#1d5bd8"><link rel="icon" href="../icons/icon-192.png">
+<meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{j_url}"><meta property="og:image" content="{DOMAIN}/icons/og.png">
+<meta name="theme-color" content="#1d5bd8"><link rel="icon" href="../icons/icon-192.png"><script src="../ga.js" defer></script>
 {ldjs}
-<style>body{{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 18px;color:#0f1a33;background:#ffffff}}h1{{font-size:24px;line-height:1.25;margin:8px 0}}.m{{color:#56607a}}.b{{display:inline-block;background:#1d5bd8;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:650;margin:6px 6px 0 0}}.g{{background:#0f1a33}}.box{{background:#ffffff;border:1px solid #dde2ee;border-radius:12px;padding:12px 14px;margin:14px 0}}a{{color:#1d5bd8}}</style></head><body>
+<style>body{{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 18px;color:#0f1a33;background:#ffffff}}h1{{font-size:24px;line-height:1.25;margin:8px 0}}.m{{color:#56607a}}.b{{display:inline-block;background:#1d5bd8;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:650;margin:6px 6px 0 0}}.g{{background:#0f1a33}}.wa{{background:#25d366}}.al{{background:#f5b800;color:#0f1a33}}.sim{{list-style:none;padding:0}}.sim li{{border:1px solid #dde2ee;border-radius:10px;padding:8px 12px;margin:6px 0}}.sim a{{font-weight:650;text-decoration:none}}.sim span{{display:block;font-size:13px;color:#56607a}}.box{{background:#ffffff;border:1px solid #dde2ee;border-radius:12px;padding:12px 14px;margin:14px 0}}a{{color:#1d5bd8}}</style></head><body>
 <p><a href="../#o={i}">← Toutes les offres sur Emploi Rapide 24</a></p>
 <h1>{E(j['t'])}</h1>
 <p class="m"><b>{E(j['e'])}</b> · {E(lieu)} · {E(j['s'])} · {E('Contrat non précisé' if j['c']=='Emploi' else j['c'])}</p>
@@ -65,6 +74,9 @@ for j in d["offres"]:
 {f'<p style="margin:6px 0 0">{E(j["cons"])}</p>' if j.get('cons') else ''}
 <a class="b g" href="{E(apply)}" rel="noopener" target="_blank">Postuler / voir l'annonce d'origine</a>
 <a class="b" href="../#o={i}">Préparer ma candidature</a></div>
+<a class="b wa" href="https://wa.me/?text={quote(j['t']+' – '+j['e']+' ('+lieu+') : '+j_url)}" target="_blank" rel="noopener">💬 Partager sur WhatsApp</a>
+<a class="b al" href="../#alerte={quote(j['p'])}">📧 Recevoir les offres {E(j['p'])} par e-mail</a>
+{simil(j)}
 <p class="m" style="font-size:13px">Source : {E(j['src'])}. Résumé rédigé par Emploi Rapide 24 ; seule l'annonce d'origine fait foi. Un vrai recruteur ne demande jamais d'argent.</p>
 </body></html>"""
     open(os.path.join(odir, i + ".html"), "w").write(page)
@@ -88,7 +100,7 @@ n_total = sum(len(v) for v in groupes.values())
 liste = ('<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
  '<title>Toutes les offres d\'emploi (' + str(n_total) + ') – Emploi Rapide 24</title>'
  '<meta name="description" content="Liste complète des ' + str(n_total) + ' offres d\'emploi ouvertes en Afrique francophone et dans le monde, mise à jour chaque matin.">'
- '<link rel="canonical" href="' + DOMAIN + '/offres.html"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">'
+ '<link rel="canonical" href="' + DOMAIN + '/offres.html"><script src="ga.js" defer></script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap">'
  '<style>body{font-family:Nunito,system-ui,sans-serif;margin:0;color:#1f2937;background:#f3f6fb}main{max-width:1100px;margin:0 auto;padding:20px 16px 60px}'
  'h1{font-size:26px;margin:6px 0 4px;color:#1d5bd8}h2{font-size:19px;margin:26px 0 8px;padding-top:6px;border-top:1px solid #dbe3f0}h2 small{color:#6b7280;font-weight:600}'
  '.som{font-size:14px;line-height:1.9}.som a,ul a{color:#1d5bd8;text-decoration:none}.som a:hover,ul a:hover{text-decoration:underline}'

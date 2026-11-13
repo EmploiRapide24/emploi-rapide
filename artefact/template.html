@@ -513,6 +513,7 @@ p,li,.desc{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 @media (max-width:560px){.xs-stats{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1181px){.xs-mob{display:none}}
 @media (prefers-reduced-motion:reduce){.xs-c{transition:none}}
+h1.hello{margin:0;font-size:inherit}
 </style>
 </head>
 <body class="v-offres">
@@ -540,7 +541,7 @@ p,li,.desc{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 </aside>
 <main class="feed wrap">
 <div class="composer" id="composer">
-  <p class="hello" id="h1">Les offres d'emploi du jour, prêtes à postuler.</p>
+  <h1 class="hello" id="h1">Les offres d'emploi du jour, prêtes à postuler.</h1>
   <p class="hsub" id="hsub"></p>
   <div class="picks" id="picks" aria-label="Recherches rapides"></div>
   <p class="sub" id="partenaire" style="display:none"></p>
@@ -613,7 +614,7 @@ p,li,.desc{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 <section class="view" id="v-recruteurs" hidden>
   <div class="rec-hero" id="annoncer">
     <h2>Recrutez les bons profils en Afrique francophone.</h2>
-    <p>Chaque matin, des candidats de toute l'Afrique francophone et de la diaspora consultent Emploi Rapide 24, avec un profil, un niveau d'études et un métier renseignés. Mettez votre offre devant eux.</p>
+    <p>Emploi Rapide 24 publie chaque matin les nouvelles offres d'emploi d'Afrique francophone, avec un profil candidat, des alertes par e-mail et le partage sur WhatsApp. Mettez votre offre en avant gratuitement pendant notre lancement.</p>
     <div class="rec-kpi" id="rec-kpi"></div>
   </div>
   <div class="why3">
@@ -1530,7 +1531,7 @@ function renderSide(){
     +(soon.length?`<div class="side"><h3>Clôturent bientôt</h3><ul>${soon.map(j=>{const d=days(j.lim);return sideItem(j,`<span class="soonx">${d===0?"Aujourd'hui":d===1?'Demain':'Dans '+d+' jours'}</span> · ${esc(j.e)}`)}).join('')}</ul></div>`:'')
     +`<div class="side"><h3>Sponsorisé</h3>${banHTML(ad)}</div>`
     +(emp.length?`<div class="side"><h3>Ils recrutent en ce moment</h3><ul>${emp.map(([e,n])=>`<li><button data-emp="${esc(e)}">${monoHTML(e)}<span><b>${esc(e)}</b><small>${n} offres ouvertes</small></span></button></li>`).join('')}</ul></div>`:'')
-    +`<div class="side"><h3>Vous recrutez ?</h3><p class="reccta">Mettez votre offre en tête du fil, devant des milliers de candidats.<br><button class="btn" data-gov2="recruteurs">Découvrir nos formats</button></p></div>`;
+    +`<div class="side"><h3>Vous recrutez ?</h3><p class="reccta">Mettez votre offre en tête du fil : gratuit pendant le lancement.<br><button class="btn" data-gov2="recruteurs">Découvrir nos formats</button></p></div>`;
   $('rside').querySelector('[data-gov2]')?.addEventListener('click',()=>show('recruteurs'));
 }
 /* ---------- démarrage ---------- */
@@ -1543,6 +1544,18 @@ syncControls(); ctaProfil(); render(); renderAlertes(); badge(); renderShorts();
   }).catch(()=>toast('Désabonnement impossible pour le moment. Réessayez plus tard.'));
 })();
 const hm=location.hash.match(/o=([a-z0-9]+)/); if(hm) setTimeout(()=>openOffer(hm[1]),50);
+</script>
+<script>
+(function(){if(!window.ER_SITE)return;
+function T(n,p){try{if(window.gtag)gtag('event',n,p||{})}catch(e){}}
+document.addEventListener('click',function(e){var a=e.target.closest('a,button');if(!a)return;
+ var h=a.getAttribute&&a.getAttribute('href')||'';
+ if(/wa\.me|whatsapp:/.test(h))T('partage_whatsapp',{page:'accueil'});
+ else if(a.matches('[data-abo-add]'))T('alerte_email');
+ else if(a.tagName==='A'&&/^https?:/.test(h)&&h.indexOf('emploirapide24.com')<0&&!a.closest('.ad'))T('clic_postuler',{lien:h.slice(0,100)});
+},true);
+var m=location.hash.match(/^#alerte(?:=([^&]*))?/);if(m){setTimeout(function(){try{show('offres')}catch(e){}var ps=document.getElementById('pays');if(m[1]&&ps){ps.value=decodeURIComponent(m[1]);ps.dispatchEvent(new Event('change',{bubbles:true}))}var c=document.getElementById('controls');c&&c.scrollIntoView({behavior:'smooth'})},400)}
+})();
 </script>
 <script>
 (function(){if(!window.ER_SITE)return;var ID='G-Y7XXSVJCYY',K='er-ga';
