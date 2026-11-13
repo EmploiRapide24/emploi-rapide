@@ -930,9 +930,7 @@ const PUB = D.pubs || {};
 const bans = (PUB.bannieres||[]).filter(actif);
 const HOUSES = [
  {titre:'Recruteurs : votre publicité GRATUITE', texte:'Offre de lancement : bannière et offre mise en avant offertes. Écrivez-nous pour réserver votre place.', lien:'#annoncer', house:1},
- {titre:'📧 Recevez les nouvelles offres par e-mail', texte:'Choisissez votre pays et votre métier : les offres arrivent chaque matin, gratuitement.', lien:'#alerte', house:2},
- {titre:'⚠️ Un vrai recruteur ne demande jamais d\'argent', texte:'Frais de dossier, de formation ou de visa : c\'est une arnaque. Signalez-la en commentaire.', lien:'#conseils', house:2},
- {titre:'💬 Partagez Emploi Rapide 24', texte:'Envoyez les offres du jour à vos proches sur WhatsApp : un emploi trouvé, c\'est une famille aidée.', lien:'https://wa.me/?text='+encodeURIComponent('Les offres d\'emploi du jour en Afrique francophone, vérifiées et gratuites : https://emploirapide24.com'), house:2}
+ {titre:'⚠️ Un vrai recruteur ne demande jamais d\'argent', texte:'Frais de dossier, de formation ou de visa : c\'est une arnaque. Signalez-la en commentaire.', lien:'#conseils', house:2}
 ];
 const HOUSE = HOUSES[Math.floor(Math.random()*HOUSES.length)];
 function banHTML(b){
@@ -1531,7 +1529,8 @@ function card(j,soon){var b=el('button','xs-c');b.type='button';var av=el('span'
  if(soon){var n=dl(j);b.appendChild(el('span','xs-b xs-soon',n<=0?'Dernier jour':'J-'+n));}else if(j.add===D.maj)b.appendChild(el('span','xs-b xs-new','Nouveau'));
  if(j.vf)b.appendChild(el('span','xs-b xs-vf','✓ Vérifiée'));b.onclick=function(){if(typeof show==='function')show('offres');openOffer(j.id)};return b}
 function row(title,list,soon){if(!list.length)return;var h=el('div','xs-h'+(soon?' xs-mob':''));h.appendChild(el('h3',null,title));root.appendChild(h);var r=el('div','xs-row'+(soon?' xs-mob':''));list.forEach(j=>r.appendChild(card(j,soon)));root.appendChild(r)}
-var seen={},fresh=J.filter(j=>j.add===D.maj).sort((a,b)=>(b.vf?1:0)-(a.vf?1:0)||((b.d?1:0)-(a.d?1:0))).filter(j=>{var k=(j.e||'').slice(0,12);if(seen[k])return false;seen[k]=1;return true}).slice(0,10);
+var tk={};try{[...jobs].sort((a,b)=>(dateJ(b)||'').localeCompare(dateJ(a)||'')).slice(0,18).forEach(j=>tk[j.id]=1)}catch(e){}
+var seen={},fresh=J.filter(j=>j.add===D.maj&&!tk[j.id]).sort((a,b)=>(b.vf?1:0)-(a.vf?1:0)||((b.d?1:0)-(a.d?1:0))).filter(j=>{var k=(j.e||'').slice(0,12);if(seen[k])return false;seen[k]=1;return true}).slice(0,10);
 if(fresh.length<4)fresh=J.slice().sort((a,b)=>(b.add||'').localeCompare(a.add||'')).slice(0,10);
 row('🔥 À la une aujourd\'hui',fresh,false);
 row('⏳ Clôturent bientôt',J.filter(j=>{var n=dl(j);return n!==null&&n>=0&&n<=7}).sort((a,b)=>a.lim.localeCompare(b.lim)).slice(0,10),true);
