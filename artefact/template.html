@@ -555,6 +555,14 @@ html,body{max-width:100%;overflow-x:hidden}
 #list,#list>*,.xs,.xs-slot,.xs-row,.pv,.composer,main,.layout>*{min-width:0;max-width:100%}
 .xs-slot .xs-row,.pv .xs-row{width:100%}
 img,svg,video,iframe,table{max-width:100%}
+
+/* ===== Pagination des offres ===== */
+.pager{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin:16px 0 8px}
+.pager button{min-width:40px;height:40px;padding:0 12px;border:1px solid var(--line,#dbe3f0);background:var(--card,#fff);color:var(--ink,#0f1a33);border-radius:10px;font:inherit;font-weight:800;font-size:14px;cursor:pointer}
+.pager button.on{background:#1d5bd8;border-color:#1d5bd8;color:#fff}
+.pager button:disabled{opacity:.4;cursor:default}.pager button:not(:disabled):not(.on):hover{border-color:#1d5bd8;color:#1d5bd8}
+.pg-dots{color:var(--mute,#5b6680);padding:0 2px}
+@media (max-width:480px){.pg-t{display:none}.pager{gap:5px}.pager button{min-width:38px;padding:0 8px}}.pg-info{flex-basis:100%;text-align:center;font-size:12.5px;color:var(--mute,#5b6680);margin-top:2px}
 </style>
 </head>
 <body class="v-offres">
@@ -1135,14 +1143,14 @@ function monoHTML(name){
 }
 
 /* ---------- liste ---------- */
-const PAGE=30; let shown=PAGE, lastR=[];
+const PAGE=20; let shown=PAGE, pg=0, lastR=[];
 function sorted(r){
   if(st.tri==='lim') return r.sort((a,b)=>(a.lim||'9999').localeCompare(b.lim||'9999'));
   if(st.tri==='score' && hasP()){const m=new Map(r.map(j=>[j,compat(j).s]));return r.sort((a,b)=>m.get(b)-m.get(a)||(a.tr-b.tr));}
   return r.sort((a,b)=>(AFR(a)?0:1)-(AFR(b)?0:1) || (isNew(b)?1:0)-(isNew(a)?1:0) || (b.pub||b.add||'').localeCompare(a.pub||a.add||'') || a.tr-b.tr);
 }
 function render(keep){
-  if(!keep) shown=PAGE;
+  if(!keep){shown=PAGE;pg=0;}
   document.querySelectorAll('.pick-b').forEach(b=>b.setAttribute('aria-pressed',b.dataset.pp?st.pays===b.dataset.pp:st.f.has(b.dataset.pf)));
   let r = sorted(jobs.filter(j=>match(j,st)));
   r = [...r.filter(j=>j.spon), ...r.filter(j=>!j.spon)];
@@ -1150,13 +1158,21 @@ function render(keep){
   const mid = bans[1] || bans[0] || HOUSE;
   const nC = hasP() ? r.filter(j=>compat(j).s>=75).length : 0;
   $('count').textContent = r.length+' offre'+(r.length>1?'s':'')+(hasP()?' · '+nC+' très compatible'+(nC>1?'s':'')+' avec votre profil':'');
-  $('list').innerHTML = r.length ? r.slice(0,shown).map((j,i)=>(i===8?banHTML(mid):'')+card(j)).join('') : '<div class="empty">Aucune offre ne correspond à ces filtres. <button class="linkbtn" onclick="document.getElementById(\'reset\').click()">Effacer les filtres</button></div>';
-  $('more').hidden = r.length<=shown;
-  $('more').textContent = 'Afficher plus d\'offres ('+(r.length-shown)+' restantes)';
+  $('list').innerHTML = r.length ? r.slice(pg*PAGE,pg*PAGE+PAGE).map((j,i)=>(i===8?banHTML(mid):'')+card(j)).join('') : '<div class="empty">Aucune offre ne correspond à ces filtres. <button class="linkbtn" onclick="document.getElementById(\'reset\').click()">Effacer les filtres</button></div>';
+  $('more').hidden = true; $('more').style.display='none'; pager(r.length);
   store.set('veille-filtres',{...st,f:[...st.f]});
   if($('shorts').innerHTML) document.querySelectorAll('#shorts [data-sf]').forEach(b=>b.setAttribute('aria-pressed',st.f.has(b.dataset.sf)));
 }
-$('more').onclick=()=>{shown+=PAGE;render(true);};
+$('more').onclick=()=>{};
+function pager(n){let P=$('pager'); if(!P){P=document.createElement('nav');P.id='pager';P.className='pager';P.setAttribute('aria-label','Pages des offres');$('more').after(P);}
+  const np=Math.ceil(n/PAGE); if(np<=1){P.hidden=true;P.textContent='';return;} P.hidden=false; if(pg>np-1)pg=np-1;
+  const set=new Set([0,np-1,pg-1,pg,pg+1].filter(x=>x>=0&&x<np)); const L=[...set].sort((a,b)=>a-b);
+  let h=`<button type="button" data-pg="${pg-1}" ${pg===0?'disabled':''} aria-label="Page précédente">‹<span class="pg-t"> Préc.</span></button>`; let prev=-1;
+  L.forEach(x=>{ if(x-prev>1) h+='<span class="pg-dots">…</span>'; h+=`<button type="button" data-pg="${x}" ${x===pg?'aria-current="page" class="on"':''}>${x+1}</button>`; prev=x; });
+  h+=`<button type="button" data-pg="${pg+1}" ${pg===np-1?'disabled':''} aria-label="Page suivante"><span class="pg-t">Suiv. </span>›</button>`;
+  h+=`<div class="pg-info">Offres ${pg*PAGE+1} à ${Math.min(n,(pg+1)*PAGE)} sur ${n} · page ${pg+1}/${np}</div>`;
+  P.innerHTML=h;}
+document.addEventListener('click',e=>{const b=e.target.closest('#pager [data-pg]'); if(!b||b.disabled)return; pg=+b.dataset.pg; render(true); const c=$('count'); c&&c.scrollIntoView({behavior:'smooth',block:'start'});});
 $('reset').onclick=()=>{Object.assign(st,{q:'',z:'',pays:'',secteur:'',contrat:'',k:'',f:new Set()});syncControls();render();};
 document.querySelectorAll('.chip[data-f]').forEach(c=>{
   c.setAttribute('aria-pressed',st.f.has(c.dataset.f));
@@ -1516,7 +1532,7 @@ document.querySelectorAll('.nav [role=tab]').forEach(b=>b.onclick=()=>show(b.dat
 function openOffer(id){
   if(!byId[id]) return false;
   if(!lastR.includes(byId[id])){Object.assign(st,{q:'',z:'',pays:'',secteur:'',contrat:'',k:'',f:new Set()});syncControls();render();}
-  const idx=lastR.indexOf(byId[id]); if(idx>=shown){shown=idx+1;render(true);}
+  const idx=lastR.indexOf(byId[id]); if(idx>=0&&Math.floor(idx/PAGE)!==pg){pg=Math.floor(idx/PAGE);render(true);}
   const el=$('o-'+id); if(!el) return false;
   el.querySelector('details.det').open=true; el.classList.add('hl'); el.scrollIntoView({behavior:'smooth',block:'start'});
   setTimeout(()=>el.classList.remove('hl'),2500); return true;
