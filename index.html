@@ -491,6 +491,34 @@ h1,h2,h3,b,strong{letter-spacing:0}
 
 /* Texte justifié */
 p,li,.desc{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+
+/* ===== Éléments attractifs ===== */
+.xs{margin:14px 0 4px}
+.xs-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:12px 0}
+.xs-st{background:linear-gradient(135deg,#1d5bd8,#3b7bff);color:#fff;border-radius:14px;padding:10px 8px;text-align:center}
+.xs-st:nth-child(2){background:linear-gradient(135deg,#f5b800,#ffd34d);color:#1d2b4f}
+.xs-st:nth-child(3){background:linear-gradient(135deg,#16a34a,#22c55e)}
+.xs-st:nth-child(4){background:linear-gradient(135deg,#7c3aed,#a855f7)}
+.xs-st b{display:block;font-size:22px;font-weight:900;line-height:1.1}.xs-st span{font-size:11.5px;font-weight:700;opacity:.95}
+.xs-h{display:flex;align-items:center;justify-content:space-between;margin:14px 0 6px}
+.xs-h h3{font-size:16px;font-weight:900;margin:0}
+.xs-row{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 8px;-webkit-overflow-scrolling:touch}
+.xs-row::-webkit-scrollbar{height:6px}.xs-row::-webkit-scrollbar-thumb{background:#cfd8ea;border-radius:9px}
+.xs-c{flex:0 0 230px;scroll-snap-align:start;background:var(--card,#fff);border:1px solid var(--line,#e3e8f2);border-radius:14px;padding:12px;cursor:pointer;text-align:left;font:inherit;color:inherit;transition:transform .15s,box-shadow .15s}
+.xs-c:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(29,91,216,.15)}
+.xs-av{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px;float:left;margin:0 9px 4px 0}
+.xs-t{font-weight:800;font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-align:left}
+.xs-e{font-size:12.5px;color:var(--mute,#5b6680);margin-top:4px;clear:both;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xs-b{display:inline-block;font-size:11px;font-weight:800;border-radius:999px;padding:2px 8px;margin:6px 4px 0 0}
+.xs-new{background:#dcfce7;color:#15803d}.xs-soon{background:#fee2e2;color:#b91c1c}.xs-vf{background:#e0ecff;color:#1d5bd8}
+.xs-emp{display:flex;flex-wrap:wrap;gap:8px}
+.xs-ec{display:flex;align-items:center;gap:7px;border:1px solid var(--line,#e3e8f2);background:var(--card,#fff);border-radius:999px;padding:5px 12px 5px 5px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;color:inherit}
+.xs-ec i{font-style:normal;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:11px;font-weight:900}
+.xs-ec small{color:var(--mute,#5b6680);font-weight:700}
+.xs-wa{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;margin:14px 0 4px;background:#25d366;color:#fff;border:0;border-radius:12px;padding:11px;font:inherit;font-weight:900;font-size:14px;cursor:pointer;text-decoration:none}
+@media (max-width:560px){.xs-stats{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1181px){.xs-mob{display:none}}
+@media (prefers-reduced-motion:reduce){.xs-c{transition:none}}
 </style>
 </head>
 <body class="v-offres">
@@ -522,6 +550,7 @@ p,li,.desc{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
   <p class="hsub" id="hsub"></p>
   <div class="picks" id="picks" aria-label="Recherches rapides"></div>
   <p class="sub" id="partenaire" style="display:none"></p>
+  <div class="xs" id="xs"></div>
 </div>
 <!-- ============ OFFRES ============ -->
 <section class="view" id="v-offres">
@@ -1444,6 +1473,35 @@ function openOffer(id){
   el.querySelector('details.det').open=true; el.classList.add('hl'); el.scrollIntoView({behavior:'smooth',block:'start'});
   setTimeout(()=>el.classList.remove('hl'),2500); return true;
 }
+
+(function(){
+var root=document.getElementById('xs'); if(!root||false)return;
+var COL=['#1d5bd8','#f5b800','#16a34a','#7c3aed','#e11d48','#0891b2','#ea580c','#4f46e5'];
+function col(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return COL[Math.abs(h)%COL.length]}
+function ini(s){return (s||'?').replace(/\(.*?\)/g,'').split(/[\s\-]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function dl(j){if(!j.lim)return null;return Math.round((new Date(j.lim)-new Date(today))/864e5)}
+var J=jobsAll.filter(j=>!j.spon);
+var nNew=J.filter(j=>j.add===D.maj).length, nP=new Set(J.map(j=>j.p)).size, nV=Math.round(100*J.filter(j=>j.vf).length/(J.length||1));
+var st=el('div','xs-stats');
+[[jobsAll.length,'offres en ligne'],[nNew,'nouvelles aujourd\'hui'],[nP,'pays couverts'],[nV,'% vérifiées']].forEach(function(a){var d=el('div','xs-st'),b=el('b',null,'0');b.dataset.v=a[0];d.appendChild(b);d.appendChild(el('span',null,a[1]));st.appendChild(d)});
+root.appendChild(st);
+function card(j,soon){var b=el('button','xs-c');b.type='button';var av=el('span','xs-av',ini(j.e));av.style.background=col(j.e||'');b.appendChild(av);b.appendChild(el('div','xs-t',j.t));b.appendChild(el('div','xs-e',(j.e||'')+' · '+(j.v?j.v+', ':'')+(j.p||'')));
+ if(soon){var n=dl(j);b.appendChild(el('span','xs-b xs-soon',n<=0?'Dernier jour':'J-'+n));}else if(j.add===D.maj)b.appendChild(el('span','xs-b xs-new','Nouveau'));
+ if(j.vf)b.appendChild(el('span','xs-b xs-vf','✓ Vérifiée'));b.onclick=function(){if(typeof show==='function')show('offres');openOffer(j.id)};return b}
+function row(title,list,soon){if(!list.length)return;var h=el('div','xs-h'+(soon?' xs-mob':''));h.appendChild(el('h3',null,title));root.appendChild(h);var r=el('div','xs-row'+(soon?' xs-mob':''));list.forEach(j=>r.appendChild(card(j,soon)));root.appendChild(r)}
+var seen={},fresh=J.filter(j=>j.add===D.maj).sort((a,b)=>(b.vf?1:0)-(a.vf?1:0)||((b.d?1:0)-(a.d?1:0))).filter(j=>{var k=(j.e||'').slice(0,12);if(seen[k])return false;seen[k]=1;return true}).slice(0,10);
+if(fresh.length<4)fresh=J.slice().sort((a,b)=>(b.add||'').localeCompare(a.add||'')).slice(0,10);
+row('🔥 À la une aujourd\'hui',fresh,false);
+row('⏳ Clôturent bientôt',J.filter(j=>{var n=dl(j);return n!==null&&n>=0&&n<=7}).sort((a,b)=>a.lim.localeCompare(b.lim)).slice(0,10),true);
+var cnt={};J.forEach(j=>{if(j.e)cnt[j.e]=(cnt[j.e]||0)+1});var top=Object.entries(cnt).sort((a,b)=>b[1]-a[1]).slice(0,6);
+if(top.length){var h=el('div','xs-h xs-mob');h.appendChild(el('h3',null,'🏢 Ils recrutent en ce moment'));root.appendChild(h);var w=el('div','xs-emp xs-mob');
+ top.forEach(function(t){var b=el('button','xs-ec');b.type='button';var i=el('i',null,ini(t[0]));i.style.background=col(t[0]);b.appendChild(i);b.appendChild(document.createTextNode(t[0].length>28?t[0].slice(0,27)+'…':t[0]));b.appendChild(el('small',null,' '+t[1]));
+  b.onclick=function(){var q=document.getElementById('q');if(q){q.value=t[0];document.getElementById('hsearch').requestSubmit();}};w.appendChild(b)});root.appendChild(w)}
+var wa=el('a','xs-wa','💬 Partager les offres du jour sur WhatsApp');wa.href='https://wa.me/?text='+encodeURIComponent('Les offres d\'emploi du jour en Afrique francophone, vérifiées et gratuites : https://emploirapide24.com');wa.target='_blank';wa.rel='noopener';root.appendChild(wa);
+var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+st.querySelectorAll('b').forEach(function(b){var v=+b.dataset.v;if(red){b.textContent=v;return}var t0=null;function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/900);b.textContent=Math.round(v*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)});
+})();
 
 $('hsearch').onsubmit=e=>{e.preventDefault();clearTimeout(qT);st.q=$('q').value;render();$('count').scrollIntoView({behavior:'smooth',block:'start'});};
 $('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!b)return;
