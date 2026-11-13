@@ -527,6 +527,16 @@ p,li,.desc{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
 @media (min-width:1181px){.xs-mob{display:none}}
 @media (prefers-reduced-motion:reduce){.xs-c{transition:none}}
 h1.hello{margin:0;font-size:inherit}
+
+/* ===== Agencement resserré (mobile) ===== */
+#hsub{display:none}
+.xs-slot{margin:6px 0 14px}
+@media (max-width:860px){
+ .xs-stats{grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0}
+ .xs-st{padding:7px 4px;border-radius:12px}.xs-st b{font-size:18px}.xs-st span{font-size:10.5px;line-height:1.2;display:block}
+ .lang{position:relative;padding:6px 9px}.lang select{position:absolute;inset:0;opacity:0;width:100%;max-width:none;cursor:pointer}
+ .topbar .hsearch{flex:1 1 auto}
+}
 </style>
 </head>
 <body class="v-offres">
@@ -1521,6 +1531,22 @@ var red=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matche
 st.querySelectorAll('b').forEach(function(b){var v=+b.dataset.v;if(red){b.textContent=v;return}var t0=null;function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/900);b.textContent=Math.round(v*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)});
 })();
 
+
+/* Agencement mobile : blocs secondaires répartis dans la liste des offres */
+(function(){var mq=window.matchMedia('(max-width:860px)');var L=$('list');if(!L)return;
+ var soonEls=[].slice.call(document.querySelectorAll('#xs .xs-h.xs-mob,#xs .xs-row.xs-mob,#xs .xs-emp.xs-mob'));
+ var wa=document.querySelector('#xs .xs-wa'),cp=$('cta-profil'),bt=$('ban-top');
+ var home={};[wa,cp,bt].forEach(function(e){if(e)home[e.id||'wa']={p:e.parentNode,n:e.nextSibling}});
+ var A=document.createElement('div');A.className='xs-slot';var B=document.createElement('div');B.className='xs-slot';var C=document.createElement('div');C.className='xs-slot';
+ function cards(){return [].slice.call(L.children).filter(function(e){return !e.classList.contains('ad')})}
+ function place(){if(!mq.matches)return;var c=cards();
+  soonEls.slice(0,2).forEach(function(e){A.appendChild(e)});soonEls.slice(2).forEach(function(e){B.appendChild(e)});if(cp)B.appendChild(cp);if(bt)C.appendChild(bt);
+  if(c.length>4)c[3].after(A);else L.after(A);
+  if(c.length>12)c[11].after(B);else A.after(B);
+  if(c.length>18)c[17].after(C);else B.after(C);
+  if(wa)L.after(wa);}
+ var R=render;render=function(k){R(k);place()};place();
+})();
 $('hsearch').onsubmit=e=>{e.preventDefault();clearTimeout(qT);st.q=$('q').value;render();$('count').scrollIntoView({behavior:'smooth',block:'start'});};
 $('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!b)return;
   if(b.dataset.pp){st.pays=st.pays===b.dataset.pp?'':b.dataset.pp;}
