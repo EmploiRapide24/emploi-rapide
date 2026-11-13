@@ -1261,7 +1261,7 @@ function aboHTML(){
   if(!SB_ON) body=`<p>Les alertes par e-mail sont disponibles sur <a href="https://emploirapide24.com/" target="_blank" rel="noopener">emploirapide24.com</a>.</p>`;
   else if(!SESS) body=`<p>Recevez chaque matin les nouvelles offres de l'alerte <b>${lib}</b>. Inscrivez-vous d'abord avec votre e-mail (un code vous sera envoyé, pas de mot de passe).</p>${loginHTML('abo')}`;
   else if(deja) body=`<p>✅ Vous recevez déjà les nouvelles offres de l'alerte <b>${lib}</b> à <b>${esc(SESS.email)}</b>, chaque matin.</p><div class="acts"><button class="btn ghost" data-abo-del="${deja.id}">Ne plus recevoir cette alerte</button></div>`;
-  else body=`<p>Recevoir chaque matin à <b>${esc(SESS.email)}</b> les nouvelles offres de l'alerte <b>${lib}</b> ?</p><p class="cnote">Un seul e-mail par jour, seulement s'il y a des nouveautés. Désabonnement en un clic dans chaque e-mail.</p><div class="acts"><button class="btn" data-abo-add>📧 Oui, m'abonner</button></div>`;
+  else body=`<p>Recevoir chaque matin à <b>${esc(SESS.email)}</b> les nouvelles offres de l'alerte <b>${lib}</b> ?</p><p><label style="font-weight:700">Fréquence : <select id="abo-freq" style="font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--line)"><option value="jour">chaque matin</option><option value="semaine">une fois par semaine (le lundi)</option></select></label></p><p class="cnote">Un seul e-mail par jour, seulement s'il y a des nouveautés. Désabonnement en un clic dans chaque e-mail.</p><div class="acts"><button class="btn" data-abo-add>📧 Oui, m'abonner</button></div>`;
   return `<div class="mdl-c" role="dialog" aria-modal="true" aria-label="Alerte par e-mail"><button class="mdl-x" data-abo-close aria-label="Fermer">×</button><h2>📧 Alerte par e-mail</h2>${body}</div>`;
 }
 function openAbo(s){ ABO_S=s; let m=$('mdl-abo'); if(!m){m=document.createElement('div');m.id='mdl-abo';m.className='mdl';document.body.appendChild(m);} m.innerHTML=aboHTML(); m.hidden=false; }
@@ -1271,9 +1271,9 @@ document.addEventListener('click',async e=>{
   if(e.target.closest('[data-abo-close]')||e.target.id==='mdl-abo'){closeAbo();return;}
   const add=e.target.closest('[data-abo-add]');
   if(add){ add.disabled=true; const tk=await token(); if(!tk){toast('Session expirée : reconnectez-vous.'); refreshAbo(); return;}
-    try{ await sb('abonnements',{method:'POST',headers:{Prefer:'return=minimal',Authorization:'Bearer '+tk},body:JSON.stringify({email:SESS.email,criteres:ABO_S,libelle:alNom(ABO_S).slice(0,200)})});
+    try{ await sb('abonnements',{method:'POST',headers:{Prefer:'return=minimal',Authorization:'Bearer '+tk},body:JSON.stringify({email:SESS.email,criteres:ABO_S,libelle:alNom(ABO_S).slice(0,200),frequence:(($('abo-freq')||{}).value||'jour')})});
       if(!alertes.some(a=>JSON.stringify(a.s)===JSON.stringify(ABO_S))){alertes.push({s:ABO_S,vu:today});saveAl();}
-      await loadAbos(); refreshAbo(); toast('Abonnement enregistré : les nouvelles offres vous seront envoyées chaque matin.'); }
+      await loadAbos(); refreshAbo(); toast('Abonnement enregistré : vous recevrez les nouvelles offres par e-mail.'); }
     catch(err){ add.disabled=false; toast("L'abonnement n'a pas pu être enregistré (10 alertes maximum). Réessayez."); }
     return; }
   const del=e.target.closest('[data-abo-del]');
@@ -1594,6 +1594,7 @@ st.querySelectorAll('b').forEach(function(b){var v=+b.dataset.v;if(red){b.textCo
   if(L.length){var r=document.createElement('div');r.className='xs-row';L.sort(function(a,b){return (b.add||'').localeCompare(a.add||'')}).slice(0,10).forEach(function(j){var c=document.createElement('button');c.className='xs-c';c.type='button';var tt=document.createElement('div');tt.className='xs-t';tt.textContent=j.t;var ee=document.createElement('div');ee.className='xs-e';ee.textContent=(j.e||'')+' · '+(j.v?j.v+', ':'')+j.p;c.appendChild(tt);c.appendChild(ee);if(j.add===D.maj){var n=document.createElement('span');n.className='xs-b xs-new';n.textContent='Nouveau';c.appendChild(n)}c.onclick=function(){show('offres');openOffer(j.id)};r.appendChild(c)});d.appendChild(r);
    var a=document.createElement('button');a.className='linkbtn';a.style.cssText='border:0;background:none;color:#1d5bd8;font:inherit;font-weight:800;cursor:pointer;padding:4px 0';a.textContent='Voir toutes mes offres →';a.onclick=function(){show('offres');if(M.p&&$('pays')){$('pays').value=M.p;$('pays').dispatchEvent(new Event('change',{bubbles:true}))}if(M.s&&$('secteur')){$('secteur').value=M.s;$('secteur').dispatchEvent(new Event('change',{bubbles:true}))}var c2=$('count');c2&&c2.scrollIntoView({behavior:'smooth'})};d.appendChild(a);}
   else{var p=document.createElement('p');p.style.cssText='margin:6px 0 0;font-size:14px';p.textContent='Pas d\'offre pour ce choix aujourd\'hui. Créez une alerte : vous serez prévenu dès qu\'une offre arrive.';d.appendChild(p)}
+  if(window.erPushBtn){var pb=erPushBtn();pb&&d.appendChild(pb)}
   var st=X.querySelector('.xs-stats');st?st.after(d):X.prepend(d);}
  function ask(){var cnt={};J.forEach(function(j){cnt[j.p]=(cnt[j.p]||0)+1});var pays=Object.entries(cnt).sort(function(a,b){return b[1]-a[1]}).slice(0,14).map(function(e){return e[0]});
   var sc={};J.forEach(function(j){if(j.s)sc[j.s]=(sc[j.s]||0)+1});var secs=Object.entries(sc).sort(function(a,b){return b[1]-a[1]}).map(function(e){return e[0]});
@@ -1607,6 +1608,38 @@ st.querySelectorAll('b').forEach(function(b){var v=+b.dataset.v;if(red){b.textCo
  window.erPourVous=ask;bloc();
  if(!M&&!store.get('er-moi-skip',0))setTimeout(function(){if(!document.querySelector('.onb-bg'))ask()},1800);
 })();
+
+/* Notifications sur téléphone (Web Push) */
+const VAPID='BHm02vYyfGeu98RiBIQVJDZe4PXw2ClYf4_wnRLVfW4nFGLEFgtRFzjMPLG8QYS1qiBIDBPP6Z5TKJrdv5IWPSA';
+const PUSH_OK = SB_ON && 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+function b64u(s){const p='='.repeat((4-s.length%4)%4);const r=atob((s+p).replace(/-/g,'+').replace(/_/g,'/'));return Uint8Array.from([...r].map(c=>c.charCodeAt(0)))}
+async function erPush(){
+  if(!PUSH_OK){toast('Votre navigateur ne permet pas les notifications. Créez plutôt une alerte par e-mail.');return;}
+  try{const perm=await Notification.requestPermission(); if(perm!=='granted'){toast('Notifications refusées. Vous pouvez les réactiver dans les réglages du navigateur.');return;}
+    const reg=await navigator.serviceWorker.ready; let sub=await reg.pushManager.getSubscription(); if(!sub) sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:b64u(VAPID)});
+    const j=sub.toJSON(); const M2=store.get('er-moi',{})||{};
+    await sb('push_subs',{method:'POST',headers:{Prefer:'return=minimal,resolution=ignore-duplicates'},body:JSON.stringify({endpoint:j.endpoint,p256dh:j.keys.p256dh,auth:j.keys.auth,criteres:{pays:M2.p||'',secteur:M2.s||''}})}).catch(e=>{if(!/409/.test(String(e)))throw e});
+    store.set('er-push',1); document.querySelectorAll('.push-btn').forEach(b=>b.remove()); toast('🔔 C\'est activé : vous serez prévenu chaque matin des nouvelles offres'+(M2.p?' – '+M2.p:'')+'.');
+    try{gtag('event','notifications_activees')}catch(x){}
+  }catch(e){toast('Impossible d\'activer les notifications pour le moment.');}
+}
+window.erPush=erPush;window.erPushBtn=function(){return pushBtn()};
+function pushBtn(){if(!PUSH_OK||store.get('er-push',0)||(window.Notification&&Notification.permission==='denied'))return null;const b=document.createElement('button');b.type='button';b.className='push-btn';b.textContent='🔔 Me prévenir des nouvelles offres';b.style.cssText='display:block;width:100%;margin-top:8px;background:#1d5bd8;color:#fff;border:0;border-radius:10px;padding:10px;font:inherit;font-weight:800;cursor:pointer';b.onclick=erPush;return b}
+(function(){const pv=$('pv');const b=pv&&pv.querySelector('.push-btn')?null:pushBtn();if(b){if(pv)pv.appendChild(b);else{const x=$('xs');const st=x&&x.querySelector('.xs-stats');st&&st.after(b)}}})();
+/* Favoris (j'aime) et suivi des candidatures synchronisés avec le compte */
+let SYNC_T=null;
+async function syncPush(){if(!SB_ON||!SESS)return;const tk=await token();if(!tk)return;
+  try{await sb('sync?on_conflict=user_id',{method:'POST',headers:{Prefer:'return=minimal,resolution=merge-duplicates',Authorization:'Bearer '+tk},body:JSON.stringify({donnees:{likes:LK,suivi:TR},maj:new Date().toISOString()})})}catch(e){}}
+async function syncPull(){if(!SB_ON||!SESS)return;const tk=await token();if(!tk)return;
+  try{const r=await sb('sync?select=donnees',{headers:{Authorization:'Bearer '+tk}});const d=(r&&r[0]&&r[0].donnees)||{};
+    const L2=Object.assign({},d.likes||{},LK), T2=Object.assign({},d.suivi||{},TR);
+    const ch=JSON.stringify(L2)!==JSON.stringify(LK)||JSON.stringify(T2)!==JSON.stringify(TR);
+    LK=L2;TR=T2;store.set('er-likes',LK);store.set('er-suivi',TR);
+    if(ch){try{badge()}catch(e){}try{render(true)}catch(e){}}
+    syncPush();}catch(e){}}
+(function(){const s0=store.set;store.set=function(k,v){s0(k,v);if((k==='er-likes'||k==='er-suivi')&&SESS){clearTimeout(SYNC_T);SYNC_T=setTimeout(syncPush,1500)}if(k==='er-sess'&&v)syncPull()};})();
+const ks0=keepSess;keepSess=function(j){ks0(j);setTimeout(syncPull,300)};
+if(SESS)setTimeout(syncPull,1500);
 $('hsearch').onsubmit=e=>{e.preventDefault();clearTimeout(qT);st.q=$('q').value;render();$('count').scrollIntoView({behavior:'smooth',block:'start'});};
 $('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!b)return;
   if(b.dataset.pp){st.pays=st.pays===b.dataset.pp?'':b.dataset.pp;}
