@@ -562,6 +562,12 @@ h1.hello{margin:0;font-size:inherit}
 .recf{display:grid;gap:8px;margin-top:10px}.recf input,.recf textarea,.recf select{font:inherit;font-size:14px;padding:9px 11px;border:1px solid var(--line,#dbe3f0);border-radius:10px;background:#fff;color:#0f1a33}
 .recf button{background:#1d5bd8;color:#fff;border:0;border-radius:10px;padding:11px;font:inherit;font-weight:800;cursor:pointer}
 .tools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}.tools a{background:#fff;border:1px solid var(--line,#dbe3f0);border-radius:12px;padding:9px 13px;text-decoration:none;font-weight:700;font-size:14px;color:#1d5bd8}
+
+/* ===== Adaptation à tous les écrans : rien ne dépasse la largeur de l'appareil ===== */
+html,body{max-width:100%;overflow-x:hidden}
+#list,#list>*,.xs,.xs-slot,.xs-row,.pv,.composer,main,.layout>*{min-width:0;max-width:100%}
+.xs-slot .xs-row,.pv .xs-row{width:100%}
+img,svg,video,iframe,table{max-width:100%}
 </style>
 </head>
 <body class="v-offres">
