@@ -563,6 +563,10 @@ img,svg,video,iframe,table{max-width:100%}
 .pager button:disabled{opacity:.4;cursor:default}.pager button:not(:disabled):not(.on):hover{border-color:#1d5bd8;color:#1d5bd8}
 .pg-dots{color:var(--mute,#5b6680);padding:0 2px}
 @media (max-width:480px){.pg-t{display:none}.pager{gap:5px}.pager button{min-width:38px;padding:0 8px}}.pg-info{flex-basis:100%;text-align:center;font-size:12.5px;color:var(--mute,#5b6680);margin-top:2px}
+
+.side-src details.src{margin:0 0 8px;border:0;background:none;padding:0}
+.side-src details.src summary{font-weight:800;font-size:14px;cursor:pointer;padding:6px 0}
+.side-src details.src ul{font-size:13px;padding-left:18px;max-height:340px;overflow:auto}
 </style>
 </head>
 <body class="v-offres">
@@ -1662,6 +1666,18 @@ async function syncPull(){if(!SB_ON||!SESS)return;const tk=await token();if(!tk)
 (function(){const s0=store.set;store.set=function(k,v){s0(k,v);if((k==='er-likes'||k==='er-suivi')&&SESS){clearTimeout(SYNC_T);SYNC_T=setTimeout(syncPush,1500)}if(k==='er-sess'&&v)syncPull()};})();
 const ks0=keepSess;keepSess=function(j){ks0(j);setTimeout(syncPull,300)};
 if(SESS)setTimeout(syncPull,1500);
+
+/* Ordinateur : « Comment les offres sont vérifiées », sites carrières et portails dans la colonne de droite, après « Ils recrutent » */
+(function(){var R=$('rside');if(!R)return;var D=[].slice.call(document.querySelectorAll('#v-offres details.src'));if(!D.length)return;
+ var home=D[0].parentNode,anchor=D[D.length-1].nextSibling,mq=matchMedia('(min-width:1181px)'),busy=false;
+ var box=document.createElement('div');box.className='side side-src';
+ function place(){if(busy)return;busy=true;
+  if(mq.matches){D.forEach(function(d){box.appendChild(d)});var ils=[].slice.call(R.children).find(function(e){var h=e.querySelector('h3');return h&&/Ils recrutent/.test(h.textContent)});if(ils){if(ils.nextElementSibling!==box)ils.after(box)}else if(box.parentNode!==R)R.appendChild(box);}
+  else{D.forEach(function(d){home.insertBefore(d,anchor)});box.remove();}
+  busy=false;}
+ new MutationObserver(function(){if(mq.matches&&box.parentNode!==R)place()}).observe(R,{childList:true});
+ (mq.addEventListener?mq.addEventListener('change',place):mq.addListener(place));place();
+})();
 $('hsearch').onsubmit=e=>{e.preventDefault();clearTimeout(qT);st.q=$('q').value;render();$('count').scrollIntoView({behavior:'smooth',block:'start'});};
 $('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!b)return;
   if(b.dataset.pp){st.pays=st.pays===b.dataset.pp?'':b.dataset.pp;}
