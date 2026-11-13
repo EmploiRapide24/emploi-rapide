@@ -1,250 +1,250 @@
 {
  "version": 1,
- "maj": "2026-11-08",
- "curseur": 0,
+ "maj": "2026-11-13",
+ "curseur": 40,
  "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
  "pays": {
   "Sénégal": {
    "emp": [
     {
      "nom": "Sonatel (Orange)",
-     "url": "",
-     "vu": "",
+     "url": "https://sonatel.sn/capital-humain/travailler-a-sonatel/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Free Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Expresso Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Wave",
-     "url": "",
-     "vu": "",
+     "url": "https://www.wave.com/en/careers/index.html",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Senelec",
-     "url": "",
-     "vu": "",
+     "url": "https://recrutement.senelec.sn/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "SDE / Sen'Eau",
-     "url": "",
-     "vu": "",
+     "url": "https://www.seneau.sn/recrutement/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Port autonome de Dakar",
-     "url": "",
-     "vu": "",
+     "url": "https://www.portdakar.sn/fr/offre-demploi",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "DP World Dakar",
-     "url": "",
-     "vu": "",
+     "url": "https://www.dpworld.com/en/careers",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Dakar Dem Dikk",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Air Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://flyairsenegal.com/recrutement/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "AIBD",
-     "url": "",
-     "vu": "",
+     "url": "https://aibd.sn/rejoignez-nous/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "SAR (Société africaine de raffinage)",
-     "url": "",
-     "vu": "",
+     "url": "https://www.sar.sn/fr/opportunites/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Petrosen",
-     "url": "",
-     "vu": "",
+     "url": "https://www.petrosen.sn/offres-demploi/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Woodside Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.woodside.com/careers",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Eramet Grande Côte",
-     "url": "",
-     "vu": "",
+     "url": "https://grande-cote.eramet.com/fr/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Sococim",
-     "url": "",
-     "vu": "",
+     "url": "https://www.sococim.com/offres-d-emploi",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Dangote Cement Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Ciments du Sahel",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Industries chimiques du Sénégal (ICS)",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "SENICO",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Sedima",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Patisen",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Kirène",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Auchan Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.auchan-retail.com/fr/location/auchan-retail-senegal/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "CBAO Attijariwafa",
-     "url": "",
-     "vu": "",
+     "url": "https://www.cbao.sn/fr/carriere/pourquoi-choisir-la-cbao",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Société Générale Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://societegenerale.sn/fr/recrutement/notre-politique/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Ecobank Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.ecobank.com/group/careers",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "BOA Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.boasenegal.com/institutionnels/offres-demploi/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "BICIS / BNDE",
-     "url": "",
-     "vu": "",
+     "url": "https://www.bicis.sn/nous-connaitre/recrutement/offres-demploi/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Banque de l'Habitat du Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.bhs.sn/RECRUTEMENT",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Coris Bank Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://senegal.coris.bank/actualites/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Orabank Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.orabank.net/fr/carriere/appel-candidatures-externes",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "UBA Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.ubagroup.com/about-us/careers/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "La Poste Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "CSS (Compagnie sucrière sénégalaise)",
-     "url": "",
-     "vu": "",
+     "url": "https://www.css.sn/travailler-a-la-css/",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "SODEFITEX",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Total Energies Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://totalenergies.sn/rejoignez-nous",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Vivo Energy Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.vivoenergy.com/en/careers",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Eiffage Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "CDE",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "APIX",
@@ -831,7 +831,8 @@
     "optioncarriere.cm",
     "kamerpower.com",
     "minfopra.gov.cm",
-    "fne.cm"
+    "fne.cm",
+    "cm.minajobs.net"
    ]
   },
   "RD Congo": {
@@ -3338,7 +3339,8 @@
     "optioncarriere.com",
     "linkedin.com/jobs",
     "glassdoor",
-    "indeed"
+    "indeed",
+    "remotive.com"
    ]
   }
  }
