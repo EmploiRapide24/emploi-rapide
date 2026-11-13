@@ -6,7 +6,7 @@ d = json.load(open(os.path.join(SITE, "data.json")))
 os.environ.setdefault("ER_DOMAIN", "https://emploirapide24.com")
 # 4) Pages d'offres (partage WhatsApp + Google for Jobs) et plan du site
 import html, datetime
-DOMAIN = os.environ.get("ER_DOMAIN", "https://VOTRE-DOMAINE").rstrip("/")
+DOMAIN = (os.environ.get("ER_DOMAIN") or ("https://" + open(os.path.join(SITE, "CNAME")).read().strip() if os.path.exists(os.path.join(SITE, "CNAME")) else "https://emploirapide24.com")).rstrip("/")
 def hid(s):
     h = 0x811c9dc5
     b = s.encode("utf-16-le")
@@ -81,6 +81,38 @@ for j in d["offres"]:
 </body></html>"""
     open(os.path.join(odir, i + ".html"), "w").write(page)
     urls.append(j_url)
+# Offres clôturées : gardées 30 jours (page « Offre clôturée » + offres similaires, hors sitemap)
+apath = os.path.join(SITE, "archive.json")
+try: arch = json.load(open(apath))
+except Exception: arch = {}
+ouvertes = {}
+for j in _open:
+    ouvertes[hid(j["t"] + "|" + j["e"])] = {"t": j["t"], "e": j["e"], "p": j["p"], "s": j.get("s", ""), "vu": today}
+arch.update(ouvertes)
+lim30 = (datetime.date.fromisoformat(today) - datetime.timedelta(days=30)).isoformat() if today else ""
+arch = {k_: v for k_, v in arch.items() if v.get("vu", "") >= lim30}
+for i, a in arch.items():
+    if i in ouvertes: continue
+    sim = simil(a)
+    page = (f'<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+      f'<title>Offre clôturée : {E(a["t"])} – {E(a["e"])} | Emploi Rapide 24</title><meta name="robots" content="noindex,follow">'
+      f'<link rel="icon" href="../icons/icon-192.png"><script src="../ga.js" defer></script>'
+      '<style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:24px 18px;color:#0f1a33}h1{font-size:23px;line-height:1.25}a{color:#1d5bd8}.x{background:#fee2e2;color:#b91c1c;border-radius:999px;padding:3px 12px;font-weight:700;font-size:14px}.b{display:inline-block;background:#1d5bd8;color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:650;margin:6px 6px 0 0}.al{background:#f5b800;color:#0f1a33}.sim{list-style:none;padding:0}.sim li{border:1px solid #dde2ee;border-radius:10px;padding:8px 12px;margin:6px 0}.sim a{font-weight:650;text-decoration:none}.sim span{display:block;font-size:13px;color:#56607a}</style></head><body>'
+      f'<p><a href="../">← Emploi Rapide 24</a></p><p><span class="x">Offre clôturée</span></p><h1>{E(a["t"])}</h1>'
+      f'<p><b>{E(a["e"])}</b> · {E(a["p"])}</p><p>Cette offre n\'est plus disponible : sa date limite est passée ou l\'employeur l\'a retirée. Voici des offres ouvertes qui pourraient vous intéresser.</p>'
+      f'<a class="b al" href="../#alerte={quote(a["p"])}">📧 Recevoir les nouvelles offres {E(a["p"])} par e-mail</a> <a class="b" href="../">Voir toutes les offres du jour</a>'
+      f'{sim}</body></html>')
+    open(os.path.join(odir, i + ".html"), "w").write(page)
+json.dump(arch, open(apath, "w"), ensure_ascii=False, separators=(",", ":"))
+# Page 404 utile
+cnt404 = {}
+for j in _open: cnt404[j["p"]] = cnt404.get(j["p"], 0) + 1
+p404 = ('<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Page introuvable – Emploi Rapide 24</title><meta name="robots" content="noindex">'
+  '<link rel="icon" href="/icons/icon-192.png"><script src="/ga.js" defer></script><style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:0 auto;padding:30px 18px;color:#0f1a33;text-align:center}a{color:#1d5bd8}.b{display:inline-block;background:#1d5bd8;color:#fff;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:700;margin:8px}.t a{display:inline-block;margin:4px;padding:6px 12px;border:1px solid #dbe3f0;border-radius:999px;text-decoration:none;font-size:14px}</style></head><body>'
+  '<p style="font-size:44px;margin:0">🔎</p><h1>Cette page n\'existe pas ou plus</h1><p>L\'offre a peut-être été clôturée. Chaque matin, de nouvelles offres d\'emploi sont publiées : retrouvez-les ici.</p>'
+  '<a class="b" href="/">Voir les offres du jour</a><a class="b" style="background:#f5b800;color:#0f1a33" href="/#alerte">📧 Créer une alerte e-mail</a>'
+  '<p class="t">' + "".join('<a href="/emploi/offres-emploi-' + re.sub(r"[^a-z0-9]+", "-", __import__("unicodedata").normalize("NFKD", p_).encode("ascii", "ignore").decode().lower()).strip("-") + '.html">' + E(p_) + '</a>' for p_, n_ in sorted(cnt404.items(), key=lambda x: -x[1]) if n_ >= 3) + '</p></body></html>')
+open(os.path.join(SITE, "404.html"), "w").write(p404)
 # Page « Toutes les offres » (liste publique regroupée par pays)
 groupes = {}
 for j in d["offres"]:
