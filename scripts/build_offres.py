@@ -110,8 +110,62 @@ liste = ('<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name=
  '<h1>Toutes les offres d\'emploi (' + str(n_total) + ')</h1><p style="margin:0 0 10px;color:#4b5563">Mise à jour du ' + E(today) + '. Classées par pays, puis par date limite.</p>'
  '<p class="som">' + sommaire + '</p>' + blocs +
  '<p style="font-size:13px;color:#6b7280;margin-top:30px">Un vrai recruteur ne demande jamais d\'argent. Seule l\'annonce d\'origine fait foi.</p></main></body></html>')
+# Pages par pays, par pays × secteur et stages (SEO)
+import unicodedata
+def slug(x):
+    x = unicodedata.normalize("NFKD", x).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", x).strip("-")
+PREP = {"Sénégal":"au Sénégal","Côte d'Ivoire":"en Côte d'Ivoire","Cameroun":"au Cameroun","RD Congo":"en RD Congo","Congo":"au Congo","Gabon":"au Gabon","Bénin":"au Bénin","Togo":"au Togo","Burkina Faso":"au Burkina Faso","Mali":"au Mali","Niger":"au Niger","Guinée":"en Guinée","Mauritanie":"en Mauritanie","Madagascar":"à Madagascar","Maroc":"au Maroc","Tunisie":"en Tunisie","Tchad":"au Tchad","Algérie":"en Algérie","Centrafrique":"en Centrafrique","Burundi":"au Burundi","Rwanda":"au Rwanda","Djibouti":"à Djibouti","Comores":"aux Comores","Haïti":"en Haïti","France":"en France","Belgique":"en Belgique","Suisse":"en Suisse","Canada":"au Canada","Luxembourg":"au Luxembourg","Monde (télétravail)":"en télétravail"}
+MOIS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"]
+mois = MOIS[int(today[5:7])-1] + " " + today[:4] if len(today) >= 7 else ""
+edir = os.path.join(SITE, "emploi"); shutil.rmtree(edir, ignore_errors=True); os.makedirs(edir)
+def ligne2(j):
+    return ligne(j).replace('href="offre/', 'href="../offre/')
+def page_cat(fn, titre, h1, intro, offres, liens=""):
+    n = len(offres)
+    html_ = ('<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+     '<title>' + E(titre) + '</title><meta name="description" content="' + E(intro[:155]) + '">'
+     '<link rel="canonical" href="' + DOMAIN + '/emploi/' + fn + '"><meta property="og:image" content="' + DOMAIN + '/icons/og.png"><link rel="icon" href="../icons/icon-192.png"><script src="../ga.js" defer></script>'
+     '<style>body{font-family:system-ui,sans-serif;margin:0;color:#1f2937;background:#f3f6fb}main{max-width:1000px;margin:0 auto;padding:20px 16px 60px}h1{font-size:25px;margin:8px 0 6px;color:#1d5bd8}p{text-align:justify}'
+     'ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}li{background:#fff;border:1px solid #e3e8f2;border-radius:12px;padding:10px 12px}li a{font-weight:800;display:block;color:#1d5bd8;text-decoration:none}li span{font-size:13px;color:#6b7280}'
+     '.tags a{display:inline-block;margin:3px 4px 3px 0;padding:5px 11px;border-radius:999px;background:#fff;border:1px solid #dbe3f0;color:#1d5bd8;text-decoration:none;font-size:14px;font-weight:600}.cta{display:inline-block;margin:10px 8px 14px 0;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}</style></head><body><main>'
+     '<p><a href="../" style="font-weight:800;color:#1d5bd8;text-decoration:none;font-size:19px">Emploi Rapide <span style="color:#f5b800">24</span></a> › <a href="../offres.html" style="color:#1d5bd8">Toutes les offres</a></p>'
+     '<h1>' + E(h1) + '</h1><p>' + E(intro) + '</p>'
+     '<a class="cta" style="background:#f5b800;color:#0f1a33" href="../#alerte">📧 Recevoir ces offres par e-mail</a>'
+     '<a class="cta" style="background:#25d366;color:#fff" href="https://wa.me/?text=' + quote(h1 + ' : ' + DOMAIN + '/emploi/' + fn) + '" target="_blank" rel="noopener">💬 Partager sur WhatsApp</a>'
+     + liens + '<ul>' + "".join(ligne2(j) for j in sorted(offres, key=lambda j: (j.get("lim") or "9999", j["t"]))) + '</ul>'
+     '<p style="font-size:13px;color:#6b7280;margin-top:26px">Liste mise à jour le ' + E(today) + '. Résumés rédigés par Emploi Rapide 24 ; seule l\'annonce d\'origine fait foi. Un vrai recruteur ne demande jamais d\'argent.</p></main></body></html>')
+    open(os.path.join(edir, fn), "w").write(html_); urls.append(DOMAIN + "/emploi/" + fn)
+n_off = len(urls) - 1
+cats = {}
+for pays_, lst in groupes.items():
+    if len(lst) < 3: continue
+    pr = PREP.get(pays_, "– " + pays_)
+    secs = {}
+    for j in lst: secs.setdefault(j.get("s") or "Autres", []).append(j)
+    stg = [j for j in lst if j.get("c") in ("Stage", "Volontariat") or j.get("exp") == 0]
+    sub = []
+    for sec, l2 in sorted(secs.items(), key=lambda x: -len(x[1])):
+        if len(l2) >= 3:
+            fn2 = "offres-emploi-" + slug(pays_) + "-" + slug(sec) + ".html"
+            page_cat(fn2, f"Emploi {sec} {pr} ({len(l2)} offres) – {mois} | Emploi Rapide 24", f"Offres d'emploi {sec} {pr}",
+                     f"{len(l2)} offres d'emploi ouvertes dans le secteur {sec} {pr}, vérifiées et mises à jour chaque matin, avec l'adresse et les étapes pour postuler.", l2,
+                     '<p class="tags"><a href="offres-emploi-' + slug(pays_) + '.html">← Toutes les offres ' + E(pr) + '</a></p>')
+            sub.append((sec, fn2, len(l2)))
+    if len(stg) >= 2:
+        fn3 = "stages-" + slug(pays_) + ".html"
+        page_cat(fn3, f"Stages et premiers emplois {pr} ({len(stg)}) – {mois} | Emploi Rapide 24", f"Stages et premiers emplois {pr}",
+                 f"{len(stg)} stages, volontariats et postes ouverts aux débutants {pr}, mis à jour chaque matin.", stg,
+                 '<p class="tags"><a href="offres-emploi-' + slug(pays_) + '.html">← Toutes les offres ' + E(pr) + '</a></p>')
+        sub.insert(0, ("Stages et débutants", fn3, len(stg)))
+    fn = "offres-emploi-" + slug(pays_) + ".html"
+    tags = ('<p class="tags">' + "".join('<a href="' + f + '">' + E(t) + ' (' + str(n) + ')</a>' for t, f, n in sub) + '</p>') if sub else ""
+    page_cat(fn, f"Offres d'emploi {pr} ({len(lst)}) – {mois} | Emploi Rapide 24", f"Offres d'emploi {pr}",
+             f"{len(lst)} offres d'emploi ouvertes {pr} : entreprises, institutions et ONG. Chaque offre est vérifiée à la source, avec l'adresse et les étapes pour postuler. Mise à jour chaque matin.", lst, tags)
+    cats[pays_] = fn
+liste = liste.replace('<p class="som">', '<p class="som"><b>Pages par pays :</b> ' + " · ".join('<a href="emploi/' + cats[p] + '">' + E(p) + '</a>' for p in ordre if p in cats) + '</p><p class="som">', 1)
 open(os.path.join(SITE, "offres.html"), "w").write(liste)
 urls.insert(1, DOMAIN + "/offres.html")
 open(os.path.join(SITE, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
 open(os.path.join(SITE, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n")
-print("ok", len(d["offres"]), "pages", len(urls)-2)
+print("ok", len(d["offres"]), "pages", n_off, "categories", len(os.listdir(edir)))
