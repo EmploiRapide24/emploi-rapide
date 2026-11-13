@@ -524,6 +524,18 @@ h1.hello{margin:0;font-size:inherit}
  .lang{position:relative;padding:6px 9px}.lang select{position:absolute;inset:0;opacity:0;width:100%;max-width:none;cursor:pointer}
  .topbar .hsearch{flex:1 1 auto}
 }
+
+/* ===== Colonne de gauche : compléments ===== */
+#side-x{display:none}
+@media (min-width:1181px){#side-x{display:block;margin-top:14px}}
+.sx-box{border:1px solid var(--line,#e3e8f2);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card,#fff)}
+.sx-box h4{margin:0 0 8px;font-size:14px;font-weight:800}
+.sx-pays a{display:flex;justify-content:space-between;padding:4px 0;font-size:13.5px;color:var(--ink,#0f1a33);text-decoration:none;border-bottom:1px dashed #eef1f6}
+.sx-pays a:hover{color:#1d5bd8}.sx-pays a span{color:var(--mute,#5b6680);font-size:12.5px}
+.sx-tip{background:#fff7e0;border-color:#f5d77a}.sx-tip p{margin:0;font-size:13.5px;line-height:1.45;text-align:left}
+.sx-bar{display:block;position:relative;width:100%;border:0;background:none;padding:5px 0 7px;font:inherit;font-size:13px;text-align:left;cursor:pointer;color:var(--ink,#0f1a33)}.sx-bar .sx-bl{display:inline-block;max-width:80%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sx-bar b{float:right;color:#1d5bd8}.sx-bar i{display:block;height:5px;border-radius:9px;background:linear-gradient(90deg,#1d5bd8,#3b7bff);margin-top:3px}.sx-bar:hover .sx-bl{color:#1d5bd8}
+.sx-note{margin:0 0 6px;font-size:12.5px;color:var(--mute,#5b6680);text-align:left}.sx-off{display:block;padding:6px 0;border-top:1px dashed #eef1f6;text-decoration:none;color:var(--ink,#0f1a33)}.sx-off b{display:block;font-size:13px;line-height:1.3}.sx-off span{font-size:12px;color:#15803d;font-weight:700}.sx-off:hover b{color:#1d5bd8}
+.sx-btn{display:block;width:100%;text-align:center;border:0;border-radius:10px;padding:9px;font:inherit;font-weight:800;font-size:13.5px;cursor:pointer;text-decoration:none;margin-top:6px}
 </style>
 </head>
 <body class="v-offres">
@@ -548,6 +560,7 @@ h1.hello{margin:0;font-size:inherit}
 </nav>
   <div class="shorts" id="shorts"></div>
   <p class="lfoot" id="maj"></p>
+  <div id="side-x"></div>
 </aside>
 <main class="feed wrap">
 <div class="composer" id="composer">
@@ -1530,6 +1543,25 @@ st.querySelectorAll('b').forEach(function(b){var v=+b.dataset.v;if(red){b.textCo
   if(c.length>18)c[17].after(C);else B.after(C);
   if(wa)L.after(wa);}
  var R=render;render=function(k){R(k);place()};place();
+})();
+
+/* Colonne de gauche (ordinateur) : secteurs, salaires affichés, concours et fonction publique */
+(function(){var X=$('side-x');if(!X)return;
+ var J=jobsAll.filter(function(j){return !j.spon});
+ function box(t){var d=document.createElement('div');d.className='sx-box';var h=document.createElement('h4');h.textContent=t;d.appendChild(h);X.appendChild(d);return d}
+ function setSel(id,v){var e=$(id);if(!e)return;e.value=v;e.dispatchEvent(new Event('change',{bubbles:true}));var c=$('count');c&&c.scrollIntoView({behavior:'smooth'})}
+ /* 1. Secteurs qui recrutent : barres */
+ var sc={};J.forEach(function(j){if(j.s)sc[j.s]=(sc[j.s]||0)+1});var ss=Object.entries(sc).sort(function(a,b){return b[1]-a[1]}).slice(0,8),mx=ss.length?ss[0][1]:1;
+ var b1=box('📊 Secteurs qui recrutent');
+ ss.forEach(function(e){var r=document.createElement('button');r.className='sx-bar';r.type='button';var l=document.createElement('span');l.className='sx-bl';l.textContent=e[0];var n=document.createElement('b');n.textContent=e[1];var g=document.createElement('i');g.style.width=Math.max(6,Math.round(100*e[1]/mx))+'%';r.appendChild(l);r.appendChild(n);r.appendChild(g);r.onclick=function(){show('offres');setSel('secteur',e[0])};b1.appendChild(r)});
+ /* 2. Salaires affichés */
+ var salA=J.filter(function(j){return j.sal}),sal=salA.slice(0,5);
+ if(sal.length){var b2=box('💰 Salaire affiché');var p=document.createElement('p');p.className='sx-note';p.textContent=salA.length+' offres sur '+J.length+' indiquent un salaire :';b2.appendChild(p);
+  sal.forEach(function(j){var a=document.createElement('a');a.className='sx-off';a.href='#o='+j.id;a.onclick=function(ev){ev.preventDefault();show('offres');openOffer(j.id)};var t=document.createElement('b');t.textContent=j.t;var m=document.createElement('span');m.textContent=j.sal+' · '+j.p;a.appendChild(t);a.appendChild(m);b2.appendChild(a)});}
+ /* 3. Concours et fonction publique */
+ var pub=J.filter(function(j){return j.c==='Concours'||j.k==='Public'||j.s==='Fonction publique'});
+ if(pub.length){var b3=box('🏛️ Concours et secteur public');var p3=document.createElement('p');p3.className='sx-note';p3.textContent=pub.length+' offres publiques ou concours ouverts :';b3.appendChild(p3);
+  pub.sort(function(a,b){return (a.lim||'9999').localeCompare(b.lim||'9999')}).slice(0,4).forEach(function(j){var a=document.createElement('a');a.className='sx-off';a.href='#o='+j.id;a.onclick=function(ev){ev.preventDefault();show('offres');openOffer(j.id)};var t=document.createElement('b');t.textContent=j.t;var m=document.createElement('span');m.textContent=(j.e||'')+(j.lim?' · jusqu\'au '+j.lim.split('-').reverse().join('/'):'');a.appendChild(t);a.appendChild(m);b3.appendChild(a)});}
 })();
 $('hsearch').onsubmit=e=>{e.preventDefault();clearTimeout(qT);st.q=$('q').value;render();$('count').scrollIntoView({behavior:'smooth',block:'start'});};
 $('picks').addEventListener('click',e=>{const b=e.target.closest('.pick-b');if(!b)return;
