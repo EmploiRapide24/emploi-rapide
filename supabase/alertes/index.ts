@@ -2,11 +2,15 @@
 // Chaque matin (pg_cron), envoie à chaque abonné les nouvelles offres du jour qui correspondent à ses critères.
 // GET ?desabo=<jeton> : désabonnement en un clic depuis l'e-mail.
 import { createClient } from "jsr:@supabase/supabase-js@2";
+import webpush from "npm:web-push@3.6.7";
 
 const SB = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 const BREVO = Deno.env.get("BREVO_API_KEY") ?? "";
 const SITE = "https://emploirapide24.com";
 const FN = (Deno.env.get("SUPABASE_URL") ?? "") + "/functions/v1/alertes";
+const VAPID_PUBLIC = "BHm02vYyfGeu98RiBIQVJDZe4PXw2ClYf4_wnRLVfW4nFGLEFgtRFzjMPLG8QYS1qiBIDBPP6Z5TKJrdv5IWPSA";
+const VAPID_PRIVATE = Deno.env.get("VAPID_PRIVATE") ?? "";
+if (VAPID_PRIVATE) webpush.setVapidDetails("mailto:emploirapide24@gmail.com", VAPID_PUBLIC, VAPID_PRIVATE);
 
 const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "content-type", "Access-Control-Allow-Methods": "GET, POST, OPTIONS" };
 type Offre = Record<string, any>;
@@ -75,6 +79,10 @@ Deno.serve(async (req) => {
     const { data } = await SB.from("abonnements").update({ actif: false }).eq("jeton", desabo).select("libelle");
     return Response.json({ ok: true, libelle: data?.[0]?.libelle ?? null }, { headers: CORS });
   }
+  if (req.method === "POST" && url.searchParams.get("desabo_push")) {
+    await SB.from("push_subs").delete().eq("endpoint", url.searchParams.get("desabo_push")!);
+    return Response.json({ ok: true }, { headers: CORS });
+  }
   if (req.method !== "POST") return new Response("ok");
   if (new Date().getUTCHours() < 7) return Response.json({ envoyes: 0, raison: "trop tôt (avant 7 h)" });
   if (!BREVO) return Response.json({ erreur: "BREVO_API_KEY manquante" }, { status: 500 });
@@ -82,13 +90,18 @@ Deno.serve(async (req) => {
   const d = await (await fetch(`${SITE}/data.json?t=${Date.now()}`)).json();
   const jour: string = d.maj;
   const nouvelles: Offre[] = (d.offres || []).filter((o: Offre) => (o.add || "") === jour);
-  const { data: abos, error } = await SB.from("abonnements").select("id,email,criteres,libelle,jeton,dernier_envoi").eq("actif", true);
+  const lundi = new Date().getUTCDay() === 1;
+  const il7 = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+  const semaine: Offre[] = (d.offres || []).filter((o: Offre) => (o.add || "") > il7);
+  const { data: abos, error } = await SB.from("abonnements").select("id,email,criteres,libelle,jeton,dernier_envoi,frequence").eq("actif", true);
   if (error) return Response.json({ erreur: error.message }, { status: 500 });
 
   let envoyes = 0, sansOffre = 0;
   for (const a of abos ?? []) {
     if (a.dernier_envoi === jour) continue;
-    const m = nouvelles.filter((j) => match(j, a.criteres || {}));
+    const hebdo = a.frequence === "semaine";
+    if (hebdo && !lundi) continue;
+    const m = (hebdo ? semaine : nouvelles).filter((j) => match(j, a.criteres || {}));
     if (!m.length) { sansOffre++; continue; }
     const r = await fetch("https://api.brevo.com/v3/smtp/email", {
       method: "POST",
@@ -96,11 +109,34 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         sender: { name: "Emploi Rapide 24", email: "noreply@emploirapide24.com" },
         to: [{ email: a.email }],
-        subject: `${m.length} nouvelle${m.length > 1 ? "s" : ""} offre${m.length > 1 ? "s" : ""} : ${a.libelle || "votre alerte"}`,
+        subject: (hebdo ? "Votre semaine : " : "") + `${m.length} nouvelle${m.length > 1 ? "s" : ""} offre${m.length > 1 ? "s" : ""} : ${a.libelle || "votre alerte"}`,
         htmlContent: emailHTML(a.libelle || "Toutes les offres", m.slice(0, 15), m.length, a.jeton),
       }),
     });
     if (r.ok) { envoyes++; await SB.from("abonnements").update({ dernier_envoi: jour }).eq("id", a.id); }
   }
-  return Response.json({ jour, nouvelles: nouvelles.length, abonnes: abos?.length ?? 0, envoyes, sansOffre });
+  // Notifications sur téléphone (Web Push)
+  let notifs = 0;
+  if (VAPID_PRIVATE) {
+    const { data: subs } = await SB.from("push_subs").select("endpoint,p256dh,auth,criteres,dernier_envoi");
+    for (const sub of subs ?? []) {
+      if (sub.dernier_envoi === jour) continue;
+      const c = sub.criteres || {};
+      const m = nouvelles.filter((j) => (!c.pays || j.p === c.pays) && (!c.secteur || j.s === c.secteur));
+      if (!m.length) continue;
+      const lieu = c.pays ? (" – " + c.pays) : "";
+      try {
+        await webpush.sendNotification({ endpoint: sub.endpoint, keys: { p256dh: sub.p256dh, auth: sub.auth } }, JSON.stringify({
+          title: `${m.length} nouvelle${m.length > 1 ? "s" : ""} offre${m.length > 1 ? "s" : ""} d'emploi${lieu}`,
+          body: m.slice(0, 2).map((j) => j.t + " · " + j.e).join("\n"),
+          url: m.length === 1 ? `${SITE}/offre/${hid(m[0].t + "|" + m[0].e)}.html` : SITE + "/",
+        }), { TTL: 86400 });
+        notifs++;
+        await SB.from("push_subs").update({ dernier_envoi: jour }).eq("endpoint", sub.endpoint);
+      } catch (e: any) {
+        if (e?.statusCode === 404 || e?.statusCode === 410) await SB.from("push_subs").delete().eq("endpoint", sub.endpoint);
+      }
+    }
+  }
+  return Response.json({ jour, nouvelles: nouvelles.length, abonnes: abos?.length ?? 0, envoyes, sansOffre, notifs });
 });
