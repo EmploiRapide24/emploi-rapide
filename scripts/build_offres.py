@@ -196,6 +196,78 @@ for pays_, lst in groupes.items():
              f"{len(lst)} offres d'emploi ouvertes {pr} : entreprises, institutions et ONG. Chaque offre est vérifiée à la source, avec l'adresse et les étapes pour postuler. Mise à jour chaque matin.", lst, tags)
     cats[pays_] = fn
 liste = liste.replace('<p class="som">', '<p class="som"><b>Pages par pays :</b> ' + " · ".join('<a href="emploi/' + cats[p] + '">' + E(p) + '</a>' for p in ordre if p in cats) + '</p><p class="som">', 1)
+# Pages Outils (CV, lettre, entretien, calendrier des concours) et À propos
+STY = ('<style>body{font:16px/1.6 system-ui,sans-serif;margin:0;color:#0f1a33;background:#f3f6fb}main{max-width:820px;margin:0 auto;padding:22px 16px 60px}h1{color:#1d5bd8;font-size:26px;margin:8px 0}h2{font-size:20px;margin:30px 0 8px;padding-top:8px;border-top:2px solid #e3e8f2}'
+       'p,li{text-align:justify}.card{background:#fff;border:1px solid #e3e8f2;border-radius:14px;padding:16px 18px;margin:10px 0}.mod{font-family:Georgia,serif;font-size:15px;white-space:pre-wrap;background:#fff;border:1px dashed #b8c4dc;border-radius:12px;padding:16px}'
+       '.b{display:inline-block;background:#1d5bd8;color:#fff;border:0;border-radius:10px;padding:9px 15px;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;margin:4px 6px 4px 0}.nav a{margin-right:12px;font-weight:700;color:#1d5bd8}'
+       'table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}td,th{padding:8px;border-bottom:1px solid #eef1f6;text-align:left;vertical-align:top}th{background:#eef4ff}@media print{.nav,.b,h1~p.np{display:none}}</style>')
+def head_(titre, desc, fn):
+    return ('<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>' + E(titre) + '</title>'
+            '<meta name="description" content="' + E(desc) + '"><link rel="canonical" href="' + DOMAIN + '/' + fn + '"><meta property="og:image" content="' + DOMAIN + '/icons/og.png"><link rel="icon" href="icons/icon-192.png"><script src="ga.js" defer></script>' + STY + '</head><body><main>'
+            '<p class="nav"><a href="./" style="font-size:19px;font-weight:900;text-decoration:none">Emploi Rapide <span style="color:#f5b800">24</span></a> <a href="outils.html">Outils</a> <a href="a-propos.html">Qui sommes-nous</a></p>')
+conc = sorted([j for j in _open if j.get("c") == "Concours" or j.get("k") == "Public" or j.get("s") == "Fonction publique"], key=lambda j: (j.get("lim") or "9999", j["p"]))
+rows = "".join('<tr><td>' + (E(j["lim"][8:10] + "/" + j["lim"][5:7] + "/" + j["lim"][:4]) if j.get("lim") else "Non précisée") + '</td><td><a href="offre/' + hid(j["t"] + "|" + j["e"]) + '.html">' + E(j["t"]) + '</a><br><small>' + E(j["e"]) + '</small></td><td>' + E(j["p"]) + '</td></tr>' for j in conc)
+CV = """PRÉNOM NOM
+Intitulé du poste visé (ex. : Comptable – 3 ans d'expérience)
+Ville, pays · +XXX XX XX XX XX · prenom.nom@email.com · linkedin.com/in/prenom-nom
+
+PROFIL
+Deux ou trois phrases : votre métier, vos années d'expérience, vos points forts et le poste que vous visez.
+
+EXPÉRIENCE PROFESSIONNELLE
+Mois Année – Mois Année · Intitulé du poste · Entreprise, ville
+– Une réalisation chiffrée (ex. : « Réduit les délais de paiement de 20 % »)
+– Une responsabilité principale
+– Un outil ou une méthode maîtrisés
+
+FORMATION
+Année · Diplôme · Établissement, ville
+
+COMPÉTENCES
+Logiciels : … · Langues : français (courant), anglais (intermédiaire), langue locale … · Permis : …
+
+CENTRES D'INTÉRÊT
+Une ou deux activités qui disent quelque chose de vous (bénévolat, sport, association…)"""
+LET = """Prénom Nom
+Adresse · Téléphone · E-mail
+                                                            À l'attention de [Nom du recruteur / Service RH]
+                                                            [Entreprise], [Ville]
+                                                            [Ville], le [date]
+
+Objet : Candidature au poste de [intitulé exact] – Réf. [référence de l'annonce]
+
+Madame, Monsieur,
+
+Votre annonce publiée le [date] pour le poste de [intitulé] a retenu toute mon attention. [Une phrase sur ce qui vous attire dans l'entreprise ou sa mission.]
+
+Titulaire d'un [diplôme] et fort(e) de [X] années d'expérience en [domaine], j'ai notamment [réalisation concrète, si possible chiffrée]. Cette expérience m'a permis de développer [deux compétences demandées dans l'annonce].
+
+Rejoindre [Entreprise] me permettrait de mettre ces compétences au service de [objectif du poste]. Je suis disponible [date de disponibilité] et serais heureux(se) de vous exposer mes motivations lors d'un entretien.
+
+Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.
+
+Prénom Nom"""
+outils = (head_("Outils pour postuler : modèle de CV, lettre, entretien, concours | Emploi Rapide 24", "Modèle de CV et de lettre de motivation à copier, préparation à l'entretien et calendrier des concours en Afrique francophone.", "outils.html")
+  + '<h1>Outils pour postuler</h1><p>Des modèles simples à copier, une méthode pour préparer l\'entretien et le calendrier des concours ouverts, mis à jour chaque matin.</p>'
+  + '<p><a class="b" href="#cv">📄 CV</a><a class="b" href="#lettre">✉️ Lettre</a><a class="b" href="#entretien">🎤 Entretien</a><a class="b" href="#concours">🏛️ Concours</a></p>'
+  + '<h2 id="cv">📄 Modèle de CV</h2><p>Une page, sans photo sauf si l\'annonce la demande, en PDF nommé « Prénom-Nom-CV.pdf ». Remplacez chaque ligne par vos informations.</p><div class="mod" id="m-cv">' + E(CV) + '</div><button class="b" onclick="cp(\'m-cv\',this)">Copier le modèle</button><button class="b" onclick="window.print()">Imprimer / PDF</button>'
+  + '<h2 id="lettre">✉️ Modèle de lettre de motivation</h2><p>Reprenez l\'intitulé exact et la référence de l\'annonce : c\'est souvent le premier tri.</p><div class="mod" id="m-lt">' + E(LET) + '</div><button class="b" onclick="cp(\'m-lt\',this)">Copier le modèle</button>'
+  + '<h2 id="entretien">🎤 Préparer l\'entretien</h2>'
+  + '<div class="card"><b>Avant</b><ul><li>Relisez l\'annonce et soulignez les 5 compétences demandées : préparez un exemple concret pour chacune.</li><li>Renseignez-vous sur l\'employeur : activités, actualité récente, implantation dans le pays.</li><li>Préparez une présentation de 2 minutes : parcours, réalisation dont vous êtes fier(e), pourquoi ce poste.</li></ul></div>'
+  + '<div class="card"><b>Questions fréquentes</b><ul><li>« Parlez-moi de vous » : parcours en 3 étapes, terminé par le poste visé.</li><li>« Pourquoi nous ? » : un fait précis sur l\'entreprise et le lien avec votre projet.</li><li>« Vos défauts ? » : un vrai point d\'amélioration et ce que vous faites pour progresser.</li><li>« Vos prétentions salariales ? » : une fourchette réaliste pour le poste et le pays.</li></ul></div>'
+  + '<div class="card"><b>Par type d\'employeur</b><ul><li><b>Banque, audit, finance</b> : rigueur, chiffres, outils (Excel, logiciels comptables), éthique.</li><li><b>ONG et Nations unies</b> : méthode STAR (Situation, Tâche, Action, Résultat), connaissance du terrain, valeurs de l\'organisation, test écrit fréquent.</li><li><b>Administration et concours</b> : dossier complet et à l\'heure, connaissance des institutions, épreuves écrites et orales à réviser.</li></ul></div>'
+  + '<div class="card"><b>Après</b><ul><li>Envoyez un court e-mail de remerciement dans les 24 heures.</li><li>Sans réponse après 10 jours, relancez poliment une fois.</li><li>Rappel : on ne paie jamais pour un entretien, une formation ou une embauche.</li></ul></div>'
+  + '<h2 id="concours">🏛️ Calendrier des concours et offres publiques</h2><p>' + str(len(conc)) + ' concours et offres du secteur public ouverts, classés par date limite (mise à jour le ' + E(today) + ').</p>'
+  + ('<table><tr><th>Date limite</th><th>Offre</th><th>Pays</th></tr>' + rows + '</table>' if conc else '<p>Aucun concours ouvert aujourd\'hui. Créez une alerte sur l\'accueil pour être prévenu.</p>')
+  + '<script>function cp(i,b){navigator.clipboard&&navigator.clipboard.writeText(document.getElementById(i).innerText).then(function(){b.textContent="Copié ✓"})}</script></main></body></html>')
+open(os.path.join(SITE, "outils.html"), "w").write(outils); urls.append(DOMAIN + "/outils.html")
+apropos = (head_("Qui sommes-nous | Emploi Rapide 24", "Emploi Rapide 24 rassemble chaque matin les offres d'emploi vérifiées d'Afrique francophone. Notre mission, notre méthode et nos engagements.", "a-propos.html")
+  + '<h1>Qui sommes-nous</h1><p>Emploi Rapide 24 est un service gratuit qui rassemble chaque matin les offres d\'emploi publiées en Afrique francophone par les entreprises, les institutions, les ONG et les sites de recrutement, avec une sélection d\'offres ouvertes dans le monde entier.</p>'
+  + '<h2>Notre mission</h2><p>Faire gagner du temps aux chercheurs d\'emploi et les protéger des arnaques : une seule adresse pour trouver les offres du jour, comprendre exactement comment postuler et ne rien payer.</p>'
+  + '<h2>Notre méthode</h2><ul><li><b>Des sources suivies</b> : plus de 1 200 employeurs et sites de recrutement dans plus de 20 pays.</li><li><b>Chaque offre vérifiée</b> sur sa page d\'origine avant publication, puis revérifiée régulièrement ; les offres closes sont retirées.</li><li><b>Les arnaques écartées</b> : toute annonce qui demande de l\'argent, un paiement Mobile Money ou des documents sensibles avant entretien est exclue.</li><li><b>Des résumés rédigés</b> par Emploi Rapide 24 ; seule l\'annonce d\'origine fait foi.</li></ul>'
+  + '<h2>Nos engagements</h2><ul><li>Le service est et restera gratuit pour les candidats.</li><li>Les annonces sponsorisées sont toujours signalées comme telles.</li><li>Vos données restent minimales : voir la <a href="confidentialite.html">politique de confidentialité</a>.</li></ul>'
+  + '<h2>Nous contacter</h2><p>Recruteurs, partenaires, signalement d\'une offre suspecte : <a href="mailto:emploirapide24@gmail.com">emploirapide24@gmail.com</a>.</p></main></body></html>')
+open(os.path.join(SITE, "a-propos.html"), "w").write(apropos); urls.append(DOMAIN + "/a-propos.html")
 open(os.path.join(SITE, "offres.html"), "w").write(liste)
 urls.insert(1, DOMAIN + "/offres.html")
 open(os.path.join(SITE, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
