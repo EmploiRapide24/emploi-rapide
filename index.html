@@ -897,16 +897,26 @@ function badge(){
 /* ---------- en-tête, pubs, statistiques ---------- */
 const PUB = D.pubs || {};
 const bans = (PUB.bannieres||[]).filter(actif);
-const HOUSE = {titre:'Votre publicité ici', texte:'Bannière vue chaque jour par les candidats de toute l\'Afrique francophone.', lien:'#annoncer', house:1};
+const HOUSES = [
+ {titre:'Recruteurs : votre publicité GRATUITE', texte:'Offre de lancement : bannière et offre mise en avant offertes. Écrivez-nous pour réserver votre place.', lien:'#annoncer', house:1},
+ {titre:'📧 Recevez les nouvelles offres par e-mail', texte:'Choisissez votre pays et votre métier : les offres arrivent chaque matin, gratuitement.', lien:'#alerte', house:2},
+ {titre:'⚠️ Un vrai recruteur ne demande jamais d\'argent', texte:'Frais de dossier, de formation ou de visa : c\'est une arnaque. Signalez-la en commentaire.', lien:'#conseils', house:2},
+ {titre:'💬 Partagez Emploi Rapide 24', texte:'Envoyez les offres du jour à vos proches sur WhatsApp : un emploi trouvé, c\'est une famille aidée.', lien:'https://wa.me/?text='+encodeURIComponent('Les offres d\'emploi du jour en Afrique francophone, vérifiées et gratuites : https://emploirapide24.com'), house:2}
+];
+const HOUSE = HOUSES[Math.floor(Math.random()*HOUSES.length)];
 function banHTML(b){
   if(!b) return '';
   const ext = b.lien && b.lien[0]!=='#';
-  return `<a class="ad${b.house?' house':''}" href="${ext?esc(safe(b.lien)):'#annoncer'}"${ext?' target="_blank" rel="noopener sponsored"':''}>
-    <span class="lbl">${b.house?'Espace disponible':'Publicité'}</span>
+  return `<a class="ad${b.house?' house':''}" href="${ext?esc(safe(b.lien)):esc(b.lien||'#annoncer')}"${ext?' target="_blank" rel="noopener'+(b.house?'':' sponsored')+'"':''}>
+    <span class="lbl">${b.house===2?'Emploi Rapide 24':b.house?'Offre de lancement':'Publicité'}</span>
     ${b.img?`<img src="${esc(b.img)}" alt="">`:''}
     <span><b>${esc(b.titre)}</b><span class="meta">${esc(b.texte||'')}</span></span></a>`;
 }
 $('ban-top').innerHTML = banHTML(bans[0] || HOUSE);
+document.addEventListener('click',e=>{const a=e.target.closest('a.ad');if(!a)return;const h=a.getAttribute('href');
+ if(h==='#annoncer'){e.preventDefault();show('recruteurs');setTimeout(()=>{const x=$('annoncer');x&&x.scrollIntoView({behavior:'smooth'})},60);}
+ else if(h==='#conseils'){e.preventDefault();show('conseils');}
+ else if(h==='#alerte'){e.preventDefault();show('offres');const x=$('controls');x&&x.scrollIntoView({behavior:'smooth'});}});
 const part = actif(PUB.partenaire) ? PUB.partenaire : null;
 if(part){const el=$('partenaire');el.style.display='';
   el.innerHTML=`Partenaire du mois : <a href="${esc(safe(part.lien))}" target="_blank" rel="noopener sponsored" style="font-weight:650">${esc(part.nom)}</a> <span style="font-size:12px">(publicité)</span>`;}
