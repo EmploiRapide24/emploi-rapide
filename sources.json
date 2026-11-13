@@ -1,7 +1,7 @@
 {
  "version": 1,
  "maj": "2026-11-13",
- "curseur": 40,
+ "curseur": 90,
  "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
  "pays": {
   "Sénégal": {
@@ -249,50 +249,50 @@
     {
      "nom": "APIX",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "FONGIP",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "DER/FJ",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "3FPT",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Fonction publique du Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://fonctionpublique.gouv.sn",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "CBAO Groupe Attijariwafa",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Banque Atlantique Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Crédit du Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Sénélec",
@@ -303,26 +303,26 @@
     {
      "nom": "SONES",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Nestlé Sénégal",
-     "url": "",
-     "vu": "",
+     "url": "https://www.nestle-cwa.com",
+     "vu": "2026-11-13",
      "ok": 1
     },
     {
      "nom": "Grands Moulins de Dakar",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "Carrefour Sénégal (CFAO)",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-13",
+     "ok": 0
     },
     {
      "nom": "CFAO Motors Sénégal",
