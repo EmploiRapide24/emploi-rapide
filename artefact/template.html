@@ -576,6 +576,45 @@ img,svg,video,iframe,table{max-width:100%}
 .flg{width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:-1px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .ring-flag{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .xs-av.mono{width:36px;height:36px;border-radius:10px;font-size:13px;float:left;margin:0 9px 4px 0}
+
+/* ===== Actualités ===== */
+.ac-i{display:block;padding:7px 0;border-top:1px dashed #eef1f6;text-decoration:none;color:var(--ink,#0f1a33)}
+.ac-i b{display:block;font-size:13.5px;line-height:1.3}.ac-i:hover b{color:#1d5bd8}
+.ac-r{display:block;font-size:13px;line-height:1.4;margin:3px 0;color:var(--ink,#0f1a33);text-align:justify}
+.ac-i small{display:block;font-size:11.5px;color:var(--mute,#5b6680);margin-top:2px}
+.ac-all{display:block;margin-top:8px;font-weight:800;font-size:13.5px;color:#1d5bd8;text-decoration:none}
+.ac-mob{background:var(--card,#fff);border:1px solid var(--line,#e3e8f2);border-radius:14px;padding:12px 14px}
+.ac-mob h4{margin:0 0 6px;font-size:15px;font-weight:900}
+@media (min-width:1181px){.ac-mob{display:none}}
+
+/* ===== Carte actualités ===== */
+.nc-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.nc-all{font-size:13px;font-weight:800;color:#1d5bd8;text-decoration:none;white-space:nowrap}
+.nc-item{display:block;text-decoration:none;color:var(--ink,#0f1a33);margin-top:8px;min-height:66px}
+.nc-t{display:block;font-size:16.5px;font-weight:800;line-height:1.3;color:#1d5bd8}
+.nc-item:hover .nc-t{text-decoration:underline}
+.nc-r{display:block;font-size:14px;line-height:1.45;margin:4px 0;text-align:justify}
+.nc-m{display:block;font-size:12.5px;color:var(--mute,#5b6680)}
+.nc-item.in{animation:ncIn .5s ease}
+@keyframes ncIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+.nc-f{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+.nc-dots{display:flex;gap:6px;flex-wrap:wrap}.nc-dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:#cfd8ea;cursor:pointer}
+.nc-dots button.on{background:#1d5bd8;width:20px;border-radius:9px}
+.nc-f span button{border:1px solid var(--line,#dbe3f0);background:var(--card,#fff);border-radius:8px;width:30px;height:28px;font:inherit;font-weight:900;cursor:pointer;margin-left:4px;color:var(--ink,#0f1a33)}
+.nc-bar{height:3px;background:#eef1f6;border-radius:9px;margin-top:10px;overflow:hidden}.nc-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#f5b800,#1d5bd8)}
+@media (max-width:860px){.nc-t{font-size:15px}.nc-r{font-size:13.5px}.nc-item{min-height:96px}}
+@media (prefers-reduced-motion:reduce){.nc-item.in{animation:none}}
+
+.nc-item{display:flex!important;gap:14px;align-items:flex-start}
+.nc-vis{position:relative;flex:none;width:132px;height:96px;border-radius:12px;display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 -30px 40px rgba(0,0,0,.15)}
+.nc-ic{font-size:44px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.25))}
+.nc-fl{position:absolute;top:7px;right:7px;width:26px;height:18px;object-fit:cover;border-radius:3px;box-shadow:0 0 0 1.5px #fff}
+.nc-lb{position:absolute;left:7px;bottom:6px;background:rgba(255,255,255,.92);color:#0f1a33;font-size:10.5px;font-weight:800;border-radius:999px;padding:2px 8px}
+.nc-tx{flex:1;min-width:0}
+.nc-ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.nc-cr{position:absolute;right:0;bottom:0;max-width:100%;background:rgba(0,0,0,.55);color:#fff;font-size:8.5px;line-height:1.2;padding:1px 4px;border-top-left-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nc-vis.has-ph .nc-lb{bottom:auto;top:6px}.nc-vis.has-ph .nc-fl{top:auto;bottom:16px}
+@media (max-width:560px){.nc-vis{width:92px;height:84px}.nc-ic{font-size:34px}.nc-lb{display:none}}
 </style>
 </head>
 <body class="v-offres">
@@ -603,6 +642,12 @@ img,svg,video,iframe,table{max-width:100%}
   <div id="side-x"></div>
 </aside>
 <main class="feed wrap">
+<div class="composer newscard" id="newscard" hidden aria-live="polite">
+  <div class="nc-h"><p class="hello">📰 L'actualité économique du jour</p><a class="nc-all" href="actualites.html">Toutes les actualités →</a></div>
+  <a class="nc-item" id="nc-item" target="_blank" rel="noopener"></a>
+  <div class="nc-f"><div class="nc-dots" id="nc-dots"></div><span><button type="button" id="nc-prev" aria-label="Actualité précédente">‹</button><button type="button" id="nc-next" aria-label="Actualité suivante">›</button></span></div>
+  <div class="nc-bar"><i id="nc-bar"></i></div>
+</div>
 <div class="composer" id="composer">
   <h1 class="hello" id="h1">Les offres d'emploi du jour, prêtes à postuler.</h1>
   <p class="hsub" id="hsub"></p>
@@ -765,7 +810,7 @@ img,svg,video,iframe,table{max-width:100%}
 
 <!-- ============ CONSEILS ============ -->
 <section class="view tips" id="v-conseils" hidden>
-  <div class="tools"><a href="outils.html#cv">📄 Modèle de CV</a><a href="outils.html#lettre">✉️ Modèle de lettre</a><a href="outils.html#entretien">🎤 Préparer l'entretien</a><a href="outils.html#concours">🏛️ Calendrier des concours</a><a href="a-propos.html">ℹ️ Qui sommes-nous</a></div>
+  <div class="tools"><a href="outils.html#cv">📄 Modèle de CV</a><a href="outils.html#lettre">✉️ Modèle de lettre</a><a href="outils.html#entretien">🎤 Préparer l'entretien</a><a href="outils.html#concours">🏛️ Calendrier des concours</a><a href="actualites.html">📰 Actualités économiques</a><a href="a-propos.html">ℹ️ Qui sommes-nous</a></div>
   <div class="panel"><h2>Conseils de recruteur</h2><p class="sub" style="margin:0">Ce que regardent vraiment les recruteurs en Afrique francophone et dans les organisations internationales.</p></div>
   <details open><summary>📄 Un CV qui passe le premier tri</summary><ul>
     <li>Une à deux pages, en PDF, nommé <b>NOM_Prenom_CV.pdf</b>.</li>
@@ -1595,6 +1640,33 @@ st.querySelectorAll('b').forEach(function(b){var v=+b.dataset.v;if(red){b.textCo
 })();
 
 
+
+
+
+/* Carte « L'actualité économique du jour » : une actualité à la fois, à tour de rôle */
+(function(){var A=(D.actus||[]).slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'')}).slice(0,10);var N=$('newscard');if(!N||!A.length)return;N.hidden=false;
+ var it=$('nc-item'),dots=$('nc-dots'),bar=$('nc-bar'),i=0,T=null,DUR=8000,red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+ var TH=[[/énergie|électri|solaire|biomasse|centrale|barrage/i,'⚡','linear-gradient(135deg,#16a34a,#84cc16)'],[/pétrole|gaz|brut|hydrocarbure|raffin/i,'🛢️','linear-gradient(135deg,#334155,#64748b)'],[/mine|or\b|bauxite|cuivre|cobalt|minier/i,'⛏️','linear-gradient(135deg,#a16207,#eab308)'],[/bourse|BRVM|action|capitalisation/i,'📈','linear-gradient(135deg,#0e7490,#22d3ee)'],[/dollar|euro|devise|change|FCFA|monnaie|BCEAO|BEAC/i,'💱','linear-gradient(135deg,#1d5bd8,#60a5fa)'],[/banque|financ|crédit|dette|FMI|budget/i,'🏦','linear-gradient(135deg,#1e3a8a,#3b82f6)'],[/agri|cacao|café|coton|anacarde|riz/i,'🌾','linear-gradient(135deg,#65a30d,#facc15)'],[/numérique|digital|tech|télécom|internet|IA\b/i,'💻','linear-gradient(135deg,#7c3aed,#c084fc)'],[/port|logistique|transport|rail|aéroport/i,'🚢','linear-gradient(135deg,#0369a1,#38bdf8)'],[/emploi|recrut|jeunes|formation|concours/i,'👷','linear-gradient(135deg,#ea580c,#fb923c)'],[/classement|indice|croissance|PIB|inflation/i,'📊','linear-gradient(135deg,#be123c,#fb7185)'],[/accord|investiss|signe|projet/i,'🤝','linear-gradient(135deg,#0f766e,#2dd4bf)']];
+ function theme(a){var x=(a.t||'')+' '+(a.r||'')+' '+(a.tag||'');for(var k=0;k<TH.length;k++){if(TH[k][0].test(x))return [TH[k][1],TH[k][2]]}return ['📰','linear-gradient(135deg,#1d5bd8,#f5b800)']}
+ function fd(x){try{return new Date(x+'T00:00:00').toLocaleDateString('fr-FR',{day:'numeric',month:'long'})}catch(e){return x}}
+ A.forEach(function(_,k){var d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Actualité '+(k+1));d.onclick=function(){show(k);go()};dots.appendChild(d)});
+ function show(k){i=(k+A.length)%A.length;var a=A[i];it.classList.remove('in');void it.offsetWidth;it.href=a.url;it.textContent='';
+  var vis=document.createElement('span');vis.className='nc-vis';var th=theme(a);vis.style.background=th[1];var ic=document.createElement('span');ic.className='nc-ic';ic.textContent=th[0];vis.appendChild(ic);
+  if(a.img&&EXT_IMG){var ph=document.createElement('img');ph.className='nc-ph';ph.alt='';ph.referrerPolicy='no-referrer';ph.onload=function(){vis.classList.add('has-ph');ic.style.display='none'};ph.onerror=function(){ph.remove()};ph.src=a.img;vis.appendChild(ph);if(a.cr){var cr=document.createElement('span');cr.className='nc-cr';cr.textContent='📷 '+a.cr;cr.title='Photo : '+a.cr;vis.appendChild(cr)}}
+  if(a.p&&ISO2[a.p]&&EXT_IMG){var fl=document.createElement('img');fl.className='nc-fl';fl.src='https://flagcdn.com/w80/'+ISO2[a.p]+'.png';fl.alt='';vis.appendChild(fl)}
+  var lb=document.createElement('span');lb.className='nc-lb';lb.textContent=a.tag||'Économie';vis.appendChild(lb);it.appendChild(vis);
+  var tx=document.createElement('span');tx.className='nc-tx';it.appendChild(tx);
+  var t=document.createElement('b');t.className='nc-t';t.textContent=a.t;var r=document.createElement('span');r.className='nc-r';r.textContent=a.r||'';
+  var m=document.createElement('span');m.className='nc-m';m.innerHTML=(a.p&&typeof flagHTML==='function'?flagHTML(a.p)+' ':'');m.appendChild(document.createTextNode((a.tag?a.tag+' · ':'')+(a.p||'Régional')+' · '+a.src+' · '+fd(a.date)));
+  tx.appendChild(t);tx.appendChild(r);tx.appendChild(m);it.classList.add('in');
+  [].forEach.call(dots.children,function(d,k2){d.classList.toggle('on',k2===i)});
+  bar.style.transition='none';bar.style.width='0';void bar.offsetWidth;if(!red&&T!==-1){bar.style.transition='width '+DUR+'ms linear';bar.style.width='100%'}}
+ function go(){clearInterval(T);if(red){T=-1;return}T=setInterval(function(){show(i+1)},DUR);show(i)}
+ $('nc-prev').onclick=function(){show(i-1);go()};$('nc-next').onclick=function(){show(i+1);go()};
+ N.addEventListener('mouseenter',function(){clearInterval(T);T=null;bar.style.transition='none'});N.addEventListener('mouseleave',go);
+ it.onclick=function(){try{gtag('event','clic_actu',{source:A[i].src})}catch(x){}};
+ show(0);go();})();
 /* Agencement mobile : blocs secondaires répartis dans la liste des offres */
 (function(){var mq=window.matchMedia('(max-width:860px)');var L=$('list');if(!L)return;
  var soonEls=[].slice.call(document.querySelectorAll('#xs .xs-h.xs-mob,#xs .xs-row.xs-mob,#xs .xs-emp.xs-mob'));
