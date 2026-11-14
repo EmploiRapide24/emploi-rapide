@@ -580,6 +580,15 @@ img,svg,video,iframe,table{max-width:100%}
 .side-src details.src{margin:0 0 8px;border:0;background:none;padding:0}
 .side-src details.src summary{font-weight:800;font-size:14px;cursor:pointer;padding:6px 0}
 .side-src details.src ul{font-size:13px;padding-left:18px;max-height:340px;overflow:auto}
+
+/* ===== Logos et drapeaux ===== */
+.mono{position:relative;overflow:hidden}
+.mono img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;padding:5px;box-sizing:border-box;opacity:0}
+.mono.has-logo{background:#fff}.mono.has-logo img{opacity:1}
+.mono.has-logo{box-shadow:inset 0 0 0 1px #e3e8f2}
+.flg{width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:-1px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
+.ring-flag{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.xs-av.mono{width:36px;height:36px;border-radius:10px;font-size:13px;float:left;margin:0 9px 4px 0}
 </style>
 </head>
 <body class="v-offres">
@@ -1001,10 +1010,21 @@ const nPays=new Set(jobs.filter(j=>!/^Monde/.test(j.p)).map(j=>j.p)).size, nNew=
 $('hsub').innerHTML = `<b>${jobs.length} offres ouvertes</b> dans ${nPays} pays${nNew&&nNew<jobs.length?`, dont <b>${nNew} nouvelles aujourd'hui</b>`:''}. Chaque offre indique l'adresse pour postuler et un indice de confiance.`;
 $('rec-kpi').innerHTML = `<div><b>${jobs.length}</b>offres en ligne</div><div><b>${nPays}</b>pays couverts</div><div><b>6 h 40</b>mise à jour quotidienne</div>`;
 const topP=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,5);
+const EXT_IMG = location.protocol.startsWith('http') && !/claude|anthropic/.test(location.hostname);
+/* ---------- logos d'employeurs et drapeaux ---------- */
+const ISO2={"Côte d'Ivoire":'ci','Sénégal':'sn','RD Congo':'cd','Maroc':'ma','Cameroun':'cm','Bénin':'bj','Togo':'tg','Mali':'ml','Tunisie':'tn','Mauritanie':'mr','Burkina Faso':'bf','Niger':'ne','Gabon':'ga','Guinée':'gn','Congo':'cg','Madagascar':'mg','Tchad':'td','Burundi':'bi','Rwanda':'rw','Djibouti':'dj','Comores':'km','République centrafricaine':'cf','Centrafrique':'cf','Algérie':'dz','Haïti':'ht','France':'fr','Belgique':'be','Suisse':'ch','Canada':'ca','Luxembourg':'lu','Espagne':'es','Italie':'it','Autriche':'at','Pays-Bas':'nl','États-Unis':'us','Ghana':'gh','Kenya':'ke','Nigéria':'ng','Colombie':'co','Singapour':'sg','Afghanistan':'af','Kirghizistan':'kg','Allemagne':'de','Royaume-Uni':'gb','Émirats arabes unis':'ae','Qatar':'qa','Arabie saoudite':'sa','Éthiopie':'et','Afrique du Sud':'za'};
+function flagHTML(p,cls){const c=ISO2[p];return c&&EXT_IMG?`<img class="${cls||'flg'}" src="https://flagcdn.com/w40/${c}.png" alt="" width="20" height="15" loading="lazy" decoding="async">`:'';}
+const ATS=/(oraclecloud|myworkday|workdayjobs|taleo|smartrecruiters|greenhouse|lever\.co|successfactors|icims|workable|teamtailor|bamboohr|recruitee|pageuppeople|jobvite|linkedin|indeed|google\.)/;
+const LOGO_KW=[[/\b(OIM|IOM)\b|organisation internationale pour les migrations/i,'iom.int'],[/UNICEF/i,'unicef.org'],[/PNUD|UNDP/i,'undp.org'],[/\bOMS\b|\bWHO\b|organisation mondiale de la santé/i,'who.int'],[/\bHCR\b|UNHCR/i,'unhcr.org'],[/\bPAM\b|\bWFP\b|programme alimentaire mondial/i,'wfp.org'],[/\bFAO\b/i,'fao.org'],[/UNFPA/i,'unfpa.org'],[/ONU Femmes|UN Women/i,'unwomen.org'],[/UNESCO/i,'unesco.org'],[/\bOIT\b|\bILO\b/i,'ilo.org'],[/UNOPS/i,'unops.org'],[/OCHA/i,'unocha.org'],[/Volontaires des Nations unies|\bUNV\b/i,'unv.org'],[/UNIDO|ONUDI/i,'unido.org'],[/Secrétariat de l.ONU|Nations unies/i,'un.org'],[/Banque africaine de développement|\bBAD\b|AfDB/i,'afdb.org'],[/Banque mondiale|World Bank/i,'worldbank.org'],[/\bIFC\b/i,'ifc.org'],[/\bFMI\b|\bIMF\b/i,'imf.org'],[/Médecins Sans Frontières|\bMSF\b/i,'msf.org'],[/CICR|ICRC|Croix-Rouge/i,'icrc.org'],[/Humanité & Inclusion|Handicap International/i,'hi.org'],[/Save the Children/i,'savethechildren.net'],[/Plan International/i,'plan-international.org'],[/World Vision/i,'wvi.org'],[/Oxfam/i,'oxfam.org'],[/\bCARE\b/i,'care-international.org'],[/International Rescue Committee|\bIRC\b/i,'rescue.org'],[/Conseil norvégien|\bNRC\b/i,'nrc.no'],[/Action contre la faim/i,'actioncontrelafaim.org'],[/Catholic Relief/i,'crs.org'],[/Mercy Corps/i,'mercycorps.org'],[/Ecobank/i,'ecobank.com'],[/Orange/i,'orange.com'],[/\bMTN\b/i,'mtn.com'],[/Airtel/i,'airtel.africa'],[/Société Générale/i,'societegenerale.com'],[/Attijari/i,'attijariwafabank.com'],[/Coris/i,'coris-bank.com'],[/NSIA/i,'groupensia.com'],[/Sanlam/i,'sanlam.com'],[/Allianz/i,'allianz.com'],[/AXA/i,'axa.com'],[/TotalEnergies|Total\b/i,'totalenergies.com'],[/Nestlé/i,'nestle.com'],[/Unilever/i,'unilever.com'],[/Deloitte/i,'deloitte.com'],[/PwC/i,'pwc.com'],[/KPMG/i,'kpmg.com'],[/\bEY\b|Ernst/i,'ey.com'],[/Mazars|Forvis/i,'forvismazars.com'],[/BCEAO/i,'bceao.int'],[/\bBEAC\b/i,'beac.int'],[/BOAD/i,'boad.org'],[/UEMOA/i,'uemoa.int'],[/Union africaine/i,'au.int'],[/Francophonie|\bOIF\b/i,'francophonie.org'],[/\bAFD\b|Agence française de développement/i,'afd.fr'],[/\bGIZ\b/i,'giz.de'],[/Enabel/i,'enabel.be'],[/Expertise France/i,'expertisefrance.fr'],[/Wave/i,'wave.com'],[/Bolloré|AGL\b|Africa Global Logistics/i,'aglgroup.com'],[/CFAO/i,'cfaogroup.com'],[/OCP\b/i,'ocpgroup.ma'],[/Maroc Telecom/i,'iam.ma'],[/Sonatel/i,'sonatel.sn'],[/Dangote/i,'dangote.com'],[/UBA\b|United Bank for Africa/i,'ubagroup.com'],[/Afriland/i,'afrilandfirstbank.com'],[/Rawbank/i,'rawbank.com'],[/Equity/i,'equitygroupholdings.com'],[/Gécamines/i,'gecamines.cd']];
+const LOGO={};
+(function(){const host=x=>{try{return new URL(x).hostname.replace(/^(www|careers|jobs|emploi|recrutement|app|carrieres)\./,'')}catch(e){return ''}};
+  jobsAll.forEach(j=>{if(LOGO[j.e])return; if(j.d){const h=host(j.u||j.lien||''); if(h&&!ATS.test(h)){LOGO[j.e]=h;return;}} for(const [re,d] of LOGO_KW){if(re.test(j.e)){LOGO[j.e]=d;return;}}});})();
+function logoOk(img){if(img.naturalWidth<=16){img.remove()}else{img.parentNode&&img.parentNode.classList.add('has-logo')}}
+window.logoOk=logoOk;
 const ISO={"Côte d'Ivoire":'CI','Sénégal':'SN','RD Congo':'CD','Maroc':'MA','Cameroun':'CM','Bénin':'BJ','Togo':'TG','Mali':'ML','Tunisie':'TN','Mauritanie':'MR','Burkina Faso':'BF','Niger':'NE','Gabon':'GA','Guinée':'GN','Congo':'CG','Madagascar':'MG'};
 const topP8=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,13);
 $('picks').innerHTML = `<button class="pick-b" data-pf="deb" aria-pressed="false"><span class="ring" style="--h:150">🎓</span><span class="lb">Débutants</span><small>stages</small></button><button class="pick-b" data-pf="tt" aria-pressed="false"><span class="ring" style="--h:265">💻</span><span class="lb">Télétravail</span><small>à distance</small></button><button class="pick-b" data-pf="monde" aria-pressed="false"><span class="ring" style="--h:200">🌍</span><span class="lb">Monde</span><small>international</small></button>`
-  + topP8.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false"><span class="ring" style="--h:${parseInt(hid(p),36)%360}">${esc(ISO[p]||p.slice(0,2).toUpperCase())}</span><span class="lb">${esc(p)}</span><small>${n} offre${n>1?'s':''}</small></button>`).join('');
+  + topP8.map(([p,n])=>`<button class="pick-b" data-pp="${esc(p)}" aria-pressed="false"><span class="ring" style="--h:${parseInt(hid(p),36)%360}">${EXT_IMG&&ISO2[p]?`<img class="ring-flag" src="https://flagcdn.com/w80/${ISO2[p]}.png" alt="" loading="lazy">`:esc(ISO[p]||p.slice(0,2).toUpperCase())}</span><span class="lb">${esc(p)}</span><small>${n} offre${n>1?'s':''}</small></button>`).join('');
 $('sites').innerHTML = (D.sites||[]).map(([n,u,k])=>`<li><a href="${esc(safe(u))}" target="_blank" rel="noopener">${esc(n)}</a> · ${esc(k)}</li>`).join('');
 $('sources').innerHTML = [...new Set(jobs.map(j=>j.src))].sort((a,b)=>a.localeCompare(b,'fr')).map(s=>`<li>${esc(s)}</li>`).join('');
 
@@ -1129,7 +1149,7 @@ function card(j){
     : `<a class="ap" href="${esc(safe(j.u))}" target="_blank" rel="noopener"><span class="ico" aria-hidden="true">📨</span>Voir l'offre</a>`;
   const cnt=[liked?'<span>👍 Vous aimez cette offre</span>':'', CC[j.id]?`<button class="ccount" data-cmt="${j.id}">💬 ${CC[j.id]} commentaire${CC[j.id]>1?'s':''}</button>`:'', saved?'<span>⭐ Dans vos candidatures</span>':''].filter(Boolean).join('');
   return `<article class="job${j.spon?' spon':''}" id="o-${j.id}">
-    <div class="ph">${monoHTML(j.e)}<div class="who"><b>${esc(j.e)}</b><span>${j.spon?'Sponsorisé':ago(when)} · 📍 ${esc((j.v&&j.v!==j.p?j.v+', ':'')+j.p)}</span></div></div>
+    <div class="ph">${monoHTML(j.e)}<div class="who"><b>${esc(j.e)}</b><span>${j.spon?'Sponsorisé':ago(when)} · ${flagHTML(j.p)||'📍'} ${esc((j.v&&j.v!==j.p?j.v+', ':'')+j.p)}</span></div></div>
     <div class="pb"><h3><a href="${esc(safe(j.u))}" target="_blank" rel="noopener">${esc(j.t)}</a></h3>
       ${fullHTML(j)}
       <ul class="facts">${facts.map(([i,t])=>`<li><span aria-hidden="true">${i}</span>${esc(t)}</li>`).join('')}</ul>
@@ -1156,10 +1176,12 @@ function fullHTML(j){
   const long = rich || (j.desc||'').length>190;
   return `<div class="pfull">${j.desc?`<p class="pdesc">${esc(j.desc)}</p>`:''}${rich?`<div class="prich">${rich}</div>`:''}</div>${long?'<button class="more" data-more>Voir plus</button>':''}`;
 }
+
 function monoHTML(name){
   const w=(name.replace(/\(.*?\)/g,'').match(/[A-Za-zÀ-ÿ0-9]+/g)||['?']).filter(x=>x.length>2||/^[A-Z0-9]+$/.test(x)).slice(0,2);
   const m=(w.length>1?w.map(x=>x[0]).join(''):(w[0]||name).slice(0,2)).toUpperCase();
-  return `<span class="mono" style="--h:${parseInt(hid(name),36)%360}" aria-hidden="true">${esc(m)}</span>`;
+  const lg=LOGO[name]&&EXT_IMG?`<img src="https://www.google.com/s2/favicons?domain=${encodeURIComponent(LOGO[name])}&sz=64" alt="" loading="lazy" decoding="async" onload="logoOk(this)" onerror="this.remove()">`:'';
+  return `<span class="mono" style="--h:${parseInt(hid(name),36)%360}" aria-hidden="true">${esc(m)}${lg}</span>`;
 }
 
 /* ---------- liste ---------- */
@@ -1570,7 +1592,7 @@ var nNew=J.filter(j=>j.add===D.maj).length, nP=new Set(J.map(j=>j.p)).size, nV=M
 var st=el('div','xs-stats');
 [[jobsAll.length,'offres en ligne'],[nNew,'nouvelles aujourd\'hui'],[nP,'pays couverts'],[nV,'% vérifiées']].forEach(function(a){var d=el('div','xs-st'),b=el('b',null,'0');b.dataset.v=a[0];d.appendChild(b);d.appendChild(el('span',null,a[1]));st.appendChild(d)});
 root.appendChild(st);
-function card(j,soon){var b=el('button','xs-c');b.type='button';var av=el('span','xs-av',ini(j.e));av.style.background=col(j.e||'');b.appendChild(av);b.appendChild(el('div','xs-t',j.t));b.appendChild(el('div','xs-e',(j.e||'')+' · '+(j.v?j.v+', ':'')+(j.p||'')));
+function card(j,soon){var b=el('button','xs-c');b.type='button';var tw=document.createElement('span');tw.innerHTML=monoHTML(j.e||'?');var av=tw.firstChild;av.classList.add('xs-av');b.appendChild(av);b.appendChild(el('div','xs-t',j.t));b.appendChild(el('div','xs-e',(j.e||'')+' · '+(j.v?j.v+', ':'')+(j.p||'')));
  if(soon){var n=dl(j);b.appendChild(el('span','xs-b xs-soon',n<=0?'Dernier jour':'J-'+n));}else if(j.add===D.maj)b.appendChild(el('span','xs-b xs-new','Nouveau'));
  if(j.vf)b.appendChild(el('span','xs-b xs-vf','✓ Vérifiée'));b.onclick=function(){if(typeof show==='function')show('offres');openOffer(j.id)};return b}
 function row(title,list,soon){if(!list.length)return;var h=el('div','xs-h'+(soon?' xs-mob':''));h.appendChild(el('h3',null,title));root.appendChild(h);var r=el('div','xs-row'+(soon?' xs-mob':''));list.forEach(j=>r.appendChild(card(j,soon)));root.appendChild(r)}
