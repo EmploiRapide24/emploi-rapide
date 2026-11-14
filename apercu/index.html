@@ -583,7 +583,8 @@ img,svg,video,iframe,table{max-width:100%}
 
 /* ===== Logos et drapeaux ===== */
 .mono{position:relative;overflow:hidden}
-.mono img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:5px;box-sizing:border-box}
+.mono img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;padding:5px;box-sizing:border-box;opacity:0}
+.mono.has-logo{background:#fff}.mono.has-logo img{opacity:1}
 .mono.has-logo{box-shadow:inset 0 0 0 1px #e3e8f2}
 .flg{width:18px;height:13px;object-fit:cover;border-radius:2px;vertical-align:-1px;box-shadow:0 0 0 1px rgba(0,0,0,.08)}
 .ring-flag{width:100%;height:100%;object-fit:cover;border-radius:50%}
