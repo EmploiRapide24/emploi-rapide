@@ -1,7 +1,7 @@
 {
  "version": 1,
- "maj": "2026-11-13",
- "curseur": 90,
+ "maj": "2026-11-14",
+ "curseur": 140,
  "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
  "pays": {
   "Sénégal": {
@@ -549,73 +549,73 @@
     {
      "nom": "Hôtel Radisson Blu Dakar",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "King Fahd Palace",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "Terrou-Bi",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "Pullman Dakar",
-     "url": "",
-     "vu": "",
+     "url": "https://careers.accor.com/global/en",
+     "vu": "2026-11-14",
      "ok": 1
     },
     {
      "nom": "Groupe Futurs Médias",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "RTS Radio Télévision Sénégalaise",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "APS Agence de Presse Sénégalaise",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "Lonase",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "IPRES",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "CSS Caisse de Sécurité Sociale",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "Ministère de la Santé Sénégal",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-14",
+     "ok": 0
     },
     {
      "nom": "Institut Pasteur de Dakar",
-     "url": "",
-     "vu": "",
+     "url": "https://institutpasteurdakar.sn/?p=5949",
+     "vu": "2026-11-14",
      "ok": 1
     },
     {
