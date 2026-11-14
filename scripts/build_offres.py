@@ -268,6 +268,19 @@ apropos = (head_("Qui sommes-nous | Emploi Rapide 24", "Emploi Rapide 24 rassemb
   + '<h2>Nos engagements</h2><ul><li>Le service est et restera gratuit pour les candidats.</li><li>Les annonces sponsorisées sont toujours signalées comme telles.</li><li>Vos données restent minimales : voir la <a href="confidentialite.html">politique de confidentialité</a>.</li></ul>'
   + '<h2>Nous contacter</h2><p>Recruteurs, partenaires, signalement d\'une offre suspecte : <a href="mailto:emploirapide24@gmail.com">emploirapide24@gmail.com</a>.</p></main></body></html>')
 open(os.path.join(SITE, "a-propos.html"), "w").write(apropos); urls.append(DOMAIN + "/a-propos.html")
+# Page Actualités économiques
+_ac = sorted(d.get("actus", []), key=lambda a: a.get("date", ""), reverse=True)[:20]
+_pays_ac = sorted(set(a.get("p") for a in _ac if a.get("p")))
+def _fd(x):
+    try: return str(int(x[8:10])) + " " + MOIS[int(x[5:7]) - 1] + " " + x[:4]
+    except Exception: return x
+_items = "".join('<div class="card" data-p="' + E(a.get("p", "")) + '"><a href="' + E(a["url"]) + '" target="_blank" rel="noopener" style="font-weight:800;font-size:17px;text-decoration:none">' + E(a["t"]) + '</a><p style="margin:6px 0">' + E(a.get("r", "")) + '</p><small style="color:#5b6680">' + E((a.get("tag", "") + " · ") if a.get("tag") else "") + E(a.get("p") or "Régional") + ' · ' + E(a["src"]) + ' · ' + E(_fd(a.get("date", ""))) + '</small></div>' for a in _ac)
+_flt = ('<p><select id="fp" style="font:inherit;padding:8px;border-radius:10px;border:1px solid #dbe3f0"><option value="">Tous les pays</option>' + "".join('<option>' + E(x) + '</option>' for x in _pays_ac) + '</select></p>') if _pays_ac else ""
+actu = (head_("Actualités économiques et emploi en Afrique francophone | Emploi Rapide 24", "Les informations économiques et financières qui comptent pour l'emploi en Afrique francophone : investissements, finance, industrie, mises à jour chaque matin.", "actualites.html")
+  + '<h1>📰 Actualités économiques</h1><p>Les informations économiques et financières qui comptent pour votre recherche d\'emploi : nouveaux investissements, secteurs qui recrutent, indicateurs. Titres résumés par Emploi Rapide 24 ; cliquez pour lire l\'article d\'origine.</p>'
+  + _flt + (_items or '<p>Aucune actualité pour le moment.</p>')
+  + '<script>var f=document.getElementById("fp");f&&(f.onchange=function(){document.querySelectorAll(".card[data-p]").forEach(function(c){c.style.display=!f.value||c.dataset.p===f.value?"":"none"})})</script></main></body></html>')
+open(os.path.join(SITE, "actualites.html"), "w").write(actu); urls.append(DOMAIN + "/actualites.html")
 open(os.path.join(SITE, "offres.html"), "w").write(liste)
 urls.insert(1, DOMAIN + "/offres.html")
 open(os.path.join(SITE, "sitemap.xml"), "w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls) + "</urlset>\n")
