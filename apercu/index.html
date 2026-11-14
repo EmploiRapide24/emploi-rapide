@@ -1020,6 +1020,7 @@ const LOGO={};
 (function(){const host=x=>{try{return new URL(x).hostname.replace(/^(www|careers|jobs|emploi|recrutement|app|carrieres)\./,'')}catch(e){return ''}};
   jobsAll.forEach(j=>{if(LOGO[j.e])return; if(j.d){const h=host(j.u||j.lien||''); if(h&&!ATS.test(h)){LOGO[j.e]=h;return;}} for(const [re,d] of LOGO_KW){if(re.test(j.e)){LOGO[j.e]=d;return;}}});})();
 function logoOk(img){if(img.naturalWidth<=16){img.remove()}else{img.parentNode&&img.parentNode.classList.add('has-logo')}}
+window.logoOk=logoOk;
 const ISO={"Côte d'Ivoire":'CI','Sénégal':'SN','RD Congo':'CD','Maroc':'MA','Cameroun':'CM','Bénin':'BJ','Togo':'TG','Mali':'ML','Tunisie':'TN','Mauritanie':'MR','Burkina Faso':'BF','Niger':'NE','Gabon':'GA','Guinée':'GN','Congo':'CG','Madagascar':'MG'};
 const topP8=Object.entries(jobs.reduce((m,j)=>(AFR(j)&&(m[j.p]=(m[j.p]||0)+1),m),{})).sort((a,b)=>b[1]-a[1]).slice(0,13);
 $('picks').innerHTML = `<button class="pick-b" data-pf="deb" aria-pressed="false"><span class="ring" style="--h:150">🎓</span><span class="lb">Débutants</span><small>stages</small></button><button class="pick-b" data-pf="tt" aria-pressed="false"><span class="ring" style="--h:265">💻</span><span class="lb">Télétravail</span><small>à distance</small></button><button class="pick-b" data-pf="monde" aria-pressed="false"><span class="ring" style="--h:200">🌍</span><span class="lb">Monde</span><small>international</small></button>`
