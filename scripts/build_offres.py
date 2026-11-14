@@ -73,7 +73,7 @@ for j in d["offres"]:
 {''.join(f'✉️ <a href="mailto:{E(m)}">{E(m)}</a><br>' for m in mails)}
 {f'<p style="margin:6px 0 0">{E(j["cons"])}</p>' if j.get('cons') else ''}
 <a class="b g" href="{E(apply)}" rel="noopener" target="_blank">Postuler / voir l'annonce d'origine</a>
-<a class="b" href="../#o={i}">Préparer ma candidature</a></div>
+<a class="b" href="../#o={i}">Préparer ma candidature</a> <a class="b" href="../#cv={i}">📄 Créer mon CV pour cette offre</a></div>
 <a class="b wa" href="https://wa.me/?text={quote(j['t']+' – '+j['e']+' ('+lieu+') : '+j_url)}" target="_blank" rel="noopener">💬 Partager sur WhatsApp</a>
 <a class="b al" href="../#alerte={quote(j['p'])}">📧 Recevoir les offres {E(j['p'])} par e-mail</a>
 {simil(j)}
