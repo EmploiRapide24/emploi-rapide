@@ -65,6 +65,16 @@ label.chip:has(input:checked){background:var(--accent-soft);border-color:var(--a
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 .more-f{display:none}
 .controls.open .more-f{display:flex}
+.fband{display:flex;align-items:center;gap:10px;width:100%;border:0;background:transparent;padding:4px 2px;font:inherit;cursor:pointer;color:var(--ink);text-align:left}
+.fb-ic{font-size:18px}.fb-t{font-weight:800;white-space:nowrap}
+.fb-act{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--mute);font-size:13px}
+.fb-n{background:var(--accent);color:#fff;border-radius:999px;font-size:12px;font-weight:800;padding:1px 8px}
+.fb-chev{font-size:16px;transition:transform .2s}.fband[aria-expanded=true] .fb-chev{transform:rotate(180deg)}
+.fpanel{display:none;padding-top:10px;margin-top:8px;border-top:1px dashed var(--line)}
+.controls.fopen .fpanel{display:block;animation:fpo .2s ease}
+.controls.fopen .more-f{display:flex}
+@keyframes fpo{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.controls.fopen .fpanel{animation:none}.fb-chev{transition:none}}
 .toggle-f{background:none;border:0;color:var(--accent);font:inherit;font-size:13px;font-weight:600;cursor:pointer;padding:6px 0 0}
 @media (max-width:640px){.controls{position:static}.row select{flex:1 1 calc(50% - 8px);min-width:0}}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:2px 0 10px;flex-wrap:wrap}
@@ -661,6 +671,8 @@ img,svg,video,iframe,table{max-width:100%}
 <div id="ban-top"></div>
 
 <div class="controls" id="controls">
+  <button type="button" class="fband" id="fband" aria-expanded="false" aria-controls="fpanel"><span class="fb-ic" aria-hidden="true">⚙️</span><span class="fb-t">Filtrer et trier</span><span class="fb-act" id="fb-act"></span><span class="fb-n" id="fb-n" hidden></span><span class="fb-chev" aria-hidden="true">▾</span></button>
+  <div class="fpanel" id="fpanel">
   <div class="row">
     <label class="sr" for="z">Région</label><select id="z"><option value="">Toutes les régions</option></select>
     <label class="sr" for="pays">Pays</label><select id="pays"><option value="">Tous les pays</option></select>
@@ -688,8 +700,9 @@ img,svg,video,iframe,table{max-width:100%}
     <button class="chip more-f" data-f="tt" aria-pressed="false">💻 Télétravail</button>
     <button class="chip more-f" data-f="ouv" aria-pressed="false">Ouvert aux candidats africains</button>
   </div>
-  <button class="toggle-f" id="toggle-f" aria-expanded="false">+ Plus de filtres</button>
+  <button class="toggle-f" id="toggle-f" aria-expanded="false" hidden>+ Plus de filtres</button>
   <button class="al-btn" id="al-add">🔔 Créer une alerte avec ces filtres</button>
+  </div>
 </div>
 <div id="alertes"></div>
 
@@ -1256,6 +1269,11 @@ document.querySelectorAll('.chip[data-f]').forEach(c=>{
 let qT; $('q').oninput=e=>{clearTimeout(qT);qT=setTimeout(()=>{st.q=e.target.value;render();},180);};
 $('toggle-f').onclick=()=>{const c=$('controls');const o=c.classList.toggle('open');$('toggle-f').setAttribute('aria-expanded',o);$('toggle-f').textContent=o?'− Moins de filtres':'+ Plus de filtres';};
 if(st.contrat||st.k||['direct','li','monde','tt','ouv'].some(x=>st.f.has(x))) $('toggle-f').click();
+(function(){const c=$('controls'),b=$('fband');if(!c||!b)return;
+ function sum(){const a=[];['z','pays','secteur','contrat','k'].forEach(id=>{const x=$(id);if(x&&x.value)a.push(x.options[x.selectedIndex].text)});c.querySelectorAll('.chip[aria-pressed="true"]').forEach(x=>a.push(x.textContent.trim()));$('fb-act').textContent=a.length?a.join(', '):'Toutes les offres : région, pays, secteur, contrat…';const n=$('fb-n');n.hidden=!a.length;n.textContent=a.length;}
+ b.onclick=()=>{const o=c.classList.toggle('fopen');b.setAttribute('aria-expanded',o);if(o)c.classList.add('open');};
+ c.addEventListener('change',sum);c.addEventListener('click',()=>setTimeout(sum,0));const r=$('reset');if(r)r.addEventListener('click',()=>setTimeout(sum,30));setTimeout(sum,0);window.erFsum=sum;})();
+
 
 
 /* ---------- commentaires (Supabase) ---------- */
