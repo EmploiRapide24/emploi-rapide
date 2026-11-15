@@ -1,7 +1,7 @@
 {
  "version": 1,
- "maj": "2026-11-14",
- "curseur": 140,
+ "maj": "2026-11-15",
+ "curseur": 190,
  "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
  "pays": {
   "Sénégal": {
@@ -863,75 +863,75 @@
     },
     {
      "nom": "Ecobank Côte d'Ivoire",
-     "url": "",
-     "vu": "",
+     "url": "https://ecobank.com/group/about-us/careers",
+     "vu": "2026-11-15",
      "ok": 1
     },
     {
      "nom": "BICICI",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "BOA Côte d'Ivoire",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Coris Bank CI",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Banque Atlantique",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "BNI",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Orabank CI",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "NSIA Assurances",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Sunu Assurances CI",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Endeavour Mining (Ity)",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Perseus Mining (Yaouré)",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Fortuna (Lagune)",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-15",
+     "ok": 0
     },
     {
      "nom": "Allied Gold (Bonikro)",
