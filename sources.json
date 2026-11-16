@@ -1,7 +1,7 @@
 {
  "version": 1,
- "maj": "2026-11-15",
- "curseur": 190,
+ "maj": "2026-11-16",
+ "curseur": 240,
  "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
  "pays": {
   "Sénégal": {
@@ -1163,8 +1163,8 @@
     },
     {
      "nom": "CFAO Motors CI",
-     "url": "",
-     "vu": "",
+     "url": "https://cfaocareers.talent-soft.com/job/list-of-jobs.aspx",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
@@ -1181,20 +1181,20 @@
     },
     {
      "nom": "Africa Global Logistics CI",
-     "url": "",
-     "vu": "",
+     "url": "https://acareerbyagl.talent-soft.com/job/list-of-jobs.aspx",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
      "nom": "MSC Côte d'Ivoire",
-     "url": "",
-     "vu": "",
+     "url": "https://www.msc.com/en/careers",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
      "nom": "Maersk CI",
-     "url": "",
-     "vu": "",
+     "url": "https://www.maersk.com/careers",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
@@ -1271,20 +1271,20 @@
     },
     {
      "nom": "Hôtel Ivoire Sofitel",
-     "url": "",
-     "vu": "",
+     "url": "https://careers.accor.com/global/en/jobs",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
      "nom": "Radisson Blu Abidjan",
-     "url": "",
-     "vu": "",
+     "url": "https://radissoncareers.com/",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
      "nom": "Novotel Abidjan",
-     "url": "",
-     "vu": "",
+     "url": "https://careers.accor.com/global/en/jobs",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
@@ -1358,14 +1358,14 @@
    "emp": [
     {
      "nom": "MTN Cameroon",
-     "url": "",
-     "vu": "",
+     "url": "https://careers.mtn.cm/",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
      "nom": "Orange Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://www.orange.jobs/",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
@@ -1383,8 +1383,8 @@
     {
      "nom": "ENEO",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-16",
+     "ok": 0
     },
     {
      "nom": "Camwater",
@@ -1431,8 +1431,8 @@
     {
      "nom": "Camrail",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-16",
+     "ok": 0
     },
     {
      "nom": "SABC (Boissons du Cameroun)",
@@ -1443,13 +1443,13 @@
     {
      "nom": "Guinness Cameroun",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-16",
+     "ok": 0
     },
     {
      "nom": "Nestlé Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://www.nestle-cwa.com/en/about-getting-job",
+     "vu": "2026-11-16",
      "ok": 1
     },
     {
