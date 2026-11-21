@@ -1,5 +1,5 @@
 {
- "maj": "2026-11-16",
+ "maj": "2026-11-21",
  "offres": [
   {
    "t": "Chargé(e) de production médiatique (responsable média national)",
@@ -50,7 +50,11 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13"
+   "vf": "2026-11-21",
+   "etp": [
+    "Remplissez le formulaire sur la page de l'offre.",
+    "Joignez votre CV (lettre de motivation facultative)."
+   ]
   },
   {
    "t": "Superviseur(e) de l'audit du système qualité",
@@ -73,7 +77,11 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13"
+   "vf": "2026-11-21",
+   "etp": [
+    "Remplissez le formulaire sur la page de l'offre.",
+    "Joignez votre CV (20 Mo maximum)."
+   ]
   },
   {
    "t": "Chef de projet senior – opérations télécom B2B",
@@ -96,7 +104,11 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13"
+   "vf": "2026-11-21",
+   "etp": [
+    "Remplissez le formulaire sur la page de l'offre.",
+    "Joignez votre CV (lettre de motivation facultative)."
+   ]
   },
   {
    "t": "Consultant support FAI",
@@ -119,54 +131,11 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Coordinateur opérations et achats (H/F)",
-   "e": "COMRACO",
-   "p": "Sénégal",
-   "v": "Thiaroye",
-   "c": "CDD",
-   "s": "Logistique / Transport",
-   "pub": "2026-11-04",
-   "lim": "",
-   "src": "Emploi Dakar",
-   "u": "https://www.emploidakar.com/offre-demploi/comraco-thiaroye-14-km-route-de-rufisque-cdd-coordinateur-operations-et-achats-h-f/",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Chez un distributeur de câbles fibre optique : suivi des stocks et réapprovisionnements, mise à jour des prix, demandes de prix fournisseurs, gestion des documents d'import (douane, transit, livraison). Profil : 3 à 5 ans en import-export, transit ou achats au Sénégal, anglais professionnel écrit, Excel.",
-   "mail": "hello@rethink-ventures.com",
-   "cons": "Envoyer le CV et raconter par écrit une expérience de dédouanement compliquée et comment elle s'est terminée.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Directeur des études",
-   "e": "Grande école (AFI L'UE)",
-   "p": "Sénégal",
-   "v": "Dakar",
-   "c": "CDD / CDI",
-   "s": "Éducation",
-   "pub": "2026-11-04",
-   "lim": "",
-   "src": "Emploi Dakar",
-   "u": "https://www.emploidakar.com/offre-demploi/afi-lue-zone-b-dakar-cdd-cdi-directeur-des-etudes/",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Coordonner la pédagogie d'une grande école, suivre les étudiants, organiser examens et jurys, piloter la qualité et assurer l'intérim du directeur général. Profil : Bac+5, au moins 5 ans dans l'enseignement supérieur dont 3 en coordination pédagogique, maîtrise du système LMD et des accréditations.",
-   "mail": "afiue306@gmail.com",
-   "cons": "Objet « Directeur des Études » ; joindre lettre de motivation, CV, diplômes et trois références. Attention : l'annonce indique une date limite (28 octobre) antérieure à sa publication, vérifiez auprès de l'école.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13",
-   "al": "Candidature via une adresse e-mail personnelle : vérifiez l'entreprise et ne payez jamais de frais."
+   "vf": "2026-11-21",
+   "etp": [
+    "Ouvrez le lien de candidature https://smrtr.io/CF2bv.",
+    "Créez votre profil et joignez votre CV."
+   ]
   },
   {
    "t": "Agent suivi client B2B",
@@ -189,7 +158,12 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13"
+   "vf": "2026-11-21",
+   "etp": [
+    "Préparez CV et courte lettre de motivation.",
+    "Envoyez-les à rhcommercial@grazeina.com.",
+    "Objet : « Candidature – Agent de suivi client B2B »."
+   ]
   },
   {
    "t": "Assistant(e) commercial(e)",
@@ -258,30 +232,12 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Assistante commerciale",
-   "e": "HR Business Center",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan (Cocody Angré)",
-   "c": "Emploi",
-   "s": "Commerce / Vente",
-   "pub": "2026-11-05",
-   "lim": "2026-11-19",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-158007-assistante-commerciale.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Seconder la responsable dans la coordination des équipes, la facturation des clients et la recherche de partenaires. Profil : au moins 2 ans d'expérience, très bonne expression orale et écrite, Word, bon relationnel. Salaire annoncé : 150 000 FCFA plus prime sur le chiffre d'affaires.",
-   "lien": "https://wa.me/0101818745",
-   "cons": "Par WhatsApp au 01 01 81 87 45 : intitulé du poste, CV en pièce jointe et lieu d'habitation.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13"
+   "vf": "2026-11-21",
+   "etp": [
+    "Préparez CV et lettre de motivation en PDF.",
+    "Déposez-les via le formulaire sur ysedgroup.ci/carriere/.",
+    "Postulez avant le 6 décembre 2026."
+   ]
   },
   {
    "t": "Commercial spécialisé en produits phytosanitaires",
@@ -310,30 +266,6 @@
     "Envoyez le dossier à hr@tropicaindustries.com.",
     "Postulez avant le 21 novembre 2026."
    ]
-  },
-  {
-   "t": "Assistante RH commerciale",
-   "e": "HR Business Center",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan",
-   "c": "Emploi",
-   "s": "RH / Administration",
-   "pub": "2026-11-05",
-   "lim": "2026-11-19",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-158001-assistante-rh-commerciale.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Gérer l'administration du personnel (contrats, congés, absences) et les recrutements, puis prospecter et suivre un portefeuille de clients. Profil : Bac+2/3 en ressources humaines, rigueur, discrétion, pack Office.",
-   "mail": "cabinethr.candidature@gmail.com",
-   "cons": "Intitulé du poste en objet ; joindre le CV et indiquer son lieu d'habitation.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13",
-   "al": "Candidature via une adresse e-mail personnelle : vérifiez l'entreprise et ne payez jamais de frais."
   },
   {
    "t": "Agent HSE (bâtiment)",
@@ -388,146 +320,6 @@
    ]
   },
   {
-   "t": "Ingénieur chargé d'études et travaux",
-   "e": "Port Autonome de San-Pédro",
-   "p": "Côte d'Ivoire",
-   "v": "San-Pédro",
-   "c": "Emploi",
-   "s": "BTP / Mines",
-   "pub": "2026-11-05",
-   "lim": "2026-11-20",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-157996-ingenieur-charge-d-etudes-et-travaux.html",
-   "k": "Public",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Rédiger les termes de référence des études portuaires, concevoir les ouvrages et superviser les travaux. Profil : Bac+5 en travaux publics, au moins 6 mois d'expérience, maîtrise de GRAITEC, COVADIS, MS Project, ARCHICAD et PLAXIS ; une expérience portuaire est un plus.",
-   "lien": "https://jobkonect.ai/apply?id=2e30121c-353d-4ad9-844f-f433862716f9",
-   "cons": "En ligne : CV, lettre de motivation, diplômes et prétention salariale.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Technico-commerciaux",
-   "e": "HR Business Center",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan, Bouaké",
-   "c": "Emploi",
-   "s": "Commerce / Vente",
-   "pub": "2026-11-05",
-   "lim": "2026-11-19",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-157995-technico-commerciaux.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Démarcher des clients, présenter des solutions techniques, conseiller, négocier et suivre le portefeuille. Profil : Bac+2/3 en électrotechnique, électricité, réseaux ou électromécanique, sens de la négociation.",
-   "mail": "cabinethr.candidature@gmail.com",
-   "cons": "Intitulé du poste en objet ; joindre le CV et indiquer son lieu d'habitation.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13",
-   "al": "Candidature via une adresse e-mail personnelle : vérifiez l'entreprise et ne payez jamais de frais."
-  },
-  {
-   "t": "Senior Metallurgist Superintendent",
-   "e": "Allied Gold",
-   "p": "Côte d'Ivoire",
-   "v": "Agbaou",
-   "c": "Emploi",
-   "s": "BTP / Mines",
-   "pub": "2026-11-05",
-   "lim": "2026-11-16",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-157993-senior-metallurgist-superintendent.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "CDI : seconder le directeur d'usine, optimiser la récupération de l'or, réduire les coûts, encadrer l'équipe métallurgique et préparer budgets et rapports. Profil : diplôme supérieur en traitement du minerai ou génie chimique, au moins 10 ans en mine dont 5 à un poste similaire, bon anglais.",
-   "mail": "ico.hr@alliedgold.com",
-   "cons": "Objet « Senior Metallurgist Superintendent » ; joindre le CV.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Gold Room Assistant Supervisor",
-   "e": "Allied Gold",
-   "p": "Côte d'Ivoire",
-   "v": "Agbaou",
-   "c": "Emploi",
-   "s": "BTP / Mines",
-   "pub": "2026-11-05",
-   "lim": "2026-11-16",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-157992-gold-room-assistant-supervisor.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "CDI : superviser la salle d'or (sécurité, comptabilité des matières aurifères, rapports de production, équipements, formation). Profil : diplôme supérieur en traitement des minéraux ou métallurgie, au moins 3 ans d'expérience en salle d'or.",
-   "mail": "ico.hr@alliedgold.com",
-   "cons": "Objet « Gold Room Assistant Supervisor » ; joindre le CV.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Comptable junior",
-   "e": "Société des Mines de Lafigué",
-   "p": "Côte d'Ivoire",
-   "v": "Dabakala",
-   "c": "Emploi",
-   "s": "Finance / Comptabilité",
-   "pub": "2026-11-05",
-   "lim": "2026-11-20",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-157990-comptable-junior.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "CDI : factures fournisseurs, petite caisse, relevés bancaires, rapprochements et clôtures mensuelles. Profil : BTS ou DUT en comptabilité, au moins 2 ans d'expérience (idéalement industrie), SYSCOHADA, Sage, Odoo ou SAP ; l'anglais est un plus.",
-   "mail": "lafigue.recrutement@endeavourmining.com",
-   "cons": "Objet « COMPTABLE JUNIOR ».",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Assistantes administratives et commerciales",
-   "e": "HR Business Center",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan",
-   "c": "Stage",
-   "s": "RH / Administration",
-   "pub": "2026-11-05",
-   "lim": "2026-11-19",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-157991-assistantes-administratives-et-commerciales-stage.html",
-   "k": "Privé",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Stage : classement, courrier, appels et rendez-vous, relances clients, devis et factures. Profil : Bac+2/3 en commerce, organisé, pack Office.",
-   "mail": "cabinethr.candidature@gmail.com",
-   "cons": "Intitulé du poste en objet ; joindre le CV et indiquer son lieu d'habitation.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 0,
-   "vf": "2026-11-13",
-   "al": "Candidature via une adresse e-mail personnelle : vérifiez l'entreprise et ne payez jamais de frais."
-  },
-  {
    "t": "Agent d'inspection maritime",
    "e": "Group AGECOSCO",
    "p": "Gabon",
@@ -574,7 +366,7 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13",
+   "vf": "2026-11-21",
    "desc": "SmartSana Energies recrute un(e) commercial(e) à Yaoundé pour développer ses ventes de solutions d'énergie solaire. Le poste inclut aussi la création de contenus sur les réseaux sociaux.",
    "mis": [
     "Accueillir, conseiller et suivre prospects et clients",
@@ -690,33 +482,6 @@
    ]
   },
   {
-   "t": "Stage en gestion de projet",
-   "e": "OIM",
-   "p": "Mauritanie",
-   "v": "Bassikounou",
-   "c": "Stage",
-   "s": "ONG / International",
-   "pub": "",
-   "lim": "2026-11-17",
-   "src": "BETA Conseils",
-   "u": "https://www.beta.mr/beta/offre/stage-en-gestion-de-projet/12032",
-   "k": "International / ONG",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "lien": "https://www.beta.mr/beta/offre/stage-en-gestion-de-projet/12032",
-   "cons": "Le descriptif complet et le mode de candidature sont sur l'annonce d'origine.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "vf": "2026-11-13",
-   "desc": "L'OIM propose un stage en gestion de projet à Bassikounou, en Mauritanie. L'annonce renvoie vers l'offre détaillée sur le site externe de l'organisation.",
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Cliquez sur « View the external job posting » et suivez la procédure OIM."
-   ]
-  },
-  {
    "t": "Caissières polyvalentes (nouvelle ouverture)",
    "e": "Monoprix",
    "p": "Tunisie",
@@ -772,73 +537,6 @@
    "vf": "2026-11-14"
   },
   {
-   "t": "Programme de bourses 2027 de leadership – Fondation Mo Ibrahim",
-   "e": "Banque africaine de développement",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan",
-   "c": "Programme",
-   "s": "ONG / International",
-   "pub": "2026-08-28",
-   "lim": "2026-11-20",
-   "src": "Site carrières BAD",
-   "u": "https://www.afdb.org/fr/propos/carrieres/postes-vacants",
-   "k": "International / ONG",
-   "d": 1,
-   "add": "2026-11-05",
-   "li": 0,
-   "lien": "https://www.afdb.org/fr/propos/carrieres/postes-vacants",
-   "cons": "Candidature en ligne depuis la page des postes vacants de la BAD.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1
-  },
-  {
-   "t": "Analyste RH – mobilité internationale et avantages sociaux",
-   "e": "Groupe de la Banque mondiale",
-   "p": "Sénégal",
-   "v": "Dakar",
-   "c": "Emploi",
-   "s": "RH / Administration",
-   "pub": "",
-   "lim": "2026-11-17",
-   "src": "Emplois Sénégal",
-   "u": "https://emploisenegal.sn/post/42222",
-   "k": "International / ONG",
-   "d": 0,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Le Groupe de la Banque mondiale recrute à Dakar un analyste RH chargé de la mobilité internationale du personnel et des avantages sociaux, surtout vers l'Afrique de l'Ouest. Poste local à durée indéterminée.",
-   "lien": "https://emploisenegal.sn/post/42222",
-   "cons": "Référence req39227. Candidature via la page d'origine, avant le 17/11/2026 à 23h59 UTC.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "vf": "2026-11-13",
-   "mis": [
-    "Servir de point de contact unique du personnel muté",
-    "Conseiller sur les démarches RH de relocalisation",
-    "Animer des briefings sur la mutation et les avantages",
-    "Autoriser et contrôler les prestataires de services",
-    "Améliorer politiques et processus de relocalisation",
-    "Encadrer les collègues moins expérimentés"
-   ],
-   "pro": [
-    "Master en commerce, gestion, RH ou logistique",
-    "2 ans en relation client ou prestation de services",
-    "Expérience en administration des avantages sociaux",
-    "Anglais et français courants",
-    "Analyse, gestion de projet, souci du détail"
-   ],
-   "plus": "Avantages : retraite, assurances santé, vie et invalidité, congés dont parental.",
-   "niv": 5,
-   "exp": 2,
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Suivez le lien de candidature de la Banque mondiale (req39227).",
-    "Postulez avant le 17/11/2026."
-   ]
-  },
-  {
    "t": "Concours externe : 58 postes (23 profils)",
    "e": "BH Bank",
    "p": "Tunisie",
@@ -859,7 +557,7 @@
    "z": "Afrique francophone",
    "tt": 0,
    "ouv": 0,
-   "vf": "2026-11-13",
+   "vf": "2026-11-21",
    "mis": [
     "Concours externe : 58 postes répartis en 23 profils"
    ],
@@ -873,50 +571,6 @@
     "Inscrivez-vous sur la plateforme de la BH Bank avant le 23/11/2026.",
     "Si présélectionné, déposez votre dossier physique à l'IFID, Tunis.",
     "Passez les épreuves écrites puis l'oral."
-   ]
-  },
-  {
-   "t": "Coordinateur(trice) exécutif(ve) – intérim",
-   "e": "FONGIM",
-   "p": "Mali",
-   "v": "Bamako",
-   "c": "CDD",
-   "s": "ONG / International",
-   "pub": "",
-   "lim": "2026-11-20",
-   "src": "Site du FONGIM",
-   "u": "https://www.fongim.org/offres-emploi-detail/recrutement-dun-e-coordinateur-coordinatrice-executifve-du-fongim-interim",
-   "k": "International / ONG",
-   "d": 1,
-   "add": "2026-11-05",
-   "li": 0,
-   "desc": "Le FONGIM recherche à Bamako un(e) coordinateur(trice) exécutif(ve) intérimaire pour remplacer un congé maternité du 1er janvier au 31 mars 2027. Le poste assure coordination, réunions et appui administratif.",
-   "mail": "ml.recrutement@fongim.org",
-   "cons": "E-mail à ml.recrutement@fongim.org, objet « Intérim – Coordinateur(trice) Exécutif(ve) FONGIM », avec CV, lettre précisant la disponibilité au 1/1/2027 et trois références. Avant le 20/11/2026 à 12h.",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "vf": "2026-11-13",
-   "mis": [
-    "Organiser réunions du Bureau, assemblées générales et groupes de travail",
-    "Rédiger comptes rendus et suivre les décisions",
-    "Faciliter l'information entre direction, membres et partenaires",
-    "Préparer notes, présentations et rapports",
-    "Assurer le suivi administratif de la direction exécutive"
-   ],
-   "pro": [
-    "Bac+3 minimum en administration, gestion ou sciences sociales",
-    "Au moins 3 ans sur un poste administratif de haut niveau",
-    "Expérience en organisation humanitaire ou de développement",
-    "Français parfait, bon anglais, Microsoft Office",
-    "Disponible dès le 1er janvier 2027"
-   ],
-   "plus": "Recrutement gratuit; candidatures féminines encouragées.",
-   "niv": 3,
-   "exp": 3,
-   "etp": [
-    "Préparez CV, lettre (disponibilité au 1er janvier 2027) et trois références.",
-    "Envoyez à ml.recrutement@fongim.org avec l'objet exigé avant le 20/11 à 12h."
    ]
   },
   {
@@ -967,135 +621,6 @@
    "al": "Dates limites divergentes entre le texte (15.11.2026) et la page FONGIM (16.12.2026)."
   },
   {
-   "t": "Consultant(e) suivi de terrain (suivi et évaluation)",
-   "e": "OIM",
-   "p": "Haïti",
-   "v": "Cap-Haïtien",
-   "c": "Consultant",
-   "s": "ONG / International",
-   "pub": "",
-   "lim": "2026-11-19",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/cfa2026-040-consultant-e-en-suivi-de-terrain-suivi-et-evaluation-consultant-categorie-a-cap-haitien-OM-23974",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Amérique latine",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "L'OIM recrute à Cap-Haïtien un(e) consultant(e) en suivi de terrain pour 6 mois, à temps partiel. Il appuie la collecte de données et les rapports sur l'assistance aux migrants.",
-   "lien": "https://fa-evlj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/23974",
-   "cons": "Référence CFA2026/040. Candidature en ligne; l'OIM ne demande aucun frais.",
-   "vf": "2026-11-13",
-   "mis": [
-    "Collecter des données aux points d'entrée, centres d'hébergement et communautés",
-    "Mener questionnaires, entretiens et groupes de discussion",
-    "Analyser les données et produire des rapports",
-    "Travailler sous la supervision du chargé de suivi-évaluation"
-   ],
-   "pro": [
-    "Diplôme en économie, affaires sociales, développement ou données, ou expérience équivalente",
-    "2 ans d'expérience avec un diplôme secondaire",
-    "Français courant; créole et anglais souhaités",
-    "Maîtrise de MS Office et KoboToolbox",
-    "Disponible pour déplacements"
-   ],
-   "plus": "Consultance de 6 mois, temps partiel, catégorie A.",
-   "niv": 3,
-   "exp": 2,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ]
-  },
-  {
-   "t": "Assistant Legal Officer (P-1)",
-   "e": "OMPI / WIPO",
-   "p": "Singapour",
-   "v": "Singapour",
-   "c": "CDD",
-   "s": "RH / Administration",
-   "pub": "",
-   "lim": "2026-11-19",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/assistant-legal-officer-PO-26297",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Asie-Pacifique",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "L'OMPI recrute à Singapour un(e) juriste adjoint(e) P-1 au Centre d'arbitrage et de médiation. Contrat temporaire d'un an pour promouvoir le règlement des litiges de PI en ASEAN.",
-   "lien": "https://wipo.taleo.net/careersection/wp_2/jobdetail.ftl?job=26297-TA&tz=GMT%2B00%3A00&tzname=UTC",
-   "cons": "Candidature en ligne sur le portail OMPI.",
-   "vf": "2026-11-13",
-   "mis": [
-    "Promouvoir les services de règlement des litiges de l'OMPI à Singapour et en ASEAN",
-    "Élaborer supports et politiques",
-    "Gérer l'administration des dossiers et la recherche"
-   ],
-   "pro": [
-    "Licence et 3 ans d'expérience",
-    "Bonne compréhension de la propriété intellectuelle et du règlement des litiges",
-    "Anglais; excellentes communications",
-    "Esprit d'équipe, travail sous pression"
-   ],
-   "plus": "Salaire annuel estimé 62 333 USD, ajustement de poste inclus.",
-   "sal": "62 333 USD par an",
-   "niv": 4,
-   "exp": 3,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ]
-  },
-  {
-   "t": "Conseiller(ère) résident(e) en réglementation et supervision bancaires",
-   "e": "FMI",
-   "p": "Ghana",
-   "v": "Accra",
-   "c": "CDD",
-   "s": "Finance / Comptabilité",
-   "pub": "",
-   "lim": "2026-11-19",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/resident-advisor-on-banking-regulation-and-supervision-at-the-bank-of-ghana-bog-in-accra-ghana-mcmta-26-R9983",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Afrique (autres)",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "Le FMI recrute un(e) conseiller(ère) résident(e) en réglementation bancaire auprès de la Banque du Ghana à Accra. Contrat d'un an, prolongeable jusqu'à deux ans de plus.",
-   "lien": "https://unvacancies.org/jobs/resident-advisor-on-banking-regulation-and-supervision-at-the-bank-of-ghana-bog-in-accra-ghana-mcmta-26-R9983",
-   "cons": "Candidature via le portail du FMI indiqué sur l'annonce d'origine.",
-   "mis": [
-    "Établir un plan de travail en réglementation et supervision",
-    "Appuyer la mise en œuvre de Bâle et du pilier 2",
-    "Moderniser la supervision fondée sur les risques",
-    "Organiser formations et ateliers pour la banque centrale"
-   ],
-   "pro": [
-    "Au moins 7 ans en supervision bancaire, surtout en banque centrale",
-    "Diplôme en économie, finance ou comptabilité",
-    "Maîtrise des normes internationales de supervision",
-    "Anglais de niveau natif ou équivalent"
-   ],
-   "plus": "Rémunération compétitive, financée par le SECO suisse.",
-   "niv": 5,
-   "exp": 7,
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Postulez via le lien officiel FMI."
-   ],
-   "vf": "2026-11-13"
-  },
-  {
    "t": "Assistant(e) spécial(e) de l'Ombudsman des Nations unies (P-4)",
    "e": "Secrétariat de l'ONU",
    "p": "États-Unis",
@@ -1116,49 +641,6 @@
    "desc": "Poste P-4 à durée déterminée auprès du Bureau de l'Ombudsman : appui au règlement informel des conflits du personnel, coordination et rédaction. Expérience confirmée attendue.",
    "lien": "https://unvacancies.org/jobs/special-assistant-to-the-united-nations-ombudsman-N-285247",
    "cons": "Postulez sur le portail officiel de l'organisation : le lien ouvre la fiche UN Vacancies, qui renvoie vers l'annonce d'origine (bouton « Apply »). Ne payez jamais de frais : les Nations unies n'en demandent à aucune étape.",
-   "vf": "2026-11-13"
-  },
-  {
-   "t": "Stagiaire – recherche et gestion de projets",
-   "e": "ONUDC (ONU)",
-   "p": "Autriche",
-   "v": "Vienne",
-   "c": "Stage",
-   "s": "ONG / International",
-   "pub": "",
-   "lim": "2026-11-18",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/intern-research-project-management-C-287860",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Europe",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "L'ONUDC propose un stage non rémunéré à Vienne, à la section trafic d'armes à feu. Il couvre recherche, appui aux projets, rédaction et préparation de réunions.",
-   "lien": "https://careers.un.org/jobSearchDescription/287860?language=en",
-   "cons": "Candidature via le portail UN Careers, avec preuve de statut d'étudiant.",
-   "mis": [
-    "Appuyer la recherche et la gestion de projets",
-    "Rédiger des documents et préparer des réunions",
-    "Aider à la levée de fonds et à la communication"
-   ],
-   "pro": [
-    "Étudiant(e) en master ou dernière année de licence, ou récemment diplômé(e)",
-    "Domaine d'étude lié au stage",
-    "Anglais courant",
-    "Maîtrise de Word, PowerPoint, Teams"
-   ],
-   "plus": "Stage non rémunéré; frais de voyage, visa et vie à la charge du stagiaire.",
-   "niv": 5,
-   "exp": 0,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ],
-   "al": "Stage non rémunéré, sans frais de candidature selon l'ONU.",
    "vf": "2026-11-13"
   },
   {
@@ -1188,46 +670,6 @@
     "Avant le 7 décembre 2026, minuit heure de Paris."
    ],
    "vf": "2026-11-14"
-  },
-  {
-   "t": "Spécialiste en gestion des entrepôts (Volontaire ONU international)",
-   "e": "VNU – Volontaires des Nations unies",
-   "p": "RD Congo",
-   "v": "Kinshasa",
-   "c": "Volontariat",
-   "s": "Logistique / Transport",
-   "pub": "",
-   "lim": "2026-11-19",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/specialiste-en-gestion-des-entrepots-21273808",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "Les Volontaires des Nations unies recherchent un(e) spécialiste en gestion des entrepôts en RDC pour 6 mois. Il renforce stocks et traçabilité pour les opérations de santé d'urgence.",
-   "lien": "https://app.unv.org/opportunities/1784888021273808",
-   "cons": "Candidature sur la plateforme UNV.",
-   "vf": "2026-11-13",
-   "mis": [
-    "Renforcer la gestion des entrepôts et des stocks",
-    "Améliorer la traçabilité des produits",
-    "Garantir la disponibilité des intrants de santé d'urgence"
-   ],
-   "pro": [
-    "Au moins 5 ans en entrepôts, stocks et logistique",
-    "Maîtrise des systèmes informatisés de stocks et Office",
-    "Français et anglais"
-   ],
-   "niv": 3,
-   "exp": 5,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ]
   },
   {
    "t": "Consultant(e) à temps partiel – chargé(e) de communication",
@@ -1296,133 +738,6 @@
     "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
     "Envoyez avant la date limite."
    ]
-  },
-  {
-   "t": "Consultant(e) mobilité active",
-   "e": "PNUE (ONU)",
-   "p": "Kenya",
-   "v": "Nairobi",
-   "c": "Consultant",
-   "s": "BTP / Mines",
-   "pub": "",
-   "lim": "2026-11-18",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/active-mobility-consultant-P-287736",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Afrique (autres)",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "Le PNUE recrute à Nairobi un(e) consultant(e) pour son programme de mobilité active en Afrique. Contrat de 12 mois axé sur études de cas, formation et orientations politiques.",
-   "lien": "https://careers.un.org/jobSearchDescription/287736?language=en",
-   "cons": "Candidature via le portail UN Careers.",
-   "vf": "2026-11-13",
-   "mis": [
-    "Coordonner le groupe de travail GEF",
-    "Élaborer des études de cas par pays",
-    "Fournir des orientations sur politiques et financement",
-    "Concevoir et animer des formations et échanges virtuels"
-   ],
-   "pro": [
-    "Diplôme avancé (ou licence plus 2 ans d'expérience)",
-    "Au moins 2 ans en mobilité active, urbanisme ou genre",
-    "Expérience avec gouvernements africains",
-    "Rédaction technique et anglais courant"
-   ],
-   "plus": "Rémunération fixée par mission.",
-   "niv": 5,
-   "exp": 2,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ]
-  },
-  {
-   "t": "Chargé(e) technique – prévention et gestion des maladies non transmissibles (VNU international)",
-   "e": "VNU – Volontaires des Nations unies",
-   "p": "Congo",
-   "v": "Congo (ville sur l'annonce)",
-   "c": "Volontariat",
-   "s": "Santé",
-   "pub": "",
-   "lim": "2026-11-19",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/charge-e-technique-prevention-et-gestion-des-maladies-non-transmissibles-21273766",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "Les VNU recrutent un(e) chargé(e) technique en maladies non transmissibles au Congo pour 12 mois. Il appuie les priorités de l'OMS AFRO en prévention et suivi des données.",
-   "lien": "https://app.unv.org/opportunities/1784888021273766",
-   "cons": "Candidature sur la plateforme UNV.",
-   "vf": "2026-11-13",
-   "mis": [
-    "Fournir un appui technique aux priorités MNT",
-    "Intégrer la prévention aux soins primaires et à la couverture santé",
-    "Renforcer suivi et systèmes de données"
-   ],
-   "pro": [
-    "Au moins 4 ans en prévention ou gestion des MNT",
-    "Expérience avec gouvernements en politiques de MNT",
-    "Français, anglais et portugais"
-   ],
-   "niv": 4,
-   "exp": 4,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ]
-  },
-  {
-   "t": "ICT Officer – gestion des identités et des accès",
-   "e": "OIM",
-   "p": "Espagne",
-   "v": "Valence",
-   "c": "CDD",
-   "s": "Informatique / Télécoms",
-   "pub": "",
-   "lim": "2026-11-18",
-   "src": "UN Vacancies (agrégateur ONU)",
-   "u": "https://unvacancies.org/jobs/information-and-communications-technology-ict-officer-identity-and-access-management-p-OM-23906",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-05",
-   "z": "Europe",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "L'OIM recrute à Valence (Espagne) un(e) ICT Officer gestion des identités et des accès pour 9 mois. Il pilote l'écosystème IDAM entre IDM, AD/Entra ID et cycles de vie RH.",
-   "lien": "https://fa-evlj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/23906",
-   "cons": "Candidature en ligne sur le portail OIM; l'OIM ne demande aucun frais.",
-   "mis": [
-    "Concevoir et soutenir l'orchestration des identités",
-    "Appliquer le moindre privilège et réduire les risques d'identité",
-    "Intégrer la gestion des accès aux systèmes ERP",
-    "Automatiser les workflows IAM par scripts"
-   ],
-   "pro": [
-    "Master en cybersécurité ou informatique et 5 ans d'expérience",
-    "Certifications SC-300 et AZ-104 requises",
-    "ITIL 4 Foundation et CISSP à obtenir",
-    "Maîtrise d'Active Directory et Entra ID",
-    "Anglais courant"
-   ],
-   "plus": "Contrat temporaire de 9 mois.",
-   "niv": 5,
-   "exp": 5,
-   "etp": [
-    "Ouvrez le lien de candidature officiel.",
-    "Complétez votre profil en ligne et joignez CV et lettre de motivation.",
-    "Envoyez avant la date limite."
-   ],
-   "vf": "2026-11-13"
   },
   {
    "t": "Stagiaire – suivi et évaluation",
@@ -1636,49 +951,6 @@
    "etp": [
     "Regroupez CV, lettre et diplôme en un seul PDF.",
     "Envoyez à rh@horus-ic.com avec l'objet exigé avant le 21 décembre 2026."
-   ],
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "vf": "2026-11-13",
-   "d": 0,
-   "ouv": 0
-  },
-  {
-   "t": "Agent des opérations internationales (stage professionnel)",
-   "e": "Africa Golden Bank (AGB)",
-   "p": "Cameroun",
-   "v": "Douala",
-   "c": "Stage",
-   "s": "Finance / Comptabilité",
-   "pub": "2026-11-13",
-   "lim": "2026-11-20",
-   "src": "MinaJobs Cameroun",
-   "u": "https://cm.minajobs.net/emplois/on-recrute-agent-des-operations-internationales-stage-professionnel-douala-50320",
-   "k": "Privé",
-   "niv": 3,
-   "exp": 0,
-   "desc": "La banque Africa Golden Bank recrute un stagiaire professionnel au département des opérations internationales à Douala. Un poste ouvert, candidature par e-mail avant le 20 novembre à 17 h.",
-   "mis": [
-    "Traiter les domiciliations import/export sur la plateforme e-GUCE",
-    "Contrôler la conformité et produire les attestations",
-    "Réaliser les rapprochements des comptes correspondants",
-    "Produire les reportings réglementaires",
-    "Traiter les réclamations selon le SLA"
-   ],
-   "pro": [
-    "Bac+3 minimum en banque, finance, comptabilité ou gestion",
-    "3 mois minimum en opérations bancaires internationales",
-    "Connaissance de la réglementation des changes CEMAC et de SWIFT",
-    "Anglais un atout"
-   ],
-   "mail": "recrutement.agb@africagoldenbank.com",
-   "lien": "https://cm.minajobs.net/emplois/on-recrute-agent-des-operations-internationales-stage-professionnel-douala-50320",
-   "cons": "CV et lettre de motivation par e-mail au plus tard le 20 novembre 2026 à 17 h. Objet : « STAGIAIRE PROFESSIONNEL DES OPERATIONS ».",
-   "etp": [
-    "Préparez CV et lettre de motivation.",
-    "Envoyez-les à l'adresse indiquée avec l'objet exigé avant le 20 novembre à 17 h."
    ],
    "li": 0,
    "add": "2026-11-13",
@@ -2422,47 +1694,6 @@
    "vf": "2026-11-13"
   },
   {
-   "t": "Business Support Associate – Mécanicien",
-   "e": "PAM (Programme alimentaire mondial)",
-   "p": "RD Congo",
-   "v": "Kinshasa",
-   "c": "Emploi",
-   "s": "Logistique / Transport",
-   "pub": "",
-   "lim": "2026-11-18",
-   "src": "PAM – site carrières (via UNvacancies)",
-   "u": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Kinshasa-Congo-The-Dem-RepOf/Business-Support-Associate---Mechanic_JR128235",
-   "k": "International / ONG",
-   "d": 1,
-   "ns": 2,
-   "exp": 0,
-   "desc": "Le bureau du PAM en RDC recrute un agent national pour l'unité Management Services : gestion des réparations de véhicules et de groupes électrogènes et des pièces détachées.",
-   "mis": [
-    "Gérer les stocks de pièces détachées et alerter pour les commandes",
-    "Saisir entrées et sorties de stock dans l'outil FMS",
-    "Organiser la maintenance des véhicules légers et des générateurs",
-    "Suivre les travaux d'entretien et de réparation"
-   ],
-   "pro": [
-    "Diplôme reconnu en mécanique auto ou réparation de groupes électrogènes",
-    "Permis de conduire en cours de validité",
-    "Maîtrise du français (niveau C)",
-    "Baccalauréat apprécié"
-   ],
-   "lien": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Kinshasa-Congo-The-Dem-RepOf/Business-Support-Associate---Mechanic_JR128235",
-   "cons": "Candidature en ligne sur le portail de recrutement du PAM avant le 18 novembre 2026 à 23 h 59 (Kinshasa).",
-   "etp": [
-    "Ouvrez l'annonce officielle du PAM (lien ci-dessus).",
-    "Postulez en ligne avant le 18 novembre à 23 h 59."
-   ],
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "vf": "2026-11-13",
-   "ouv": 0
-  },
-  {
    "t": "Finance Assistant (assurance santé du personnel et pensions) – G5",
    "e": "OMS (Organisation mondiale de la Santé)",
    "p": "Congo",
@@ -2779,83 +2010,6 @@
    "exp": 7
   },
   {
-   "t": "Finance Manager Mali",
-   "e": "Norwegian Refugee Council (NRC)",
-   "p": "Mali",
-   "v": "Bamako",
-   "c": "Emploi",
-   "s": "Finance / Comptabilité",
-   "pub": "2026-11-02",
-   "lim": "2026-11-16",
-   "src": "ReliefWeb",
-   "u": "https://reliefweb.int/job/4236553/finance-manager-mali",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "NRC cherche un(e) gestionnaire des finances pour sa mission au Mali, chargé(e) des systèmes financiers et de la formation des équipes.",
-   "mis": [
-    "Mettre en place les systèmes et outils de finance",
-    "Former le personnel finances et programmes",
-    "Gérer le rapportage aux bailleurs"
-   ],
-   "pro": [
-    "Master dans un domaine pertinent",
-    "3 ans en gestion financière en contexte humanitaire",
-    "Français et anglais professionnels"
-   ],
-   "lien": "https://ekum.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_2019/job/21872",
-   "cons": "Postulez via le portail de recrutement de NRC (lien ci-dessus).",
-   "etp": [
-    "Ouvrez le portail NRC.",
-    "Créez votre profil et déposez CV et lettre.",
-    "Postulez avant le 16/11/2026."
-   ],
-   "vf": "2026-11-13",
-   "exp": 3,
-   "al": "Date limite proche (16 novembre)."
-  },
-  {
-   "t": "Chargé(e) de finances et de projet – Tchad",
-   "e": "Impunity Watch",
-   "p": "Tchad",
-   "c": "Emploi",
-   "s": "Finance / Comptabilité",
-   "pub": "2026-11-09",
-   "lim": "2026-11-16",
-   "src": "ReliefWeb",
-   "u": "https://reliefweb.int/job/4237509/finance-project-officer-chad",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Afrique francophone",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "L'ONG Impunity Watch recrute un(e) Finance & Project Officer pour son programme au Tchad.",
-   "mis": [
-    "Gérer les finances du programme",
-    "Appuyer le suivi de projet"
-   ],
-   "pro": [
-    "CV de 2 pages maximum avec trois références",
-    "Lettre de motivation de 2 pages maximum",
-    "Candidature en français ou en anglais"
-   ],
-   "cons": "Envoyez CV (2 pages, trois références) et lettre (2 pages) avec l'objet « Chad Finance Officer ». Date limite : 16 novembre 2026.",
-   "etp": [
-    "Rédigez CV et lettre en français ou anglais.",
-    "Envoyez-les à l'adresse indiquée avec l'objet exact.",
-    "Envoyez avant le 16/11/2026."
-   ],
-   "vf": "2026-11-13",
-   "mail": "vacancies@impunitywatch.org",
-   "al": "Date limite proche (16 novembre)."
-  },
-  {
    "t": "Consultant(e) de recherche – analyse d'économie politique au Tchad",
    "e": "Impunity Watch",
    "p": "Tchad",
@@ -3163,45 +2317,6 @@
    "niv": 4
   },
   {
-   "t": "Programme Development Officer – SHIFT Africa (P)",
-   "e": "OIM (IOM)",
-   "p": "Kenya",
-   "v": "Nairobi",
-   "c": "Emploi",
-   "s": "ONG / International",
-   "pub": "2026-11-10",
-   "lim": "2026-11-19",
-   "src": "ReliefWeb",
-   "u": "https://reliefweb.int/job/4237824/23758-programme-development-officer-shift-africa-p",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Afrique (autres)",
-   "tt": 0,
-   "ouv": 1,
-   "desc": "L'OIM cherche un Programme Development Officer pour élaborer le programme régional SHIFT Africa (réf. 23758).",
-   "mis": [
-    "Coordonner l'élaboration du programme SHIFT Africa",
-    "Consolider les contributions régionales, pays et siège",
-    "Organiser les consultations avec partenaires et secteur privé"
-   ],
-   "pro": [
-    "Personnel professionnel recruté sur le plan international",
-    "Mobilité requise",
-    "Voir l'annonce pour diplôme et expérience"
-   ],
-   "lien": "https://reliefweb.int/job/4237824/23758-programme-development-officer-shift-africa-p",
-   "cons": "Postulez via le lien de l'annonce (portail IOM). Personnel professionnel recruté sur le plan international, mobilité requise. Référence 23758.",
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Suivez la procédure de candidature indiquée par l'employeur."
-   ],
-   "vf": "2026-11-13",
-   "niv": 3,
-   "al": "Date limite proche (19 novembre) ; Nairobi à confirmer sur l'annonce."
-  },
-  {
    "t": "MHPSS Response Officer – retour volontaire assisté (P)",
    "e": "OIM (IOM)",
    "p": "Rwanda",
@@ -3278,45 +2393,6 @@
    "vf": "2026-11-13",
    "niv": 3,
    "al": "Poste en zone sensible, vérifier les conditions de sécurité."
-  },
-  {
-   "t": "Recruitment Mobile Implementation Advisor",
-   "e": "Médecins Sans Frontières Belgique",
-   "p": "Belgique",
-   "v": "Bruxelles",
-   "c": "Emploi",
-   "s": "RH / Administration",
-   "pub": "2026-11-09",
-   "lim": "2026-11-16",
-   "src": "ReliefWeb",
-   "u": "https://reliefweb.int/job/4237550/recruitment-mobile-implementation-advisor-fxm-msf-belgium",
-   "k": "International / ONG",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Europe",
-   "tt": 0,
-   "ouv": 0,
-   "desc": "MSF Belgique cherche un conseiller pour renforcer le recrutement des équipes mobiles, au sein d'une équipe bruxelloise.",
-   "mis": [
-    "Repérer les écarts et proposer des améliorations de recrutement",
-    "Appliquer les standards de recrutement sûr",
-    "Rendre compte à la responsable du recrutement"
-   ],
-   "pro": [
-    "1 an d'expérience RH internationale en ONG",
-    "2 ans en recrutement",
-    "Master en RH ou sciences sociales apprécié"
-   ],
-   "lien": "https://reliefweb.int/job/4237550/recruitment-mobile-implementation-advisor-fxm-msf-belgium",
-   "cons": "Candidature via le bouton « Apply » de l'annonce MSF, CV et lettre de motivation. Hors UE, un permis de travail est nécessaire.",
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Suivez la procédure de candidature indiquée par l'employeur."
-   ],
-   "vf": "2026-11-13",
-   "exp": 2,
-   "al": "Date limite proche (16 novembre). Permis de travail requis hors UE."
   },
   {
    "t": "Director of Operations – Bruxelles",
@@ -3650,42 +2726,6 @@
    "sal": "20 000 à 35 000 USD (fourchette indiquée par l'annonce)"
   },
   {
-   "t": "Développeur(se) Full-Stack (React / Next.js, AWS)",
-   "e": "Fluence International",
-   "p": "Monde (télétravail)",
-   "c": "Consultant",
-   "s": "Informatique / Télécoms",
-   "pub": "2026-10-29",
-   "src": "Remotive",
-   "u": "https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165",
-   "k": "Privé",
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-13",
-   "z": "Télétravail (monde)",
-   "tt": 1,
-   "ouv": 1,
-   "desc": "Fluence recrute un développeur full-stack sous contrat, à distance, pour ses produits B2B de santé mentale.",
-   "mis": [
-    "Développer des applications React et Next.js",
-    "Concevoir des API et backends sur AWS",
-    "Gérer authentification et droits d'accès"
-   ],
-   "pro": [
-    "Maîtrise de React, Next.js et AWS",
-    "Sensibilité à la sécurité et à la confidentialité",
-    "Documentation technique claire"
-   ],
-   "lien": "https://remotive.com/remote-jobs/software-development/full-stack-developer-2091165",
-   "cons": "Postulez depuis la page de l'annonce Remotive, qui redirige vers l'employeur.",
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Suivez la procédure de candidature indiquée par l'employeur."
-   ],
-   "vf": "2026-11-13",
-   "sal": "3 500 à 5 000 USD par mois (indiqué par l'annonce)"
-  },
-  {
    "t": "Agile Program Manager (à distance)",
    "e": "Toptal",
    "p": "Monde (télétravail)",
@@ -3840,7 +2880,7 @@
   {
    "z": "Afrique francophone",
    "add": "2026-11-13",
-   "vf": "2026-11-13",
+   "vf": "2026-11-21",
    "d": 0,
    "li": 0,
    "tt": 0,
@@ -3923,95 +2963,6 @@
     "Préparez un CV à jour et une lettre de motivation.",
     "Envoyez-les à decosen@goodlait.com avec l'objet « Comptable ».",
     "Indiquez l'objet demandé et envoyez avant la date limite."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 0,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Directeur administratif et financier (DAF)",
-   "e": "Grand Bleu SA",
-   "p": "Sénégal",
-   "v": "Dakar",
-   "c": "Freelance",
-   "s": "Finance / Comptabilité",
-   "pub": "2026-11-13",
-   "lim": "2026-11-20",
-   "src": "Emploi Dakar",
-   "u": "https://www.emploidakar.com/offre-demploi/grand-bleu-s-a-mole-10-nouveau-quai-de-peche-dakar-cdd-directeur-administratif-et-financier-daf/",
-   "k": "Privé",
-   "niv": 4,
-   "desc": "Entreprise de pêche thonière et d'exportation de produits de la mer cherchant un DAF pour piloter finance, comptabilité, fiscalité et trésorerie. Prestation de services, disponibilité immédiate.",
-   "mis": [
-    "Superviser finance, comptabilité, fiscalité et trésorerie",
-    "Gérer banques, financements et opérations de change",
-    "Coordonner relations avec administrations et autorités fiscales",
-    "Renforcer le contrôle interne et gérer les risques",
-    "Encadrer l'équipe finance et les clôtures"
-   ],
-   "pro": [
-    "Formation supérieure en finance, comptabilité ou audit",
-    "Expérience confirmée en finance et fiscalité",
-    "Français et anglais professionnels",
-    "Aptitude à encadrer une équipe",
-    "Atout : IFRS, SYSCOHADA, Sage"
-   ],
-   "plus": "Prestation de services ; disponibilité immédiate.",
-   "mail": "kim.hana@grandbleusa.com",
-   "cons": "Objet « Candidature – Directeur Administratif et Financier (DAF) ». Joindre CV, lettre de motivation et prétentions salariales avant le 20/11/2026 à 17h.",
-   "etp": [
-    "Préparez un CV à jour et une lettre de motivation.",
-    "Ajoutez vos prétentions salariales puis écrivez à kim.hana@grandbleusa.com.",
-    "Indiquez l'objet demandé et envoyez avant la date limite."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Spécialiste des services généraux (P-3, nomination temporaire 4 mois)",
-   "e": "UNICEF",
-   "p": "Sénégal",
-   "v": "Dakar",
-   "c": "CDD",
-   "s": "ONG / International",
-   "pub": "2026-11-05",
-   "lim": "2026-11-19",
-   "src": "UNICEF Careers",
-   "u": "https://jobs.unicef.org/jobs/facilities-services-specialist-p-3-ta-4-months-138985-dakar-senegal-wcar-senegal-dakar",
-   "k": "International / ONG",
-   "ns": 2,
-   "niv": 5,
-   "exp": 5,
-   "desc": "L'UNICEF cherche à Dakar un spécialiste des services généraux pour 4 mois, chargé de la gestion des installations et prestataires techniques du bureau.",
-   "mis": [
-    "Planifier la maintenance préventive et corrective des bâtiments",
-    "Suivre la performance des prestataires",
-    "Appuyer les achats techniques",
-    "Coordonner techniciens et services avec les agences ONU"
-   ],
-   "pro": [
-    "Master en ingénierie, gestion d'installations ou domaine technique proche",
-    "Au moins 5 ans d'expérience en gestion d'installations",
-    "Maîtrise de Microsoft Office",
-    "Capacité à encadrer techniciens et prestataires"
-   ],
-   "plus": "Nomination temporaire de 4 mois, référence 138985.",
-   "lien": "https://jobs.unicef.org/jobs/facilities-services-specialist-p-3-ta-4-months-138985-dakar-senegal-wcar-senegal-dakar",
-   "cons": "Postuler en ligne sur le portail UNICEF avant le 19/11/2026 à 10h55 (heure de Sydney).",
-   "etp": [
-    "Ouvrez la page officielle UNICEF (lien ci-dessus).",
-    "Créez ou ouvrez votre compte candidat UNICEF.",
-    "Remplissez le profil et joignez CV et lettre de motivation.",
-    "Soumettez avant la clôture du 19/11/2026."
    ]
   },
   {
@@ -4236,137 +3187,6 @@
    "li": 0,
    "tt": 0,
    "ouv": 1,
-   "t": "Stagiaire juriste d'entreprise",
-   "e": "Orezone Bomboré SA",
-   "p": "Burkina Faso",
-   "v": "Bomboré (Mogtédo)",
-   "c": "Stage",
-   "s": "RH / Administration",
-   "pub": "2026-11-13",
-   "lim": "2026-11-19",
-   "src": "Afriqueemplois",
-   "u": "https://afriqueemplois.com/post/42793",
-   "k": "Privé",
-   "niv": 4,
-   "exp": 0,
-   "desc": "La société minière Orezone Bomboré recrute un stagiaire juriste pour son département administration générale, basé sur le site aurifère de Bomboré.",
-   "mis": [
-    "Suivre les instructions du maître de stage en affaires juridiques",
-    "Aider à la vérification réglementaire des arrêtés",
-    "Veiller à l'application des procédures et contrôles",
-    "Appuyer les avis juridiques"
-   ],
-   "pro": [
-    "Bac+4 minimum en droit des affaires",
-    "Bonne connaissance du droit des affaires",
-    "Capacité à travailler sous pression et en horaire variable",
-    "Intégrité et bonne écoute"
-   ],
-   "mail": "careers-OBSA@orezone.com",
-   "cons": "Dossier en un fichier PDF unique : CV (FR et EN) avec 3 références, lettre au DRH, dernier diplôme. Avant le 19/11/2026 à 16h. Titre du poste en objet.",
-   "etp": [
-    "Réunissez CV (FR et EN), lettre au DRH et diplôme en un seul PDF.",
-    "Envoyez à careers-OBSA@orezone.com avec le titre du poste en objet.",
-    "Ne téléphonez pas, n'utilisez pas d'agence."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Réceptionniste",
-   "e": "CICR (Comité international de la Croix-Rouge)",
-   "p": "Burkina Faso",
-   "v": "Ouagadougou",
-   "c": "Emploi",
-   "s": "RH / Administration",
-   "pub": "2026-11-10",
-   "lim": "2026-11-18",
-   "src": "CICR",
-   "u": "https://www.icrc.org/fr/travailler-pour-le-cicr/offre-emploi/burkina-faso-nous-recrutons-un-e-receptionniste",
-   "k": "International / ONG",
-   "ns": 2,
-   "niv": 2,
-   "exp": 2,
-   "desc": "Le CICR recrute une réceptionniste pour son équipe de gestion de l'information à Ouagadougou : accueil, standard, courrier et fournitures.",
-   "mis": [
-    "Accueillir et orienter les visiteurs",
-    "Répondre aux appels et les transférer",
-    "Gérer courrier entrant et sortant",
-    "Distribuer les badges d'accès",
-    "Gérer l'économat de bureau"
-   ],
-   "pro": [
-    "Certification en accueil ou administration",
-    "2 à 3 ans d'expérience similaire",
-    "Bonne maîtrise du français",
-    "Bonnes compétences informatiques",
-    "Anglais de base apprécié"
-   ],
-   "plus": "Aucun frais demandé à aucune étape du recrutement.",
-   "lien": "https://www.icrc.org/fr/travailler-pour-le-cicr/offre-emploi/burkina-faso-nous-recrutons-un-e-receptionniste",
-   "cons": "Postuler via la page carrières du CICR avant le 18/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle du CICR (lien ci-dessus).",
-    "Cliquez sur « Présenter sa candidature ».",
-    "Joignez CV et lettre avant le 18/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 0,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Commercial(e) – solutions informatiques et énergies renouvelables",
-   "e": "Nsoromma Burkina",
-   "p": "Burkina Faso",
-   "v": "Ouagadougou",
-   "c": "CDD",
-   "s": "Commerce / Vente",
-   "pub": "2026-11-13",
-   "lim": "2026-11-16",
-   "src": "Afriqueemplois",
-   "u": "https://afriqueemplois.com/post/42400",
-   "k": "Privé",
-   "niv": 2,
-   "exp": 2,
-   "desc": "Entreprise locale cherchant un commercial pour prospecter et vendre des solutions informatiques et d'énergies renouvelables à Ouagadougou.",
-   "mis": [
-    "Prospecter par téléphone et sur le terrain",
-    "Présenter les solutions aux clients",
-    "Négocier et conclure les ventes",
-    "Suivre les clients et développer le chiffre d'affaires"
-   ],
-   "pro": [
-    "Bac+2 minimum",
-    "2 ans d'expérience en vente et prospection",
-    "Maîtrise du français",
-    "Dynamisme, persévérance, autonomie"
-   ],
-   "mail": "burkinansoromma@gmail.com",
-   "cons": "Envoyer le dossier de candidature par e-mail avant le 16/11/2026.",
-   "etp": [
-    "Préparez un CV à jour et une lettre de motivation.",
-    "Envoyez-les à burkinansoromma@gmail.com.",
-    "Indiquez l'objet demandé et envoyez avant la date limite."
-   ],
-   "al": "Adresse Gmail et petite structure : vérifier l'entreprise et ne payer aucun frais."
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 0,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
    "t": "Chargé(e) de programme genre (Burkina Faso)",
    "e": "AECF",
    "p": "Burkina Faso",
@@ -4409,92 +3229,6 @@
    "li": 0,
    "tt": 0,
    "ouv": 1,
-   "t": "Roving Field Security Officer (Dori)",
-   "e": "Programme alimentaire mondial (PAM)",
-   "p": "Burkina Faso",
-   "v": "Dori",
-   "c": "Consultant",
-   "s": "ONG / International",
-   "pub": "2026-11-05",
-   "lim": "2026-11-20",
-   "src": "UN Vacancies",
-   "u": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Dori-Burkina-Faso-Peoples-Dem/Roving-Field-Security-Officer_JR128213-2",
-   "k": "International / ONG",
-   "ns": 2,
-   "exp": 6,
-   "desc": "Le PAM recrute un officier de sécurité itinérant pour renforcer la sécurité de ses opérations de terrain au Burkina Faso, notamment à Dori. Contrat de consultant de 11 mois.",
-   "mis": [
-    "Appuyer la sécurité des opérations du PAM sur le terrain",
-    "Intervenir en renfort dans les zones à haut risque comme Dori"
-   ],
-   "pro": [
-    "6 ans d'expérience pertinente",
-    "Master",
-    "Français et anglais"
-   ],
-   "plus": "Consultance de 11 mois.",
-   "lien": "https://wd3.myworkdaysite.com/recruiting/wfp/job_openings/job/Dori-Burkina-Faso-Peoples-Dem/Roving-Field-Security-Officer_JR128213-2",
-   "cons": "Postuler sur le portail carrières du PAM avant le 20/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle du PAM (lien ci-dessus).",
-    "Créez votre compte candidat.",
-    "Soumettez avant le 20/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Responsable des opérations terrain (Diffa)",
-   "e": "International Rescue Committee (IRC)",
-   "p": "Niger",
-   "v": "Diffa",
-   "c": "Emploi",
-   "s": "ONG / International",
-   "pub": "2026-11-09",
-   "lim": "2026-11-17",
-   "src": "Afriqueemplois",
-   "u": "https://theirc.wd1.myworkdayjobs.com/External_Careers/job/Diffa-Niger/Responsable-des-Oprations-Terrain_JR00005916",
-   "k": "International / ONG",
-   "ns": 2,
-   "niv": 3,
-   "exp": 3,
-   "desc": "L'IRC cherche à Diffa un responsable des opérations terrain qui supervise RH-administration, finance, logistique et sécurité de la base, et coordonne l'accès humanitaire.",
-   "mis": [
-    "Superviser les fonctions support de la base de Diffa",
-    "Gérer sécurité et accès humanitaire",
-    "Valider plans d'activités et suivre les budgets",
-    "Animer la coordination hebdomadaire et le reporting",
-    "Représenter l'IRC auprès des autorités locales"
-   ],
-   "pro": [
-    "Bac+3 en gestion de projets ou opérations",
-    "3 ans de gestion en ONG internationale",
-    "Français et anglais écrits et oraux",
-    "Disponibilité pour déplacements terrain",
-    "Capacité à travailler en contexte sécuritaire instable"
-   ],
-   "plus": "Avantages et allocations de soutien indiqués ; candidatures féminines encouragées.",
-   "lien": "https://theirc.wd1.myworkdayjobs.com/External_Careers/job/Diffa-Niger/Responsable-des-Oprations-Terrain_JR00005916",
-   "cons": "Référence JR00005916. Postuler sur le portail carrières IRC avant le 17/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle IRC (lien ci-dessus).",
-    "Cliquez sur postuler et créez votre compte.",
-    "Joignez CV et lettre en français avant le 17/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
    "t": "Responsable de zone – Maradi",
    "e": "NRC (Conseil norvégien pour les réfugiés)",
    "p": "Niger",
@@ -4528,128 +3262,6 @@
     "Soumettez avant le 26/11/2026."
    ],
    "al": "Exigences détaillées à confirmer sur le portail NRC."
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 0,
-   "t": "Digital Impact Associate (Volontaire ONU national)",
-   "e": "UNICEF Niger (via UNV)",
-   "p": "Niger",
-   "v": "Niamey",
-   "c": "Volontariat",
-   "s": "Informatique / Télécoms",
-   "pub": "2026-11-04",
-   "lim": "2026-11-18",
-   "src": "UN Vacancies",
-   "u": "https://app.unv.org/opportunities/1784888021273723",
-   "k": "International / ONG",
-   "ns": 2,
-   "exp": 3,
-   "desc": "UNICEF Niger recrute un volontaire ONU national pour 6 mois afin d'appuyer services techniques, écosystèmes numériques et cybersécurité de ses programmes.",
-   "mis": [
-    "Appuyer les services techniques et numériques",
-    "Soutenir la cybersécurité des programmes",
-    "Renforcer la programmation numérique pour les droits de l'enfant"
-   ],
-   "pro": [
-    "3 ans d'expérience",
-    "Français et anglais",
-    "Nationalité nigérienne, 18 à 35 ans",
-    "Disponibilité à Niamey"
-   ],
-   "plus": "Volontariat de 6 mois.",
-   "lien": "https://app.unv.org/opportunities/1784888021273723",
-   "cons": "Postuler via la plateforme UNV avant le 18/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle UNV (lien ci-dessus).",
-    "Connectez-vous à votre profil UNV.",
-    "Postulez avant le 18/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 0,
-   "t": "Project Manager – projet RELANCE (Mopti)",
-   "e": "Save the Children International",
-   "p": "Mali",
-   "v": "Mopti",
-   "c": "CDI",
-   "s": "ONG / International",
-   "pub": "2026-11-06",
-   "lim": "2026-11-18",
-   "src": "Afriqueemplois",
-   "u": "https://hcri.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs/preview/18125",
-   "k": "International / ONG",
-   "ns": 2,
-   "niv": 5,
-   "desc": "Save the Children cherche un chef de projet à Mopti pour RELANCE, projet régional (Mali, Niger, Burkina) alliant réponse humanitaire et résilience dans le Liptako Gourma.",
-   "mis": [
-    "Piloter la mise en oeuvre du projet RELANCE",
-    "Coordonner santé, nutrition, protection et sécurité alimentaire",
-    "Respecter la politique de sauvegarde des enfants"
-   ],
-   "pro": [
-    "Contrat national, grade 3.1",
-    "Disponibilité pour déplacements sur sites au Mali",
-    "Respect du code de conduite de sauvegarde"
-   ],
-   "plus": "Contrat jusqu'en mars 2028 ; référence 18125.",
-   "lien": "https://hcri.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1/jobs/preview/18125",
-   "cons": "Postuler sur le portail Save the Children avant le 18/11/2026 à 17h.",
-   "etp": [
-    "Ouvrez la page officielle (lien ci-dessus).",
-    "Créez votre compte candidat.",
-    "Postulez avant le 18/11/2026."
-   ],
-   "al": "Contrat national : candidats résidant au Mali ; exigences détaillées à confirmer."
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Recrutement multipostes – Programme Dogo-bis (barrage hydro multifonctions)",
-   "e": "Présidence de la République du Bénin – Programme Dogo-bis",
-   "p": "Bénin",
-   "v": "Cotonou (ou environs)",
-   "c": "CDD",
-   "s": "Fonction publique",
-   "pub": "2026-11-02",
-   "lim": "2026-11-18",
-   "src": "Gouv.bj",
-   "u": "https://www.gouv.bj/opportunite/193/recrutement-multipostes-unite-gestion-programme-dogo-presidence-republique/",
-   "k": "Public",
-   "desc": "L'unité de gestion du Programme Dogo-bis (financé par la Banque mondiale) recrute huit profils : finance, suivi-évaluation, secrétariat, comptabilité, environnement, social et marchés.",
-   "mis": [
-    "Gérer finances, suivi-évaluation et passation de marchés du programme",
-    "Appuyer sauvegardes environnementales et développement social",
-    "Assurer secrétariat de direction et comptabilité"
-   ],
-   "pro": [
-    "Diplômes et expériences propres à chaque poste (termes de référence joints)",
-    "Dossier complet : lettre, pièce d'identité, CV, diplômes, preuves d'expérience"
-   ],
-   "plus": "CDD de 2 ans renouvelable, prise de fonction prévue le 01/01/2027 ; période d'essai de 6 mois.",
-   "mail": "recrutement.dogo-bis@presidence.bj",
-   "cons": "Objet « Candidature au poste de (poste) ». Un seul mail, un fichier PDF ou zippé. Avant le 18/11/2026 à 12h (Cotonou).",
-   "etp": [
-    "Téléchargez les termes de référence du poste visé sur la page officielle.",
-    "Regroupez toutes les pièces dans un seul PDF ou zip.",
-    "Envoyez à recrutement.dogo-bis@presidence.bj avec l'objet demandé."
-   ]
   },
   {
    "z": "Afrique francophone",
@@ -4704,48 +3316,6 @@
    "d": 0,
    "li": 0,
    "tt": 0,
-   "ouv": 1,
-   "t": "Chef(fe) d'agence",
-   "e": "NSIA Banque Togo",
-   "p": "Togo",
-   "v": "Lomé",
-   "c": "Emploi",
-   "s": "Finance / Comptabilité",
-   "pub": "",
-   "lim": "2026-11-18",
-   "src": "Afriqueemplois",
-   "u": "https://afriqueemplois.com/tg/post/42644",
-   "k": "Privé",
-   "niv": 4,
-   "exp": 3,
-   "desc": "NSIA Banque Togo recrute un chef d'agence rattaché au département clientèle des particuliers, chargé de développer l'activité commerciale de l'agence.",
-   "mis": [
-    "Mettre en oeuvre la stratégie commerciale de la banque",
-    "Développer parts de marché et rentabilité de l'agence",
-    "Gérer la relation client et la qualité de service",
-    "Suivre le budget et les dossiers de crédit",
-    "Faire monter en compétences l'équipe"
-   ],
-   "pro": [
-    "Bac+4/5 en marketing, économie, banque ou gestion commerciale",
-    "3 ans à un poste similaire ou 5 ans comme gestionnaire de comptes",
-    "Aisance relationnelle et sens du résultat"
-   ],
-   "mail": "recrutement.togo@nsiabanque.com",
-   "cons": "Envoyer CV et lettre de motivation avant le 18/11/2026, avec le poste en objet.",
-   "etp": [
-    "Préparez un CV à jour et une lettre de motivation.",
-    "Envoyez-les à recrutement.togo@nsiabanque.com avec le poste en objet.",
-    "Indiquez l'objet demandé et envoyez avant la date limite."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 0,
-   "li": 0,
-   "tt": 0,
    "ouv": 0,
    "t": "Appel à candidatures – 5 postes finance et opérations, projet CARAVAN",
    "e": "CARE International Bénin/Togo",
@@ -4779,178 +3349,6 @@
     "Envoyez à BenRH@care.org avec l'objet « CARAVAN_ + poste »."
    ],
    "al": "Candidatures du Togo priorisées ; vérifier votre droit de travailler au Togo."
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Assistant(e) logistique (G-5)",
-   "e": "UNICEF",
-   "p": "Togo",
-   "v": "Lomé",
-   "c": "CDD",
-   "s": "Logistique / Transport",
-   "pub": "",
-   "lim": "2026-11-20",
-   "src": "Afriqueemplois",
-   "u": "https://secure.dc7.pageuppeople.com/apply/671/gateway/default.aspx?c=apply&lJobID=596941&lJobSourceTypeID=796&sLanguage=fr-fr",
-   "k": "International / ONG",
-   "ns": 2,
-   "niv": 0,
-   "exp": 5,
-   "desc": "L'UNICEF recrute à Lomé un assistant logistique (G-5) pour assurer l'approvisionnement continu en fournitures et services, avec nomination à durée déterminée.",
-   "mis": [
-    "Gérer l'approvisionnement et les contrats",
-    "Organiser la logistique sur site",
-    "Gérer entrepôts et stocks",
-    "Appuyer les services d'approvisionnement"
-   ],
-   "pro": [
-    "Diplôme d'études secondaires",
-    "5 ans d'expérience administrative en chaîne d'approvisionnement",
-    "Maîtrise de Word, Excel, PowerPoint et SAP",
-    "Bonne connaissance des règles d'achats publics"
-   ],
-   "plus": "Nomination à durée déterminée ; référence 052584, offre 596941.",
-   "lien": "https://secure.dc7.pageuppeople.com/apply/671/gateway/default.aspx?c=apply&lJobID=596941&lJobSourceTypeID=796&sLanguage=fr-fr",
-   "cons": "Postuler sur le portail UNICEF avant le 20/11/2026 à 10h55 (heure de Sydney).",
-   "etp": [
-    "Ouvrez le lien de candidature UNICEF.",
-    "Cliquez sur « Begin application » et créez votre compte.",
-    "Soumettez avant le 20/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Donor Relations Specialist (Volontaire ONU international)",
-   "e": "UNICEF Guinée (via UNV)",
-   "p": "Guinée",
-   "v": "Conakry",
-   "c": "Volontariat",
-   "s": "ONG / International",
-   "pub": "2026-11-10",
-   "lim": "2026-11-19",
-   "src": "UN Vacancies",
-   "u": "https://app.unv.org/opportunities/1784888021273907",
-   "k": "International / ONG",
-   "ns": 2,
-   "exp": 3,
-   "desc": "Un volontaire ONU international appuie UNICEF Guinée pendant 6 mois dans la relation avec les bailleurs, l'élaboration de propositions et les rapports de subvention.",
-   "mis": [
-    "Engager les bailleurs de fonds",
-    "Élaborer des propositions de financement",
-    "Préparer les rapports de subvention"
-   ],
-   "pro": [
-    "Français et anglais",
-    "3 ans d'expérience professionnelle",
-    "Expérience en collecte de fonds ou rapports bailleurs",
-    "Aptitude à travailler en conditions de terrain difficiles"
-   ],
-   "plus": "Volontariat de 6 mois.",
-   "lien": "https://app.unv.org/opportunities/1784888021273907",
-   "cons": "Postuler via la plateforme UNV avant le 19/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle UNV (lien ci-dessus).",
-    "Connectez-vous à votre profil UNV.",
-    "Postulez avant le 19/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "t": "Stagiaire – gestion de projet (Bassikounou)",
-   "e": "OIM (Organisation internationale pour les migrations)",
-   "p": "Mauritanie",
-   "v": "Bassikounou",
-   "c": "Stage",
-   "s": "ONG / International",
-   "pub": "2026-11-03",
-   "lim": "2026-11-16",
-   "src": "UN Vacancies",
-   "u": "https://fa-evlj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/23198",
-   "k": "International / ONG",
-   "ns": 2,
-   "niv": 5,
-   "exp": 0,
-   "desc": "L'OIM Mauritanie propose un stage de 6 mois pour appuyer un projet européen (ECHO) de préparation aux catastrophes et aux risques climatiques dans le Hodh El Chargui.",
-   "mis": [
-    "Aider à planifier et gérer administrativement le projet",
-    "Suivre les activités de préparation aux risques climatiques",
-    "Collecter, compiler et archiver les données",
-    "Rédiger documents et contenus réseaux sociaux",
-    "Participer aux missions de terrain"
-   ],
-   "pro": [
-    "Master en sciences sociales, migration, sociologie ou géographie",
-    "Maîtrise du français",
-    "Expérience en migration, climat ou résilience attendue"
-   ],
-   "plus": "Stage de 6 mois, ouvert à toutes les nationalités.",
-   "lien": "https://fa-evlj-saasfaprod1.fa.ocs.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/23198",
-   "cons": "Postuler sur le portail OIM avant le 16/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle OIM (lien ci-dessus).",
-    "Créez ou ouvrez votre compte candidat.",
-    "Postulez avant le 16/11/2026."
-   ]
-  },
-  {
-   "z": "Afrique francophone",
-   "add": "2026-11-13",
-   "vf": "2026-11-13",
-   "d": 1,
-   "li": 0,
-   "tt": 0,
-   "ouv": 0,
-   "t": "Client Engagement Assistant (Volontaire ONU national)",
-   "e": "UNV – Volontaires des Nations Unies",
-   "p": "Mauritanie",
-   "v": "Mauritanie",
-   "c": "Volontariat",
-   "s": "ONG / International",
-   "pub": "2026-11-06",
-   "lim": "2026-11-20",
-   "src": "UN Vacancies",
-   "u": "https://app.unv.org/opportunities/1784888021273801",
-   "k": "International / ONG",
-   "ns": 2,
-   "exp": 3,
-   "desc": "L'unité UNV en Mauritanie recrute un volontaire national pour 12 mois afin de développer partenariats, gérer les comptes clés et suivre la satisfaction des volontaires.",
-   "mis": [
-    "Développer des partenariats pour la mobilisation de volontaires",
-    "Gérer les comptes clés",
-    "Suivre la satisfaction des volontaires par les données"
-   ],
-   "pro": [
-    "Français, anglais et arabe",
-    "3 ans d'expérience (ou 2 de plus avec niveau secondaire)",
-    "Maîtrise de la langue locale du poste",
-    "Expérience en développement préférée"
-   ],
-   "plus": "Volontariat de 12 mois.",
-   "lien": "https://app.unv.org/opportunities/1784888021273801",
-   "cons": "Postuler via la plateforme UNV avant le 20/11/2026.",
-   "etp": [
-    "Ouvrez la page officielle UNV (lien ci-dessus).",
-    "Connectez-vous à votre profil UNV.",
-    "Postulez avant le 20/11/2026."
-   ]
   },
   {
    "d": 0,
@@ -5602,92 +4000,6 @@
    "add": "2026-11-14",
    "vf": "2026-11-14",
    "tt": 0,
-   "lim": "2026-11-16",
-   "pub": "2026-10-24",
-   "t": "Coordonnateur(trice) national(e) – programme NAATANGUE 2030",
-   "e": "Ministère de la Santé et de l'Hygiène publique (Sénégal)",
-   "p": "Sénégal",
-   "v": "Dakar",
-   "c": "CDD",
-   "s": "Santé",
-   "src": "Guindima",
-   "u": "https://guindima.sn/news/article/recrutement-coordonnateurtrice-nationale-pour-le-programme-naatangue-2030-ministere-de-la-sante/",
-   "k": "Public",
-   "z": "Afrique francophone",
-   "niv": "Bac+5",
-   "exp": "10 ans minimum",
-   "desc": "Le ministère recrute le coordonnateur national du programme NAATANGUE 2030, financé par la Banque mondiale, pour piloter le renforcement du système de santé. CDD de 12 mois renouvelable.",
-   "mis": [
-    "Appuyer le comité de pilotage et coordonner les entités",
-    "Élaborer le plan de travail et budget annuel",
-    "Suivre les indicateurs de résultats avec la Banque mondiale",
-    "Coordonner audits, sauvegardes et gestion des plaintes"
-   ],
-   "pro": [
-    "Master en santé publique, économie, gestion ou équivalent",
-    "10 ans d'expérience, dont 5 en gestion de projets",
-    "Expérience des instruments de la Banque mondiale",
-    "Bonne connaissance du système de santé sénégalais",
-    "Français excellent, bon anglais"
-   ],
-   "mail": "recrutcoordoprogpforrsante@gmail.com",
-   "cons": "Dossier PDF unique : lettre au Ministre, CV détaillé, copies certifiées des diplômes.",
-   "etp": [
-    "Rédigez une lettre adressée au Ministre de la Santé.",
-    "Joignez CV et copies certifiées des diplômes en PDF.",
-    "Envoyez à recrutcoordoprogpforrsante@gmail.com.",
-    "Avant le 16 novembre 2026, 23 h 59."
-   ],
-   "al": "Candidature via une adresse Gmail et non une adresse officielle du ministère : vérifiez l'avis auprès du MSHP avant d'envoyer vos documents."
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-14",
-   "vf": "2026-11-14",
-   "tt": 0,
-   "lim": "2026-11-16",
-   "pub": "2026-10-24",
-   "t": "Responsable administratif et financier (RAF) – programme NAATANGUE 2030",
-   "e": "Ministère de la Santé et de l'Hygiène publique (Sénégal)",
-   "p": "Sénégal",
-   "v": "Dakar",
-   "c": "CDD",
-   "s": "Finance / Comptabilité",
-   "src": "Guindima",
-   "u": "https://guindima.sn/news/article/recrutement-responsable-administratif-et-financier-raf-pour-le-programme-naatangue-2030/",
-   "k": "Public",
-   "z": "Afrique francophone",
-   "niv": "Bac+5",
-   "exp": "10 ans minimum",
-   "desc": "L'unité de coordination du programme NAATANGUE 2030, financé par la Banque mondiale, recrute son RAF à Dakar. CDD de 12 mois renouvelable selon les performances.",
-   "mis": [
-    "Superviser comptabilité générale, analytique et budgétaire",
-    "Préparer les états financiers et coordonner les audits",
-    "Gérer trésorerie, logistique et patrimoine du projet",
-    "Administrer le personnel et encadrer les comptables"
-   ],
-   "pro": [
-    "Master en gestion ou finance avec diplôme comptable (DSCG, DESCOGEF…)",
-    "10 ans d'expérience, dont 5 en poste de responsabilité",
-    "Expérience des projets Banque mondiale souhaitée",
-    "Maîtrise de SAGE ou TOMPRO et des marchés publics"
-   ],
-   "mail": "recrutrafprogpforrsante@gmail.com",
-   "cons": "Objet « RAF » ; dossier PDF : lettre au Ministre, CV, copies certifiées des diplômes.",
-   "etp": [
-    "Préparez lettre au Ministre, CV et diplômes certifiés en PDF.",
-    "Envoyez à recrutrafprogpforrsante@gmail.com, objet « RAF ».",
-    "Avant le 16 novembre 2026, 23 h 59."
-   ],
-   "al": "Candidature via une adresse Gmail et non une adresse officielle du ministère : vérifiez l'avis auprès du MSHP avant d'envoyer vos documents."
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-14",
-   "vf": "2026-11-14",
-   "tt": 0,
    "lim": "2026-12-04",
    "t": "Concours : recrutement de 13 agents et cadres",
    "e": "Théâtre de l'Opéra de Tunis",
@@ -6158,35 +4470,6 @@
    "vf": "2026-11-15",
    "tt": 0,
    "z": "Afrique francophone",
-   "lim": "2026-11-18",
-   "ouv": 1,
-   "t": "Deputy Safety Advisor (DSA)",
-   "e": "International NGO Safety Organisation (INSO)",
-   "p": "RD Congo",
-   "v": "Kalemie (Tanganyika)",
-   "c": "Emploi",
-   "s": "ONG / International",
-   "pub": "2026-11-09",
-   "src": "Mediacongo",
-   "u": "https://www.mediacongo.net/emploi-societe-45151_inso_international_ngo_safety_organisation_deputy_safety_advisor_dsa.html",
-   "k": "International / ONG",
-   "mail": "jobs@drc.ngosafety.org",
-   "desc": "INSO recrute un conseiller sécurité adjoint pour sa zone du Tanganyika. Les détails du poste figurent sur l'affiche de l'annonce.",
-   "cons": "Dossier par e-mail et formulaire Microsoft Forms obligatoire.",
-   "etp": [
-    "Préparez lettre, CV (3 pages max) et carte ONEM.",
-    "Envoyez à jobs@drc.ngosafety.org, objet « 11/DEPUTY SAFETY ADVISOR/TANG/11/26 ».",
-    "Remplissez aussi le formulaire Microsoft Forms de l'annonce.",
-    "Postulez avant le 18 novembre 2026, 17 h."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
    "lim": "2026-11-25",
    "ouv": 1,
    "t": "Conseiller provincial en systèmes d'information sanitaire (2 postes)",
@@ -6298,49 +4581,6 @@
    "vf": "2026-11-15",
    "tt": 0,
    "z": "Afrique francophone",
-   "lim": "2026-11-20",
-   "ouv": 1,
-   "t": "Assistante commerciale (immobilier)",
-   "e": "Optigestion Group",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan (Angré, 7e tranche)",
-   "c": "Emploi",
-   "s": "Commerce / Vente",
-   "pub": "2026-11-13",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-158428-assistante-commerciale.html",
-   "k": "Privé",
-   "mail": "recruitmentoptigestion@gmail.com",
-   "niv": "Bac+2",
-   "desc": "Société immobilière d'Abidjan cherchant une assistante pour l'accueil client, le suivi des prospects et la préparation des devis.",
-   "mis": [
-    "Accueillir et orienter clients et prospects.",
-    "Traiter appels et demandes commerciales.",
-    "Suivre prospects, clients et transactions.",
-    "Préparer offres, devis et rapports d'activité."
-   ],
-   "pro": [
-    "Formation en commerce, marketing ou gestion.",
-    "Maîtrise de Word, Excel et PowerPoint.",
-    "Bonne expression écrite et orale.",
-    "Rigueur et sens du service client."
-   ],
-   "cons": "CV et lettre avec prétentions salariales par e-mail.",
-   "al": "Contact par adresse Gmail : vérifiez l'employeur avant d'envoyer vos documents. Ne payez jamais de frais.",
-   "etp": [
-    "Préparez CV et lettre avec prétentions salariales.",
-    "Envoyez à recruitmentoptigestion@gmail.com.",
-    "Objet : « Candidature au poste d'ASSISTANTE COMMERCIALE ».",
-    "Postulez avant le 20 novembre 2026."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
    "lim": "2026-11-27",
    "ouv": 1,
    "t": "Responsable communication, marketing et commercial",
@@ -6376,46 +4616,6 @@
     "Préparez votre CV.",
     "Envoyez-le à cabinethr.candidature@gmail.com avec le poste et votre lieu d'habitation.",
     "Postulez avant le 27 novembre 2026."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
-   "lim": "2026-11-18",
-   "ouv": 1,
-   "t": "Assistant administratif et comptable",
-   "e": "Blôdou Consulting",
-   "p": "Côte d'Ivoire",
-   "v": "Odienné",
-   "c": "CDD",
-   "s": "Finance / Comptabilité",
-   "pub": "2026-11-13",
-   "src": "Educarrière",
-   "u": "https://emploi.educarriere.ci/offre-158427-assistant-administratif-et-comptable.html",
-   "k": "Privé",
-   "mail": "recrutement@blodouconsulting.com",
-   "niv": "BTS (Bac+2)",
-   "desc": "Pour une entreprise agricole cliente à Odienné, le cabinet cherche un assistant chargé de la comptabilité quotidienne. Candidatures féminines encouragées.",
-   "mis": [
-    "Tenir la comptabilité sous supervision du cabinet.",
-    "Faire le lien entre l'entreprise et le cabinet.",
-    "Transmettre les pièces comptables.",
-    "Suivre les opérations comptables."
-   ],
-   "pro": [
-    "BTS finance-comptabilité.",
-    "Rigueur et organisation."
-   ],
-   "cons": "CV par e-mail.",
-   "etp": [
-    "Préparez votre CV.",
-    "Envoyez-le à recrutement@blodouconsulting.com.",
-    "Objet : « Candidature – Assistant administratif et comptable – Odienné ».",
-    "Postulez avant le 18 novembre 2026."
    ]
   },
   {
@@ -6467,88 +4667,6 @@
    "vf": "2026-11-15",
    "tt": 0,
    "z": "Afrique francophone",
-   "lim": "2026-11-17",
-   "ouv": 1,
-   "t": "Employé(e) technique",
-   "e": "Comité international de la Croix-Rouge (CICR)",
-   "p": "Burkina Faso",
-   "v": "Ouagadougou",
-   "c": "Emploi",
-   "s": "ONG / International",
-   "src": "Afrique Emplois",
-   "u": "https://afriqueemplois.com/post/42944",
-   "k": "International / ONG",
-   "mail": "oug_recruitment_services@icrc.org",
-   "exp": "3 à 4 ans",
-   "desc": "Le CICR recrute un technicien polyvalent pour sa délégation de Ouagadougou ; prise de poste souhaitée le 4 janvier 2027.",
-   "mis": [
-    "Installer et entretenir les équipements.",
-    "Intervenir en plomberie et électricité.",
-    "Entretenir les réseaux d'eau.",
-    "Gérer les stocks techniques."
-   ],
-   "pro": [
-    "Formation technique.",
-    "3 à 4 ans d'expérience.",
-    "Bon français.",
-    "Disponible pour voyager."
-   ],
-   "cons": "Dossier par e-mail ; le CICR ne demande aucun frais.",
-   "etp": [
-    "Préparez CV, lettre avec prétention salariale, diplômes et certificats.",
-    "Envoyez à oug_recruitment_services@icrc.org.",
-    "Objet : « Employé technique _OUG 2026 ».",
-    "Postulez avant le 17 novembre 2026."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
-   "lim": "2026-11-20",
-   "ouv": 1,
-   "t": "Psychologue",
-   "e": "Comité international de la Croix-Rouge (CICR)",
-   "p": "Burkina Faso",
-   "v": "Fada N'Gourma",
-   "c": "Emploi",
-   "s": "Santé",
-   "src": "Afrique Emplois",
-   "u": "https://afriqueemplois.com/post/42941",
-   "k": "International / ONG",
-   "mail": "oug_recruitment_services@icrc.org",
-   "exp": "3 ans",
-   "niv": "Bac+3 minimum",
-   "desc": "Poste de psychologue pour le programme santé mentale et soutien psychosocial de la sous-délégation de Fada N'Gourma, dès janvier 2027.",
-   "mis": [
-    "Mettre en œuvre le programme santé mentale et psychosocial.",
-    "Évaluer les besoins de la zone.",
-    "Mener des entretiens psychologiques.",
-    "Former, superviser et rendre compte."
-   ],
-   "pro": [
-    "Diplôme en psychologie clinique.",
-    "3 ans en santé mentale.",
-    "Bon français ; anglais apprécié."
-   ],
-   "cons": "Dossier par e-mail ; aucun frais demandé.",
-   "etp": [
-    "Préparez CV, lettre et diplômes.",
-    "Envoyez à oug_recruitment_services@icrc.org.",
-    "Objet : « Psychologue_FDA 2026 ».",
-    "Postulez avant le 20 novembre 2026."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
    "lim": "2026-11-25",
    "ouv": 1,
    "t": "Chargé(e) de projet Empowered Futures",
@@ -6579,78 +4697,6 @@
    "etp": [
     "Ouvrez l'annonce d'origine (lien ci-dessus).",
     "Suivez la procédure de candidature indiquée par l'employeur."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
-   "lim": "2026-11-20",
-   "ouv": 1,
-   "t": "Chef(fe) de projet Réduction des risques de catastrophes",
-   "e": "WeWorld-GVC",
-   "p": "Burkina Faso",
-   "v": "Ouagadougou",
-   "c": "CDD",
-   "s": "ONG / International",
-   "src": "Afrique Emplois",
-   "u": "https://afriqueemplois.com/post/42953",
-   "k": "International / ONG",
-   "niv": "Bac+3",
-   "desc": "CDD de 6 mois renouvelable jusqu'à 12 mois pour piloter un projet de réduction des risques, avec déplacements fréquents sur le terrain.",
-   "mis": [
-    "Planifier et mettre en œuvre les activités du projet.",
-    "Coordonner les parties prenantes.",
-    "Animer les réunions de l'équipe projet.",
-    "Encadrer les agents terrain et veiller à leur sécurité."
-   ],
-   "cons": "Candidature par e-mail, objet « CHEF DE PROJET 2026 RAPIDE ».",
-   "etp": [
-    "Ouvrez l'annonce d'origine (lien ci-dessus).",
-    "Suivez la procédure de candidature indiquée par l'employeur."
-   ]
-  },
-  {
-   "d": 0,
-   "li": 0,
-   "add": "2026-11-15",
-   "vf": "2026-11-15",
-   "tt": 0,
-   "z": "Afrique francophone",
-   "lim": "2026-11-20",
-   "ouv": 1,
-   "t": "Manager commercial (matériaux de construction)",
-   "e": "Cabinet Avanseil",
-   "p": "Burkina Faso",
-   "v": "Ouagadougou (Ouaga 2000)",
-   "c": "Emploi",
-   "s": "Commerce / Vente",
-   "src": "Afrique Emplois",
-   "u": "https://afriqueemplois.com/post/42958",
-   "k": "Privé",
-   "mail": "recrutement@cabinetavanseil.com",
-   "exp": "5 ans",
-   "niv": "Bac+3",
-   "desc": "Le cabinet Avanseil recrute pour une entreprise de carreaux et matériaux un manager chargé de la stratégie et de l'équipe commerciale.",
-   "mis": [
-    "Définir et piloter la stratégie commerciale.",
-    "Encadrer l'équipe de vente.",
-    "Gérer grands comptes et politique tarifaire.",
-    "Assurer le reporting des performances."
-   ],
-   "pro": [
-    "Bac+3.",
-    "5 ans en vente, idéalement carreaux ou matériaux.",
-    "Leadership."
-   ],
-   "cons": "Lettre et CV par e-mail, avec deux numéros de téléphone.",
-   "etp": [
-    "Préparez lettre de motivation et CV.",
-    "Envoyez à recrutement@cabinetavanseil.com, objet « Manager Commercial ».",
-    "Postulez avant le 20 novembre 2026, 16 h."
    ]
   },
   {
@@ -7202,46 +5248,6 @@
    "z": "Afrique francophone"
   },
   {
-   "t": "RESPONSABLE SERVICES APRES VENTE",
-   "e": "ROSAPARKS (pour un client)",
-   "p": "Côte d'Ivoire",
-   "v": "Abidjan",
-   "c": "Emploi",
-   "s": "Industrie / Ingénierie",
-   "u": "https://emploi.educarriere.ci/offre-158466-responsable-services-apres-vente.html",
-   "src": "Educarriere",
-   "k": "Privé",
-   "d": 0,
-   "pub": "2026-11-13",
-   "lim": "2026-11-20",
-   "niv": "Bac+2 à Bac+4",
-   "mail": "recrutement@rosaparks-ci.com",
-   "desc": "Le cabinet Rosaparks recrute pour une entreprise de technologies un responsable SAV chargé des interventions techniques.",
-   "mis": [
-    "Diagnostiquer et dépanner les équipements.",
-    "Organiser et suivre les interventions.",
-    "Garantir la qualité du SAV et la satisfaction client."
-   ],
-   "pro": [
-    "Diplôme en électrotechnique ou équivalent.",
-    "Maintenance d'ascenseurs, installations électriques, portes automatiques.",
-    "Organisation, réactivité, autonomie."
-   ],
-   "cons": "Objet : « RESPONSABLE SERVICES APRES VENTE » ; CV et lettre en PDF.",
-   "al": "Recrutement par cabinet pour un client non nommé : renseignez-vous sur l'employeur final.",
-   "etp": [
-    "Préparez CV et lettre de motivation en PDF.",
-    "Envoyez-les à recrutement@rosaparks-ci.com avec l'objet indiqué.",
-    "Postulez avant le 20/11/2026."
-   ],
-   "add": "2026-11-16",
-   "vf": "2026-11-16",
-   "li": 0,
-   "tt": 0,
-   "ouv": 1,
-   "z": "Afrique francophone"
-  },
-  {
    "t": "Gestionnaire Paie - Projet CORI H/F",
    "e": "Owendo Container Terminal (AGL)",
    "p": "Gabon",
@@ -7489,6 +5495,872 @@
     "Créez votre profil et complétez le formulaire.",
     "Soumettez avant le 28 novembre 2026."
    ]
+  },
+  {
+   "t": "Auditeur junior (H/F)",
+   "e": "Express Union",
+   "p": "Cameroun",
+   "v": "",
+   "c": "Emploi",
+   "s": "Finance / Comptabilité",
+   "pub": "2026-11-17",
+   "lim": "2026-11-30",
+   "src": "Cameroon Desks",
+   "u": "https://www.cameroondesks.com/2026/11/recrutement-express-union-novembre-auditeurs-juniors-controleurs-permanents-job.html",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Express Union renforce sa direction de l'audit. Le poste participe au plan d'audit et au suivi des risques. Profil : Bac+3 en audit, finance ou comptabilité, 2 ans d'expérience.",
+   "mis": [
+    "Participer au plan d'audit pluriannuel",
+    "Évaluer la conformité des opérations",
+    "Suivre la mise en œuvre des recommandations",
+    "Contrôler la régularité des états financiers"
+   ],
+   "pro": [
+    "Bac+3 minimum en audit, comptabilité ou finance",
+    "2 ans d'expérience d'auditeur (banque, finance ou cabinet)"
+   ],
+   "etp": [
+    "Préparez votre CV au format PDF.",
+    "Envoyez-le à rh.cmr@expressunion.net avec l'objet « Auditeur ».",
+    "Postulez avant le 30 novembre 2026 à 17h30."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rh.cmr@expressunion.net",
+   "lien": "https://www.cameroondesks.com/2026/11/recrutement-express-union-novembre-auditeurs-juniors-controleurs-permanents-job.html",
+   "cons": "CV en PDF par e-mail, objet « Auditeur ».",
+   "niv": "Bac+3",
+   "exp": "2 ans"
+  },
+  {
+   "t": "Contrôleur permanent (H/F)",
+   "e": "Express Union",
+   "p": "Cameroun",
+   "v": "",
+   "c": "Emploi",
+   "s": "Finance / Comptabilité",
+   "pub": "2026-11-17",
+   "lim": "2026-11-30",
+   "src": "Cameroon Desks",
+   "u": "https://www.cameroondesks.com/2026/11/recrutement-express-union-novembre-auditeurs-juniors-controleurs-permanents-job.html",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Express Union recrute des contrôleurs permanents rattachés à la direction du contrôle permanent. Ils vérifient le respect des procédures sur place et sur pièces.",
+   "mis": [
+    "Contrôler sur place et sur pièces le respect des procédures",
+    "Évaluer les outils de contrôle",
+    "Réaliser des vérifications générales",
+    "Rendre compte de l'activité"
+   ],
+   "pro": [
+    "Bac+2 minimum en contrôle, audit, comptabilité ou finance",
+    "2 ans d'expérience à un poste similaire"
+   ],
+   "etp": [
+    "Préparez votre CV au format PDF.",
+    "Envoyez-le à rh.cmr@expressunion.net avec l'objet « CONTRÔLEURS PERMANENTS ».",
+    "Postulez avant le 30 novembre 2026 à 17h30."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rh.cmr@expressunion.net",
+   "lien": "https://www.cameroondesks.com/2026/11/recrutement-express-union-novembre-auditeurs-juniors-controleurs-permanents-job.html",
+   "cons": "CV en PDF par e-mail, objet « CONTRÔLEURS PERMANENTS ».",
+   "niv": "Bac+2",
+   "exp": "2 ans"
+  },
+  {
+   "t": "Responsable département RH",
+   "e": "Solidarités International",
+   "p": "Cameroun",
+   "v": "Yaoundé",
+   "c": "Emploi",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "2026-12-19",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/annonce-de-recrutement-responsable-departement-rh-50604",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "L'ONG humanitaire Solidarités International cherche à Yaoundé un responsable RH pour toute la mission Cameroun. Le poste pilote les politiques RH, la paie et le recrutement.",
+   "mis": [
+    "Appliquer les politiques RH et le droit du travail local",
+    "Superviser paie, charges sociales et procédures disciplinaires",
+    "Piloter recrutement, intégration et formation",
+    "Encadrer l'équipe RH"
+   ],
+   "pro": [
+    "Bac+4 en droit ou école de commerce option RH",
+    "3 ans sur poste similaire et 3 ans dans l'humanitaire",
+    "Français obligatoire, anglais recommandé",
+    "Logiciel de paie Homère apprécié"
+   ],
+   "etp": [
+    "Préparez CV, lettre de motivation, diplômes et certificats de travail.",
+    "Envoyez-les à recrutement@solidarites-cameroun.org.",
+    "Objet : « Candidature au poste de Responsable département RH »."
+   ],
+   "vf": "2026-11-21",
+   "mail": "recrutement@solidarites-cameroun.org",
+   "lien": "https://cm.minajobs.net/emplois/annonce-de-recrutement-responsable-departement-rh-50604",
+   "cons": "Dossier par e-mail adressé au Directeur Pays.",
+   "niv": "Bac+4",
+   "exp": "3 ans"
+  },
+  {
+   "t": "Responsable département SERA (suivi-évaluation, redevabilité)",
+   "e": "Solidarités International",
+   "p": "Cameroun",
+   "v": "Yaoundé",
+   "c": "Emploi",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "2026-12-19",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/annonce-de-recrutement-responsable-de-departement-sera-suivi-evaluation-redevabi-50605",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Solidarités International recrute à Yaoundé le responsable du suivi, de l'évaluation, de la redevabilité et de l'apprentissage de sa mission Cameroun.",
+   "mis": [
+    "Élaborer la stratégie SERA du bureau pays",
+    "Appuyer les équipes sur la collecte et l'analyse",
+    "Piloter le mécanisme de gestion des plaintes",
+    "Coordonner les évaluations et encadrer l'équipe"
+   ],
+   "pro": [
+    "Master en gestion de projet humanitaire ou domaine proche",
+    "3 ans minimum dans l'humanitaire",
+    "Power BI, Excel, Kobo et ODK",
+    "Français obligatoire, anglais recommandé"
+   ],
+   "etp": [
+    "Préparez CV, lettre de motivation, diplômes et certificats de travail.",
+    "Envoyez-les à recrutement@solidarites-cameroun.org.",
+    "Objet : « Candidature au poste de Responsable département SERA »."
+   ],
+   "vf": "2026-11-21",
+   "mail": "recrutement@solidarites-cameroun.org",
+   "lien": "https://cm.minajobs.net/emplois/annonce-de-recrutement-responsable-de-departement-sera-suivi-evaluation-redevabi-50605",
+   "cons": "Dossier par e-mail uniquement, adressé au Directeur Pays.",
+   "niv": "Bac+5",
+   "exp": "3 ans"
+  },
+  {
+   "t": "Stagiaires (logistique, RH, finance, SERA/MEAL)",
+   "e": "INTERSOS Cameroun",
+   "p": "Cameroun",
+   "v": "Yaoundé, Bamenda, Maroua",
+   "c": "Stage",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/avis-de-recrutement-stagiaires-logistique-rh-finance-et-sera-meal-50603",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "L'ONG humanitaire INTERSOS propose des stages de 3 mois non rémunérés pour jeunes diplômés à Yaoundé, Bamenda et Maroua, dans la ville où réside le candidat.",
+   "mis": [
+    "Appuyer un superviseur en logistique, RH, finance ou SERA",
+    "Participer au travail quotidien de la mission"
+   ],
+   "pro": [
+    "Bac+2 minimum dans le domaine visé",
+    "Bon français ou anglais",
+    "Bonne maîtrise de Word, Excel et Outlook"
+   ],
+   "etp": [
+    "Préparez CV, lettre de motivation, copie de CNI et d'acte de naissance.",
+    "Remplissez le formulaire en ligne indiqué dans l'annonce.",
+    "Indiquez votre ville de résidence."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://forms.gle/ZcUCobMFHj6XiPz4A",
+   "cons": "Formulaire Google indiqué dans l'annonce.",
+   "niv": "Bac+2",
+   "al": "Candidature par formulaire Google et pièces d'identité demandées : vérifiez l'annonce auprès d'INTERSOS avant d'envoyer vos documents."
+  },
+  {
+   "t": "Stage – section SBC (plusieurs stagiaires, 6 mois)",
+   "e": "UNICEF",
+   "p": "Cameroun",
+   "v": "Yaoundé, Douala, Buea, Bertoua, Ngaoundéré, Maroua",
+   "c": "Stage",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "2026-11-30",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/internship-sbc-section-multiple-interns-6-months-50598",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "UNICEF Cameroun recrute des stagiaires rémunérés pour 6 mois dans sa section changement social et comportemental, à partir du 1er décembre 2026.",
+   "mis": [
+    "Appuyer les cercles familiaux dans les communes amies des enfants",
+    "Collecter les retours des communautés",
+    "Soutenir l'enregistrement des naissances",
+    "Rédiger des rapports hebdomadaires et mensuels"
+   ],
+   "pro": [
+    "Étudiant ou diplômé depuis moins de 2 ans (sciences sociales)",
+    "Certificat universitaire SBC UNICEF requis",
+    "Anglais ou français courant"
+   ],
+   "etp": [
+    "Créez un compte sur le site carrières de l'UNICEF.",
+    "Postulez en ligne via le lien officiel avant le 30 novembre 2026.",
+    "Préparez attestation universitaire, pièce d'identité et assurance santé."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://jobs.unicef.org/jobs/internship-sbc-section-internship-multiple-interns-yaounde-douala-buea-maroua-bertoua-and-ngaoundere-in-cameroun-6-months-full-time-cameroon-dc25c814-846d-4344-8b71-e76da3c0e3c0",
+   "cons": "Candidature en ligne sur le site carrières de l'UNICEF."
+  },
+  {
+   "t": "Chargé(e) de la conservation communautaire (communication)",
+   "e": "WCS – Wildlife Conservation Society",
+   "p": "Cameroun",
+   "v": "Ngaoundéré",
+   "c": "Emploi",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "2026-12-02",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/07-postes-ouverts-chez-wcs-cameroun-wildlife-conservation-society-50607",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "WCS Cameroun, ONG de conservation de la nature, ouvre ce poste aux candidats externes et internes. Les détails complets figurent sur l'annonce d'origine.",
+   "mis": [
+    "Consultez la fiche de poste détaillée sur l'annonce d'origine"
+   ],
+   "pro": [
+    "Profil détaillé dans l'annonce d'origine"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Envoyez votre dossier à rhrecruitment@wcs.org avec l'intitulé du poste en objet.",
+    "Postulez avant le 02/12/2026."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rhrecruitment@wcs.org",
+   "lien": "https://cm.minajobs.net/emplois/07-postes-ouverts-chez-wcs-cameroun-wildlife-conservation-society-50607",
+   "cons": "Candidature par e-mail, intitulé du poste en objet."
+  },
+  {
+   "t": "Responsable logistique et achats",
+   "e": "WCS – Wildlife Conservation Society",
+   "p": "Cameroun",
+   "v": "",
+   "c": "Emploi",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "2026-12-02",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/07-postes-ouverts-chez-wcs-cameroun-wildlife-conservation-society-50607",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "WCS Cameroun, ONG de conservation de la nature, ouvre ce poste aux candidats externes et internes. Les détails complets figurent sur l'annonce d'origine.",
+   "mis": [
+    "Consultez la fiche de poste détaillée sur l'annonce d'origine"
+   ],
+   "pro": [
+    "Profil détaillé dans l'annonce d'origine"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Envoyez votre dossier à rhrecruitment@wcs.org avec l'intitulé du poste en objet.",
+    "Postulez avant le 02/12/2026."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rhrecruitment@wcs.org",
+   "lien": "https://cm.minajobs.net/emplois/07-postes-ouverts-chez-wcs-cameroun-wildlife-conservation-society-50607",
+   "cons": "Candidature par e-mail, intitulé du poste en objet."
+  },
+  {
+   "t": "Responsable du suivi écologique",
+   "e": "WCS – Wildlife Conservation Society",
+   "p": "Cameroun",
+   "v": "",
+   "c": "Emploi",
+   "s": "ONG / International",
+   "pub": "2026-11-19",
+   "lim": "2026-12-02",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/07-postes-ouverts-chez-wcs-cameroun-wildlife-conservation-society-50607",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "WCS Cameroun, ONG de conservation de la nature, ouvre ce poste aux candidats externes et internes. Les détails complets figurent sur l'annonce d'origine.",
+   "mis": [
+    "Consultez la fiche de poste détaillée sur l'annonce d'origine"
+   ],
+   "pro": [
+    "Profil détaillé dans l'annonce d'origine"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Envoyez votre dossier à rhrecruitment@wcs.org avec l'intitulé du poste en objet.",
+    "Postulez avant le 02/12/2026."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rhrecruitment@wcs.org",
+   "lien": "https://cm.minajobs.net/emplois/07-postes-ouverts-chez-wcs-cameroun-wildlife-conservation-society-50607",
+   "cons": "Candidature par e-mail, intitulé du poste en objet."
+  },
+  {
+   "t": "Chef comptable",
+   "e": "@fric Payment Solutions",
+   "p": "Cameroun",
+   "v": "Douala",
+   "c": "Emploi",
+   "s": "Finance / Comptabilité",
+   "pub": "2026-11-19",
+   "lim": "2026-12-05",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/05-postes-ouverts-a-douala-fric-payment-solutions-50608",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "@fric Payment Solutions est une fintech de Douala qui développe des solutions de paiement et services financiers numériques. Le détail du poste figure sur l'annonce d'origine.",
+   "mis": [
+    "Consultez la fiche de poste détaillée sur l'annonce d'origine"
+   ],
+   "pro": [
+    "Profil détaillé dans l'annonce d'origine"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Envoyez votre candidature à rh@afric.ca, intitulé du poste en objet.",
+    "Postulez avant la date limite indiquée."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rh@afric.ca",
+   "lien": "https://cm.minajobs.net/emplois/05-postes-ouverts-a-douala-fric-payment-solutions-50608",
+   "cons": "Candidature par e-mail, intitulé du poste en objet.",
+   "al": "Adresse de candidature sur le domaine afric.ca : vérifiez l'entreprise avant d'envoyer vos documents."
+  },
+  {
+   "t": "Chief Technology Officer (CTO)",
+   "e": "@fric Payment Solutions",
+   "p": "Cameroun",
+   "v": "Douala",
+   "c": "Emploi",
+   "s": "Informatique / Télécoms",
+   "pub": "2026-11-19",
+   "lim": "2026-12-15",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/05-postes-ouverts-a-douala-fric-payment-solutions-50608",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "@fric Payment Solutions est une fintech de Douala qui développe des solutions de paiement et services financiers numériques. Le détail du poste figure sur l'annonce d'origine.",
+   "mis": [
+    "Consultez la fiche de poste détaillée sur l'annonce d'origine"
+   ],
+   "pro": [
+    "Profil détaillé dans l'annonce d'origine"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Envoyez votre candidature à rh@afric.ca, intitulé du poste en objet.",
+    "Postulez avant la date limite indiquée."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rh@afric.ca",
+   "lien": "https://cm.minajobs.net/emplois/05-postes-ouverts-a-douala-fric-payment-solutions-50608",
+   "cons": "Candidature par e-mail, intitulé du poste en objet.",
+   "al": "Adresse de candidature sur le domaine afric.ca : vérifiez l'entreprise avant d'envoyer vos documents."
+  },
+  {
+   "t": "Lead DevOps Engineer",
+   "e": "@fric Payment Solutions",
+   "p": "Cameroun",
+   "v": "Douala",
+   "c": "Emploi",
+   "s": "Informatique / Télécoms",
+   "pub": "2026-11-19",
+   "lim": "2026-12-31",
+   "src": "MinaJobs",
+   "u": "https://cm.minajobs.net/emplois/05-postes-ouverts-a-douala-fric-payment-solutions-50608",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "@fric Payment Solutions est une fintech de Douala qui développe des solutions de paiement et services financiers numériques. Le détail du poste figure sur l'annonce d'origine.",
+   "mis": [
+    "Consultez la fiche de poste détaillée sur l'annonce d'origine"
+   ],
+   "pro": [
+    "Profil détaillé dans l'annonce d'origine"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Envoyez votre candidature à rh@afric.ca, intitulé du poste en objet.",
+    "Postulez avant la date limite indiquée."
+   ],
+   "vf": "2026-11-21",
+   "mail": "rh@afric.ca",
+   "lien": "https://cm.minajobs.net/emplois/05-postes-ouverts-a-douala-fric-payment-solutions-50608",
+   "cons": "Candidature par e-mail, intitulé du poste en objet.",
+   "al": "Adresse de candidature sur le domaine afric.ca : vérifiez l'entreprise avant d'envoyer vos documents."
+  },
+  {
+   "t": "Responsable finances",
+   "e": "MAG International",
+   "p": "Sénégal",
+   "v": "Dakar",
+   "c": "CDD",
+   "s": "ONG / International",
+   "pub": "2026-11-20",
+   "lim": "2026-12-04",
+   "src": "Emploi Dakar",
+   "u": "https://www.emploidakar.com/offre-demploi/mag-international-senegal-cdd-responsable-finances/",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "L'ONG de déminage MAG recrute à Dakar son responsable finances pour le programme Sénégal, en CDD de 6 mois renouvelable, avec des déplacements dans le pays.",
+   "mis": [
+    "Superviser comptabilité, trésorerie et comptes bancaires",
+    "Suivre les budgets et produire les rapports bailleurs",
+    "Coordonner les audits internes et externes",
+    "Suivre financièrement les organisations partenaires"
+   ],
+   "pro": [
+    "Diplôme supérieur en finance ou comptabilité",
+    "5 ans d'expérience, idéalement humanitaire",
+    "Français et anglais, OHADA, Excel",
+    "ACCA, CIMA ou équivalent souhaité"
+   ],
+   "etp": [
+    "Préparez un CV à jour et une lettre de motivation.",
+    "Envoyez-les à RH.SENEGAL@maginternational.org, objet « Responsable Finances ».",
+    "Postulez avant le 4 décembre 2026 à 17h30."
+   ],
+   "vf": "2026-11-21",
+   "mail": "RH.SENEGAL@maginternational.org",
+   "lien": "https://www.emploidakar.com/offre-demploi/mag-international-senegal-cdd-responsable-finances/",
+   "cons": "Candidature par e-mail uniquement.",
+   "exp": "5 ans",
+   "sal": "1 670 136 FCFA brut par mois"
+  },
+  {
+   "t": "Chargé comptabilité",
+   "e": "ALTEN Sénégal",
+   "p": "Sénégal",
+   "v": "Dakar",
+   "c": "CDI",
+   "s": "Finance / Comptabilité",
+   "pub": "2026-11-19",
+   "lim": "",
+   "src": "Emploi Dakar",
+   "u": "https://www.emploidakar.com/offre-demploi/alten-senegal-dakar-senegal-cdi-charge-comptabilite/",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "ALTEN Sénégal, filiale du groupe d'ingénierie ALTEN, recrute un chargé de comptabilité rattaché à sa direction financière à Dakar.",
+   "mis": [
+    "Tenir et contrôler la comptabilité générale",
+    "Participer au reporting IFRS du groupe",
+    "Préparer les clôtures mensuelles et annuelles",
+    "Gérer les déclarations fiscales (TVA, IR)"
+   ],
+   "pro": [
+    "Bac+5 en comptabilité, finance ou gestion",
+    "5 ans d'expérience ou plus en comptabilité",
+    "Bonne maîtrise de la fiscalité ; IFRS apprécié"
+   ],
+   "etp": [
+    "Ouvrez l'annonce d'origine (lien ci-dessus).",
+    "Remplissez le formulaire et joignez votre CV.",
+    "Ajoutez une lettre de motivation (facultative)."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://www.emploidakar.com/offre-demploi/alten-senegal-dakar-senegal-cdi-charge-comptabilite/",
+   "cons": "Formulaire en ligne sur la page de l'offre.",
+   "niv": "Bac+5",
+   "exp": "5 ans"
+  },
+  {
+   "t": "Développeur back-end Java / Reactive Spring senior",
+   "e": "ALTEN Sénégal",
+   "p": "Sénégal",
+   "v": "Dakar",
+   "c": "CDI",
+   "s": "Informatique / Télécoms",
+   "pub": "2026-11-19",
+   "lim": "",
+   "src": "Emploi Dakar",
+   "u": "https://www.emploidakar.com/offre-demploi/alten-senegal-dakar-senegal-cdi-developpeur-back-end-java-reactive-spring-senior/",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "ALTEN Sénégal recrute à Dakar un développeur Java senior pour concevoir et maintenir des applications réactives à fort volume.",
+   "mis": [
+    "Développer des applications avec Java et Spring WebFlux",
+    "Mettre en œuvre la programmation réactive",
+    "Résoudre les incidents de production",
+    "Utiliser des outils d'IA générative au quotidien"
+   ],
+   "pro": [
+    "Bac+5 en informatique",
+    "7 ans sur des systèmes distribués en production",
+    "Maîtrise de Java et Spring WebFlux"
+   ],
+   "etp": [
+    "Ouvrez le lien de candidature SmartRecruiters d'ALTEN.",
+    "Créez votre profil et joignez votre CV.",
+    "Suivez les étapes de sélection indiquées."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://jobs.smartrecruiters.com/ALTEN/744000162087589--developpeur-back-end-java-reactive-spring-senior",
+   "cons": "Candidature en ligne sur SmartRecruiters (ALTEN).",
+   "niv": "Bac+5",
+   "exp": "7 ans"
+  },
+  {
+   "t": "Consultant(e) national(e) – guide d'accueil et de protection des femmes et enfants migrants",
+   "e": "UNICEF",
+   "p": "Comores",
+   "v": "",
+   "c": "Consultant",
+   "s": "ONG / International",
+   "pub": "2026-11-20",
+   "lim": "2026-11-26",
+   "src": "UN Vacancies",
+   "u": "https://unvacancies.org/jobs/consultant-e-national-e-charge-e-de-lelaboration-du-guide-national-daccueil-et-de-protection-des-fem-F-596821",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Dans un projet conjoint UNICEF–OIM financé par l'UE, l'UNICEF cherche un consultant comorien pour rédiger le guide national de prise en charge des femmes et enfants migrants.",
+   "mis": [
+    "Rédiger le guide national d'accueil et de protection",
+    "Harmoniser identification, orientation et suivi des migrants",
+    "Animer des ateliers avec les autorités et partenaires"
+   ],
+   "pro": [
+    "Master en droit, sciences sociales, migration ou domaine proche",
+    "7 ans d'expérience, dont rédaction de guides",
+    "Excellent français, bon anglais",
+    "Réservé aux ressortissants comoriens"
+   ],
+   "etp": [
+    "Lisez les termes de référence sur le site de l'UNICEF.",
+    "Postulez en ligne via le lien officiel avant le 26 novembre 2026."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://jobs.unicef.org/jobs/consultant-e-national-e-charge-e-de-l-elaboration-du-guide-national-d-accueil-et-de-protection-des-femmes-et-enfants-migrants-aux-comores-comoros",
+   "cons": "Candidature en ligne sur le site carrières de l'UNICEF.",
+   "niv": "Bac+5",
+   "exp": "7 ans"
+  },
+  {
+   "t": "Collaborateur(trice) administratif(ve) polyvalent(e) – service de coopération",
+   "e": "Ambassade de Belgique au Burkina Faso",
+   "p": "Burkina Faso",
+   "v": "Ouagadougou",
+   "c": "Emploi",
+   "s": "RH / Administration",
+   "pub": "2026-11-20",
+   "lim": "2026-11-30",
+   "src": "Afrique Emplois",
+   "u": "https://afriqueemplois.com/post/43339",
+   "k": "Public",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "L'Ambassade de Belgique au Burkina Faso recrute un collaborateur administratif pour son service de coopération : secrétariat, organisation et préparation de missions.",
+   "mis": [
+    "Assurer le secrétariat du service de coopération",
+    "Organiser et préparer les missions",
+    "Gérer l'information et les documents"
+   ],
+   "pro": [
+    "Solide expérience administrative",
+    "Excellentes capacités d'organisation",
+    "Parfaite maîtrise du français"
+   ],
+   "etp": [
+    "Préparez en PDF CV avec références, lettre de motivation et diplômes.",
+    "Envoyez-les à recrutement.ouagadougou@diplobel.fed.be.",
+    "Postulez avant le 30 novembre 2026 à midi."
+   ],
+   "vf": "2026-11-21",
+   "mail": "recrutement.ouagadougou@diplobel.fed.be",
+   "lien": "https://afriqueemplois.com/post/43339",
+   "cons": "Candidature par e-mail à l'adresse officielle de l'ambassade."
+  },
+  {
+   "t": "Responsable commercial(e)",
+   "e": "Axium Burkina",
+   "p": "Burkina Faso",
+   "v": "Loumbila / Ouagadougou",
+   "c": "CDD",
+   "s": "Commerce / Vente",
+   "pub": "2026-11-20",
+   "lim": "2026-11-25",
+   "src": "Afrique Emplois",
+   "u": "https://afriqueemplois.com/post/43297",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Axium Burkina, distributeur d'intrants et de matériel agro-pastoral depuis plus de 25 ans, recrute un responsable commercial avec déplacements fréquents.",
+   "mis": [
+    "Atteindre les objectifs de vente",
+    "Prospecter et fidéliser les clients",
+    "Encadrer l'équipe commerciale",
+    "Faire la veille de marché et les rapports"
+   ],
+   "pro": [
+    "Licence en agronomie, communication ou marketing",
+    "2 ans d'expérience en vente ou conseil agricole",
+    "Connaissance des cultures et intrants"
+   ],
+   "etp": [
+    "Rassemblez lettre, CV avec 3 références, diplôme et attestations en un seul PDF.",
+    "Envoyez-le à contact@axiumburkina.com, objet « Candidature – Responsable commercial(e) – NOM Prénom ».",
+    "Envoyez avant le mercredi 25 novembre 2026 à 17h."
+   ],
+   "vf": "2026-11-21",
+   "mail": "contact@axiumburkina.com",
+   "lien": "https://afriqueemplois.com/post/43297",
+   "cons": "Un seul fichier PDF par e-mail.",
+   "niv": "Bac+3",
+   "exp": "2 ans"
+  },
+  {
+   "t": "Responsable boutique en ligne",
+   "e": "Axium Burkina",
+   "p": "Burkina Faso",
+   "v": "Loumbila / Ouagadougou",
+   "c": "CDD",
+   "s": "Communication / Marketing",
+   "pub": "2026-11-20",
+   "lim": "2026-11-25",
+   "src": "Afrique Emplois",
+   "u": "https://afriqueemplois.com/post/43297",
+   "k": "Privé",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Afrique francophone",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Axium Burkina recrute un responsable de sa boutique en ligne d'intrants agricoles, chargé des ventes en ligne et des réseaux sociaux.",
+   "mis": [
+    "Gérer la boutique en ligne : stocks, articles, livraisons",
+    "Assurer le service client",
+    "Animer les réseaux sociaux",
+    "Piloter les campagnes digitales"
+   ],
+   "pro": [
+    "Bac+3 en communication ou marketing",
+    "2 ans d'expérience en marketing digital",
+    "Outils de création graphique et IA"
+   ],
+   "etp": [
+    "Rassemblez lettre, CV avec 3 références, diplôme et attestations en un seul PDF.",
+    "Envoyez-le à contact@axiumburkina.com en précisant le poste.",
+    "Envoyez avant le mercredi 25 novembre 2026 à 17h."
+   ],
+   "vf": "2026-11-21",
+   "mail": "contact@axiumburkina.com",
+   "lien": "https://afriqueemplois.com/post/43297",
+   "cons": "Un seul fichier PDF par e-mail.",
+   "niv": "Bac+3",
+   "exp": "2 ans"
+  },
+  {
+   "t": "Legal Affairs Intern (Codification Division)",
+   "e": "Nations Unies – Bureau des affaires juridiques",
+   "p": "États-Unis",
+   "v": "New York",
+   "c": "Stage",
+   "s": "ONG / International",
+   "pub": "2026-11-20",
+   "lim": "2026-12-10",
+   "src": "UN Vacancies",
+   "u": "https://unvacancies.org/jobs/legal-affairs-intern-N-286490",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Amérique du Nord",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "Stage non rémunéré de 2 à 6 mois à la Division de la codification de l'ONU, à partir de janvier 2027, sur les travaux de la Commission du droit international.",
+   "mis": [
+    "Recherche juridique sur la réparation des préjudices",
+    "Revue et aide à la rédaction de documents",
+    "Prise de notes et appui aux réunions"
+   ],
+   "pro": [
+    "Master en droit en cours ou dernière année de licence",
+    "Anglais courant ; français souhaité",
+    "Intérêt pour le droit international public"
+   ],
+   "etp": [
+    "Créez un compte sur careers.un.org.",
+    "Postulez via le lien officiel avant le 10 décembre 2026."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://careers.un.org/jobSearchDescription/286490?language=en",
+   "cons": "Candidature sur le portail officiel de l'ONU.",
+   "al": "Stage non rémunéré : frais de voyage, visa et logement à la charge du stagiaire."
+  },
+  {
+   "t": "Consultant – développeur web (microsites du GIEC)",
+   "e": "OMM (Organisation météorologique mondiale)",
+   "p": "Monde (télétravail)",
+   "v": "",
+   "c": "Consultant",
+   "s": "Informatique / Télécoms",
+   "pub": "2026-11-20",
+   "lim": "2026-11-30",
+   "src": "UN Vacancies",
+   "u": "https://unvacancies.org/jobs/consultancy-website-developer-ssa-2026-ipcc-1-MO-38187",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Télétravail (monde)",
+   "tt": 1,
+   "ouv": 1,
+   "desc": "L'OMM cherche, pour le GIEC, un consultant en télétravail pour concevoir les microsites de cinq rapports climat, sur 12 mois répartis jusqu'en 2029.",
+   "mis": [
+    "Concevoir des microsites accessibles et adaptés au mobile",
+    "Proposer charte graphique et maquettes",
+    "Mettre en place un CMS headless",
+    "Former l'équipe du secrétariat du GIEC"
+   ],
+   "pro": [
+    "Master en informatique ou équivalent",
+    "Portfolio d'au moins deux sites comparables",
+    "HTML5, CSS, JavaScript, SEO et accessibilité",
+    "Anglais de travail"
+   ],
+   "etp": [
+    "Préparez une proposition technique de 4 pages maximum.",
+    "Postulez via le portail de recrutement de l'OMM avant le 30 novembre 2026."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://estm.fa.em2.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_5001/job/38187",
+   "cons": "Candidature uniquement via le système en ligne de l'OMM.",
+   "niv": "Bac+5"
+  },
+  {
+   "t": "Project Associate (PSA, mi-temps)",
+   "e": "Université des Nations Unies (UNU-FLORES)",
+   "p": "Allemagne",
+   "v": "Dresde",
+   "c": "Consultant",
+   "s": "ONG / International",
+   "pub": "2026-11-20",
+   "lim": "2026-12-03",
+   "src": "UN Vacancies",
+   "u": "https://unvacancies.org/jobs/project-associate-psa--2104430",
+   "k": "International / ONG",
+   "d": 0,
+   "add": "2026-11-21",
+   "li": 0,
+   "z": "Europe",
+   "tt": 0,
+   "ouv": 1,
+   "desc": "L'institut UNU Resource Nexus recrute à Dresde un assistant de projet à mi-temps pour un an renouvelable, en appui à la recherche, la formation et la communication.",
+   "mis": [
+    "Appuyer les projets de recherche et les demandes de financement",
+    "Préparer des supports de formation",
+    "Suivre les projets et coordonner les réunions",
+    "Contribuer à la communication des projets"
+   ],
+   "pro": [
+    "Master en sciences environnementales, sociales ou domaine proche",
+    "1 an d'expérience en gestion de projet et recherche",
+    "Anglais courant ; allemand apprécié"
+   ],
+   "etp": [
+    "Postulez via le site carrières de l'UNU.",
+    "Envoyez votre candidature avant le 3 décembre 2026 (heure d'Europe centrale)."
+   ],
+   "vf": "2026-11-21",
+   "lien": "https://careers.unu.edu/o/project-associate-psa",
+   "cons": "Candidature en ligne sur careers.unu.edu.",
+   "niv": "Bac+5",
+   "exp": "1 an",
+   "sal": "2 137,50 à 2 455,50 EUR net par mois (mi-temps)"
   }
  ],
  "sites": [
@@ -7627,6 +6499,61 @@
  },
  "actus": [
   {
+   "t": "Côte d'Ivoire : Coris Bank ouvre 20 % de son capital en bourse",
+   "r": "Coris Bank International Côte d'Ivoire propose 8,16 millions d'actions au public du 30 novembre au 4 décembre 2026, en vue de son entrée à la BRVM ; l'opération vise environ 62,7 milliards de FCFA.",
+   "src": "Financial Afrik",
+   "url": "https://www.financialafrik.com/2026/11/20/coris-bank-cote-divoire-ouvre-20-de-son-capital-au-public/",
+   "date": "2026-11-20",
+   "p": "Côte d'Ivoire",
+   "tag": "Finance",
+   "img": "https://commons.wikimedia.org/wiki/Special:FilePath/AbidjanSib.JPG?width=480",
+   "cr": "Abidjan, Plateau — Zenman / Wikimedia, CC BY-SA 3.0"
+  },
+  {
+   "t": "UEMOA : le paiement instantané PI-SPI passe les 4 millions d'opérations",
+   "r": "Un an après son lancement par la BCEAO, la plateforme régionale de paiement instantané relie 175 institutions et a traité plus de 300 milliards de FCFA ; un pilote de connexion au système panafricain PAPSS est en cours.",
+   "src": "Financial Afrik",
+   "url": "https://www.financialafrik.com/2026/11/20/siips-2026-le-pi-spi-depasse-les-4-millions-de-transactions-en-un-an-dans-luemoa/",
+   "date": "2026-11-20",
+   "p": "",
+   "tag": "Finance",
+   "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
+   "cr": "Yue Wu / Unsplash"
+  },
+  {
+   "t": "Guinée : feu vert pour deux mines d'or de PDI Gold à Kankan",
+   "r": "L'État a délivré les permis d'exploitation des projets Bankan et Mansounia ; l'investissement prévu atteint 463 millions de dollars, pour une production attendue vers mi-2028.",
+   "src": "Financial Afrik",
+   "url": "https://www.financialafrik.com/2026/11/20/guinee-pdi-gold-va-investir-463-millions-de-dollars-dans-les-mines-dor-de-bankan-et-mansounia/",
+   "date": "2026-11-20",
+   "p": "Guinée",
+   "tag": "Investissement",
+   "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
+   "cr": "Yue Wu / Unsplash"
+  },
+  {
+   "t": "La BRVM veut mieux orienter l'épargne africaine vers l'investissement",
+   "r": "À Abidjan, le directeur général de la bourse régionale a jugé que les ressources financières du continent financent trop peu de projets productifs et plaidé pour mobiliser l'épargne locale.",
+   "src": "Financial Afrik",
+   "url": "https://www.financialafrik.com/2026/11/20/financement-de-lafrique-la-brvm-appelle-a-mobiliser-4-000-milliards-de-dollars-dactifs-africains/",
+   "date": "2026-11-20",
+   "p": "Côte d'Ivoire",
+   "tag": "Investissement",
+   "img": "https://commons.wikimedia.org/wiki/Special:FilePath/AbidjanSib.JPG?width=480",
+   "cr": "Abidjan, Plateau — Zenman / Wikimedia, CC BY-SA 3.0"
+  },
+  {
+   "t": "Moins d'aide extérieure : l'UEMOA mise sur l'épargne intérieure",
+   "r": "Face au recul de l'aide publique au développement, des responsables ivoiriens et régionaux veulent financer davantage l'économie par les marchés locaux, qui ont levé plus de 4 200 milliards de FCFA en 2025.",
+   "src": "Financial Afrik",
+   "url": "https://www.financialafrik.com/2026/11/20/face-au-recul-de-laide-exterieure-luemoa-et-abidjan-activent-les-leviers-du-financement-endogene/",
+   "date": "2026-11-20",
+   "p": "Côte d'Ivoire",
+   "tag": "Finance",
+   "img": "https://commons.wikimedia.org/wiki/Special:FilePath/AbidjanSib.JPG?width=480",
+   "cr": "Abidjan, Plateau — Zenman / Wikimedia, CC BY-SA 3.0"
+  },
+  {
    "t": "RDC : la BCC prépare la fin des paiements cash en devises",
    "r": "La Banque centrale du Congo a réuni les banques pour préciser les règles des transactions en espèces en devises, avant l'entrée en vigueur de l'interdiction prévue le 9 avril 2027.",
    "src": "Financial Afrik",
@@ -7678,61 +6605,6 @@
    "date": "2026-11-13",
    "p": "",
    "tag": "Indicateur",
-   "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
-   "cr": "Yue Wu / Unsplash"
-  },
-  {
-   "t": "Cameroun : un nouvel emprunt extérieur pour le budget 2027",
-   "r": "Le gouvernement préparerait un emprunt à l'étranger afin de compléter le financement de son budget de l'an prochain.",
-   "src": "Financial Afrik",
-   "url": "https://www.financialafrik.com/2026/11/13/cameroun-un-nouvel-emprunt-exterieur-en-preparation-pour-boucler-le-budget-2027/",
-   "date": "2026-11-13",
-   "p": "Cameroun",
-   "tag": "Finance",
-   "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
-   "cr": "Yue Wu / Unsplash"
-  },
-  {
-   "t": "Bénin : le bénéfice de la BIIC bondit de 64 % au 3e trimestre",
-   "r": "La Banque internationale pour l'industrie et le commerce du Bénin affiche une forte progression de ses résultats sur le trimestre.",
-   "src": "Financial Afrik",
-   "url": "https://www.financialafrik.com/2026/11/13/banques-hausse-de-64-du-benefice-de-la-banque-internationale-pour-lindustrie-et-le-commerce-du-benin-au-troisieme-trimestre-2026/",
-   "date": "2026-11-13",
-   "p": "Bénin",
-   "tag": "Finance",
-   "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Cotonouskyline.jpg?width=480",
-   "cr": "Cotonou — MVN / Wikimedia, CC BY 2.0"
-  },
-  {
-   "t": "Gabon : une cession légale imposée aux micro-assureurs",
-   "r": "Un arrêté du 7 octobre 2026 oblige les sociétés de microassurance gabonaises à céder 1 % à 2 % de leurs primes, comme les assureurs classiques.",
-   "src": "Financial Afrik",
-   "url": "https://www.financialafrik.com/2026/11/13/gabon-les-micro-assureurs-soumis-a-une-cession-legale-de-1-a-2-de-leurs-primes/",
-   "date": "2026-11-13",
-   "p": "Gabon",
-   "tag": "Finance",
-   "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
-   "cr": "Yue Wu / Unsplash"
-  },
-  {
-   "t": "Maroc : la BCP propose des règlements en yuan Afrique-Chine",
-   "r": "Via sa filiale offshore, la Banque Centrale Populaire permet aux entreprises de payer directement en renminbi leurs échanges entre l'Afrique et la Chine.",
-   "src": "Financial Afrik",
-   "url": "https://www.financialafrik.com/2026/11/12/maroc-la-bcp-mise-sur-le-yuan-pour-capter-les-flux-commerciaux-entre-lafrique-et-la-chine/",
-   "date": "2026-11-12",
-   "p": "Maroc",
-   "tag": "Commerce",
-   "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
-   "cr": "Yue Wu / Unsplash"
-  },
-  {
-   "t": "Maroc : Wafa Assurance va racheter La Marocaine Vie",
-   "r": "L'assureur Wafa Assurance prépare l'acquisition de la quasi-totalité du capital de La Marocaine Vie afin de grossir dans l'assurance-vie.",
-   "src": "Financial Afrik",
-   "url": "https://www.financialafrik.com/2026/11/12/maroc-wafa-assurance-sapprete-a-acquerir-9998-de-la-marocaine-vie-pour-se-renforcer-dans-lassurance-vie/",
-   "date": "2026-11-12",
-   "p": "Maroc",
-   "tag": "Investissement",
    "img": "https://images.unsplash.com/photo-1783228635692-a8953a296c4d?w=480&q=70&auto=format&fit=crop",
    "cr": "Yue Wu / Unsplash"
   }

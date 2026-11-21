@@ -1,7 +1,7 @@
 {
  "version": 1,
- "maj": "2026-11-16",
- "curseur": 240,
+ "maj": "2026-11-21",
+ "curseur": 290,
  "aide": "Registre des sources parcourues par la tâche horaire. emp = employeurs (url = page carrières officielle vérifiée, vide si pas encore trouvée ; vu = date du dernier passage ; ok = 0 si la page n'existe pas ou ne publie pas d'offres). por = sites de recrutement du pays. Le curseur indique le prochain employeur à visiter dans la rotation.",
  "pays": {
   "Sénégal": {
@@ -1478,20 +1478,20 @@
     },
     {
      "nom": "Dangote Cement Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://cement.dangote.com/careers/",
+     "vu": "2026-11-21",
      "ok": 1
     },
     {
      "nom": "Afriland First Bank",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "Société Générale Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://afrique.societegenerale.com/en/our-employees/",
+     "vu": "2026-11-21",
      "ok": 1
     },
     {
@@ -1503,8 +1503,8 @@
     {
      "nom": "BICEC",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "Ecobank Cameroun",
@@ -1527,14 +1527,14 @@
     {
      "nom": "Express Union",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "Activa Assurances",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "Chanas Assurances",
@@ -1544,20 +1544,20 @@
     },
     {
      "nom": "TotalEnergies Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://careers.totalenergies.com/",
+     "vu": "2026-11-21",
      "ok": 1
     },
     {
      "nom": "Tradex",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "Perenco Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://perenco-careers.talent-soft.com/",
+     "vu": "2026-11-21",
      "ok": 1
     },
     {
@@ -1575,8 +1575,8 @@
     {
      "nom": "CNPS",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "MINFOPRA",
@@ -1652,8 +1652,8 @@
     },
     {
      "nom": "Standard Chartered Cameroun",
-     "url": "",
-     "vu": "",
+     "url": "https://www.sc.com/en/careers/",
+     "vu": "2026-11-21",
      "ok": 1
     },
     {
@@ -1665,8 +1665,8 @@
     {
      "nom": "Advans Cameroun",
      "url": "",
-     "vu": "",
-     "ok": 1
+     "vu": "2026-11-21",
+     "ok": 0
     },
     {
      "nom": "Yoomee",
